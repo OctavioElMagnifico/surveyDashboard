@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Dashboard: Live Tracking of a Samplig Process.</title>
+        <script type="text/javascript" src="https://unpkg.com/d3@5.15.0/dist/d3.min.js"> </script>
+        <script type="text/javascript" src="https://unpkg.com/lodash@4.17.15/lodash.js"></script>
+        <style type="text/css">
+         text.label {
+             font-weight: bold;
+             fill: white;
+             font-family: optima,futura,sans-serif;
+         }
+        </style>
+    </head>
+    <body>
+
+        <script type="text/javascript">
+
+         var height = 600;
+         var width = 600;
+         var padding = 40;
+         var datos;
+
+         var svgParent = d3.select("body")
+                         .append("svg")
+                         .classed("parent",true)
+                         .attr("height", 2 * height )
+                         .attr("width", 2 * width )
+         ;
+
+
+
+         var svg = d3.select("svg.parent")
+                     .append("svg")
+                     .attr("height",( height * 1.5 ) )
+                     .attr("width", ( width  * 1.5 ) )
+                     .attr("x","0")
+                     .attr("y","100")
+         ;
+
+         var svgHeader = d3.select("svg.parent")
+                           .append("svg")
+                           .attr("x",0)
+                           .attr("y",0)
+                           .attr("height",100)
+                           .attr("width",width*1.5)
+
+         var parseOrganic = function(d) { if ( d == "0" ) { return 'NotOrganic'; } else { return 'Organic'; } };
+         var parseRow = function(d) {
+             return{
+                 sampleId: d.sampleID,
+                 sampleId2: d.sampleID,
+                 carbsReported: parseFloat( d.carbohydratesReported ),
+                 carbsMeasured: parseFloat( d.carbohydratesMeasured ),
+                 isOrganic:  parseOrganic(d.isOrganic),
+                 fatsReported: parseFloat( d.saturatedFatsReported ),
+                 fatsMeasured: parseFloat( d.saturatedFatsMeasured ),
+                 district: d.district
+             }
+         };
+
+         var getColumn = function(array, columnName) {
+             var column = [];
+             for ( i = 0; i < array.length; i++) { column.push( array[i][columnName] )};
+             return column;
+         };
+
+         var getSId = (d) => ( d.sampleId );
+         var factors = [ "isOrganic", "district" ];
+
+         var explicative = [ "carbsReported", "fatsMeasured", "fatsReported" ];
+         var explained = "carbsMeasured";
+
+         var cellPositionsArray = function( nRow, nCol ) {
+             var cellBases = [];
+             for( i=0 ; i < nCol; i++ ) cellBases.push( i );
+             var baseStep = ( width / nCol );
+             cellBases = cellBases.map( (d) => d*( baseStep + padding ) + padding );
+             var cellHeights = [];
+             for( i=1 ; i <= nRow; i++ ) cellHeights.push( i );
+             var heightStep = ( height / nRow ) ;
+             cellHeights = cellHeights.map( (d) => (  d*( heightStep +padding ) + padding ));
+             var positionsArray = [];
+             for ( i=0; i < nCol; i++) {
+                 for ( j=0; j < nRow; j++ ) {
+                     var newPoint = { X: 0, Y: 0};
+                     newPoint['X'] = cellBases[i];
+                     newPoint['Y'] = cellHeights[j];
+                     positionsArray.push(newPoint);
+                 }
+             }
+             return positionsArray;
+         };
+
+         var bottomColor = "rgba(100,100,100,0.2)";
+
+         var arrangeToFactor = function (factorName, data) {
+             var vector = getColumn( data, factorName);
+             var categories = _.uniq(vector);
+             var cellWidth = width / ( explicative.length );
+             var cellHeight = height / ( categories.length );
+
+             d3.csv("./compositions.csv", parseRow)
+               .then( function(dataFile) {
+                   datos = dataFile;
+               } );
+
+             svg.selectAll(".ejeChico").
+                 remove()
+             ;
+             svg.selectAll(".label")
+                .remove()
+             ;
+             svg.selectAll(".bottom")
+                .remove()
+             ;
+
+
+
+             escalaY = d3.scaleLinear()
+                         .domain( [0, d3.max(data, (d) => ( d[explained] ) ) ] )
+                         .range( [ cellHeight , 0 ] );
+
+
+             var ejeY = d3.axisLeft()
+                          .scale(escalaY)
+                          .ticks(3)
+
+             var matrix = cellPositionsArray( categories.length, explicative.length )
+
+
+             var parametrizedScatter = function( category, categoryVal, index, position, explicative ) {
+             escalaX = d3.scaleLinear()
+                         .domain( [
+                             d3.min(data, (d)  => ( d[explicative] )  ),
+                             d3.max(data, (d) => ( d[explicative] ) ) ]
+                         )
+                         .range( [ 0 , cellWidth ] );
+             var ejeX = d3.axisBottom()
+                          .scale(escalaX)
+                          .ticks(5)
+
+                 svg.append("rect")
+                          .attr("fill", bottomColor )
+                          .attr("x",0)
+                          .attr("y",0)
+                          .attr("width", cellWidth +  padding )
+                          .attr("height", cellHeight +  padding)
+                          .attr("class","bottom")
+                          .attr("transform","translate(" + ( position['X']  ) +  "," +  ( position['Y'] - cellHeight - padding  ) + ")" )
+                 ;
+                 svg.append("rect")
+                    .attr("x", ( cellWidth + padding ) *  3 + padding / 2 )
+                    .attr("y", padding )
+                    .attr("fill", "rgba(100,100,120,0.4)")
+                    .attr("height", ( cellHeight + padding ) * categories.length )
+                    .attr("width", cellWidth / 2)
+                    .attr("class","label")
+                 ;
+
+
+             var selectedCircs =svg.selectAll("circle." + explicative )
+                .data(data, getSId)
+                .filter( (d) => ( d[category] == categoryVal ) )
+
+            selectedCircs.enter()
+                .append("circle")
+                .merge(selectedCircs)
+                .transition()
+                .duration(1000)
+                .attr("fill", d3.schemeCategory10[index] )
+                .attr("r","5")
+                .attr("cx", (d) =>(  escalaX( d[explicative] )  ) )
+                .attr("cy", (d) =>(  escalaY( d[explained] )  ) )
+                .attr("transform","translate(" + ( position['X'] ) +  "," +  (  position['Y'] - cellHeight ) + ")" )
+             ;
+             svg.append("g")
+                .attr("class","ejeChico")
+                .attr("transform","translate(" + ( position['X'] ) +  "," +  ( position['Y'] ) + ")" )
+                .call(ejeX)
+             ;
+             svg.append("g")
+                .attr("class","ejeChico")
+                .attr("transform","translate(" + ( position['X'] ) +  "," +  ( position['Y'] - cellHeight  ) + ")" )
+                .call(ejeY);
+
+             svg.append("text")
+                .text( (d) => ( explicative ) )
+                .attr("x", 0 )
+                .attr("y", 0 )
+                .attr("font-size","20")
+                .attr("font-weight","bold")
+                .attr("text-anchor","middle")
+                .attr("fill","white")
+                .attr("class","label")
+                .attr("font-family","optima,futura,sans-serif")
+                .attr("transform","translate(" + ( position['X'] + cellWidth / 2 ) +  "," +  ( position['Y'] - cellHeight/2) + ")" )
+                 ;
+                 svg.append("text")
+                    .attr("x", ( cellWidth + padding ) *  3 + 2 *  padding - 10 )
+                    .attr("y", padding * 3 )
+                    .attr("font-size","20")
+                    .attr("font-weight","bold")
+                    .attr("fill","white")
+                    .attr("class","label")
+                    .attr("font-family","optima,futura,sans-serif")
+                    .style("writing-mode","vertical-rl")
+                    .text( categoryVal )
+                    .attr("transform","translate(0," +(  position['Y'] - cellHeight * 1.4 ) + ")" )
+                 ;
+
+
+         }
+
+
+             var index = parseInt(0);
+             for ( j in explicative ) {
+                 for ( i in categories ) {
+                     parametrizedScatter(factorName,categories[i],index,matrix[index],explicative[j]);
+                     index++;
+                 }
+             }
+
+
+
+             svg.selectAll(".ejeGrande").
+                    remove()
+             ;
+                ;
+             return matrix;
+         };
+
+         var constellation = function(data) {
+            svg.selectAll(".ejeChico").
+                remove()
+            ;
+            svg.selectAll(".label")
+            .remove()
+            ;
+            svg.selectAll(".bottom")
+               .transition()
+             .duration(100)
+               .attr("fill","rgba(0,0,0,0)")
+               .remove()
+            ;
+             d3.csv("./compositions.csv", parseRow)
+               .then( function(dataFile) {
+                   datos = dataFile;
+               } );
+                escalaR = d3.scaleLinear()
+                            .domain( [
+                                d3.min(datos, function(d) { return d[explained]; }  ),
+                                d3.max(datos, function(d) { return d[explained]; } ) ]
+                            )
+                            .range( [ width / 2, 0 ] );
+             svg.append("circle")
+                .attr("r", ( 0.51*height ) )
+                .attr("cx", ( width * 0.75  ))
+                .attr("cy", ( height * 0.65 ) )
+                .attr("fill",bottomColor)
+                .attr("class","bottom")
+
+                explicative.map( function( expl, i )
+                    {
+                        escalaA = d3.scaleLog()
+                                    .domain( [ d3.min( datos, (d) => ( d[ expl ] ) ) , d3.max(datos, (d) => (d[ expl ]) ) ] )
+                                    .range( [ 0 , ( 2 *  Math.PI ) / 3 ] );
+
+                        var selectedCircles = svg.selectAll("circle." + expl );
+
+                        svg.selectAll("circle." + expl )
+                        .data(datos, getSId)
+                        .enter()
+                        .append("circle")
+                        .merge(selectedCircles)
+                        .transition()
+                        .ease( d3.easeCircleIn )
+                        .duration(1000)
+                        .attr("cx", (d) => ( escalaR( d[ explained ] ) * Math.cos( escalaA( d[ expl ] ) + ( ( 2 * Math.PI )/3 ) * (i+1) ) + width * 0.75 ) )
+                        .attr("cy", (d) => ( escalaR( d[ explained ] ) * Math.sin( escalaA( d[ expl ] ) + ( ( 2 * Math.PI )/3 ) * (i+1) ) + height * 0.65 ) )
+                        .attr("r", 3+i + "px" )
+                        .attr("transform","translate(0,0)")
+                        .attr("fill", d3.schemeCategory10[ i + 2 ] )
+                        .attr("class", (d) => ( expl ) );
+                             }
+                         );
+         }
+
+
+         
+         d3.csv("./compositions.csv", parseRow)
+           .then( function(dataFile) {
+               datos = dataFile;
+               constellation(datos)
+           } );
+
+         /* Comment on program structure: The only call donde to d3.csv exports the data to a global environment variable from where the other transformation functions get it. Thats why most of the code is function definition. */
+
+         /* Buttons organization */
+
+                         svgHeader.append("rect")
+                                  .attr("x",0)
+                                  .attr("y",0)
+                                  .attr("height",25)
+                                  .attr("width",900)
+                                  .attr("stroke","black")
+                                  .attr("stroke-width",1)
+                                  .attr("fill","gray");
+                         svgHeader.append("text")
+                                  .attr("x",12)
+                                  .attr("y",20)
+                                  .text("Click on an option to arrange the data by:")
+                                  .classed("label",true);
+
+                         svgHeader.append("rect")
+                                    .attr("x",0)
+                                    .attr("y",25)
+                                    .attr("id","selOrganic")
+                                    .attr("height",50)
+                                    .attr("width",300)
+                                    .attr("fill",bottomColor);
+                         svgHeader.append("text")
+                                    .attr("x",padding)
+                                    .attr("y",50)
+                                    .attr("id","selOrganic")
+                                    .classed("label",true)
+                                    .text("Organicity.");
+
+                         svgHeader.append("rect")
+                                  .attr("x",300)
+                                  .attr("y",25)
+                                  .attr("id","selDistrict")
+                                  .attr("height",50)
+                                  .attr("width",300)
+                                  .attr("fill",bottomColor);
+                         svgHeader.append("text")
+                                  .attr("x",300 + 2 * padding)
+                                  .attr("y",50)
+                                  .text("District.")
+                                  .classed("label",true)
+                                  .attr("id","selDistrict")
+
+                         svgHeader.append("rect")
+                                  .attr("x",600)
+                                  .attr("y",25)
+                                  .attr("id","selConstellation")
+                                  .attr("height",50)
+                                  .attr("width",300)
+                                  .attr("fill",bottomColor);
+                         svgHeader.append("text")
+                                  .attr("x",600 + 3 * padding)
+                                  .attr("y",50)
+                                  .text("Constellation.")
+                                  .attr("id","selConstellation")
+                                  .classed("label",true);
+
+                         d3.selectAll("#selConstellation").
+                            on( "click", function() {
+                                constellation(datos)
+                            } );
+                         d3.selectAll("#selOrganic").
+                            on( "click", function() {
+                                arrangeToFactor('isOrganic',datos)
+                            } );
+                         d3.selectAll("#selDistrict").
+                            on( "click", function() {
+                                d3.csv("./compositions.csv",parseRow).then( function(dataFile)
+                                        {
+                                            datos = dataFile;
+                                            arrangeToFactor('district',datos);
+                                        });
+                     } );
+
+        </script>
+    </body>
+</html>
