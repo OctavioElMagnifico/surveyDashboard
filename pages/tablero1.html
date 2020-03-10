@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard: Live Tracking of a Samplig Process.</title>
+  <script type="text/javascript" src="https://unpkg.com/d3@5.15.0/dist/d3.min.js"> </script>
+  <script type="text/javascript" src="https://unpkg.com/lodash@4.17.15/lodash.js"></script>
+</head>
+
+<body>
+
+  <p id="button"> Hacer Click para Dividir el Diagrama. </p>
+  <button onclick="draw()">Click me</button>
+  <button onclick="addRow()">Add observation</button>
+  <script type="text/javascript">
+    async function addRow () {
+      return fetch('/rexec', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          script: 'agregarObservacion.R',
+          arguments: [],
+          output: 'compositions.csv'
+        })
+      })
+    }
+
+
+    async function getTendency ( explained, factor, category ) {
+      return fetch('/rexec', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          script: 'agregarObservacion.R',
+          arguments: [ explained, factor, category ],
+          input: 'compositions.csv',
+          output: 'tendency.csv',
+        })
+      })
+    }
+
+    var height = 300;
+    var width = 600;
+    var padding = 40;
+    var datos;
+
+
+    var svg = d3.select("body")
+      .append("svg")
+      .attr("height", height)
+      .attr("width", width)
+      ;
+    var leerFila = function (d) {
+      return {
+        sampleId: d.sampleID,
+        carbsReported: parseFloat(d.carbohydratesReported),
+        carbsMeasured: parseFloat(d.carbohydratesMeasured),
+        isOrganic: d.isOrganic,
+        saturatedFatsReported: parseFloat(d.saturatedFatsReported),
+        saturatedFatsMeasured: parseFloat(d.saturatedFatsMeasured),
+        district: d.district
+      }
+    };
+
+    var getColumn = function (array, columnName) {
+      var column = [];
+      for (i = 0; i < array.length; i++) { column.push(array[i][columnName]) };
+      return column;
+    };
+
+    var unique = function (vector) {
+      var uniqueElements = [];
+      var n = vector.length;
+      for (i = 0; i < n; i++) {
+        if (!(vector[i] in uniqueElements)) {
+          uniqueElements.push(vector[i]);
+        };
+      }
+      return uniqueElements;
+    }
+
+    var getSId = (d) => (d.sampleId)
+
+    setInterval(async () => {
+      await addRow()
+      await draw()
+    }, 1000)
+
+    const draw = () => {
+      d3.csv('/csv/compositions.csv', leerFila)
+        .then(function (archivo) {
+          datos = archivo;
+  
+          escalaX = d3.scaleLinear()
+            .domain([
+              d3.min(datos, function (d) { return d.carbsMeasured; }),
+              d3.max(datos, function (d) { return d.carbsMeasured; })]
+            )
+            .range([0 + padding, width - padding]);
+          escalaY = d3.scaleLinear()
+            .domain([0, d3.max(datos, (d) => (d.carbsReported))])
+            .range([height - padding, 0 + padding]);
+          var ejeX = d3.axisBottom()
+            .scale(escalaX)
+            .ticks(5)
+          var ejeY = d3.axisLeft()
+            .scale(escalaY)
+            .ticks(8)
+  
+          svg.selectAll("circle")
+            .data(datos, getSId)
+            .enter()
+            .append("circle")
+            .attr("cx", (d) => escalaX(d.carbsMeasured))
+            .attr("cy", (d) => escalaY(d.carbsReported))
+            /* .attr("r", (d) => ( d.saturatedFatsReported/10 ) ) */
+            .attr("r", "2px")
+            .attr("fill", "black")
+  
+  
+          svg.append("g")
+            .attr("class", "ejeGrande")
+            .attr("transform", "translate(0," + (height - padding) + ")")
+            .call(ejeX)
+  
+          svg.append("g")
+            .attr("class", "ejeGrande")
+            .attr("transform", "translate(" + padding + ",0)")
+            .call(ejeY)
+            ;
+          /* Acción Más General. */
+  
+          d3.selectAll("#variableSelector").
+            on("click", function () {
+  
+            });
+  
+          /* Acción de separar datos. */
+          d3.selectAll("#button")
+            .on("click", function (d) {
+              d3.select(this).
+                style("color", "red");
+  
+              escalaX.range([0, width / 2 - padding]
+              );
+  
+              svg.selectAll("circle")
+                .data(datos, getSId)
+                .filter((d) => (d.isOrganic == false))
+                .transition()
+                .duration(2000)
+                .attr("fill", "blue")
+                .attr("cx", (d) => (escalaX(d.carbsMeasured) + escalaX.range()[1] + 2 * padding))
+                ;
+              svg.selectAll("circle")
+                .data(datos, getSId)
+                .filter((d) => (d.isOrganic == true))
+                .transition()
+                .duration(2000)
+                .attr("fill", "green")
+                .attr("cx", (d) => ((escalaX(d.carbsMeasured) + padding)))
+                ;
+              svg.selectAll(".ejeGrande").
+                remove();
+  
+              svg.append("g")
+                .attr("class", "ejeChico")
+                .attr("transform", "translate(" + padding + " ," + (height - padding) + ")")
+                .call(ejeX)
+                ;
+  
+              svg.append("g")
+                .attr("class", "ejeChico")
+                .attr("transform", "translate(" + (width / 2 + padding) + "," + (height - padding) + ")")
+                .call(ejeX)
+                ;
+  
+              svg.append("g")
+                .attr("class", "ejeChico")
+                .attr("transform", "translate(" + padding + ",0)")
+                .call(ejeY)
+                ;
+              svg.append("g")
+                .attr("class", "ejeChico")
+                .attr("transform", "translate(" + (width / 2 + padding) + ",0)")
+                .call(ejeY)
+                ;
+            }
+            );
+  
+        });
+    }
+  </script>
+</body>
+
+</html>
