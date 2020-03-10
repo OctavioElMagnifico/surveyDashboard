@@ -10,7 +10,7 @@
              font-weight: bold;
              fill: white;
              font-family: optima,futura,sans-serif;
-             font-size: 30;
+             font-size: 40;
          }
         </style>
     </head>
@@ -74,15 +74,20 @@
          var padding = 40;
          var datos;
          var objectiveSamples = 455;
+         var headerHeight = 100;
 
          var svgParent = d3.select("body")
                          .append("svg")
                          .classed("parent",true)
-                         .attr("height", 3 * height )
-                         .attr("width", 3 * width )
+                         .attr("height", 1.5 * height + headerHeight + padding )
+                         .attr("width", 2 * width )
          ;
 
+          var bottomCircle = "rgba(100,100,100,0.1)";
+          var bottomColor = "indigo";
 
+          d3.select("body").style("background-color","cornsilk")
+          svgParent.style("background-color","cadetblue")
 
          var svg = d3.select("svg.parent")
                      .append("svg")
@@ -96,8 +101,44 @@
                            .append("svg")
                            .attr("x",0)
                            .attr("y",0)
-                           .attr("height",100)
-                           .attr("width",width*1.5)
+                           .attr("height",headerHeight)
+                           .attr("width",width*1.5);
+
+        var svgHeader2 = d3.select("svg.parent")
+                          .append("svg")
+                          .attr("x",width*1.5)
+                          .attr("y",0)
+                          .attr("height",headerHeight)
+                          .attr("width",width*0.4);
+
+          svgHeader2.append("rect").
+                     attr("x",0).
+                     attr("y",0).
+                     attr("width",width*0.4).
+                     attr("height",headerHeight).
+                     attr("id","header2").
+                     attr("fill",bottomColor);
+
+          /* svgHeader2.append("rect"). */
+          /* attr("x",0). */
+          /* attr("y",0). */
+          /* attr("width",width*0.4). */
+          /* attr("height",25). */
+          /* attr("id","header2"). */
+          /* attr("stroke","black"). */
+          /* attr("fill","gray"). */
+          /* attr("stroke-width",1) */
+          /* ; */
+
+          svgHeader2.append("text")
+                    .attr("x", 0 + padding )
+                    .attr("y",60)
+                    .attr("class","label")
+                    .text("Progress.")
+                    .classed("label",true)
+                    .attr("font-size",30)
+                    .attr("fill","red")
+          ;
 
          var svgSide = d3.select("svg.parent")
           .append("svg")
@@ -105,6 +146,8 @@
           .attr("y",100)
           .attr("width",width*0.4)
           .attr("height",height*1.5)
+
+
 
 
          var parseOrganic = function(d) { if ( d == "0" ) { return 'NotOrganic'; } else { return 'Organic'; } };
@@ -155,7 +198,6 @@
              return positionsArray;
          };
 
-         var bottomColor = "rgba(100,100,100,0.2)";
 
          var arrangeToFactor = function (factorName, data) {
              var vector = getColumn( data, factorName);
@@ -204,7 +246,7 @@
                           .ticks(5)
 
                  svg.append("rect")
-                          .attr("fill", bottomColor )
+                          .attr("fill", bottomCircle )
                           .attr("x",0)
                           .attr("y",0)
                           .attr("width", cellWidth +  padding )
@@ -331,7 +373,7 @@
               .attr("r", ( 0.51*height ) )
               .attr("cx", ( width * 0.75  ))
               .attr("cy", ( height * 0.65 ) )
-              .attr("fill",bottomColor)
+              .attr("fill",bottomCircle)
               .attr("class","bottomC")
 
             explicative.map( function( expl, i )
@@ -381,48 +423,52 @@
                                   .attr("x",12)
                                   .attr("y",20)
                                   .text("Click on an option to arrange the data by:")
-                                  .classed("label",true);
+                                  .classed("label",true)
+                                  ;
 
                          svgHeader.append("rect")
                                     .attr("x",0)
                                     .attr("y",25)
                                     .attr("id","selOrganic")
-                                    .attr("height",50)
+                                    .attr("height",70)
                                     .attr("width",300)
                                     .attr("fill",bottomColor);
                          svgHeader.append("text")
                                     .attr("x",padding)
-                                    .attr("y",50)
+                                    .attr("y",60)
                                     .attr("id","selOrganic")
                                     .classed("label",true)
+                                    .attr("font-size","30")
                                     .text("Organicity.");
 
                          svgHeader.append("rect")
                                   .attr("x",300)
                                   .attr("y",25)
                                   .attr("id","selDistrict")
-                                  .attr("height",50)
+                                  .attr("height",70)
                                   .attr("width",300)
                                   .attr("fill",bottomColor);
                          svgHeader.append("text")
-                                  .attr("x",300 + 2 * padding)
-                                  .attr("y",50)
+                                  .attr("x",300 + 1 * padding)
+                                  .attr("y",60)
                                   .text("District.")
                                   .classed("label",true)
+                                  .attr("font-size","30")
                                   .attr("id","selDistrict")
 
                          svgHeader.append("rect")
                                   .attr("x",600)
                                   .attr("y",25)
                                   .attr("id","selConstellation")
-                                  .attr("height",50)
+                                  .attr("height",70)
                                   .attr("width",300)
                                   .attr("fill",bottomColor);
                          svgHeader.append("text")
-                                  .attr("x",600 + 3 * padding)
-                                  .attr("y",50)
+                                  .attr("x",600 + padding)
+                                  .attr("y",60)
                                   .text("Constellation.")
                                   .attr("id","selConstellation")
+                                  .attr("font-size","30")
                                   .classed("label",true);
 
                          d3.selectAll("#selConstellation").
@@ -461,9 +507,6 @@
 
               svgSide.selectAll("rect")
                                 .data(bars, (d) => d.label )
-                                .transition()
-                                .duration(800)
-                                .ease( d3.easeLinear )
                                 .attr("x",0)
                                 .attr( "y", (d) => ( scaleComp( d.barHeight ) ) )
                                 .attr("height",height*1.5)
@@ -474,14 +517,11 @@
               var selText = svgSide.selectAll("text")
 
 
-              svgSide.selectAll("text")
+              svgSide.selectAll("text.label")
                      .data(bars, (d) => d.label )
                      .enter()
                      .append("text")
                      .merge(selText)
-                     .transition()
-                     .duration(800)
-                     .ease( d3.easeLinear )
                      .attr("x", width*0.2)
                      .attr( "y", (d) => ( scaleComp( d.barHeight ) ) + 40 )
                      .attr("height",height*1.5)
@@ -491,6 +531,26 @@
                      .text( (d) => d.label )
                      .attr("text-anchor","middle")
             ;
+
+            svgSide.selectAll("text.display").transition().attr("fill","red").remove();
+
+            svgSide.append("text").
+                    attr("x", 1.7*padding).
+                    attr("y", height * 1.5 - padding ).
+                    text( datos.length ).
+                    attr("class","display").
+                    attr("font-size",55).
+                    attr("fill","darkslateblue").
+                    attr("font-emphasys","azure");
+
+            svgSide.append("text").
+                    attr("x", 1.7*padding).
+                    attr("y", 2.5 * padding ).
+                    text( objectiveSamples ).
+                    attr("class","display").
+                    attr("font-size",55).
+                    attr("fill","yellow").
+                    attr("font-emphasys","bold")
 
           };
 
@@ -531,6 +591,8 @@
           };
 
 
+
         </script>
+
     </body>
 </html>
