@@ -30,4 +30,17 @@ fila$fittedByDistrict <- predict(modelDist, fila)
 
 tabla2 <- rbind(tabla,fila)
 
+extract <- c()
+
+for ( i in 1:nrow(tabla2) ) {
+  for( j in 1:ncol(tabla2) )
+    if ( is.finite(tabla2[i,j]) == FALSE  ) {
+      extract <- c( extract, i )
+    }
+}
+
+if ( !is.null(extract) ) {
+  tabla2 <- tabla2[-extract,]
+};
+
 write.csv( x=tabla2, file=Sys.getenv("OUTPUT_FILE") )

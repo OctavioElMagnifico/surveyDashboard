@@ -84,10 +84,10 @@
          ;
 
           var bottomCircle = "rgba(100,100,100,0.1)";
-          var bottomColor = "indigo";
+          var bottomColor = "gray";
 
           d3.select("body").style("background-color","cornsilk")
-          svgParent.style("background-color","cadetblue")
+          svgParent.style("background-color","gainsboro")
 
          var svg = d3.select("svg.parent")
                      .append("svg")
@@ -119,16 +119,6 @@
                      attr("id","header2").
                      attr("fill",bottomColor);
 
-          /* svgHeader2.append("rect"). */
-          /* attr("x",0). */
-          /* attr("y",0). */
-          /* attr("width",width*0.4). */
-          /* attr("height",25). */
-          /* attr("id","header2"). */
-          /* attr("stroke","black"). */
-          /* attr("fill","gray"). */
-          /* attr("stroke-width",1) */
-          /* ; */
 
           svgHeader2.append("text")
                     .attr("x", 0 + padding )
@@ -416,8 +406,8 @@
                                   .attr("y",0)
                                   .attr("height",25)
                                   .attr("width",900)
-                                  .attr("stroke","black")
-                                  .attr("stroke-width",1)
+                                  .attr("stroke","gray")
+                                  .attr("stroke-width",3)
                                   .attr("fill","gray");
                          svgHeader.append("text")
                                   .attr("x",12)
@@ -432,6 +422,8 @@
                                     .attr("id","selOrganic")
                                     .attr("height",70)
                                     .attr("width",300)
+                                  .attr("stroke",bottomColor)
+                                  .attr("stroke-width",3)
                                     .attr("fill",bottomColor);
                          svgHeader.append("text")
                                     .attr("x",padding)
@@ -447,7 +439,9 @@
                                   .attr("id","selDistrict")
                                   .attr("height",70)
                                   .attr("width",300)
-                                  .attr("fill",bottomColor);
+                                  .attr("fill",bottomColor)
+                                      .attr("stroke",bottomColor)
+                                    .attr("stroke-width",3);
                          svgHeader.append("text")
                                   .attr("x",300 + 1 * padding)
                                   .attr("y",60)
@@ -462,7 +456,9 @@
                                   .attr("id","selConstellation")
                                   .attr("height",70)
                                   .attr("width",300)
-                                  .attr("fill",bottomColor);
+                                  .attr("fill",bottomColor)
+                                    .attr("stroke",bottomColor)
+                                    .attr("stroke-width",3);
                          svgHeader.append("text")
                                   .attr("x",600 + padding)
                                   .attr("y",60)
@@ -491,8 +487,8 @@
 
           var completionMeters = function() {
               bars = [
-                { label: "objective", barHeight: objectiveSamples, fill: "black" },
-                { label: "samples", barHeight: datos.length, fill:"green" }
+                { label: "objective", barHeight: objectiveSamples, fill: "lightgray" },
+                { label: "samples", barHeight: datos.length, fill:"darkgray" }
               ];
 
               var scaleComp = d3.scaleLinear().
@@ -533,6 +529,8 @@
             ;
 
             svgSide.selectAll("text.display").transition().attr("fill","red").remove();
+            svgSide.selectAll("text.displayFixed").transition().remove();
+            
 
             svgSide.append("text").
                     attr("x", 1.7*padding).
@@ -547,7 +545,7 @@
                     attr("x", 1.7*padding).
                     attr("y", 2.5 * padding ).
                     text( objectiveSamples ).
-                    attr("class","display").
+                    attr("class","displayFixed").
                     attr("font-size",55).
                     attr("fill","yellow").
                     attr("font-emphasys","bold")
