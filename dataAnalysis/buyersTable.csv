@@ -1,0 +1,1517 @@
+State,Source,ID,Type,FarmPractices,StoreName,Farmer,Polyphenols,Antioxidants,Flavor0to5,ShippingTimehrs,TotalTimehrs,MaturityDays,Sweetness0to5,Taste0to5,sourceName,sourceClass
+michigan,store,3238,cherry_tomato,none,meijer,NA,21.48,992.62,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3239,cherry_tomato,none,meijer,NA,22.87,858.19,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3240,cherry_tomato,none,meijer,NA,21.63,969.36,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3241,grape,none,meijer,NA,20.64,938.16,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3242,grape,none,meijer,NA,27.7,1038.19,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3244,lettuce,none,meijer,NA,10.77,387.45,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3245,lettuce,none,meijer,NA,26.93,794.75,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3246,lettuce,none,meijer,NA,9.56,256.35,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3247,spinach,certified_organic,meijer,NA,59.95,1270.15,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3248,spinach,certified_organic,meijer,NA,77.34,33.38,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3249,spinach,certified_organic,meijer,NA,53.9,27.59,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3250,kale,none,meijer,NA,85.49,5483.22,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3251,kale,none,meijer,NA,66.21,2321.63,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3252,kale,none,meijer,NA,109.5,5252.93,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3262.1,grape,none,meijer,NA,24.86,1248.34,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3262.2,grape,none,meijer,NA,24.9,1120.34,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3262.3,grape,none,meijer,NA,18.81,854.22,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3264.1,kale,none,meijer,NA,124.78,17453.5,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3264.2,kale,none,meijer,NA,132.01,18693.6,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3264.3,kale,none,meijer,NA,90.5,11900.4,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3271.1,spinach,none,meijer,NA,67,1090.11,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3271.2,spinach,none,meijer,NA,81.86,1418.02,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3271.3,spinach,none,meijer,NA,69.67,1237.72,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3261.1,carrot,none,meijer,NA,4.33,93.73,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3261.2,carrot,none,meijer,NA,3.56,107.07,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3261.3,carrot,none,meijer,NA,6.44,68.72,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3260.1,lettuce,certified_organic,meijer,NA,12.7,231.14,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3260.2,lettuce,certified_organic,meijer,NA,21.41,298.07,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3260.3,lettuce,certified_organic,meijer,NA,10.01,204.13,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3263.2,cherry_tomato,certified_organic other biologique,meijer,NA,29.53,1887.3,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3263.3,cherry_tomato,certified_organic other biologique,meijer,NA,27.2,1500.42,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,3263.1,cherry_tomato,certified_organic other biologique,meijer,NA,32.42,2571.45,NA,NA,NA,NA,NA,NA,meijer,namedStore
+connecticut,store,2169.3,carrot,none,fitzgeralds,NA,12.05,47.15,NA,NA,NA,NA,NA,NA,fitzgeralds,namedStore
+connecticut,store,2169.1,carrot,none,fitzgeralds,NA,8.17,49.55,NA,NA,NA,NA,NA,NA,fitzgeralds,namedStore
+connecticut,store,2169.2,carrot,none,fitzgeralds,NA,7.62,43.47,NA,NA,NA,NA,NA,NA,fitzgeralds,namedStore
+new_york,farm_market,3304,carrot,NA,NA,bruno farm stand,98.52,11287.7,NA,113.31,167.67000000000002,NA,NA,NA,bruno farm stand,farmer
+california,store,3000.1,carrot,none,fruit_basket,NA,8.91,38.53,NA,NA,NA,NA,NA,NA,fruit_basket,namedStore
+california,store,3000.2,carrot,none,fruit_basket,NA,8.21,72.73,NA,NA,NA,NA,NA,NA,fruit_basket,namedStore
+california,store,3000.3,carrot,none,fruit_basket,NA,9.81,24.87,NA,NA,NA,NA,NA,NA,fruit_basket,namedStore
+california,store,3029.1,carrot,certified_organic,whole_foods,NA,13.21,102.66,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+california,store,3029.3,carrot,certified_organic,whole_foods,NA,9.09,29.74,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+california,store,3029.2,carrot,certified_organic,whole_foods,NA,8.38,39.05,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+california,store,3025,grape,certified_organic local,whole_foods,NA,62.65,1135.26,4,NA,NA,NA,5,4,whole_foods,namedStore
+california,farm_market,3334,lettuce,certified_organic notill nospray biodynamic,NA,Sebastopol Farmers Market,16.71,248.98,5,74.78,97.62,NA,4,5,Sebastopol Farmers Market,farmer
+california,farm_market,3333,kale,certified_organic notill nospray biodynamic,NA,Sebastopol Farmers Market,160.09,12414.3,5,73.46,192.52999999999997,NA,3,5,Sebastopol Farmers Market,farmer
+california,farm_market,3339,carrot,certified_organic notill nospray biodynamic,NA,Sebastopol Farmers Market,21.44,68.53,4,95.49,525.75,NA,4,4,Sebastopol Farmers Market,farmer
+california,farm_market,3340,lettuce,certified_organic notill nospray biodynamic,NA,Sebastopol Farmers Market,38.12,901.3,5,95.27,281.48,NA,5,5,Sebastopol Farmers Market,farmer
+new_york,farm_market,3315,kale,certified_organic,NA,NA,68.01,29330.6,5,51.58,313.07,NA,3,4,farm_marketUnnamed,farm_marketUnnamed
+new_york,farm_market,3361,kale,certified_organic,NA,NA,649.54,1082.18,5,51.58,172.98000000000002,NA,3,4,farm_marketUnnamed,farm_marketUnnamed
+north_carolina,store,3519,carrot,none,trader_joes,NA,8.7,58.55,4,88.31,427.64,NA,3,4,trader_joes,namedStore
+north_carolina,store,3537,carrot,none,trader_joes,NA,7.65,73.38,4,88.31,427.23,NA,3,4,trader_joes,namedStore
+north_carolina,farm_market,3556,grape,nospray,NA,Lees One Fortune Farm,103.92,14996.3,NA,69.81,150.34,NA,NA,NA,Lees One Fortune Farm,farmer
+north_carolina,farm_market,3557,grape,nospray,NA,Lees One Fortune Farm,111.75,18473.6,NA,69.81,150.01,NA,NA,NA,Lees One Fortune Farm,farmer
+north_carolina,farm_market,3558,grape,nospray,NA,Lees One Fortune Farm,91.02,9891.17,NA,69.81,222.17000000000002,NA,NA,NA,Lees One Fortune Farm,farmer
+canada,farm_market,3469,carrot,biodynamic cover_crops notill,NA,Thomas Schneider,19.2,50.05,3,NA,NA,NA,3,4,Thomas Schneider,farmer
+maine,store,2363.1,carrot,none,hannaford,NA,7.98,50.66,NA,NA,NA,NA,NA,NA,hannaford,namedStore
+maine,store,2363.2,carrot,none,hannaford,NA,13.53,94.84,NA,NA,NA,NA,NA,NA,hannaford,namedStore
+maine,store,2363.3,carrot,none,hannaford,NA,26.41,82.78,NA,NA,NA,NA,NA,NA,hannaford,namedStore
+maine,store,2364,spinach,none,hannaford,NA,130.58,1266.53,NA,109.5,161.15,NA,NA,NA,hannaford,namedStore
+maine,store,2362,carrot,certified_organic,hannaford,NA,6.94,55.64,NA,132.98,281.21,NA,NA,NA,hannaford,namedStore
+maine,store,2361,spinach,certified_organic,hannaford,NA,106.04,208.66,NA,132.92,160.38,NA,NA,NA,hannaford,namedStore
+maine,farm_market,2365,cherry_tomato,certified_organic cover_crops,NA,Goranson Farm,32.74,4839.77,NA,109.15,187.72,NA,NA,NA,Goranson Farm,farmer
+maine,farm_market,2367,cherry_tomato,certified_organic cover_crops,NA,Goranson Farm,40.4,5895.81,NA,109.15,188.04000000000002,NA,NA,NA,Goranson Farm,farmer
+maine,farm_market,2368.1,lettuce,certified_organic,NA,Goranson Farm,115.42,1209.52,NA,NA,NA,NA,NA,NA,Goranson Farm,farmer
+maine,farm_market,2368.2,lettuce,certified_organic,NA,Goranson Farm,21.61,486.65,NA,NA,NA,NA,NA,NA,Goranson Farm,farmer
+maine,farm_market,2368.3,lettuce,certified_organic,NA,Goranson Farm,8.1,300.39,NA,NA,NA,NA,NA,NA,Goranson Farm,farmer
+maine,farm_market,2369.1,spinach,certified_organic,NA,Bumbleroot Farm,40.15,1235.88,NA,NA,NA,NA,NA,NA,Bumbleroot Farm,farmer
+maine,farm_market,2369.2,spinach,certified_organic,NA,Bumbleroot Farm,58.16,695.66,NA,NA,NA,NA,NA,NA,Bumbleroot Farm,farmer
+maine,farm_market,2370,carrot,certified_organic,NA,Bumbleroot Farm,16.96,73.24,NA,109.69,281.28999999999996,NA,NA,NA,Bumbleroot Farm,farmer
+new_york,store,3314.1,carrot,other bakersfield_california,pats_market,NA,11.69,102.26,5,NA,NA,NA,5,5,pats_market,namedStore
+new_york,store,3314.2,carrot,other bakersfield_california,pats_market,NA,14.65,100.33,5,NA,NA,NA,5,5,pats_market,namedStore
+new_york,store,3314.3,carrot,other bakersfield_california,pats_market,NA,6.71,41.79,5,NA,NA,NA,5,5,pats_market,namedStore
+new_york,farm_market,3303.1,cherry_tomato,NA,NA,NA,8.01,70.96,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+new_york,farm_market,3303.2,cherry_tomato,NA,NA,NA,7.51,39.98,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+new_york,farm_market,3303.3,cherry_tomato,NA,NA,NA,11.19,44.52,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+ohio,store,3273,kale,certified_organic,heinens,NA,129.44,16532.1,2,233.11,259.28000000000003,NA,1,2,heinens,namedStore
+ohio,store,3274,kale,certified_organic,heinens,NA,240.41,1556.24,2,233.11,239.70000000000002,NA,1,2,heinens,namedStore
+ohio,store,3276,cherry_tomato,certified_organic,heinens,NA,24.61,858.69,4,94.6,122.94,NA,4,4,heinens,namedStore
+ohio,store,3277,cherry_tomato,certified_organic,heinens,NA,24.99,910.27,4,94.6,123.57,NA,4,4,heinens,namedStore
+ohio,store,3278,cherry_tomato,certified_organic,heinens,NA,29.09,928.49,4,94.6,123.25999999999999,NA,4,4,heinens,namedStore
+connecticut,store,2547.1,lettuce,local certified_organic,stop_and_shop,NA,21.57,554.51,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,2547.2,lettuce,local certified_organic,stop_and_shop,NA,320.56,693.86,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,2547.3,lettuce,local certified_organic,stop_and_shop,NA,20.14,657.91,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,2544.1,lettuce,local certified_organic,stop_and_shop,NA,21.63,615.99,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,2544.3,lettuce,local certified_organic,stop_and_shop,NA,31.43,540.58,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+washington,store,3470,carrot,local certified_organic,food_pavillion,NA,72.11,186.11,NA,47.52,163.4,NA,NA,NA,food_pavillion,namedStore
+new_york,store,3365,spinach,certified_organic,fairway market,NA,101.02,8245.38,NA,69.38,70.63,NA,NA,NA,fairway market,namedStore
+new_york,store,3368,grape,certified_organic,fairway market,NA,11.25,389.43,NA,69.27,72.75,NA,NA,NA,fairway market,namedStore
+new_york,store,3360,grape,certified_organic,fairway market,NA,16.88,672.37,NA,69.27,72.42,NA,NA,NA,fairway market,namedStore
+florida,store,3583,lettuce,none,walmart,NA,20.31,334.79,NA,74.58,188.62,NA,NA,NA,walmart,namedStore
+florida,store,3582,kale,none,walmart,NA,103.36,12954,NA,74.41,189.3,NA,NA,NA,walmart,namedStore
+maine,farm_market,2385.1,kale,certified_organic cover_crops,NA,Goranson Farm,96.9,17426.2,NA,NA,NA,NA,NA,NA,Goranson Farm,farmer
+maine,farm_market,2385.2,kale,certified_organic cover_crops,NA,Goranson Farm,114.9,23377.1,NA,NA,NA,NA,NA,NA,Goranson Farm,farmer
+maine,farm_market,2385.3,kale,certified_organic cover_crops,NA,Goranson Farm,106.84,16748.3,NA,NA,NA,NA,NA,NA,Goranson Farm,farmer
+maine,farm_market,2388.1,carrot,certified_organic,NA,Goranson Farm,3.17,28.73,NA,NA,NA,NA,NA,NA,Goranson Farm,farmer
+maine,farm_market,2388.2,carrot,certified_organic,NA,Goranson Farm,3.03,37.31,NA,NA,NA,NA,NA,NA,Goranson Farm,farmer
+maine,farm_market,2388.3,carrot,certified_organic,NA,Goranson Farm,3.35,9.25,NA,NA,NA,NA,NA,NA,Goranson Farm,farmer
+ohio,store,2117,lettuce,none,aldi,NA,15.28,338.73,4,56.19,96.06,NA,4,4,aldi,namedStore
+ohio,store,2118,lettuce,none,aldi,NA,10.04,348.24,4,56.19,97.47999999999999,NA,4,4,aldi,namedStore
+ohio,store,2119,lettuce,none,aldi,NA,14.88,383.05,4,56.19,96.59,NA,4,4,aldi,namedStore
+ohio,store,2116.1,carrot,none,save_a_lot,NA,10.87,56.07,3,NA,NA,NA,3,3,save_a_lot,namedStore
+ohio,store,2116.2,carrot,none,save_a_lot,NA,9.48,30.07,3,NA,NA,NA,3,3,save_a_lot,namedStore
+ohio,store,2116.3,carrot,none,save_a_lot,NA,6.9,16.19,3,NA,NA,NA,3,3,save_a_lot,namedStore
+california,store,3767,grape,certified_organic,whole_foods,NA,114.47,15729.6,4,63.51,142.99,NA,4,4,whole_foods,namedStore
+california,store,3761,grape,certified_organic,whole_foods,NA,72.9,11628.1,4,63.51,160.73,NA,4,4,whole_foods,namedStore
+california,store,3760,grape,certified_organic,whole_foods,NA,214.19,17172.9,4,63.51,143.24,NA,4,4,whole_foods,namedStore
+california,store,3766,cherry_tomato,certified_organic local,whole_foods,NA,36.51,5248.31,5,62.99,159.58,NA,5,5,whole_foods,namedStore
+california,store,3776,cherry_tomato,certified_organic local,whole_foods,NA,39.27,5012.83,5,62.99,160.52,NA,5,5,whole_foods,namedStore
+california,store,3775,cherry_tomato,certified_organic local,whole_foods,NA,34.71,4130.2,5,62.99,160.92000000000002,NA,5,5,whole_foods,namedStore
+new_york,farm_market,3362.3,lettuce,NA,NA,olish farms,48.39,725.16,NA,NA,NA,NA,NA,NA,olish farms,farmer
+new_york,farm_market,3362.1,lettuce,NA,NA,olish farms,44.33,703.8,NA,NA,NA,NA,NA,NA,olish farms,farmer
+new_york,farm_market,3362.2,lettuce,NA,NA,olish farms,26.49,509.23,NA,NA,NA,NA,NA,NA,olish farms,farmer
+new_york,farm_market,3372.1,cherry_tomato,NA,NA,olish farms,38.48,3477.68,NA,NA,NA,NA,NA,NA,olish farms,farmer
+new_york,farm_market,3372.2,cherry_tomato,NA,NA,olish farms,33.51,4525.39,NA,NA,NA,NA,NA,NA,olish farms,farmer
+new_york,store,3872.1,lettuce,none,whole_foods,NA,293.26,682.32,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+new_york,store,3872.2,lettuce,none,whole_foods,NA,33.76,501.04,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+new_york,store,3872.3,lettuce,none,whole_foods,NA,22.3,362.08,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+new_york,store,3873.1,spinach,none,whole_foods,NA,329.32,431.52,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+new_york,store,3873.2,spinach,none,whole_foods,NA,312.4,729.55,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+new_york,store,3873.3,spinach,none,whole_foods,NA,268.57,454.46,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+new_york,store,3443.1,spinach,none,walmart,NA,417.24,124.03,NA,NA,NA,NA,NA,NA,walmart,namedStore
+new_york,store,3443.2,spinach,none,walmart,NA,213.21,117.71,NA,NA,NA,NA,NA,NA,walmart,namedStore
+new_york,store,3960,grape,none,walmart,NA,59.5,1272.38,3,NA,NA,NA,4,3,walmart,namedStore
+new_york,store,3961,grape,none,walmart,NA,54.94,890.78,3,NA,NA,NA,4,3,walmart,namedStore
+new_york,store,3962,grape,none,walmart,NA,58.43,794.91,3,NA,NA,NA,4,3,walmart,namedStore
+florida,store,3616,carrot,none,walmart,NA,17.3,44.31,NA,100.48,174.75,NA,NA,NA,walmart,namedStore
+florida,store,3868,cherry_tomato,local,walmart,NA,50.98,1151.13,NA,100.29,176.13,NA,NA,NA,walmart,namedStore
+florida,store,3867,cherry_tomato,local,walmart,NA,53.14,1186.39,NA,100.29,175.57,NA,NA,NA,walmart,namedStore
+florida,store,3866,cherry_tomato,local,walmart,NA,60.49,1192.69,NA,100.29,175.81,NA,NA,NA,walmart,namedStore
+maine,farm_market,2376.3,kale,certified_organic cover_crops,NA,Two Farmers Farm,453.49,38633.2,NA,NA,NA,NA,NA,NA,Two Farmers Farm,farmer
+maine,farm_market,2376.2,kale,certified_organic cover_crops,NA,Two Farmers Farm,466.78,34190.2,NA,NA,NA,NA,NA,NA,Two Farmers Farm,farmer
+maine,farm_market,2376.1,kale,certified_organic cover_crops,NA,Two Farmers Farm,464.71,30010.3,NA,NA,NA,NA,NA,NA,Two Farmers Farm,farmer
+maine,farm_market,2380.1,carrot,certified_organic cover_crops,NA,Two Farmers Farm,54.53,163.61,NA,NA,NA,NA,NA,NA,Two Farmers Farm,farmer
+maine,farm_market,2380.2,carrot,certified_organic cover_crops,NA,Two Farmers Farm,39.62,169.45,NA,NA,NA,NA,NA,NA,Two Farmers Farm,farmer
+maine,farm_market,2380.3,carrot,certified_organic cover_crops,NA,Two Farmers Farm,19.4,167.13,NA,NA,NA,NA,NA,NA,Two Farmers Farm,farmer
+maine,farm_market,2373.1,carrot,certified_organic cover_crops,NA,Two Farmers Farm,19.81,21.54,NA,NA,NA,NA,NA,NA,Two Farmers Farm,farmer
+maine,farm_market,2373.3,carrot,certified_organic cover_crops,NA,Two Farmers Farm,17.35,14.88,NA,NA,NA,NA,NA,NA,Two Farmers Farm,farmer
+north_carolina,store,3815,grape,other non_gmo,bounty_and_soul,NA,174.07,1279.92,3,70.18,75.92,NA,3,3,bounty_and_soul,namedStore
+north_carolina,store,3801.3,kale,certified_organic,bounty_and_soul,NA,410.06,26057.6,NA,NA,NA,NA,NA,NA,bounty_and_soul,namedStore
+north_carolina,store,3801.2,kale,certified_organic,bounty_and_soul,NA,464.45,26284.1,NA,NA,NA,NA,NA,NA,bounty_and_soul,namedStore
+north_carolina,store,3801.1,kale,certified_organic,bounty_and_soul,NA,363.38,22019.6,NA,NA,NA,NA,NA,NA,bounty_and_soul,namedStore
+north_carolina,store,3802.3,kale,certified_organic,bounty_and_soul,NA,368.2,27784.2,NA,NA,NA,NA,NA,NA,bounty_and_soul,namedStore
+north_carolina,store,3802.2,kale,certified_organic,bounty_and_soul,NA,513.09,17494.4,NA,NA,NA,NA,NA,NA,bounty_and_soul,namedStore
+north_carolina,store,3802.1,kale,certified_organic,bounty_and_soul,NA,379.32,23288.2,NA,NA,NA,NA,NA,NA,bounty_and_soul,namedStore
+north_carolina,store,3800.3,kale,certified_organic,bounty_and_soul,NA,416.84,26770.3,NA,NA,NA,NA,NA,NA,bounty_and_soul,namedStore
+north_carolina,store,3800.2,kale,certified_organic,bounty_and_soul,NA,430.12,30882.5,NA,NA,NA,NA,NA,NA,bounty_and_soul,namedStore
+north_carolina,store,3800.1,kale,certified_organic,bounty_and_soul,NA,553.27,2129.2,NA,NA,NA,NA,NA,NA,bounty_and_soul,namedStore
+north_carolina,store,3803,cherry_tomato,other non_gmo,bounty_and_soul,NA,49.36,1022.35,4,70.4,75.88000000000001,NA,4,4,bounty_and_soul,namedStore
+north_carolina,store,3804,cherry_tomato,other non_gmo,bounty_and_soul,NA,40.51,940.68,4,70.4,148,NA,4,4,bounty_and_soul,namedStore
+north_carolina,store,3805,cherry_tomato,other non_gmo,bounty_and_soul,NA,54.61,964.67,4,70.4,75.56,NA,4,4,bounty_and_soul,namedStore
+north_carolina,store,3813,lettuce,none,bounty_and_soul,NA,38.02,386.2,NA,69.51,169.9,NA,NA,NA,bounty_and_soul,namedStore
+north_carolina,store,3812,lettuce,certified_organic,bounty_and_soul,NA,43.95,658.65,NA,69.58,171.14,NA,NA,NA,bounty_and_soul,namedStore
+new_york,farm_market,4571.3,kale,certified_organic,NA,organics today,678.55,9847.52,NA,NA,NA,NA,NA,NA,organics today,farmer
+new_york,farm_market,4571.1,kale,certified_organic,NA,organics today,587.84,1860.24,NA,NA,NA,NA,NA,NA,organics today,farmer
+new_york,farm_market,4571.2,kale,certified_organic,NA,organics today,818.74,1723.66,NA,NA,NA,NA,NA,NA,organics today,farmer
+ohio,store,2115,spinach,certified_organic,gregs_produce,NA,248.83,28.15,2,56.17,265.67,NA,2,2,gregs_produce,namedStore
+ohio,store,3894,cherry_tomato,local certified_organic,gregs_produce,NA,53.66,522.1,3,55.85,220.56,NA,4,3,gregs_produce,namedStore
+ohio,store,3895,cherry_tomato,local certified_organic,gregs_produce,NA,32.48,649.8,3,55.85,219.22,NA,4,3,gregs_produce,namedStore
+ohio,store,3896,cherry_tomato,local certified_organic,gregs_produce,NA,35.89,1233.82,3,55.85,123.36000000000001,NA,4,3,gregs_produce,namedStore
+new_york,store,3871.1,carrot,none,stop_and_shop,NA,13.23,49.23,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+new_york,store,3871.2,carrot,none,stop_and_shop,NA,14.26,89.19,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+new_york,store,3871.3,carrot,none,stop_and_shop,NA,12.92,187.93,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+new_york,store,3871.4,carrot,none,stop_and_shop,NA,10.76,140.75,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+new_york,store,3373,cherry_tomato,none,stop_and_shop,NA,55.04,314.86,NA,71.64,1081.3400000000001,NA,NA,NA,stop_and_shop,namedStore
+new_york,store,3374,cherry_tomato,none,stop_and_shop,NA,45.76,873.08,NA,71.64,211.31,NA,NA,NA,stop_and_shop,namedStore
+new_york,store,3930,cherry_tomato,none,stop_and_shop,NA,31.54,829.28,NA,71.64,96.6,NA,NA,NA,stop_and_shop,namedStore
+new_york,store,3427.1,carrot,none,hannaford,NA,12.76,37.79,4,NA,NA,NA,3,3,hannaford,namedStore
+new_york,store,3427.2,carrot,none,hannaford,NA,19.34,47.42,4,NA,NA,NA,3,3,hannaford,namedStore
+new_york,store,3427.3,carrot,none,hannaford,NA,18.76,96.44,4,NA,NA,NA,3,3,hannaford,namedStore
+new_york,store,3423.3,kale,none,hannaford,NA,251.8,8678.76,NA,NA,NA,NA,NA,NA,hannaford,namedStore
+new_york,store,3423.2,kale,none,hannaford,NA,250.99,5969.09,NA,NA,NA,NA,NA,NA,hannaford,namedStore
+new_york,store,3423.1,kale,none,hannaford,NA,792.26,6113.98,NA,NA,NA,NA,NA,NA,hannaford,namedStore
+washington,store,3834,cherry_tomato,none,country_farms_burlington,NA,113.7,1141.23,NA,98.42,354.87,NA,NA,NA,country_farms_burlington,namedStore
+washington,store,3835,cherry_tomato,none,country_farms_burlington,NA,122,1062.49,NA,98.42,353.9,NA,NA,NA,country_farms_burlington,namedStore
+washington,store,3839,cherry_tomato,none,country_farms_burlington,NA,110.84,1186.87,NA,98.42,359.19,NA,NA,NA,country_farms_burlington,namedStore
+washington,store,3841,grape,other produce_of_usa,country_farms_burlington,NA,60.37,876.4,NA,98.32,213.8,NA,NA,NA,country_farms_burlington,namedStore
+washington,store,3840,grape,other produce_of_usa,country_farms_burlington,NA,104.14,906.07,NA,98.32,212.74,NA,NA,NA,country_farms_burlington,namedStore
+washington,store,3829,grape,other produce_of_usa,country_farms_burlington,NA,88.59,1799.74,NA,98.32,214.35,NA,NA,NA,country_farms_burlington,namedStore
+washington,store,3826.3,kale,none,country_farms_burlington,NA,1018.83,15512.8,NA,NA,NA,NA,NA,NA,country_farms_burlington,namedStore
+washington,store,3826.2,kale,none,country_farms_burlington,NA,818.93,16786.2,NA,NA,NA,NA,NA,NA,country_farms_burlington,namedStore
+washington,store,3826.1,kale,none,country_farms_burlington,NA,991.54,2344.18,NA,NA,NA,NA,NA,NA,country_farms_burlington,namedStore
+connecticut,farm_market,3666.2,carrot,NA,NA,NA,23.54,164.97,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+connecticut,farm_market,3666.3,carrot,NA,NA,NA,17.31,123.46,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+connecticut,farm_market,3666.1,carrot,NA,NA,NA,20.02,65.95,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+connecticut,farm_market,2149.3,grape,NA,NA,NA,279.65,1084.38,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+connecticut,farm_market,2149.1,grape,NA,NA,NA,86.54,1051.44,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+connecticut,farm_market,2149.2,grape,NA,NA,NA,238.23,1110.44,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+connecticut,farm_market,2141,grape,NA,NA,NA,350.43,1182.54,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+connecticut,farm_market,3652b,grape,NA,NA,NA,137.21,917.3,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+connecticut,farm_market,3659.2,carrot,NA,NA,NA,21.98,19.16,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+connecticut,farm_market,3659.3,carrot,NA,NA,NA,20.02,119.16,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+connecticut,farm_market,3659.1,carrot,NA,NA,NA,16.37,45.84,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+colorado,store,4008.1,lettuce,local certified_organic,alfalfas,NA,50.71,414.94,NA,NA,NA,NA,NA,NA,alfalfas,namedStore
+colorado,store,4008.2,lettuce,local certified_organic,alfalfas,NA,60.13,522.2,NA,NA,NA,NA,NA,NA,alfalfas,namedStore
+colorado,store,4008.3,lettuce,local certified_organic,alfalfas,NA,52.51,429.24,NA,NA,NA,NA,NA,NA,alfalfas,namedStore
+colorado,store,4009.1,cherry_tomato,certified_organic,alfalfas,NA,48.93,784.37,NA,NA,NA,NA,NA,NA,alfalfas,namedStore
+colorado,store,4009.2,cherry_tomato,certified_organic,alfalfas,NA,57.39,730.73,NA,NA,NA,NA,NA,NA,alfalfas,namedStore
+colorado,store,4009.3,cherry_tomato,certified_organic,alfalfas,NA,41.53,1008.13,NA,NA,NA,NA,NA,NA,alfalfas,namedStore
+colorado,store,4009.4,cherry_tomato,certified_organic,alfalfas,NA,49.08,409.62,NA,NA,NA,NA,NA,NA,alfalfas,namedStore
+colorado,store,4010.1,spinach,certified_organic,alfalfas,NA,473.17,51.71,NA,NA,NA,NA,NA,NA,alfalfas,namedStore
+colorado,store,4010.2,spinach,certified_organic,alfalfas,NA,551.52,34.17,NA,NA,NA,NA,NA,NA,alfalfas,namedStore
+colorado,store,4010.3,spinach,certified_organic,alfalfas,NA,541.74,36.13,NA,NA,NA,NA,NA,NA,alfalfas,namedStore
+colorado,store,4005,kale,certified_organic,alfalfas,NA,439.56,1193.61,NA,21.93,140.4,NA,NA,NA,alfalfas,namedStore
+illinois,store,4580.1,spinach,certified_organic,fresh_thyme,NA,398.08,244.32,NA,NA,NA,NA,NA,NA,fresh_thyme,namedStore
+illinois,store,4580.2,spinach,certified_organic,fresh_thyme,NA,427.37,25.28,NA,NA,NA,NA,NA,NA,fresh_thyme,namedStore
+illinois,store,4579,spinach,certified_organic,jewel,NA,361.9,70.26,NA,0.62,69.55000000000001,NA,NA,NA,jewel,namedStore
+illinois,farm_market,4581.1,cherry_tomato,certified_organic,NA,lee kochel,94.39,570.01,NA,NA,NA,NA,NA,NA,lee kochel,farmer
+illinois,farm_market,4581.2,cherry_tomato,certified_organic,NA,lee kochel,125.25,219.67,NA,NA,NA,NA,NA,NA,lee kochel,farmer
+indiana,farm_market,4582.2,cherry_tomato,NA,NA,dan waters,53.76,567.68,NA,NA,NA,NA,NA,NA,dan waters,farmer
+indiana,farm_market,4582.1,cherry_tomato,NA,NA,dan waters,63.98,1044.18,NA,NA,NA,NA,NA,NA,dan waters,farmer
+illinois,store,4584.1,cherry_tomato,none,jewel_supermarket,NA,38.82,598.08,NA,NA,NA,NA,NA,NA,jewel_supermarket,namedStore
+illinois,store,4584.2,cherry_tomato,none,jewel_supermarket,NA,48.8,880.09,NA,NA,NA,NA,NA,NA,jewel_supermarket,namedStore
+indiana,store,4587,carrot,certified_organic,imperfect_produce,NA,4.2,16.55,NA,0.25,502.25,NA,NA,NA,imperfect_produce,namedStore
+illinois,store,4586.1,carrot,certified_organic,tonys_fresh_market,NA,6.26,15.54,NA,NA,NA,NA,NA,NA,tonys_fresh_market,namedStore
+illinois,store,4586.2,carrot,certified_organic,tonys_fresh_market,NA,6.89,10.57,NA,NA,NA,NA,NA,NA,tonys_fresh_market,namedStore
+illinois,store,4588.1,lettuce,certified_organic,dill_pickle_food_coop,NA,68.75,505.43,NA,NA,NA,NA,NA,NA,dill_pickle_food_coop,namedStore
+illinois,store,4588.2,lettuce,certified_organic,dill_pickle_food_coop,NA,65.63,620.75,NA,NA,NA,NA,NA,NA,dill_pickle_food_coop,namedStore
+illinois,farm_market,4589,cherry_tomato,certified_organic,NA,monticello community garden,77.67,647.36,NA,0.1,69.75999999999999,NA,NA,NA,monticello community garden,farmer
+illinois,store,4590,grape,none,jewel,NA,54.99,523.72,NA,0.07,92.69,NA,NA,NA,jewel,namedStore
+illinois,store,4591.1,grape,certified_organic,dill_pickle_food_coop,NA,339.91,985.65,NA,NA,NA,NA,NA,NA,dill_pickle_food_coop,namedStore
+illinois,store,4591.2,grape,certified_organic,dill_pickle_food_coop,NA,365.6,10174,NA,NA,NA,NA,NA,NA,dill_pickle_food_coop,namedStore
+connecticut,store,3664.1,carrot,NA,walmart,NA,18.84,42.21,NA,NA,NA,NA,NA,NA,walmart,namedStore
+connecticut,store,3664.2,carrot,NA,walmart,NA,13.49,34.72,NA,NA,NA,NA,NA,NA,walmart,namedStore
+connecticut,store,3664.3,carrot,NA,walmart,NA,13.09,11.75,NA,NA,NA,NA,NA,NA,walmart,namedStore
+connecticut,store,3665.1,lettuce,NA,walmart,NA,47.77,140.05,NA,NA,NA,NA,NA,NA,walmart,namedStore
+connecticut,store,3665.2,lettuce,NA,walmart,NA,52.55,79.55,NA,NA,NA,NA,NA,NA,walmart,namedStore
+connecticut,store,3665.3,lettuce,NA,walmart,NA,57.57,165.57,NA,NA,NA,NA,NA,NA,walmart,namedStore
+connecticut,store,3660.3,kale,NA,walmart,NA,433.7,2690.91,NA,NA,NA,NA,NA,NA,walmart,namedStore
+connecticut,store,3660.2,kale,NA,walmart,NA,470.21,11747.8,NA,NA,NA,NA,NA,NA,walmart,namedStore
+connecticut,store,3660.1,kale,NA,walmart,NA,545.06,2761.56,NA,NA,NA,NA,NA,NA,walmart,namedStore
+connecticut,store,3657.3,kale,NA,geisslers,NA,808.69,2600.43,NA,NA,NA,NA,NA,NA,geisslers,namedStore
+connecticut,store,3657.2,kale,NA,geisslers,NA,726.73,8467.75,NA,NA,NA,NA,NA,NA,geisslers,namedStore
+connecticut,store,3657.1,kale,NA,geisslers,NA,467.12,9511.33,NA,NA,NA,NA,NA,NA,geisslers,namedStore
+connecticut,store,3658.1,lettuce,NA,geisslers,NA,48.74,108.8,NA,NA,NA,NA,NA,NA,geisslers,namedStore
+connecticut,store,3658.2,lettuce,NA,geisslers,NA,30.87,163.25,NA,NA,NA,NA,NA,NA,geisslers,namedStore
+connecticut,store,3658.3,lettuce,NA,geisslers,NA,43.31,189.26,NA,NA,NA,NA,NA,NA,geisslers,namedStore
+connecticut,store,4652.1,carrot,NA,geisslers,NA,14.19,39.93,NA,NA,NA,NA,NA,NA,geisslers,namedStore
+connecticut,store,4652.2,carrot,NA,geisslers,NA,20.78,38.74,NA,NA,NA,NA,NA,NA,geisslers,namedStore
+connecticut,store,4652.3,carrot,NA,geisslers,NA,14.49,40.62,NA,NA,NA,NA,NA,NA,geisslers,namedStore
+new_york,farm_market,3931,cherry_tomato,organic,NA,cornucopia,57.38,902.76,NA,106.15,125.15,NA,NA,NA,cornucopia,farmer
+new_york,farm_market,3926,cherry_tomato,organic,NA,cornucopia,82.09,1326.1,NA,106.15,146.63,NA,NA,NA,cornucopia,farmer
+new_york,farm_market,3932,cherry_tomato,organic,NA,cornucopia,79.02,1592.57,NA,106.15,147.53,NA,NA,NA,cornucopia,farmer
+new_york,farm_market,3369.1,carrot,organic,NA,cornucopia,13.55,5.14,NA,NA,NA,NA,NA,NA,cornucopia,farmer
+new_york,farm_market,3369.2,carrot,organic,NA,cornucopia,21.71,10.44,NA,NA,NA,NA,NA,NA,cornucopia,farmer
+new_york,farm_market,3369.3,carrot,organic,NA,cornucopia,17.39,17.69,NA,NA,NA,NA,NA,NA,cornucopia,farmer
+new_york,store,3417,cherry_tomato,certified_organic other non_gmo,hannaford,NA,16.57,573.13,NA,21.46,367.53999999999996,NA,NA,NA,hannaford,namedStore
+new_york,store,3418,cherry_tomato,certified_organic other non_gmo,hannaford,NA,111.52,1231.67,NA,21.46,146.74,NA,NA,NA,hannaford,namedStore
+new_york,store,3419,cherry_tomato,certified_organic other non_gmo,hannaford,NA,74.2,824.47,NA,21.46,48.3,NA,NA,NA,hannaford,namedStore
+new_york,store,3445.1,spinach,certified_organic other non_gmo,hannaford,NA,456.05,156.19,NA,NA,NA,NA,NA,NA,hannaford,namedStore
+new_york,store,3445.2,spinach,certified_organic other non_gmo,hannaford,NA,211.37,68.48,NA,NA,NA,NA,NA,NA,hannaford,namedStore
+new_york,store,3445.3,spinach,certified_organic other non_gmo,hannaford,NA,275.89,33.32,NA,NA,NA,NA,NA,NA,hannaford,namedStore
+florida,farm_market,3861,cherry_tomato,certified_organic,NA,personal garden,66.43,633.36,NA,-165.66,-145.68,NA,NA,NA,personal garden,farmer
+florida,farm_market,3862.3,cherry_tomato,certified_organic,NA,personal garden,229.71,1728.11,NA,NA,NA,NA,NA,NA,personal garden,farmer
+florida,farm_market,3862.2,cherry_tomato,certified_organic,NA,personal garden,249.52,1781.98,NA,NA,NA,NA,NA,NA,personal garden,farmer
+florida,farm_market,3862.1,cherry_tomato,certified_organic,NA,personal garden,279.54,1871.58,NA,NA,NA,NA,NA,NA,personal garden,farmer
+florida,farm_market,3617.3,kale,none,NA,Produce Place,217.15,9652.2,4,NA,NA,NA,4,4,Produce Place,farmer
+florida,farm_market,3617.2,kale,none,NA,Produce Place,305.16,8042.29,4,NA,NA,NA,4,4,Produce Place,farmer
+florida,farm_market,3617.1,kale,none,NA,Produce Place,291.92,2312.61,4,NA,NA,NA,4,4,Produce Place,farmer
+florida,farm_market,3860,kale,none,NA,Produce Place,49.29,889.88,4,68.15,216.76000000000002,NA,4,4,Produce Place,farmer
+florida,farm_market,3863,kale,none,NA,Produce Place,51.43,493.54,4,68.15,219.94,NA,4,4,Produce Place,farmer
+connecticut,store,3661.1,lettuce,NA,kanes_market,NA,23,236.9,NA,NA,NA,NA,NA,NA,kanes_market,namedStore
+connecticut,store,3661.2,lettuce,NA,kanes_market,NA,37.74,341.97,NA,NA,NA,NA,NA,NA,kanes_market,namedStore
+connecticut,store,3661.3,lettuce,NA,kanes_market,NA,37.06,355.84,NA,NA,NA,NA,NA,NA,kanes_market,namedStore
+connecticut,store,3663.1,lettuce,NA,kanes_market,NA,11.22,119.67,NA,NA,NA,NA,NA,NA,kanes_market,namedStore
+connecticut,store,3663.2,lettuce,NA,kanes_market,NA,12.41,107.27,NA,NA,NA,NA,NA,NA,kanes_market,namedStore
+connecticut,store,3663.3,lettuce,NA,kanes_market,NA,13.82,87.53,NA,NA,NA,NA,NA,NA,kanes_market,namedStore
+washington,store,3856.3,kale,certified_organic,haggen,NA,706.42,1702.78,NA,NA,NA,NA,NA,NA,haggen,namedStore
+washington,store,3856.2,kale,certified_organic,haggen,NA,933.33,16718.1,NA,NA,NA,NA,NA,NA,haggen,namedStore
+washington,store,3856.1,kale,certified_organic,haggen,NA,639.59,14717.9,NA,NA,NA,NA,NA,NA,haggen,namedStore
+washington,store,3457.1,lettuce,certified_organic,haggen,NA,31.28,187.54,NA,NA,NA,NA,NA,NA,haggen,namedStore
+washington,store,3457.2,lettuce,certified_organic,haggen,NA,30.21,58.41,NA,NA,NA,NA,NA,NA,haggen,namedStore
+washington,store,3457.3,lettuce,certified_organic,haggen,NA,36.65,46.84,NA,NA,NA,NA,NA,NA,haggen,namedStore
+washington,store,3855.1,carrot,local certified_organic,haggen,NA,9.71,43.17,NA,NA,NA,NA,NA,NA,haggen,namedStore
+washington,store,3855.2,carrot,local certified_organic,haggen,NA,10.92,69.28,NA,NA,NA,NA,NA,NA,haggen,namedStore
+washington,store,3855.3,carrot,local certified_organic,haggen,NA,13.35,47.51,NA,NA,NA,NA,NA,NA,haggen,namedStore
+new_york,store,3437,spinach,none,hannaford,NA,221.24,324.81,NA,94.87,264.98,NA,NA,NA,hannaford,namedStore
+new_york,store,3436.1,kale,none,hannaford,NA,498.86,2714.5,NA,NA,NA,NA,NA,NA,hannaford,namedStore
+new_york,store,3436.2,kale,none,hannaford,NA,462.48,17720.5,NA,NA,NA,NA,NA,NA,hannaford,namedStore
+new_york,store,3436.3,kale,none,hannaford,NA,464.62,16700.3,NA,NA,NA,NA,NA,NA,hannaford,namedStore
+new_york,store,3371,kale,none,whole_foods,NA,25.09,329.63,NA,91.05,91.92999999999999,NA,NA,NA,whole_foods,namedStore
+new_york,store,3370,lettuce,hydroponic,pats_market,NA,514.72,1789.05,NA,91,238.95,NA,NA,NA,pats_market,namedStore
+ohio,store,3900,spinach,certified_organic,costco,NA,282.5,56.33,4,96.96,168.82999999999998,NA,3,4,costco,namedStore
+ohio,store,3901,spinach,certified_organic,costco,NA,285.55,46.52,4,96.96,171,NA,3,4,costco,namedStore
+ohio,store,3902,spinach,certified_organic,costco,NA,308.34,45.59,4,96.96,175.66,NA,3,4,costco,namedStore
+ohio,store,3891,grape,other none Green_seedless_table_grapes,walmart,NA,62.89,1024.58,3,96.86,171.51,NA,4,3,walmart,namedStore
+ohio,store,3892,grape,other none Green_seedless_table_grapes,walmart,NA,84.92,1104.4,3,96.86,221.88,NA,4,3,walmart,namedStore
+ohio,store,3893,grape,other none Green_seedless_table_grapes,walmart,NA,64.83,924.3,3,96.86,222.17000000000002,NA,4,3,walmart,namedStore
+connecticut,store,3662.3,kale,NA,stop_and_shop,NA,291.83,1560.36,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,3662.2,kale,NA,stop_and_shop,NA,487.34,16286.6,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,3662.1,kale,NA,stop_and_shop,NA,318.37,1618.37,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+michigan,store,4725.3,kale,certified_organic,meijer,NA,196.43,7415.91,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4725.2,kale,certified_organic,meijer,NA,204.02,7188.67,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4725.1,kale,certified_organic,meijer,NA,226.52,10187.5,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4726.3,kale,certified_organic,meijer,NA,310.04,1495.11,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4726.2,kale,certified_organic,meijer,NA,400.85,17554.7,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4726.1,kale,certified_organic,meijer,NA,385.09,14621,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4727.1,carrot,certified_organic,meijer,NA,6.46,52.21,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4727.2,carrot,certified_organic,meijer,NA,9.28,96.02,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4727.3,carrot,certified_organic,meijer,NA,7.34,36.72,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4728.3,lettuce,NA,meijer,NA,25.55,208.59,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4728.1,lettuce,NA,meijer,NA,41.1,223.25,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4728.2,lettuce,NA,meijer,NA,29.96,256.57,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4729.2,lettuce,NA,meijer,NA,83.39,425.53,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4729.1,lettuce,NA,meijer,NA,40.56,240.8,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4729.3,lettuce,NA,meijer,NA,54.37,449.34,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4733.3,cherry_tomato,NA,meijer,NA,60.64,1125.11,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4733.2,cherry_tomato,NA,meijer,NA,58.42,1093.02,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4733.1,cherry_tomato,NA,meijer,NA,49.48,1052.23,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4732.1,cherry_tomato,NA,meijer,NA,43.21,880.9,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4732.2,cherry_tomato,NA,meijer,NA,49.85,1032.08,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4732.3,cherry_tomato,NA,meijer,NA,55.49,877.77,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4731.1,carrot,NA,meijer,NA,15.9,27.02,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4731.2,carrot,NA,meijer,NA,18.02,27.09,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4731.3,carrot,NA,meijer,NA,18.31,32.96,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4735.1,cherry_tomato,other Non_GMO,meijer,NA,41.94,807.29,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4735.2,cherry_tomato,other Non_GMO,meijer,NA,39.68,778.66,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4735.3,cherry_tomato,other Non_GMO,meijer,NA,36.72,602.93,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4734.1,cherry_tomato,other Non_GMO_Verified,meijer,NA,41.61,817.8,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4734.2,cherry_tomato,other Non_GMO_Verified,meijer,NA,33.86,752.34,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4734.3,cherry_tomato,other Non_GMO_Verified,meijer,NA,40.01,702.48,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4736.1,kale,certified_organic,meijer,NA,245.55,7535.16,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4736.2,kale,certified_organic,meijer,NA,265.68,7037.7,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4736.3,kale,certified_organic,meijer,NA,246.34,6862.95,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4737.3,kale,certified_organic,meijer,NA,212.58,7220.64,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4737.1,kale,certified_organic,meijer,NA,256.28,10104.2,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4737.2,kale,certified_organic,meijer,NA,220.72,7356.09,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4739.1,carrot,certified_organic,meijer,NA,7.21,23.3,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4739.2,carrot,certified_organic,meijer,NA,13.39,25.74,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4739.3,carrot,certified_organic,meijer,NA,10.75,16.26,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4738.1,carrot,none,meijer,NA,12.83,17.02,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4738.2,carrot,none,meijer,NA,9.48,29.83,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4738.3,carrot,none,meijer,NA,10.55,45.72,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4740.3,lettuce,none,meijer,NA,20.97,88.25,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4740.2,lettuce,none,meijer,NA,19.92,80.6,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4740.1,lettuce,none,meijer,NA,10.6,136.03,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4741.1,lettuce,certified_organic,meijer,NA,19.93,104.33,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4741.2,lettuce,certified_organic,meijer,NA,16.39,105.46,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4741.3,lettuce,certified_organic,meijer,NA,13.66,99.87,NA,NA,NA,NA,NA,NA,meijer,namedStore
+connecticut,store,4626,carrot,certified_organic,stop_and_shop,NA,16.22,36.25,NA,114.75,148.6,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4627,kale,certified_organic,stop_and_shop,NA,22.61,46.76,NA,114.59,1178.49,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4628,carrot,certified_organic,whole_foods,NA,35.92,66.97,NA,114.55,148.05,NA,NA,NA,whole_foods,namedStore
+connecticut,store,2543,cherry_tomato,none,fitzgeralds,NA,39.83,1703.14,NA,113.51,140.35,NA,NA,NA,fitzgeralds,namedStore
+connecticut,store,4651,cherry_tomato,none,fitzgeralds,NA,30.4,954.25,NA,113.51,142.32,NA,NA,NA,fitzgeralds,namedStore
+connecticut,store,4650,cherry_tomato,none,fitzgeralds,NA,38.88,1451.52,NA,113.51,140.75,NA,NA,NA,fitzgeralds,namedStore
+connecticut,store,4649,cherry_tomato,greenhouse,fitzgeralds,NA,40.77,1014.6,NA,113.4,146.47,NA,NA,NA,fitzgeralds,namedStore
+connecticut,store,4648.1,cherry_tomato,greenhouse,fitzgeralds,NA,38.32,949.63,NA,NA,NA,NA,NA,NA,fitzgeralds,namedStore
+connecticut,store,4648.2,cherry_tomato,greenhouse,fitzgeralds,NA,43.9,905.71,NA,NA,NA,NA,NA,NA,fitzgeralds,namedStore
+connecticut,store,4648.3,cherry_tomato,greenhouse,fitzgeralds,NA,54.03,819.34,NA,NA,NA,NA,NA,NA,fitzgeralds,namedStore
+connecticut,store,2138.1,cherry_tomato,greenhouse,fitzgeralds,NA,32.04,1096.52,NA,NA,NA,NA,NA,NA,fitzgeralds,namedStore
+connecticut,store,2138.2,cherry_tomato,greenhouse,fitzgeralds,NA,70.33,973.06,NA,NA,NA,NA,NA,NA,fitzgeralds,namedStore
+connecticut,store,2138.3,cherry_tomato,greenhouse,fitzgeralds,NA,46.2,860.68,NA,NA,NA,NA,NA,NA,fitzgeralds,namedStore
+connecticut,store,4600.1,lettuce,none,fitzgeralds,NA,33.39,280.57,NA,NA,NA,NA,NA,NA,fitzgeralds,namedStore
+connecticut,store,4600.2,lettuce,none,fitzgeralds,NA,35.35,366.66,NA,NA,NA,NA,NA,NA,fitzgeralds,namedStore
+connecticut,store,4600.3,lettuce,none,fitzgeralds,NA,22.9,272.75,NA,NA,NA,NA,NA,NA,fitzgeralds,namedStore
+michigan,store,4764.2,cherry_tomato,none,kroger,NA,33.13,942.04,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4764.3,cherry_tomato,none,kroger,NA,40.41,979.82,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4764.1,cherry_tomato,none,kroger,NA,28.65,799.36,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4765.1,cherry_tomato,none,kroger,NA,50.13,1757.06,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4765.2,cherry_tomato,none,kroger,NA,33.03,1194.37,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4765.3,cherry_tomato,none,kroger,NA,38.91,1115.74,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4766.1,cherry_tomato,none,kroger,NA,41.14,1082.11,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4766.2,cherry_tomato,none,kroger,NA,39.54,1969.5,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4766.3,cherry_tomato,none,kroger,NA,43.17,1001.84,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4767.1,carrot,none,kroger,NA,10.96,46.5,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4767.2,carrot,none,kroger,NA,23.28,42.46,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4767.3,carrot,none,kroger,NA,15.36,35.47,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4768.1,lettuce,none,kroger,NA,34.99,429.05,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4768.2,lettuce,none,kroger,NA,11.83,195.34,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4768.3,lettuce,none,kroger,NA,23.23,361.43,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4769.1,lettuce,none,kroger,NA,20.71,408.39,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4769.2,lettuce,none,kroger,NA,21.17,442.39,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4769.3,lettuce,none,kroger,NA,28.56,306.13,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4770.1,kale,none,kroger,NA,231.5,5827.33,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4770.2,kale,none,kroger,NA,282.84,8403.68,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4770.3,kale,none,kroger,NA,257.86,5060.08,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4771.1,kale,none,kroger,NA,514.44,1602.83,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4772.1,lettuce,certified_organic,kroger,NA,23.82,190.5,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4772.2,lettuce,certified_organic,kroger,NA,24.96,268.26,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4772.3,lettuce,certified_organic,kroger,NA,22.72,348.85,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4773.1,carrot,local,kroger,NA,11.78,24.66,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4773.2,carrot,local,kroger,NA,11.45,27.78,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4773.3,carrot,local,kroger,NA,9.01,39.43,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4774.1,carrot,none,kroger,NA,12.36,18.39,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4774.2,carrot,none,kroger,NA,10.1,25.24,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,4774.3,carrot,none,kroger,NA,9.61,26.73,NA,NA,NA,NA,NA,NA,kroger,namedStore
+massachusetts,store,4994.1,carrot,certified_organic,whole_foods,NA,44.69,26.53,3,NA,NA,NA,2,3,whole_foods,namedStore
+massachusetts,store,4994.2,carrot,certified_organic,whole_foods,NA,10.39,50.37,3,NA,NA,NA,2,3,whole_foods,namedStore
+massachusetts,store,4994.3,carrot,certified_organic,whole_foods,NA,8.74,22.25,3,NA,NA,NA,2,3,whole_foods,namedStore
+massachusetts,store,4993.1,carrot,"none other Grown_in_California;_loose_bulk,_in_bin",whole_foods,NA,9.75,10.21,3,NA,NA,NA,3,3,whole_foods,namedStore
+massachusetts,store,4993.2,carrot,"none other Grown_in_California;_loose_bulk,_in_bin",whole_foods,NA,8.53,11.51,3,NA,NA,NA,3,3,whole_foods,namedStore
+massachusetts,store,4993.3,carrot,"none other Grown_in_California;_loose_bulk,_in_bin",whole_foods,NA,8.21,15.79,3,NA,NA,NA,3,3,whole_foods,namedStore
+massachusetts,store,4995.1,carrot,certified_organic,whole_foods,NA,8.13,27.8,4,NA,NA,NA,4,4,whole_foods,namedStore
+massachusetts,store,4995.2,carrot,certified_organic,whole_foods,NA,7.77,20.15,4,NA,NA,NA,4,4,whole_foods,namedStore
+massachusetts,store,4995.3,carrot,certified_organic,whole_foods,NA,12.3,14.91,4,NA,NA,NA,4,4,whole_foods,namedStore
+massachusetts,store,4717,grape,certified_organic other California_Table_Grapes,whole_foods,NA,110.24,1186.57,3,171.32,192.37,NA,4,3,whole_foods,namedStore
+massachusetts,store,4718,grape,certified_organic other California_Table_Grapes,whole_foods,NA,60.4,539.77,3,171.32,192.66,NA,4,3,whole_foods,namedStore
+massachusetts,store,4720,grape,certified_organic other California_Table_Grapes,whole_foods,NA,250.13,1441.74,3,171.32,191.04999999999998,NA,4,3,whole_foods,namedStore
+massachusetts,store,4713,grape,"local other Grown_in_the_Northeast;_Ashfield_MA;_Right_for_you,Right_for_the_farmer,_Right_for_the_Planet",whole_foods,NA,131.6,1287.84,5,171.13,171.22,NA,5,5,whole_foods,namedStore
+massachusetts,store,4715,grape,"local other Grown_in_the_Northeast;_Ashfield_MA;_Right_for_you,Right_for_the_farmer,_Right_for_the_Planet",whole_foods,NA,202.06,1326.87,5,171.13,171.68,NA,5,5,whole_foods,namedStore
+massachusetts,store,4703,grape,"local other Grown_in_the_Northeast;_Ashfield_MA;_Right_for_you,Right_for_the_farmer,_Right_for_the_Planet",whole_foods,NA,233.48,1304.1,5,171.13,192.70999999999998,NA,5,5,whole_foods,namedStore
+massachusetts,store,4998.1,kale,certified_organic,whole_foods,NA,170.93,8428.31,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,4998.2,kale,certified_organic,whole_foods,NA,157.38,7164.19,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,4998.3,kale,certified_organic,whole_foods,NA,395.8,12920.8,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,4984.3,kale,certified_organic other non-gmo,whole_foods,NA,191.15,6456.38,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,4984.2,kale,certified_organic other non-gmo,whole_foods,NA,189.82,5166.45,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,4984.1,kale,certified_organic other non-gmo,whole_foods,NA,192.02,7071.13,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,4997,kale,certified_organic,whole_foods,NA,490.39,18728.1,NA,170.1,192.13,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,4983.3,kale,certified_organic,whole_foods,NA,365.4,14480.2,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,4983.2,kale,certified_organic,whole_foods,NA,272.88,10945.2,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,4983.1,kale,certified_organic,whole_foods,NA,300.93,12135.7,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,4982.3,kale,other product_of_Mexico,whole_foods,NA,373.46,10183.3,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,4982.2,kale,other product_of_Mexico,whole_foods,NA,237.37,8288.53,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,4982.1,kale,other product_of_Mexico,whole_foods,NA,236.5,2477.6,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4951.1,lettuce,none other Product_of_USA,aldi,NA,14.22,196.47,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4951.2,lettuce,none other Product_of_USA,aldi,NA,21.12,433.05,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4951.3,lettuce,none other Product_of_USA,aldi,NA,17.25,226.02,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4952.3,kale,certified_organic,aldi,NA,232.07,11236.3,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4952.2,kale,certified_organic,aldi,NA,217.61,6580.93,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4952.1,kale,certified_organic,aldi,NA,166.49,6288.83,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4953.1,cherry_tomato,certified_organic,aldi,NA,33.92,876.28,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4953.2,cherry_tomato,certified_organic,aldi,NA,47.62,1294.76,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4953.3,cherry_tomato,certified_organic,aldi,NA,42.84,1148.09,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4954.2,cherry_tomato,none,aldi,NA,41.95,915.75,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4954.1,cherry_tomato,none,aldi,NA,40.8,1033.18,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4954.3,cherry_tomato,none,aldi,NA,49.28,1021.49,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4955.1,carrot,certified_organic,aldi,NA,10.44,31.13,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4955.2,carrot,certified_organic,aldi,NA,9.57,20.69,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4955.3,carrot,certified_organic,aldi,NA,11.29,31.94,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4956.1,carrot,none,aldi,NA,10.19,24.01,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4956.2,carrot,none,aldi,NA,15.42,30.2,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4956.3,carrot,none,aldi,NA,11.08,28.78,NA,NA,NA,NA,NA,NA,aldi,namedStore
+michigan,store,4957.2,lettuce,certified_organic,plum_market,NA,25.52,199.57,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+michigan,store,4957.3,lettuce,certified_organic,plum_market,NA,21.3,164.44,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+michigan,store,4958.3,kale,certified_organic local,plum_market,NA,160.64,2034.57,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+michigan,store,4958.2,kale,certified_organic local,plum_market,NA,68.2,775.27,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+michigan,store,4958.1,kale,certified_organic local,plum_market,NA,174.39,2024.48,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+ohio,store,3906,lettuce,none,aldi,NA,131.44,600.01,3,125.85,126.41,NA,2,3,aldi,namedStore
+ohio,store,3907,lettuce,none,aldi,NA,47.51,146.31,3,125.85,169.28,NA,2,3,aldi,namedStore
+ohio,store,3908,lettuce,none,aldi,NA,84.51,138.78,3,125.85,142.51,NA,2,3,aldi,namedStore
+michigan,store,4959.1,cherry_tomato,greenhouse,plum_market,NA,37.29,2250.16,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+michigan,store,4959.2,cherry_tomato,greenhouse,plum_market,NA,43.18,2454.36,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+michigan,store,4959.3,cherry_tomato,greenhouse,plum_market,NA,26.57,1723.99,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+michigan,store,4960.1,carrot,certified_organic,plum_market,NA,19.65,34.59,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+michigan,store,4960.2,carrot,certified_organic,plum_market,NA,18.13,26.68,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+michigan,store,4960.3,carrot,certified_organic,plum_market,NA,10.36,32.08,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+ohio,store,3897,carrot,none,sun_plum_market,NA,33.32,48.68,3,125.7,149.33,NA,3,3,sun_plum_market,namedStore
+michigan,store,4961.3,kale,certified_organic,plum_market,NA,288.31,11473.3,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+michigan,store,4961.2,kale,certified_organic,plum_market,NA,141.69,1563.41,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+michigan,store,4961.1,kale,certified_organic,plum_market,NA,174.65,9662.7,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+michigan,store,4962.3,lettuce,certified_organic,plum_market,NA,17.23,312.01,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+michigan,store,4962.2,lettuce,certified_organic,plum_market,NA,14.73,231.32,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+michigan,store,4962.1,lettuce,certified_organic,plum_market,NA,17.27,443.36,NA,NA,NA,NA,NA,NA,plum_market,namedStore
+ohio,store,3408,cherry_tomato,NA,walmart,NA,53.89,1359.97,1,125.52,168.19,NA,1,1,walmart,namedStore
+ohio,store,3409,cherry_tomato,NA,walmart,NA,69.18,3324.1,1,125.52,168.70999999999998,NA,1,1,walmart,namedStore
+ohio,store,3410,cherry_tomato,NA,walmart,NA,48.87,2098.89,1,125.52,168.47,NA,1,1,walmart,namedStore
+new_york,store,3869.1,carrot,none,pats_market,NA,11.64,6.33,NA,NA,NA,NA,NA,NA,pats_market,namedStore
+new_york,store,3869.2,carrot,none,pats_market,NA,58.29,208.88,NA,NA,NA,NA,NA,NA,pats_market,namedStore
+new_york,store,3869.3,carrot,none,pats_market,NA,63.43,164.39,NA,NA,NA,NA,NA,NA,pats_market,namedStore
+michigan,store,4963.1,carrot,certified_organic,whole_foods,NA,7.32,15.09,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4963.2,carrot,certified_organic,whole_foods,NA,9.07,19.73,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4963.3,carrot,certified_organic,whole_foods,NA,10.37,35.61,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4964.1,carrot,certified_organic,whole_foods,NA,37.24,79.5,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4964.2,carrot,certified_organic,whole_foods,NA,39.2,59.07,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4965.1,carrot,certified_organic,whole_foods,NA,32.72,111.63,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4965.2,carrot,certified_organic,whole_foods,NA,43.97,92.67,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4967.1,carrot,certified_organic,whole_foods,NA,9.22,17.49,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4967.2,carrot,certified_organic,whole_foods,NA,13.43,18.9,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4967.3,carrot,certified_organic,whole_foods,NA,12.22,24.92,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4966.1,carrot,certified_organic,whole_foods,NA,17.03,14.9,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4966.2,carrot,certified_organic,whole_foods,NA,11.7,23.36,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4970.1,lettuce,certified_organic,whole_foods,NA,20.39,224.56,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4970.2,lettuce,certified_organic,whole_foods,NA,25.22,300.27,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4970.3,lettuce,certified_organic,whole_foods,NA,22.35,299.91,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4971.1,lettuce,"certified_organic greenhouse other urban_farming,_in_chicago",whole_foods,NA,19.47,89.65,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4971.2,lettuce,"certified_organic greenhouse other urban_farming,_in_chicago",whole_foods,NA,28.84,123.89,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4971.3,lettuce,"certified_organic greenhouse other urban_farming,_in_chicago",whole_foods,NA,24.03,82.62,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4968.1,cherry_tomato,greenhouse,whole_foods,NA,25.59,848.66,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4968.2,cherry_tomato,greenhouse,whole_foods,NA,28.61,578.55,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4968.3,cherry_tomato,greenhouse,whole_foods,NA,30.26,790.68,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4969.1,cherry_tomato,certified_organic,whole_foods,NA,50.58,1469.38,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4969.2,cherry_tomato,certified_organic,whole_foods,NA,21.17,1646.74,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4969.3,cherry_tomato,certified_organic,whole_foods,NA,53.15,1183.11,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4972.3,kale,certified_organic,whole_foods,NA,445.99,16507.1,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4972.2,kale,certified_organic,whole_foods,NA,469.89,16287.4,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+michigan,store,4972.1,kale,certified_organic,whole_foods,NA,226.44,8751.92,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+colorado,farm_market,4831.1,carrot,certified_organic biodynamic,NA,NA,12.43,38.52,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+colorado,farm_market,4831.2,carrot,certified_organic biodynamic,NA,NA,10.86,27.59,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+colorado,farm_market,4831.3,carrot,certified_organic biodynamic,NA,NA,12.32,26.99,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+colorado,farm_market,4832.1,carrot,certified_organic biodynamic,NA,NA,14.15,107.54,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+colorado,farm_market,4832.2,carrot,certified_organic biodynamic,NA,NA,13.17,148.61,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+colorado,farm_market,4832.3,carrot,certified_organic biodynamic,NA,NA,16.85,74.18,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+colorado,farm_market,4833.1,carrot,certified_organic biodynamic,NA,NA,12.82,21.41,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+colorado,farm_market,4833.2,carrot,certified_organic biodynamic,NA,NA,13.64,13.77,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+colorado,farm_market,4833.3,carrot,certified_organic biodynamic,NA,NA,11.05,18.47,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+colorado,farm_market,4834.1,carrot,certified_organic biodynamic,NA,NA,7.39,19.31,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+colorado,farm_market,4834.2,carrot,certified_organic biodynamic,NA,NA,9.21,5.88,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+colorado,farm_market,4834.3,carrot,certified_organic biodynamic,NA,NA,7.34,35.72,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+colorado,store,4835.1,cherry_tomato,certified_organic,sprouts,NA,56.94,1832.76,NA,NA,NA,NA,NA,NA,sprouts,namedStore
+colorado,store,4835.2,cherry_tomato,certified_organic,sprouts,NA,46.51,840.92,NA,NA,NA,NA,NA,NA,sprouts,namedStore
+colorado,store,4835.3,cherry_tomato,certified_organic,sprouts,NA,46.78,797.51,NA,NA,NA,NA,NA,NA,sprouts,namedStore
+colorado,store,4836.1,spinach,certified_organic,sprouts,NA,128.64,490.99,NA,NA,NA,NA,NA,NA,sprouts,namedStore
+colorado,store,4836.2,spinach,certified_organic,sprouts,NA,127.14,449.63,NA,NA,NA,NA,NA,NA,sprouts,namedStore
+colorado,store,4836.3,spinach,certified_organic,sprouts,NA,133.43,545.77,NA,NA,NA,NA,NA,NA,sprouts,namedStore
+colorado,store,4837.1,lettuce,certified_organic,sprouts,NA,19.56,174.73,NA,NA,NA,NA,NA,NA,sprouts,namedStore
+colorado,store,4837.2,lettuce,certified_organic,sprouts,NA,9.74,94.42,NA,NA,NA,NA,NA,NA,sprouts,namedStore
+colorado,store,4837.3,lettuce,certified_organic,sprouts,NA,14.14,84.82,NA,NA,NA,NA,NA,NA,sprouts,namedStore
+colorado,store,4838.3,kale,certified_organic,sprouts,NA,173.63,17786.1,NA,NA,NA,NA,NA,NA,sprouts,namedStore
+colorado,store,4838.2,kale,certified_organic,sprouts,NA,263.39,23123.7,NA,NA,NA,NA,NA,NA,sprouts,namedStore
+colorado,store,4838.1,kale,certified_organic,sprouts,NA,212.15,19685,NA,NA,NA,NA,NA,NA,sprouts,namedStore
+colorado,farm_market,4839.1,carrot,certified_organic biodynamic,NA,NA,10.97,39.03,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+colorado,farm_market,4839.2,carrot,certified_organic biodynamic,NA,NA,11.87,66.73,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+michigan,store,4985.1,lettuce,none,meijer,NA,87.77,250.3,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4985.2,lettuce,none,meijer,NA,118.75,284.21,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4985.3,lettuce,none,meijer,NA,103.85,281.75,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4986.1,lettuce,none,meijer,NA,60.04,201.31,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4986.2,lettuce,none,meijer,NA,49.66,130.03,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4986.3,lettuce,none,meijer,NA,57.95,181,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4988.1,cherry_tomato,certified_organic,meijer,NA,52.64,1073.48,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4988.2,cherry_tomato,certified_organic,meijer,NA,42.56,895.89,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4988.3,cherry_tomato,certified_organic,meijer,NA,45.31,1005.56,NA,NA,NA,NA,NA,NA,meijer,namedStore
+colorado,store,4987.1,cherry_tomato,none,meijer,NA,46.16,2253.9,NA,NA,NA,NA,NA,NA,meijer,namedStore
+colorado,store,4987.2,cherry_tomato,none,meijer,NA,47.21,2101,NA,NA,NA,NA,NA,NA,meijer,namedStore
+colorado,store,4987.3,cherry_tomato,none,meijer,NA,46.2,2411.77,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4989.1,cherry_tomato,greenhouse,meijer,NA,23.77,760.54,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4989.2,cherry_tomato,greenhouse,meijer,NA,31.94,1356.35,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4989.3,cherry_tomato,greenhouse,meijer,NA,33.49,1473.43,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4991.3,kale,none,meijer,NA,200.62,8434.69,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4991.2,kale,none,meijer,NA,147.46,5811.62,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,4991.1,kale,none,meijer,NA,158.31,6204.64,NA,NA,NA,NA,NA,NA,meijer,namedStore
+connecticut,store,4601.1,lettuce,certified_organic,fresh_market,NA,27.47,447.39,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4601.2,lettuce,certified_organic,fresh_market,NA,23.8,335.66,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4601.3,lettuce,certified_organic,fresh_market,NA,23.07,366.51,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4602.1,lettuce,certified_organic,fresh_market,NA,19.21,143.6,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4602.2,lettuce,certified_organic,fresh_market,NA,18.81,101.04,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4602.3,lettuce,certified_organic,fresh_market,NA,20.54,125.71,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4603.1,carrot,certified_organic,fresh_market,NA,13.5,114.77,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4603.2,carrot,certified_organic,fresh_market,NA,9.03,41.06,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4605.1,kale,certified_organic,fresh_market,NA,132,9982.02,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4605.2,kale,certified_organic,fresh_market,NA,114.05,11357.2,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4605.3,kale,certified_organic,fresh_market,NA,149.4,1586.14,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4644.1,cherry_tomato,certified_organic,fresh_market,NA,53.76,1180.85,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4644.2,cherry_tomato,certified_organic,fresh_market,NA,44.5,1228.64,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4644.3,cherry_tomato,certified_organic,fresh_market,NA,57.82,1202.02,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4646.1,cherry_tomato,certified_organic,fresh_market,NA,41.56,1139.9,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4646.2,cherry_tomato,certified_organic,fresh_market,NA,37.57,1180.4,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4646.3,cherry_tomato,certified_organic,fresh_market,NA,56.97,1260.74,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4647.1,cherry_tomato,certified_organic,fresh_market,NA,58.32,1407.32,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4647.2,cherry_tomato,certified_organic,fresh_market,NA,47.47,1176.84,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4606.1,kale,certified_organic,fresh_market,NA,146.02,10194.1,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4606.2,kale,certified_organic,fresh_market,NA,195.4,7441.96,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4606.3,kale,certified_organic,fresh_market,NA,233.8,9766.52,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4640.1,cherry_tomato,greenhouse,fresh_market,NA,27.86,942.44,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4640.2,cherry_tomato,greenhouse,fresh_market,NA,32.31,2026.22,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4640.3,cherry_tomato,greenhouse,fresh_market,NA,32.51,1968.44,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4639.1,cherry_tomato,greenhouse,fresh_market,NA,27.93,700.96,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4639.2,cherry_tomato,greenhouse,fresh_market,NA,37.67,435.93,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4639.3,cherry_tomato,greenhouse,fresh_market,NA,26.71,751.9,NA,NA,NA,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4629,cherry_tomato,greenhouse,fresh_market,NA,44.56,1168.9,NA,73.3,384.76,NA,NA,NA,fresh_market,namedStore
+connecticut,store,4641.1,cherry_tomato,other on_the_vine,stop_and_shop,NA,32.73,2357.06,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4641.2,cherry_tomato,other on_the_vine,stop_and_shop,NA,37.74,2463.71,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4641.3,cherry_tomato,other on_the_vine,stop_and_shop,NA,39.19,2459.34,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4642.1,cherry_tomato,other on_the_vine,stop_and_shop,NA,50.17,1832.06,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4642.2,cherry_tomato,other on_the_vine,stop_and_shop,NA,48.27,2025.14,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4642.3,cherry_tomato,other on_the_vine,stop_and_shop,NA,45.58,2063.56,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4643.1,cherry_tomato,other on_the_vine,stop_and_shop,NA,59.09,2815.67,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4643.2,cherry_tomato,other on_the_vine,stop_and_shop,NA,49.72,2484.8,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4635.1,cherry_tomato,none,stop_and_shop,NA,31.98,2372.22,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4635.2,cherry_tomato,none,stop_and_shop,NA,38.73,2719.23,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4635.3,cherry_tomato,none,stop_and_shop,NA,30.71,1921.44,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4637.1,cherry_tomato,none,stop_and_shop,NA,37.16,2139.72,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4637.2,cherry_tomato,none,stop_and_shop,NA,38.75,2067.12,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4637.3,cherry_tomato,none,stop_and_shop,NA,38.63,2814.94,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4638.1,cherry_tomato,none,stop_and_shop,NA,32.13,881.73,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4638.2,cherry_tomato,none,stop_and_shop,NA,35.74,2576.28,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+connecticut,store,4638.3,cherry_tomato,none,stop_and_shop,NA,31.46,2204.79,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+florida,store,3634.1,kale,none,walmart,NA,91.79,1697.87,NA,NA,NA,NA,NA,NA,walmart,namedStore
+florida,store,3634.2,kale,none,walmart,NA,132.81,10322.9,NA,NA,NA,NA,NA,NA,walmart,namedStore
+florida,store,3634.3,kale,none,walmart,NA,141.06,11356.8,NA,NA,NA,NA,NA,NA,walmart,namedStore
+florida,store,3635.1,carrot,none,walmart,NA,12.9,25.32,NA,NA,NA,NA,NA,NA,walmart,namedStore
+florida,store,3635.2,carrot,none,walmart,NA,17.23,46.72,NA,NA,NA,NA,NA,NA,walmart,namedStore
+florida,store,3635.3,carrot,none,walmart,NA,14.23,26.78,NA,NA,NA,NA,NA,NA,walmart,namedStore
+iowa,store,4861.1,carrot,certified_organic,costco,NA,8.64,8.94,NA,NA,NA,NA,NA,NA,costco,namedStore
+iowa,store,4861.2,carrot,certified_organic,costco,NA,8.69,23.34,NA,NA,NA,NA,NA,NA,costco,namedStore
+iowa,store,4861.3,carrot,certified_organic,costco,NA,6.98,9.04,NA,NA,NA,NA,NA,NA,costco,namedStore
+iowa,store,4864.1,kale,certified_organic,everybodys,NA,335.61,11511,NA,NA,NA,NA,NA,NA,everybodys,namedStore
+iowa,store,4864.2,kale,certified_organic,everybodys,NA,342.28,13911.5,NA,NA,NA,NA,NA,NA,everybodys,namedStore
+iowa,store,4864.3,kale,certified_organic,everybodys,NA,188.4,12214,NA,NA,NA,NA,NA,NA,everybodys,namedStore
+iowa,store,4867.1,kale,certified_organic,everybodys,NA,172.49,2102.75,NA,NA,NA,NA,NA,NA,everybodys,namedStore
+iowa,store,4867.2,kale,certified_organic,everybodys,NA,208.57,2602.63,NA,NA,NA,NA,NA,NA,everybodys,namedStore
+iowa,store,4867.3,kale,certified_organic,everybodys,NA,210.41,2612.27,NA,NA,NA,NA,NA,NA,everybodys,namedStore
+iowa,store,4870.1,cherry_tomato,certified_organic,everybodys,NA,40.52,1042.87,NA,NA,NA,NA,NA,NA,everybodys,namedStore
+iowa,store,4870.2,cherry_tomato,certified_organic,everybodys,NA,41.5,1009.69,NA,NA,NA,NA,NA,NA,everybodys,namedStore
+iowa,store,4870.3,cherry_tomato,certified_organic,everybodys,NA,40,2327.44,NA,NA,NA,NA,NA,NA,everybodys,namedStore
+iowa,store,4873,spinach,certified_organic,everybodys,NA,158.54,57.48,NA,95.61,116.06,NA,NA,NA,everybodys,namedStore
+iowa,store,4876.1,carrot,none,the_dutchman,NA,20.45,121.31,NA,NA,NA,NA,NA,NA,the_dutchman,namedStore
+iowa,store,4876.2,carrot,none,the_dutchman,NA,22.75,99.58,NA,NA,NA,NA,NA,NA,the_dutchman,namedStore
+iowa,store,4876.3,carrot,none,the_dutchman,NA,9.68,95.92,NA,NA,NA,NA,NA,NA,the_dutchman,namedStore
+iowa,store,4879.1,spinach,none,the_dutchman,NA,135.1,323.8,NA,NA,NA,NA,NA,NA,the_dutchman,namedStore
+iowa,store,4879.2,spinach,none,the_dutchman,NA,122.02,871.72,NA,NA,NA,NA,NA,NA,the_dutchman,namedStore
+iowa,store,4879.3,spinach,none,the_dutchman,NA,124.83,717.07,NA,NA,NA,NA,NA,NA,the_dutchman,namedStore
+iowa,store,4882.1,cherry_tomato,certified_organic,the_dutchman,NA,64.39,1185.45,NA,NA,NA,NA,NA,NA,the_dutchman,namedStore
+iowa,store,4882.2,cherry_tomato,certified_organic,the_dutchman,NA,67.15,1208.17,NA,NA,NA,NA,NA,NA,the_dutchman,namedStore
+iowa,store,4882.3,cherry_tomato,certified_organic,the_dutchman,NA,55.55,2506.27,NA,NA,NA,NA,NA,NA,the_dutchman,namedStore
+iowa,store,4885.1,spinach,none,the_dutchman,NA,167.19,76.83,NA,NA,NA,NA,NA,NA,the_dutchman,namedStore
+iowa,store,4885.2,spinach,none,the_dutchman,NA,172.66,57.88,NA,NA,NA,NA,NA,NA,the_dutchman,namedStore
+iowa,store,4885.3,spinach,none,the_dutchman,NA,169.69,65.64,NA,NA,NA,NA,NA,NA,the_dutchman,namedStore
+iowa,store,4862.2,lettuce,hydroponic other pesticide&__herbicide_free,the_dutchman,NA,14.58,61.25,NA,NA,NA,NA,NA,NA,the_dutchman,namedStore
+iowa,store,4862.1,lettuce,hydroponic other pesticide&__herbicide_free,the_dutchman,NA,21.26,94.88,NA,NA,NA,NA,NA,NA,the_dutchman,namedStore
+iowa,store,4862.3,lettuce,hydroponic other pesticide&__herbicide_free,the_dutchman,NA,31.23,170.48,NA,NA,NA,NA,NA,NA,the_dutchman,namedStore
+iowa,store,4865.1,carrot,certified_organic,the_golden_dome_market,NA,11.62,88.35,NA,NA,NA,NA,NA,NA,the_golden_dome_market,namedStore
+iowa,store,4865.2,carrot,certified_organic,the_golden_dome_market,NA,14.98,90.34,NA,NA,NA,NA,NA,NA,the_golden_dome_market,namedStore
+iowa,store,4865.3,carrot,certified_organic,the_golden_dome_market,NA,13.44,62.2,NA,NA,NA,NA,NA,NA,the_golden_dome_market,namedStore
+iowa,store,4880.1,carrot,none,hyvee,NA,14.47,14.21,NA,NA,NA,NA,NA,NA,hyvee,namedStore
+iowa,store,4880.2,carrot,none,hyvee,NA,10.18,52.63,NA,NA,NA,NA,NA,NA,hyvee,namedStore
+iowa,store,4880.3,carrot,none,hyvee,NA,9.73,39.94,NA,NA,NA,NA,NA,NA,hyvee,namedStore
+iowa,store,4868.3,kale,certified_organic,the_golden_dome_market,NA,202.75,12732,NA,NA,NA,NA,NA,NA,the_golden_dome_market,namedStore
+iowa,store,4868.2,kale,certified_organic,the_golden_dome_market,NA,204.59,12259.4,NA,NA,NA,NA,NA,NA,the_golden_dome_market,namedStore
+iowa,store,4868.1,kale,certified_organic,the_golden_dome_market,NA,420.65,12302.2,NA,NA,NA,NA,NA,NA,the_golden_dome_market,namedStore
+iowa,store,4877.1,kale,none,hyvee,NA,459.53,1710.34,NA,NA,NA,NA,NA,NA,hyvee,namedStore
+iowa,store,4877.2,kale,none,hyvee,NA,538.97,20663.9,NA,NA,NA,NA,NA,NA,hyvee,namedStore
+iowa,store,4877.3,kale,none,hyvee,NA,585.18,22870.1,NA,NA,NA,NA,NA,NA,hyvee,namedStore
+new_york,store,4743.1,carrot,certified_organic,wegmans,NA,12.7,44.99,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4743.2,carrot,certified_organic,wegmans,NA,18.96,47.84,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4743.3,carrot,certified_organic,wegmans,NA,11.04,57.68,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4744.1,carrot,certified_organic,wegmans,NA,12.3,36.18,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4744.2,carrot,certified_organic,wegmans,NA,8.69,11.16,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4744.3,carrot,certified_organic,wegmans,NA,14.33,35.75,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4745.3,kale,none,wegmans,NA,177.97,10417.3,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4745.2,kale,none,wegmans,NA,167.33,9552.96,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4745.1,kale,none,wegmans,NA,184.87,14165,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4746.3,kale,local certified_organic,wegmans,NA,311.59,1587.18,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4746.2,kale,local certified_organic,wegmans,NA,397.73,1417.37,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4746.1,kale,local certified_organic,wegmans,NA,285.85,1369.86,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4747.1,lettuce,certified_organic,wegmans,NA,18.6,255.55,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4747.2,lettuce,certified_organic,wegmans,NA,12.73,113.31,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4747.3,lettuce,certified_organic,wegmans,NA,17.61,164.48,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4748.1,lettuce,none,wegmans,NA,9.81,143.5,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4748.2,lettuce,none,wegmans,NA,12.71,248.58,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4748.3,lettuce,none,wegmans,NA,13.73,236.77,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4749.1,lettuce,certified_organic,wegmans,NA,23.07,479.18,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4749.2,lettuce,certified_organic,wegmans,NA,12.9,216.99,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4749.3,lettuce,certified_organic,wegmans,NA,12.18,230.95,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4699.1,cherry_tomato,none,wegmans,NA,49.66,926.11,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4699.2,cherry_tomato,none,wegmans,NA,21.72,846.53,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+new_york,store,4742,cherry_tomato,none,wegmans,NA,21.48,912.7,NA,75.84,145.45,NA,NA,NA,wegmans,namedStore
+new_york,store,5046,cherry_tomato,none,wegmans,NA,30.19,871.79,NA,75.84,95.75,NA,NA,NA,wegmans,namedStore
+michigan,store,5007.1,lettuce,certified_organic,kroger,NA,15.82,144.55,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5007.2,lettuce,certified_organic,kroger,NA,16.36,85.61,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5007.3,lettuce,certified_organic,kroger,NA,15.57,88,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5008.1,lettuce,none,kroger,NA,24.2,166.13,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5008.2,lettuce,none,kroger,NA,24.96,168,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5008.3,lettuce,none,kroger,NA,25.39,184.86,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5009.1,lettuce,none,kroger,NA,30.54,176.1,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5009.2,lettuce,none,kroger,NA,39.41,309.76,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5009.3,lettuce,none,kroger,NA,22.05,207.97,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5010.1,lettuce,none,kroger,NA,32.48,453.93,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5010.2,lettuce,none,kroger,NA,18.02,158.37,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5010.3,lettuce,none,kroger,NA,35.06,331.71,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5041.1,cherry_tomato,none,kroger,NA,37.64,978.71,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5041.2,cherry_tomato,none,kroger,NA,30.85,891.87,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5041.3,cherry_tomato,none,kroger,NA,39.93,916,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5042.1,cherry_tomato,none,kroger,NA,35.59,3548.22,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5042.2,cherry_tomato,none,kroger,NA,28.43,4013.9,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5042.3,cherry_tomato,none,kroger,NA,32.49,3048.97,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5043.3,kale,certified_organic,kroger,NA,162.46,4954.64,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5043.2,kale,certified_organic,kroger,NA,205.37,6826.81,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5043.1,kale,certified_organic,kroger,NA,195.27,7151.24,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5044.3,kale,certified_organic,kroger,NA,219.77,2256.58,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5044.2,kale,certified_organic,kroger,NA,213.68,2295.54,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5044.1,kale,certified_organic,kroger,NA,235.54,2579.34,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5045.1,carrot,local,kroger,NA,10.7,77.67,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5045.2,carrot,local,kroger,NA,9.91,86.32,NA,NA,NA,NA,NA,NA,kroger,namedStore
+michigan,store,5045.3,carrot,local,kroger,NA,9.09,106.87,NA,NA,NA,NA,NA,NA,kroger,namedStore
+maine,store,4750.1,carrot,local certified_organic,morning_glory_natural_foods,NA,13.45,53.22,NA,NA,NA,NA,NA,NA,morning_glory_natural_foods,namedStore
+maine,store,4750.2,carrot,local certified_organic,morning_glory_natural_foods,NA,10.09,41.96,NA,NA,NA,NA,NA,NA,morning_glory_natural_foods,namedStore
+maine,store,4750.3,carrot,local certified_organic,morning_glory_natural_foods,NA,9.71,10.47,NA,NA,NA,NA,NA,NA,morning_glory_natural_foods,namedStore
+maine,store,4751.1,kale,certified_organic,morning_glory_natural_foods,NA,94.46,1547.36,NA,NA,NA,NA,NA,NA,morning_glory_natural_foods,namedStore
+maine,store,4751.2,kale,certified_organic,morning_glory_natural_foods,NA,126.37,2079.23,NA,NA,NA,NA,NA,NA,morning_glory_natural_foods,namedStore
+maine,store,4751.3,kale,certified_organic,morning_glory_natural_foods,NA,151.51,1816.16,NA,NA,NA,NA,NA,NA,morning_glory_natural_foods,namedStore
+maine,store,4752.1,lettuce,certified_organic local,morning_glory_natural_foods,NA,8.45,242.21,NA,NA,NA,NA,NA,NA,morning_glory_natural_foods,namedStore
+maine,store,4752.2,lettuce,certified_organic local,morning_glory_natural_foods,NA,24.6,301.43,NA,NA,NA,NA,NA,NA,morning_glory_natural_foods,namedStore
+maine,store,4752.3,lettuce,certified_organic local,morning_glory_natural_foods,NA,22.85,242.23,NA,NA,NA,NA,NA,NA,morning_glory_natural_foods,namedStore
+maine,store,4753.1,spinach,local certified_organic,morning_glory_natural_foods,NA,66.46,82.06,NA,NA,NA,NA,NA,NA,morning_glory_natural_foods,namedStore
+maine,store,4753.2,spinach,local certified_organic,morning_glory_natural_foods,NA,81.5,229.6,NA,NA,NA,NA,NA,NA,morning_glory_natural_foods,namedStore
+maine,store,4753.3,spinach,local certified_organic,morning_glory_natural_foods,NA,67.56,276.79,NA,NA,NA,NA,NA,NA,morning_glory_natural_foods,namedStore
+maine,farm_market,4754.1,carrot,certified_organic cover_crops nospray,NA,ben whatley,10.42,34.61,NA,NA,NA,79,NA,NA,ben whatley,farmer
+maine,farm_market,4754.2,carrot,certified_organic cover_crops nospray,NA,ben whatley,12.88,32.64,NA,NA,NA,79,NA,NA,ben whatley,farmer
+maine,farm_market,4754.3,carrot,certified_organic cover_crops nospray,NA,ben whatley,9.21,44.15,NA,NA,NA,79,NA,NA,ben whatley,farmer
+maine,farm_market,4755.1,spinach,certified_organic cover_crops greenhouse nospray,NA,ben whatley,93.5,542.58,NA,NA,NA,64,NA,NA,ben whatley,farmer
+maine,farm_market,4755.2,spinach,certified_organic cover_crops greenhouse nospray,NA,ben whatley,95.07,196.56,NA,NA,NA,64,NA,NA,ben whatley,farmer
+maine,farm_market,4755.3,spinach,certified_organic cover_crops greenhouse nospray,NA,ben whatley,135.64,435.84,NA,NA,NA,64,NA,NA,ben whatley,farmer
+maine,farm_market,4756.1,lettuce,certified_organic cover_crops nospray greenhouse,NA,ben whatley,39.48,413.32,NA,NA,NA,99,NA,NA,ben whatley,farmer
+maine,farm_market,4756.2,lettuce,certified_organic cover_crops nospray greenhouse,NA,ben whatley,32.7,421.84,NA,NA,NA,99,NA,NA,ben whatley,farmer
+maine,farm_market,4756.3,lettuce,certified_organic cover_crops nospray greenhouse,NA,ben whatley,28.32,311.14,NA,NA,NA,99,NA,NA,ben whatley,farmer
+maine,farm_market,4757.3,kale,certified_organic cover_crops greenhouse nospray,NA,ben whatley,98.99,1286.63,NA,NA,NA,99,NA,NA,ben whatley,farmer
+maine,farm_market,4757.2,kale,certified_organic cover_crops greenhouse nospray,NA,ben whatley,91.01,1453.45,NA,NA,NA,99,NA,NA,ben whatley,farmer
+maine,farm_market,4757.1,kale,certified_organic cover_crops greenhouse nospray,NA,ben whatley,98.73,1410.06,NA,NA,NA,99,NA,NA,ben whatley,farmer
+new_york,store,4655,cherry_tomato,certified_organic other biologique,four_seasons_health_food,NA,21.49,633.78,NA,-38.75,5.439999999999998,NA,NA,NA,four_seasons_health_food,namedStore
+new_york,store,4660.1,cherry_tomato,certified_organic other biologique,four_seasons_health_food,NA,50.53,677,NA,NA,NA,NA,NA,NA,four_seasons_health_food,namedStore
+new_york,store,4660.2,cherry_tomato,certified_organic other biologique,four_seasons_health_food,NA,53.18,647.04,NA,NA,NA,NA,NA,NA,four_seasons_health_food,namedStore
+new_york,store,4657.1,cherry_tomato,certified_organic other biologique,four_seasons_health_food,NA,3.69,520.62,NA,NA,NA,NA,NA,NA,four_seasons_health_food,namedStore
+new_york,store,4657.2,cherry_tomato,certified_organic other biologique,four_seasons_health_food,NA,35.04,490.37,NA,NA,NA,NA,NA,NA,four_seasons_health_food,namedStore
+new_york,store,2903.2,kale,certified_organic,four_seasons_health_food,NA,204.41,9384.35,NA,NA,NA,NA,NA,NA,four_seasons_health_food,namedStore
+new_york,store,2903.1,kale,certified_organic,four_seasons_health_food,NA,193.14,9001.44,NA,NA,NA,NA,NA,NA,four_seasons_health_food,namedStore
+new_york,store,2905.1,lettuce,certified_organic,healthy_living,NA,27.36,491.8,NA,NA,NA,NA,NA,NA,healthy_living,namedStore
+new_york,store,2905.2,lettuce,certified_organic,healthy_living,NA,42.81,564.77,NA,NA,NA,NA,NA,NA,healthy_living,namedStore
+new_york,store,2905.3,lettuce,certified_organic,healthy_living,NA,33.53,457.9,NA,NA,NA,NA,NA,NA,healthy_living,namedStore
+new_york,store,2904.1,kale,certified_organic,healthy_living,NA,169.28,14031.8,NA,NA,NA,NA,NA,NA,healthy_living,namedStore
+new_york,store,2904.2,kale,certified_organic,healthy_living,NA,184.97,16671.1,NA,NA,NA,NA,NA,NA,healthy_living,namedStore
+new_york,store,2904.3,kale,certified_organic,healthy_living,NA,188.57,17046.5,NA,NA,NA,NA,NA,NA,healthy_living,namedStore
+new_york,store,2907.1,lettuce,certified_organic,healthy_living,NA,17.25,366.35,NA,NA,NA,NA,NA,NA,healthy_living,namedStore
+new_york,store,2907.2,lettuce,certified_organic,healthy_living,NA,21.17,289.02,NA,NA,NA,NA,NA,NA,healthy_living,namedStore
+new_york,store,2907.3,lettuce,certified_organic,healthy_living,NA,16.69,313.73,NA,NA,NA,NA,NA,NA,healthy_living,namedStore
+new_york,store,2900.1,carrot,certified_organic,healthy_living,NA,8.54,21.61,NA,NA,NA,NA,NA,NA,healthy_living,namedStore
+new_york,store,2900.2,carrot,certified_organic,healthy_living,NA,6.53,41.08,NA,NA,NA,NA,NA,NA,healthy_living,namedStore
+new_york,store,2900.3,carrot,certified_organic,healthy_living,NA,7.09,56.16,NA,NA,NA,NA,NA,NA,healthy_living,namedStore
+new_york,store,4656,cherry_tomato,certified_organic,healthy_living,NA,24.98,1078.11,NA,-38.9,4.810000000000002,NA,NA,NA,healthy_living,namedStore
+new_york,store,4658,cherry_tomato,certified_organic,healthy_living,NA,26.25,886.87,NA,-38.92,5.5,NA,NA,NA,healthy_living,namedStore
+new_york,store,4659,cherry_tomato,certified_organic,healthy_living,NA,24.47,945.11,NA,-38.9,5.730000000000004,NA,NA,NA,healthy_living,namedStore
+new_york,farm_market,2908.1,carrot,certified_organic cover_crops,NA,denison farm,18,148.95,NA,NA,NA,NA,NA,NA,denison farm,farmer
+new_york,farm_market,2908.2,carrot,certified_organic cover_crops,NA,denison farm,10.78,54.94,NA,NA,NA,NA,NA,NA,denison farm,farmer
+new_york,farm_market,2908.3,carrot,certified_organic cover_crops,NA,denison farm,13.63,186.25,NA,NA,NA,NA,NA,NA,denison farm,farmer
+rhode_island,farm_market,4690.1,lettuce,certified_organic,NA,NA,21.9,186.88,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+rhode_island,farm_market,4690.2,lettuce,certified_organic,NA,NA,22.61,150.45,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+rhode_island,farm_market,4690.3,lettuce,certified_organic,NA,NA,23.2,160.95,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+rhode_island,farm_market,4689.1,spinach,certified_organic cover_crops nospray,NA,NA,244.05,522.65,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+rhode_island,farm_market,4689.2,spinach,certified_organic cover_crops nospray,NA,NA,272.29,615.87,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+rhode_island,farm_market,4689.3,spinach,certified_organic cover_crops nospray,NA,NA,258.71,486.68,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+rhode_island,store,4700.3,cherry_tomato,certified_organic,the_greengrocer,NA,73.63,2159.02,NA,NA,NA,NA,NA,NA,the_greengrocer,namedStore
+rhode_island,store,4700.1,cherry_tomato,certified_organic,the_greengrocer,NA,47.85,1161.96,NA,NA,NA,NA,NA,NA,the_greengrocer,namedStore
+rhode_island,store,4700.2,cherry_tomato,certified_organic,the_greengrocer,NA,39.78,1068.17,NA,NA,NA,NA,NA,NA,the_greengrocer,namedStore
+rhode_island,store,4701.1,cherry_tomato,certified_organic,the_greengrocer,NA,45.24,992.56,NA,NA,NA,NA,NA,NA,the_greengrocer,namedStore
+rhode_island,store,4701.2,cherry_tomato,certified_organic,the_greengrocer,NA,50.52,1405.56,NA,NA,NA,NA,NA,NA,the_greengrocer,namedStore
+rhode_island,store,4701.3,cherry_tomato,certified_organic,the_greengrocer,NA,44.42,1029.33,NA,NA,NA,NA,NA,NA,the_greengrocer,namedStore
+rhode_island,store,4696.1,cherry_tomato,certified_organic,the_greengrocer,NA,41.77,1457.57,NA,NA,NA,NA,NA,NA,the_greengrocer,namedStore
+rhode_island,store,4696.2,cherry_tomato,certified_organic,the_greengrocer,NA,65.22,109.6,NA,NA,NA,NA,NA,NA,the_greengrocer,namedStore
+rhode_island,store,4696.3,cherry_tomato,certified_organic,the_greengrocer,NA,50.71,1862.72,NA,NA,NA,NA,NA,NA,the_greengrocer,namedStore
+rhode_island,store,4695,grape,certified_organic,the_greengrocer,NA,116.25,1007.11,NA,0.26,144.07,NA,NA,NA,the_greengrocer,namedStore
+rhode_island,store,4694,grape,certified_organic,the_greengrocer,NA,112.55,1179.16,NA,0.26,143.76,NA,NA,NA,the_greengrocer,namedStore
+rhode_island,store,4693,grape,certified_organic,the_greengrocer,NA,115.83,1082.18,NA,0.26,144.76999999999998,NA,NA,NA,the_greengrocer,namedStore
+rhode_island,farm_market,4692.1,carrot,certified_organic,NA,NA,13.98,54.39,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+rhode_island,farm_market,4692.2,carrot,certified_organic,NA,NA,15.99,79.64,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+rhode_island,farm_market,4692.3,carrot,certified_organic,NA,NA,14.38,48.6,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+rhode_island,farm_market,4691.3,kale,certified_organic cover_crops,NA,NA,335.07,8938.71,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+rhode_island,farm_market,4691.2,kale,certified_organic cover_crops,NA,NA,375.69,11140.9,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+rhode_island,farm_market,4691.1,kale,certified_organic cover_crops,NA,NA,382.88,1452.46,NA,NA,NA,NA,NA,NA,farm_marketUnnamed,farm_marketUnnamed
+ohio,store,2866.1,carrot,none,save_a_lot,NA,15.88,63.36,3,NA,NA,NA,3,3,save_a_lot,namedStore
+ohio,store,2866.2,carrot,none,save_a_lot,NA,13.65,134.47,3,NA,NA,NA,3,3,save_a_lot,namedStore
+ohio,store,2866.3,carrot,none,save_a_lot,NA,21.4,123,3,NA,NA,NA,3,3,save_a_lot,namedStore
+ohio,store,2865.1,lettuce,none,sun_plum_market,NA,43.37,101.7,4,NA,NA,NA,4,5,sun_plum_market,namedStore
+ohio,store,2865.2,lettuce,none,sun_plum_market,NA,31.28,114.49,4,NA,NA,NA,4,5,sun_plum_market,namedStore
+ohio,store,2865.3,lettuce,none,sun_plum_market,NA,39.71,113.93,4,NA,NA,NA,4,5,sun_plum_market,namedStore
+ohio,store,4572.1,lettuce,none,aldi,NA,9.66,86.79,2,NA,NA,NA,2,2,aldi,namedStore
+ohio,store,4572.2,lettuce,none,aldi,NA,13.9,115.72,2,NA,NA,NA,2,2,aldi,namedStore
+ohio,store,4572.3,lettuce,none,aldi,NA,10.21,88.48,2,NA,NA,NA,2,2,aldi,namedStore
+ohio,store,3885,grape,none,aldi,NA,39.4,424.89,4,93.48,141.29000000000002,NA,4,4,aldi,namedStore
+ohio,store,3886,grape,none,aldi,NA,32.33,294.49,4,93.48,140.84,NA,4,4,aldi,namedStore
+ohio,store,3887,grape,none,aldi,NA,75.22,946.01,4,93.48,143.02,NA,4,4,aldi,namedStore
+florida,store,4680.2,kale,other Organic_Kale,paradise_health_nutrition,NA,404.73,10988.7,2,NA,NA,NA,1,2,paradise_health_nutrition,namedStore
+florida,store,4680.1,kale,other Organic_Kale,paradise_health_nutrition,NA,486.03,14432.9,2,NA,NA,NA,1,2,paradise_health_nutrition,namedStore
+florida,store,4680.3,kale,other Organic_Kale,paradise_health_nutrition,NA,443.51,9240.14,2,NA,NA,NA,1,2,paradise_health_nutrition,namedStore
+florida,store,4681.1,spinach,certified_organic,publix,NA,165.87,67.58,4,NA,NA,NA,3,4,publix,namedStore
+florida,store,4681.2,spinach,certified_organic,publix,NA,167.51,75.82,4,NA,NA,NA,3,4,publix,namedStore
+florida,store,4681.3,spinach,certified_organic,publix,NA,147.6,120.3,4,NA,NA,NA,3,4,publix,namedStore
+florida,store,4686.1,carrot,other Fresh_Organic,paradise_health_nutrition,NA,25.29,35.43,3,NA,NA,NA,3,2,paradise_health_nutrition,namedStore
+florida,store,4686.2,carrot,other Fresh_Organic,paradise_health_nutrition,NA,21.59,12.96,3,NA,NA,NA,3,2,paradise_health_nutrition,namedStore
+florida,store,4686.3,carrot,other Fresh_Organic,paradise_health_nutrition,NA,14.88,19.59,3,NA,NA,NA,3,2,paradise_health_nutrition,namedStore
+florida,store,4705,cherry_tomato,certified_organic local,publix,NA,44.25,852.54,2,139.07,288.06,NA,1,2,publix,namedStore
+florida,store,4708,cherry_tomato,certified_organic local,publix,NA,51.25,635.67,2,139.07,256.7,NA,1,2,publix,namedStore
+florida,store,4719,cherry_tomato,certified_organic local,publix,NA,54.72,1316.1,2,139.07,283.95,NA,1,2,publix,namedStore
+florida,farm_market,4683.3,kale,organic notill nospray,NA,Scott Parker,391.28,1749.65,2,NA,NA,65,1,2,Scott Parker,farmer
+florida,farm_market,4683.2,kale,organic notill nospray,NA,Scott Parker,382.23,1820.49,2,NA,NA,65,1,2,Scott Parker,farmer
+florida,farm_market,4683.1,kale,organic notill nospray,NA,Scott Parker,185.46,1595.68,2,NA,NA,65,1,2,Scott Parker,farmer
+florida,store,4684.1,lettuce,certified_organic,paradise_health_nutrition,NA,51.04,242.64,1,NA,NA,NA,1,1,paradise_health_nutrition,namedStore
+florida,store,4684.2,lettuce,certified_organic,paradise_health_nutrition,NA,28.61,88.06,1,NA,NA,NA,1,1,paradise_health_nutrition,namedStore
+florida,store,4684.3,lettuce,certified_organic,paradise_health_nutrition,NA,21.13,192.88,1,NA,NA,NA,1,1,paradise_health_nutrition,namedStore
+florida,farm_market,4682.1,cherry_tomato,organic notill nospray,NA,Scott Parker,60.74,1018.44,4,NA,NA,67,3,4,Scott Parker,farmer
+florida,farm_market,4682.2,cherry_tomato,organic notill nospray,NA,Scott Parker,63.37,1039.28,4,NA,NA,67,3,4,Scott Parker,farmer
+florida,farm_market,4682.3,cherry_tomato,organic notill nospray,NA,Scott Parker,70.23,1101.27,4,NA,NA,67,3,4,Scott Parker,farmer
+florida,store,4685.1,lettuce,hydroponic greenhouse,walmart,NA,26.03,294.8,2,NA,NA,NA,2,2,walmart,namedStore
+florida,store,4685.2,lettuce,hydroponic greenhouse,walmart,NA,22.09,145.3,2,NA,NA,NA,2,2,walmart,namedStore
+florida,store,4685.3,lettuce,hydroponic greenhouse,walmart,NA,22.48,85.69,2,NA,NA,NA,2,2,walmart,namedStore
+michigan,store,5101.1,cherry_tomato,certified_organic,meijer,NA,68.51,956.04,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5101.2,cherry_tomato,certified_organic,meijer,NA,55.94,1073.73,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5101.3,cherry_tomato,certified_organic,meijer,NA,60.42,1006.32,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5102.1,cherry_tomato,certified_organic,meijer,NA,49.77,1185.84,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5102.2,cherry_tomato,certified_organic,meijer,NA,39.91,897.69,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5102.3,cherry_tomato,certified_organic,meijer,NA,49.89,1123.43,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5103.1,cherry_tomato,greenhouse,meijer,NA,38.15,872.45,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5103.2,cherry_tomato,greenhouse,meijer,NA,40.93,1628.86,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5103.3,cherry_tomato,greenhouse,meijer,NA,33.99,847.52,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5104.1,cherry_tomato,none,meijer,NA,43.88,1059.17,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5104.2,cherry_tomato,none,meijer,NA,34.77,945.21,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5104.3,cherry_tomato,none,meijer,NA,43.65,986.66,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5105.1,carrot,none,meijer,NA,19.93,129.03,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5105.2,carrot,none,meijer,NA,34.98,127.46,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5105.3,carrot,none,meijer,NA,39.78,79.58,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5106.1,carrot,certified_organic,meijer,NA,21.96,19.94,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5106.2,carrot,certified_organic,meijer,NA,17.8,32.86,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5106.3,carrot,certified_organic,meijer,NA,15.11,22.9,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5107.1,carrot,none,meijer,NA,11.34,19.37,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5107.2,carrot,none,meijer,NA,19.55,50.39,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5107.3,carrot,none,meijer,NA,58.22,145.95,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5108.1,carrot,certified_organic,meijer,NA,11.12,42.99,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5108.2,carrot,certified_organic,meijer,NA,11.42,42.54,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5108.3,carrot,certified_organic,meijer,NA,12.86,42.78,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5109.1,lettuce,none,meijer,NA,13.98,151.17,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5109.2,lettuce,none,meijer,NA,17.24,192.17,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5109.3,lettuce,none,meijer,NA,14.15,134.08,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5110.1,lettuce,none,meijer,NA,12.6,109.39,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5110.2,lettuce,none,meijer,NA,10.28,83.27,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5110.3,lettuce,none,meijer,NA,15.19,137.89,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5111.1,lettuce,none,meijer,NA,14,176,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5111.2,lettuce,none,meijer,NA,14.11,178.97,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5111.3,lettuce,none,meijer,NA,12.91,156.39,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5112.3,kale,certified_organic,meijer,NA,502.14,18179.6,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5112.2,kale,certified_organic,meijer,NA,448.37,16303.7,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5112.1,kale,certified_organic,meijer,NA,387.14,1369.59,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5113.3,kale,certified_organic,meijer,NA,471.12,1468.31,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5113.2,kale,certified_organic,meijer,NA,346.49,1652.91,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5113.1,kale,certified_organic,meijer,NA,393.05,1527.76,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5114.1,kale,certified_organic,meijer,NA,120.25,2328.75,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5114.2,kale,certified_organic,meijer,NA,119.74,1621.27,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5114.3,kale,certified_organic,meijer,NA,139.46,1708.28,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5115.3,kale,none,meijer,NA,171.61,8165.01,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5115.2,kale,none,meijer,NA,172.06,4993.76,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5115.1,kale,none,meijer,NA,374.52,9664.12,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5116.1,lettuce,none,meijer,NA,30.9,518.17,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5116.2,lettuce,none,meijer,NA,26.05,497.11,NA,NA,NA,NA,NA,NA,meijer,namedStore
+michigan,store,5116.3,lettuce,none,meijer,NA,14,203.4,NA,NA,NA,NA,NA,NA,meijer,namedStore
+washington,store,4803.1,carrot,certified_organic,fred_meyer,NA,16.12,56.94,2,NA,NA,NA,3,3,fred_meyer,namedStore
+washington,store,4803.2,carrot,certified_organic,fred_meyer,NA,15.39,31.19,2,NA,NA,NA,3,3,fred_meyer,namedStore
+washington,store,4803.3,carrot,certified_organic,fred_meyer,NA,15.93,34.74,2,NA,NA,NA,3,3,fred_meyer,namedStore
+washington,store,4807.1,cherry_tomato,certified_organic,fred_meyer,NA,73.04,1150.65,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+washington,store,4807.2,cherry_tomato,certified_organic,fred_meyer,NA,64.84,1096.12,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+washington,store,4807.3,cherry_tomato,certified_organic,fred_meyer,NA,55.8,2320.7,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+washington,store,4810.2,cherry_tomato,certified_organic,fred_meyer,NA,70.04,2697.91,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+washington,store,4810.3,cherry_tomato,certified_organic,fred_meyer,NA,69.91,137.58,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+washington,store,4810.1,cherry_tomato,certified_organic,fred_meyer,NA,51.08,1933.02,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+washington,store,4802.1,lettuce,certified_organic,fred_meyer,NA,32.09,215.15,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+washington,store,4802.2,lettuce,certified_organic,fred_meyer,NA,48.58,353.42,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+washington,store,4802.3,lettuce,certified_organic,fred_meyer,NA,36.46,258.74,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+washington,store,4804.1,spinach,certified_organic,fred_meyer,NA,129.72,274.53,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+washington,store,4804.2,spinach,certified_organic,fred_meyer,NA,116.76,45.52,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+washington,store,4804.3,spinach,certified_organic,fred_meyer,NA,176.6,97.53,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+washington,store,4801.3,kale,certified_organic,fred_meyer,NA,387.41,1768.32,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+washington,store,4801.2,kale,certified_organic,fred_meyer,NA,401.18,1957.69,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+washington,store,4801.1,kale,certified_organic,fred_meyer,NA,466.29,14487,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+washington,store,4927.1,carrot,certified_organic,safeway,NA,12.74,35.17,NA,NA,NA,NA,NA,NA,safeway,namedStore
+washington,store,4927.2,carrot,certified_organic,safeway,NA,19.86,36.46,NA,NA,NA,NA,NA,NA,safeway,namedStore
+washington,store,4927.3,carrot,certified_organic,safeway,NA,16.56,17.47,NA,NA,NA,NA,NA,NA,safeway,namedStore
+washington,store,4925.1,cherry_tomato,NA,safeway,NA,47.88,962.26,NA,NA,NA,NA,NA,NA,safeway,namedStore
+washington,store,4925.2,cherry_tomato,NA,safeway,NA,52.72,977.98,NA,NA,NA,NA,NA,NA,safeway,namedStore
+washington,store,4924.1,cherry_tomato,NA,safeway,NA,75.4,1721.25,NA,NA,NA,NA,NA,NA,safeway,namedStore
+washington,store,4924.2,cherry_tomato,NA,safeway,NA,54.87,1203.76,NA,NA,NA,NA,NA,NA,safeway,namedStore
+washington,store,4926.1,cherry_tomato,NA,safeway,NA,45.09,981.5,NA,NA,NA,NA,NA,NA,safeway,namedStore
+washington,store,4926.2,cherry_tomato,NA,safeway,NA,47.86,1101.58,NA,NA,NA,NA,NA,NA,safeway,namedStore
+washington,store,4922.1,spinach,NA,safeway,NA,356.89,1645.4,NA,NA,NA,NA,NA,NA,safeway,namedStore
+washington,store,4922.2,spinach,NA,safeway,NA,253.96,1283.18,NA,NA,NA,NA,NA,NA,safeway,namedStore
+washington,store,4922.3,spinach,NA,safeway,NA,321.39,9032.71,NA,NA,NA,NA,NA,NA,safeway,namedStore
+washington,store,4923.3,kale,NA,safeway,NA,461.07,729.93,NA,NA,NA,NA,NA,NA,safeway,namedStore
+washington,store,4923.2,kale,NA,safeway,NA,391.38,11575.5,NA,NA,NA,NA,NA,NA,safeway,namedStore
+washington,store,4923.1,kale,NA,safeway,NA,302.17,1698,NA,NA,NA,NA,NA,NA,safeway,namedStore
+maine,store,2345.1,cherry_tomato,certified_organic,trader_joes,NA,54.81,1042.77,NA,NA,NA,NA,NA,NA,trader_joes,namedStore
+maine,store,2345.2,cherry_tomato,certified_organic,trader_joes,NA,52.38,871.72,NA,NA,NA,NA,NA,NA,trader_joes,namedStore
+maine,store,2346,cherry_tomato,certified_organic,trader_joes,NA,48.73,1088.35,NA,90.45,143.77,NA,NA,NA,trader_joes,namedStore
+maine,store,2347.1,cherry_tomato,certified_organic,trader_joes,NA,49.92,933.24,NA,NA,NA,NA,NA,NA,trader_joes,namedStore
+maine,store,2347.2,cherry_tomato,certified_organic,trader_joes,NA,50.95,946.24,NA,NA,NA,NA,NA,NA,trader_joes,namedStore
+maine,store,2378,carrot,certified_organic,trader_joes,NA,24.28,69.91,NA,90.33,91.42999999999999,NA,NA,NA,trader_joes,namedStore
+maine,store,2377.3,kale,certified_organic,trader_joes,NA,424.92,1846.99,NA,NA,NA,NA,NA,NA,trader_joes,namedStore
+maine,store,2377.2,kale,certified_organic,trader_joes,NA,471.71,1983.1,NA,NA,NA,NA,NA,NA,trader_joes,namedStore
+maine,store,2377.1,kale,certified_organic,trader_joes,NA,483.42,2032.44,NA,NA,NA,NA,NA,NA,trader_joes,namedStore
+maine,store,2379.1,spinach,certified_organic,trader_joes,NA,492.01,52.65,NA,NA,NA,NA,NA,NA,trader_joes,namedStore
+maine,store,2379.2,spinach,certified_organic,trader_joes,NA,418.58,54.5,NA,NA,NA,NA,NA,NA,trader_joes,namedStore
+maine,store,2379.3,spinach,certified_organic,trader_joes,NA,357.5,49.84,NA,NA,NA,NA,NA,NA,trader_joes,namedStore
+maine,store,2386.1,spinach,certified_organic,whole_foods,NA,162.38,138.83,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+maine,store,2386.2,spinach,certified_organic,whole_foods,NA,244.82,153.03,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+maine,store,2386.3,spinach,certified_organic,whole_foods,NA,262.96,287.39,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+maine,store,2356.3,kale,certified_organic,whole_foods,NA,581.77,2800.63,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+maine,store,2356.2,kale,certified_organic,whole_foods,NA,504.67,2794.07,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+maine,store,2356.1,kale,certified_organic,whole_foods,NA,486.49,2644.67,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+maine,store,2349.1,carrot,certified_organic local,whole_foods,NA,11.89,21.52,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+maine,store,2349.2,carrot,certified_organic local,whole_foods,NA,14.09,31.79,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+maine,store,2349.3,carrot,certified_organic local,whole_foods,NA,10.27,37.98,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+washington,store,4921.1,lettuce,NA,safeway,NA,38.84,185.41,NA,NA,NA,NA,NA,NA,safeway,namedStore
+washington,store,4921.2,lettuce,NA,safeway,NA,20.63,199.88,NA,NA,NA,NA,NA,NA,safeway,namedStore
+washington,store,4921.3,lettuce,NA,safeway,NA,26.23,181.62,NA,NA,NA,NA,NA,NA,safeway,namedStore
+maine,farm_market,4891.1,carrot,certified_organic,NA,Kim,14.84,69.94,NA,NA,NA,NA,NA,NA,Kim,farmer
+maine,farm_market,4891.2,carrot,certified_organic,NA,Kim,13.57,49.42,NA,NA,NA,NA,NA,NA,Kim,farmer
+maine,farm_market,4891.3,carrot,certified_organic,NA,Kim,11.77,74.51,NA,NA,NA,NA,NA,NA,Kim,farmer
+maine,farm_market,4894.1,spinach,certified_organic,NA,kim,247.32,84.91,NA,NA,NA,NA,NA,NA,kim,farmer
+maine,farm_market,4894.2,spinach,certified_organic,NA,kim,369.75,84.24,NA,NA,NA,NA,NA,NA,kim,farmer
+maine,farm_market,4894.3,spinach,certified_organic,NA,kim,289.98,95.66,NA,NA,NA,NA,NA,NA,kim,farmer
+massachusetts,store,4625.3,kale,none,big_y,NA,482.19,1603.12,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4625.2,kale,none,big_y,NA,472.38,1487.72,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4625.1,kale,none,big_y,NA,489.66,1638.23,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4624.1,lettuce,none,big_y,NA,59.7,605.15,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4624.2,lettuce,none,big_y,NA,62.88,248.95,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4624.3,lettuce,none,big_y,NA,39.02,115.78,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4623.1,lettuce,none,big_y,NA,35.2,151.3,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4623.2,lettuce,none,big_y,NA,50.88,123.58,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4623.3,lettuce,none,big_y,NA,41.37,103.22,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4613.1,lettuce,none,big_y,NA,45.47,120.7,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4613.2,lettuce,none,big_y,NA,38.1,272.47,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4613.3,lettuce,none,big_y,NA,51.61,368.39,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4632,cherry_tomato,none,big_y,NA,48.47,823.17,NA,53.72,74.00999999999999,NA,NA,NA,big_y,namedStore
+massachusetts,store,4633,cherry_tomato,none,big_y,NA,42.57,937.33,NA,53.72,74.38,NA,NA,NA,big_y,namedStore
+massachusetts,store,4634,cherry_tomato,none,big_y,NA,54.24,910.5,NA,53.72,74.63,NA,NA,NA,big_y,namedStore
+massachusetts,store,4631,cherry_tomato,greenhouse,big_y,NA,38.38,968.46,NA,53.49,73.19,NA,NA,NA,big_y,namedStore
+massachusetts,store,4630,cherry_tomato,greenhouse,big_y,NA,46.77,979.37,NA,53.49,69.09,NA,NA,NA,big_y,namedStore
+massachusetts,store,4636,cherry_tomato,greenhouse,big_y,NA,42.02,996.34,NA,53.49,69.57,NA,NA,NA,big_y,namedStore
+massachusetts,store,4612.1,carrot,none,big_y,NA,24.2,113.41,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4612.2,carrot,none,big_y,NA,22.46,64.55,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4612.3,carrot,none,big_y,NA,22.89,97.9,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4610.1,carrot,none,big_y,NA,13.35,10.83,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4610.2,carrot,none,big_y,NA,19.29,9.49,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4610.3,carrot,none,big_y,NA,13.64,13.72,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4611.1,carrot,none,big_y,NA,8.87,19,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4611.3,carrot,none,big_y,NA,10.03,15.03,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,4611.2,carrot,none,big_y,NA,12.08,28.97,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,3500.1,carrot,certified_organic,stop_and_shop,NA,8.21,23.21,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+massachusetts,store,3500.2,carrot,certified_organic,stop_and_shop,NA,8.58,22.39,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+massachusetts,store,3500.3,carrot,certified_organic,stop_and_shop,NA,7.35,22.36,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+massachusetts,store,3492.3,kale,certified_organic,stop_and_shop,NA,308.6,8453.94,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+massachusetts,store,3492.1,kale,certified_organic,stop_and_shop,NA,298.69,7481.73,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+massachusetts,store,3492.2,kale,certified_organic,stop_and_shop,NA,619.34,15368.2,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+massachusetts,store,3520.1,cherry_tomato,none,stop_and_shop,NA,48.58,936.27,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+massachusetts,store,3520.2,cherry_tomato,none,stop_and_shop,NA,42.57,2076.37,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+massachusetts,store,3499.1,carrot,certified_organic,stop_and_shop,NA,26.7,64.66,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+massachusetts,store,3499.2,carrot,certified_organic,stop_and_shop,NA,16.53,107.06,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+massachusetts,store,3499.3,carrot,certified_organic,stop_and_shop,NA,19.75,96.87,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+massachusetts,store,3485.3,kale,none,stop_and_shop,NA,377.09,10736.4,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+massachusetts,store,3485.1,kale,none,stop_and_shop,NA,244.22,2601.14,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+massachusetts,store,3485.2,kale,none,stop_and_shop,NA,530.24,15607.4,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+massachusetts,store,3518.1,cherry_tomato,certified_organic,stop_and_shop,NA,54.07,1059.68,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+massachusetts,store,3518.2,cherry_tomato,certified_organic,stop_and_shop,NA,49.73,1772.7,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+massachusetts,store,3518.3,cherry_tomato,certified_organic,stop_and_shop,NA,44.83,1104.11,NA,NA,NA,NA,NA,NA,stop_and_shop,namedStore
+alaska,store,4666.1,spinach,certified_organic,carrs_safeway,NA,271.55,805.38,NA,NA,NA,NA,NA,NA,carrs_safeway,namedStore
+alaska,store,4666.2,spinach,certified_organic,carrs_safeway,NA,206.84,165.61,NA,NA,NA,NA,NA,NA,carrs_safeway,namedStore
+alaska,store,4666.3,spinach,certified_organic,carrs_safeway,NA,227.46,459.87,NA,NA,NA,NA,NA,NA,carrs_safeway,namedStore
+alaska,store,4665.3,kale,certified_organic,carrs_safeway,NA,231.56,7173.2,NA,NA,NA,NA,NA,NA,carrs_safeway,namedStore
+alaska,store,4665.2,kale,certified_organic,carrs_safeway,NA,149.01,4151.7,NA,NA,NA,NA,NA,NA,carrs_safeway,namedStore
+alaska,store,4665.1,kale,certified_organic,carrs_safeway,NA,159.88,4435.03,NA,NA,NA,NA,NA,NA,carrs_safeway,namedStore
+alaska,store,4667.1,lettuce,local,fred_meyer,NA,19.62,152.79,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+alaska,store,4667.2,lettuce,local,fred_meyer,NA,30.65,257.64,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+alaska,store,4667.3,lettuce,local,fred_meyer,NA,21.83,260.85,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+alaska,store,4669.1,carrot,local,fred_meyer,NA,21.26,85.87,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+alaska,store,4669.2,carrot,local,fred_meyer,NA,21.74,71.15,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+alaska,store,4669.3,carrot,local,fred_meyer,NA,16.89,42.64,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+alaska,store,4668.1,carrot,local,fred_meyer,NA,17.65,33.36,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+alaska,store,4668.2,carrot,local,fred_meyer,NA,20.99,66.61,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+alaska,store,4668.3,carrot,local,fred_meyer,NA,12.79,26.62,NA,NA,NA,NA,NA,NA,fred_meyer,namedStore
+south_carolina,farm,2297,cherry_tomato,NA,NA,NA,57.54,992.78,NA,65.6,166,NA,NA,NA,farmUnnamed,farmUnnamed
+south_carolina,farm,2299,cherry_tomato,NA,NA,NA,49.97,890.97,NA,65.52,164.2,NA,NA,NA,farmUnnamed,farmUnnamed
+south_carolina,farm,2300,cherry_tomato,NA,NA,NA,109.02,3699.52,3,65.47,165.38,NA,4,3,farmUnnamed,farmUnnamed
+south_carolina,farm,2295,cherry_tomato,NA,NA,NA,59.29,1860.85,NA,65.42,164.91,NA,NA,NA,farmUnnamed,farmUnnamed
+south_carolina,farm,2298,cherry_tomato,NA,NA,NA,58.39,1146.45,NA,65.38,162.57999999999998,NA,NA,NA,farmUnnamed,farmUnnamed
+south_carolina,farm,2296,cherry_tomato,NA,NA,NA,47.62,607.8,NA,65.34,164.46,NA,NA,NA,farmUnnamed,farmUnnamed
+iowa,farm,2265,cherry_tomato,NA,NA,NA,53.29,475.69,NA,112.87,142.08,NA,NA,NA,farmUnnamed,farmUnnamed
+iowa,farm,2285,cherry_tomato,NA,NA,NA,59.75,1300.24,NA,112.92,143.44,NA,NA,NA,farmUnnamed,farmUnnamed
+iowa,farm,2288,cherry_tomato,NA,NA,NA,42.08,1178.76,NA,112.98,141.77,NA,NA,NA,farmUnnamed,farmUnnamed
+iowa,farm,2287,cherry_tomato,NA,NA,NA,52.3,1967.6,NA,113.64,143.46,NA,NA,NA,farmUnnamed,farmUnnamed
+iowa,farm,2284,cherry_tomato,NA,NA,NA,50.67,501.85,NA,114.01,142.25,NA,NA,NA,farmUnnamed,farmUnnamed
+iowa,farm,2435,spinach,NA,NA,NA,374.08,34.86,3,276.18,447.08000000000004,NA,3,3,farmUnnamed,farmUnnamed
+iowa,farm,2431,lettuce,NA,NA,NA,82.84,199.66,3,278.95,384.49,NA,3,3,farmUnnamed,farmUnnamed
+iowa,farm,2436,spinach,NA,NA,NA,361.49,32.69,3,278.73,449.94000000000005,NA,3,3,farmUnnamed,farmUnnamed
+iowa,farm,2433,spinach,NA,NA,NA,329.18,28.97,2,278.56,383.40999999999997,NA,2,2,farmUnnamed,farmUnnamed
+iowa,farm,2432,spinach,NA,NA,NA,404.51,34.48,4,278.52,448.87,NA,3,4,farmUnnamed,farmUnnamed
+south_carolina,farm,2031,lettuce,NA,NA,NA,59.32,661.21,NA,145.03,146.62,NA,NA,NA,farmUnnamed,farmUnnamed
+south_carolina,farm,2034,lettuce,NA,NA,NA,140.61,645.69,NA,144.83,147.24,NA,NA,NA,farmUnnamed,farmUnnamed
+south_carolina,farm,2032,lettuce,NA,NA,NA,126.56,643.82,NA,144.75,145.86,NA,NA,NA,farmUnnamed,farmUnnamed
+south_carolina,farm,2033,lettuce,NA,NA,NA,76.38,666.41,NA,144.71,146.04000000000002,NA,NA,NA,farmUnnamed,farmUnnamed
+iowa,farm,2434,kale,NA,NA,NA,509.14,1667.78,3,278.46,450.16999999999996,NA,2,3,farmUnnamed,farmUnnamed
+massachusetts,farm,3936,carrot,NA,NA,NA,12.94,34.09,5,2911.95,3411.2599999999998,NA,5,5,farmUnnamed,farmUnnamed
+massachusetts,farm,3937.1,carrot,NA,NA,NA,5.15,36.42,5,NA,NA,NA,5,5,farmUnnamed,farmUnnamed
+massachusetts,farm,3937.2,carrot,NA,NA,NA,7.33,94.18,5,NA,NA,NA,5,5,farmUnnamed,farmUnnamed
+massachusetts,farm,3938,carrot,NA,NA,NA,14.9,53.07,5,2911.95,3410.7799999999997,NA,5,5,farmUnnamed,farmUnnamed
+massachusetts,farm,3876,grape,NA,NA,NA,303.92,1202.42,2,2913.1,2930.13,NA,4,2,farmUnnamed,farmUnnamed
+massachusetts,farm,3877,grape,NA,NA,NA,602.56,19855.8,2,2913.06,2930.7,NA,4,2,farmUnnamed,farmUnnamed
+massachusetts,farm,3878,grape,NA,NA,NA,642.09,1408.28,2,2913.06,2913.73,NA,4,2,farmUnnamed,farmUnnamed
+massachusetts,farm,2791,carrot,NA,NA,NA,2.64,50.04,5,79.23,222.70999999999998,NA,2,5,farmUnnamed,farmUnnamed
+massachusetts,farm,2788.1,carrot,NA,NA,NA,6.28,212.16,5,NA,NA,NA,2,5,farmUnnamed,farmUnnamed
+massachusetts,farm,2788.2,carrot,NA,NA,NA,6.44,119.63,5,NA,NA,NA,2,5,farmUnnamed,farmUnnamed
+massachusetts,farm,2788.3,carrot,NA,NA,NA,5.55,115.05,5,NA,NA,NA,2,5,farmUnnamed,farmUnnamed
+massachusetts,farm,2789,carrot,NA,NA,NA,1.69,42.65,5,79.23,223.07999999999998,NA,2,5,farmUnnamed,farmUnnamed
+pennsylvania,farm,2264,kale,NA,NA,NA,91.72,7744.31,3,164.09,165.76,NA,2,3,farmUnnamed,farmUnnamed
+pennsylvania,farm,2262,kale,NA,NA,NA,100.51,9271.88,3,164.09,165.09,NA,2,3,farmUnnamed,farmUnnamed
+massachusetts,store,2162.1,carrot,certified_organic,big_y,NA,2.65,67.01,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,2162.2,carrot,certified_organic,big_y,NA,2.19,48.3,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,2162.3,carrot,certified_organic,big_y,NA,3.08,48.22,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,2154.1,carrot,certified_organic,big_y,NA,6.59,48.06,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,2154.2,carrot,certified_organic,big_y,NA,8.53,59.85,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,2154.3,carrot,certified_organic,big_y,NA,9.16,103.67,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,2145.1,carrot,certified_organic,big_y,NA,3.01,49.08,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,2145.2,carrot,certified_organic,big_y,NA,2.54,40.43,NA,NA,NA,NA,NA,NA,big_y,namedStore
+massachusetts,store,2145.3,carrot,certified_organic,big_y,NA,4.3,50.22,NA,NA,NA,NA,NA,NA,big_y,namedStore
+connecticut,farm,2158,kale,certified_organic notill cover_crops nospray,NA,kris mccue,75.28,4931.16,NA,115.21,121.6,NA,NA,NA,kris mccue,farmer
+connecticut,farm,2153,kale,certified_organic notill cover_crops nospray,NA,kris mccue,162.63,24294.2,NA,114.78,118.27,NA,NA,NA,kris mccue,farmer
+connecticut,farm,2152,lettuce,certified_organic notill cover_crops nospray,NA,kris mccue,17.05,273.69,NA,114.55,116.46,NA,NA,NA,kris mccue,farmer
+connecticut,farm,2146,lettuce,certified_organic notill cover_crops nospray,NA,kris mccue,22.67,319.82,NA,114.38,115.64999999999999,NA,NA,NA,kris mccue,farmer
+michigan,farm,3184,carrot,certified_organic,NA,Richard Andre,1.88,19.5,NA,0.12,163.48000000000002,105,NA,NA,Richard Andre,farmer
+michigan,farm,3186,carrot,certified_organic,NA,Richard Andre,2.54,28.7,NA,0.12,164.70000000000002,105,NA,NA,Richard Andre,farmer
+michigan,farm,3189,carrot,certified_organic,NA,Richard Andre,2.29,35.6,NA,0.12,96.18,105,NA,NA,Richard Andre,farmer
+michigan,farm,3181,carrot,certified_organic,NA,Richard Andre,3.35,31.47,NA,0.07,138.47,105,NA,NA,Richard Andre,farmer
+michigan,farm,3188,carrot,certified_organic,NA,Richard Andre,2.32,54.22,NA,0.07,119.82,105,NA,NA,Richard Andre,farmer
+michigan,farm,3182,carrot,certified_organic,NA,Richard Andre,2.6,51.79,NA,0.09,137.94,105,NA,NA,Richard Andre,farmer
+michigan,farm,3185,carrot,certified_organic,NA,Richard Andre,1.47,20.62,NA,0.06,164.88,105,NA,NA,Richard Andre,farmer
+michigan,farm,3183,carrot,certified_organic,NA,Richard Andre,2.72,18.01,NA,0.04,163.88,105,NA,NA,Richard Andre,farmer
+michigan,farm,3187,carrot,certified_organic,NA,Richard Andre,2.44,25.47,NA,0.04,164.38,105,NA,NA,Richard Andre,farmer
+massachusetts,farm,2594,carrot,NA,NA,NA,1.09,6.69,NA,92.01,143.10000000000002,NA,NA,NA,farmUnnamed,farmUnnamed
+massachusetts,farm,2591,carrot,NA,NA,NA,81.93,3490.48,NA,92.01,96.41000000000001,NA,NA,NA,farmUnnamed,farmUnnamed
+massachusetts,farm,2593,carrot,NA,NA,NA,34.51,1296.4,NA,92.01,97.67,NA,NA,NA,farmUnnamed,farmUnnamed
+connecticut,farm,2177,carrot,NA,NA,NA,4.25,144.57,NA,121.79,171.64000000000001,NA,NA,NA,farmUnnamed,farmUnnamed
+connecticut,farm,2178,carrot,NA,NA,NA,6.29,184.46,NA,121.79,172.21,NA,NA,NA,farmUnnamed,farmUnnamed
+connecticut,farm,2179,carrot,NA,NA,NA,4.43,141.83,NA,121.79,171.28,NA,NA,NA,farmUnnamed,farmUnnamed
+connecticut,farm,2000,kale,NA,NA,NA,132.91,8299.6,5,121.19,124.64,NA,5,5,farmUnnamed,farmUnnamed
+connecticut,farm,2001,kale,NA,NA,NA,206.47,12724.1,5,121.19,124.39,NA,5,5,farmUnnamed,farmUnnamed
+connecticut,farm,2002,kale,NA,NA,NA,159.75,8221.51,5,121.19,124.96,NA,5,5,farmUnnamed,farmUnnamed
+michigan,farm,2054,kale,NA,NA,NA,418.15,2507.69,4,2.36,96.78,NA,3,4,farmUnnamed,farmUnnamed
+michigan,farm,2055,kale,NA,NA,NA,255.18,20382,4,2.36,97.23,NA,3,4,farmUnnamed,farmUnnamed
+michigan,farm,2059,kale,NA,NA,NA,404.15,32499.2,4,2.36,96.45,NA,3,4,farmUnnamed,farmUnnamed
+michigan,farm,2058,lettuce,NA,NA,NA,52.5,2498.81,4,2.19,98.11,NA,2,4,farmUnnamed,farmUnnamed
+michigan,farm,2057,lettuce,NA,NA,NA,23.71,854.77,4,2.19,51.86,NA,2,4,farmUnnamed,farmUnnamed
+michigan,farm,2056,lettuce,NA,NA,NA,19.78,327.71,4,2.19,51.22,NA,2,4,farmUnnamed,farmUnnamed
+michigan,farm,2041,carrot,NA,NA,NA,7.95,118.86,4,1.98,144.16,NA,4,4,farmUnnamed,farmUnnamed
+michigan,farm,2037,carrot,NA,NA,NA,7.19,201.08,4,1.98,125.7,NA,4,4,farmUnnamed,farmUnnamed
+michigan,farm,2038,carrot,NA,NA,NA,9.83,174.82,4,1.98,125.4,NA,4,4,farmUnnamed,farmUnnamed
+michigan,farm,2040,carrot,NA,NA,NA,5.59,103.32,4,1.91,123.5,NA,5,4,farmUnnamed,farmUnnamed
+michigan,farm,2039,carrot,NA,NA,NA,5.79,108.88,4,1.91,123.11999999999999,NA,5,4,farmUnnamed,farmUnnamed
+michigan,farm,2036,carrot,NA,NA,NA,4.78,83.88,4,1.91,123.86,NA,5,4,farmUnnamed,farmUnnamed
+michigan,farm,2223,carrot,NA,NA,NA,8.14,264,5,1.72,124.82,NA,5,5,farmUnnamed,farmUnnamed
+michigan,farm,2224,carrot,NA,NA,NA,3.27,61.99,5,1.72,124.06,NA,5,5,farmUnnamed,farmUnnamed
+michigan,farm,2228,carrot,NA,NA,NA,4.4,110.67,5,1.72,124.53,NA,5,5,farmUnnamed,farmUnnamed
+maryland,farm,2319,lettuce,organic notill cover_crops,NA,Carolyn Johnson,30.15,325.84,NA,51.13,53.59,150,NA,NA,Carolyn Johnson,farmer
+maryland,farm,2839,lettuce,organic notill cover_crops,NA,Carolyn Johnson,36.63,227.13,NA,51.13,53.77,150,NA,NA,Carolyn Johnson,farmer
+maryland,farm,2849,lettuce,organic notill cover_crops,NA,Carolyn Johnson,30.9,441.49,NA,51.13,53.080000000000005,150,NA,NA,Carolyn Johnson,farmer
+maryland,farm,2304,kale,organic cover_crops nospray,NA,Carolyn Johnson,185.33,14610.6,NA,50.94,51.629999999999995,149,NA,NA,Carolyn Johnson,farmer
+massachusetts,farm,2996,lettuce,NA,NA,Julie Rawson,49.72,7894.07,NA,-0.16,1173.1699999999998,NA,NA,NA,Julie Rawson,farmer
+massachusetts,farm,2993.1,lettuce,certified_organic,NA,julie rawson,34.94,701.92,NA,NA,NA,NA,NA,NA,julie rawson,farmer
+massachusetts,farm,2993.2,lettuce,certified_organic,NA,julie rawson,34.96,642.55,NA,NA,NA,NA,NA,NA,julie rawson,farmer
+massachusetts,farm,2993.3,lettuce,certified_organic,NA,julie rawson,29.68,686.88,NA,NA,NA,NA,NA,NA,julie rawson,farmer
+michigan,farm,3259.1,cherry_tomato,organic nospray,NA,Jacob D'lamater,27.17,895.77,NA,NA,NA,78,NA,NA,Jacob D'lamater,farmer
+michigan,farm,3259.2,cherry_tomato,organic nospray,NA,Jacob D'lamater,42.52,755.73,NA,NA,NA,78,NA,NA,Jacob D'lamater,farmer
+michigan,farm,3259.3,cherry_tomato,organic nospray,NA,Jacob D'lamater,32.08,944.27,NA,NA,NA,78,NA,NA,Jacob D'lamater,farmer
+connecticut,farm,2151,kale,organic nospray,NA,Ed Vanderbeck,191.92,10507.8,NA,50.47,67.53,NA,NA,NA,Ed Vanderbeck,farmer
+connecticut,farm,2161,kale,organic nospray,NA,Ed Vanderbeck,198.1,13040.8,NA,50.47,68.09,NA,NA,NA,Ed Vanderbeck,farmer
+connecticut,farm,2155,kale,organic nospray,NA,Ed Vanderbeck,152.82,11662,NA,50.47,68.53999999999999,NA,NA,NA,Ed Vanderbeck,farmer
+north_carolina,farm,2109,carrot,NA,NA,NA,6.4,25.58,4,68.14,89.27,NA,3,4,farmUnnamed,farmUnnamed
+north_carolina,farm,2108,carrot,NA,NA,NA,5.76,14.56,4,68.14,90.66,NA,3,4,farmUnnamed,farmUnnamed
+north_carolina,farm,2111,carrot,NA,NA,NA,5.57,19.95,4,68.14,87.91,NA,3,4,farmUnnamed,farmUnnamed
+north_carolina,farm,2110,carrot,NA,NA,NA,5.98,12.17,4,67.64,89.71000000000001,NA,3,4,farmUnnamed,farmUnnamed
+north_carolina,farm,2112,carrot,NA,NA,NA,8.1,32.47,4,67.64,84.66,NA,3,4,farmUnnamed,farmUnnamed
+north_carolina,farm,2113,carrot,NA,NA,NA,9.24,44.06,4,67.64,88.34,NA,3,4,farmUnnamed,farmUnnamed
+connecticut,farm,2144,cherry_tomato,organic nospray,NA,Ed Vanderbeck,21.56,1899.07,NA,50.68,72.78,NA,NA,NA,Ed Vanderbeck,farmer
+connecticut,farm,2142,cherry_tomato,organic nospray,NA,Ed Vanderbeck,22.11,2417.51,NA,50.68,73.2,NA,NA,NA,Ed Vanderbeck,farmer
+connecticut,farm,2135,cherry_tomato,organic nospray,NA,Ed Vanderbeck,16.23,1494.74,NA,50.68,72.38,NA,NA,NA,Ed Vanderbeck,farmer
+north_carolina,farm,3217,cherry_tomato,NA,NA,NA,37.9,550.62,4,74.74,98.91999999999999,NA,3,4,farmUnnamed,farmUnnamed
+north_carolina,farm,3218,cherry_tomato,NA,NA,NA,34.03,863.42,4,74.74,98.49,NA,3,4,farmUnnamed,farmUnnamed
+north_carolina,farm,3219,cherry_tomato,NA,NA,NA,30.36,745.31,4,74.74,99.28999999999999,NA,3,4,farmUnnamed,farmUnnamed
+north_carolina,farm,3220,cherry_tomato,NA,NA,NA,21.16,995.92,3,75.55,96.06,NA,2,3,farmUnnamed,farmUnnamed
+north_carolina,farm,3221,cherry_tomato,NA,NA,NA,19.1,1069.25,3,75.55,94.92,NA,2,3,farmUnnamed,farmUnnamed
+north_carolina,farm,3222,cherry_tomato,NA,NA,NA,52.7,841.16,3,75.55,101.1,NA,2,3,farmUnnamed,farmUnnamed
+north_carolina,farm,3223,cherry_tomato,NA,NA,NA,26.46,1018.65,2,75.55,96.81,NA,2,2,farmUnnamed,farmUnnamed
+north_carolina,farm,3224,cherry_tomato,NA,NA,NA,29.22,1147.49,2,75.55,95.32,NA,2,2,farmUnnamed,farmUnnamed
+north_carolina,farm,3225,cherry_tomato,NA,NA,NA,29.98,3143.14,2,75.55,95.69999999999999,NA,2,2,farmUnnamed,farmUnnamed
+north_carolina,farm,3214,cherry_tomato,NA,NA,NA,54.11,863.23,3,75.51,98.72,NA,3,3,farmUnnamed,farmUnnamed
+north_carolina,farm,3215,cherry_tomato,NA,NA,NA,50.18,894.8,3,75.51,100.39,NA,3,3,farmUnnamed,farmUnnamed
+north_carolina,farm,3216,cherry_tomato,NA,NA,NA,46.35,5451.74,3,75.51,98.31,NA,3,3,farmUnnamed,farmUnnamed
+vermont,farm,3208,cherry_tomato,NA,NA,NA,26.67,561.36,NA,115.42,193.34,NA,NA,NA,farmUnnamed,farmUnnamed
+vermont,farm,3209,cherry_tomato,NA,NA,NA,22.52,491,NA,115.42,192.49,NA,NA,NA,farmUnnamed,farmUnnamed
+vermont,farm,3210,cherry_tomato,NA,NA,NA,25.57,669.03,NA,115.42,192.8,NA,NA,NA,farmUnnamed,farmUnnamed
+vermont,farm,3211,cherry_tomato,NA,NA,NA,39.81,687.25,NA,115.51,191.18,NA,NA,NA,farmUnnamed,farmUnnamed
+vermont,farm,3212,cherry_tomato,NA,NA,NA,37.14,621.34,NA,115.51,192.01,NA,NA,NA,farmUnnamed,farmUnnamed
+vermont,farm,3213,cherry_tomato,NA,NA,NA,34.14,637.1,NA,115.51,193.81,NA,NA,NA,farmUnnamed,farmUnnamed
+connecticut,farm,2156,carrot,organic nospray,NA,Ed Vanderbeck,8.01,77.91,NA,49.83,96.69,NA,NA,NA,Ed Vanderbeck,farmer
+rhode_island,farm,2042,carrot,NA,NA,NA,5.43,72.45,5,-46.35,-45.81,NA,4,4,farmUnnamed,farmUnnamed
+rhode_island,farm,2047,carrot,NA,NA,NA,4.6,19.6,5,-46.35,-46.230000000000004,NA,4,4,farmUnnamed,farmUnnamed
+washington,farm,2093,lettuce,NA,NA,NA,21.46,271.99,4,68.48,313.62,NA,4,4,farmUnnamed,farmUnnamed
+washington,farm,2092,lettuce,NA,NA,NA,19.96,374.84,4,68.48,315.69,NA,4,4,farmUnnamed,farmUnnamed
+washington,farm,3169,carrot,NA,NA,NA,5.34,58.94,4,65.32,189.17,NA,4,4,farmUnnamed,farmUnnamed
+washington,farm,3170,carrot,NA,NA,NA,5.36,38.58,4,65.32,188.32999999999998,NA,4,4,farmUnnamed,farmUnnamed
+washington,farm,3171,carrot,NA,NA,NA,7.93,74.76,4,65.32,187.79,NA,4,4,farmUnnamed,farmUnnamed
+washington,farm,3166,cherry_tomato,NA,NA,NA,58.29,1819.58,3,63.73,165.53,NA,3,3,farmUnnamed,farmUnnamed
+washington,farm,3168,cherry_tomato,NA,NA,NA,39.8,722.77,4,63.32,164.11,NA,4,4,farmUnnamed,farmUnnamed
+washington,farm,3167,cherry_tomato,NA,NA,NA,53.62,1686.76,4,63.09,161.18,NA,3,3,farmUnnamed,farmUnnamed
+connecticut,farm,2546,grape,cover_crops,NA,marshall epstein,206.3,7489.34,NA,94.27,127.61,NA,NA,NA,marshall epstein,farmer
+connecticut,farm,2545b,grape,cover_crops,NA,marshall epstein,1212.91,26315.3,NA,NA,NA,NA,NA,NA,marshall epstein,farmer
+connecticut,farm,2544b,grape,cover_crops,NA,marshall epstein,126.46,1445.22,NA,NA,NA,NA,NA,NA,marshall epstein,farmer
+connecticut,farm,2159,kale,cover_crops,NA,marshall epstein,116.27,19105.7,NA,95.55,170.94,NA,NA,NA,marshall epstein,farmer
+connecticut,farm,2148,kale,cover_crops,NA,marshall epstein,57.46,4368.67,NA,95.88,170.64999999999998,NA,NA,NA,marshall epstein,farmer
+california,farm,3342,cherry_tomato,organic notill nospray,NA,Paula and David Shatkin,21.55,210.44,3,88.04,165.34,98,3,3,Paula and David Shatkin,farmer
+new_york,farm,2766,cherry_tomato,NA,NA,NA,31.63,987.22,NA,54.91,96.09,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,2764,cherry_tomato,NA,NA,NA,76.05,851.24,4,55.26,340.76,NA,4,NA,farmUnnamed,farmUnnamed
+new_york,farm,2765,cherry_tomato,NA,NA,NA,32.82,766.74,4,55.26,96.78,NA,4,NA,farmUnnamed,farmUnnamed
+new_york,farm,2763,cherry_tomato,NA,NA,NA,31.56,643.04,4,55.26,77.1,NA,4,NA,farmUnnamed,farmUnnamed
+connecticut,farm,2147,lettuce,cover_crops nospray,NA,Josh Bristol,16.79,410.78,NA,54.95,96.07,NA,NA,NA,Josh Bristol,farmer
+connecticut,farm,2140,kale,cover_crops nospray,NA,Josh Bristol,146.9,19876.9,NA,51.98,95.44,NA,NA,NA,Josh Bristol,farmer
+connecticut,farm_market,2157.2,carrot,cover_crops nospray,NA,Josh Bristol,11.29,32.75,NA,NA,NA,NA,NA,NA,Josh Bristol,farmer
+connecticut,farm_market,2157.1,carrot,cover_crops nospray,NA,Josh Bristol,12.47,36.09,NA,NA,NA,NA,NA,NA,Josh Bristol,farmer
+washington,farm,3448,kale,certified_organic notill cover_crops,NA,Pauline Chiquet,111.27,7761.48,NA,47.65,256.12,96,NA,NA,Pauline Chiquet,farmer
+washington,farm,3442,kale,certified_organic notill cover_crops,NA,Pauline Chiquet,99.41,7692.13,NA,NA,NA,96,NA,NA,Pauline Chiquet,farmer
+washington,farm,3441,kale,certified_organic notill cover_crops,NA,Pauline Chiquet,116.64,6918.6,NA,47.65,232.48000000000002,96,NA,NA,Pauline Chiquet,farmer
+washington,farm,3447,kale,certified_organic notill cover_crops,NA,Pauline Chiquet,71.46,4853.76,NA,46.66,254.32,96,NA,NA,Pauline Chiquet,farmer
+washington,farm,3449,kale,certified_organic notill cover_crops,NA,Pauline Chiquet,58.86,2092.35,NA,46.7,255.42000000000002,96,NA,NA,Pauline Chiquet,farmer
+washington,farm,3450,kale,certified_organic notill cover_crops,NA,Pauline Chiquet,70.84,6708.12,NA,46.66,164.89,96,NA,NA,Pauline Chiquet,farmer
+connecticut,farm,2468,kale,organic notill,NA,Jocelyn Tidwell,122.77,7842.6,NA,121.18,283.89,NA,NA,NA,Jocelyn Tidwell,farmer
+north_carolina,farm,3551,cherry_tomato,organic notill nospray,NA,Becki Janes,102.02,560.76,NA,86.85,238.72,85,NA,NA,Becki Janes,farmer
+ohio,farm,2018,kale,organic,NA,Mike,109.35,12390.8,5,171.11,288.03000000000003,NA,5,5,Mike,farmer
+ohio,farm,2019,kale,organic,NA,mike,100.38,3647.95,3,96.77,212.3,NA,3,3,mike,farmer
+ohio,farm,2020,kale,organic,NA,mike,88.66,9205.26,1,96.6,212.38,NA,1,1,mike,farmer
+connecticut,farm,2536.1,cherry_tomato,NA,NA,emily tuller,34.79,687.94,NA,NA,NA,NA,NA,NA,emily tuller,farmer
+connecticut,farm,2536.2,cherry_tomato,NA,NA,emily tuller,32.31,808.95,NA,NA,NA,NA,NA,NA,emily tuller,farmer
+connecticut,farm,2553.1,cherry_tomato,cover_crops,NA,emily tuller,29.8,790.68,NA,NA,NA,NA,NA,NA,emily tuller,farmer
+connecticut,farm,2553.2,cherry_tomato,cover_crops,NA,emily tuller,31.94,714.2,NA,NA,NA,NA,NA,NA,emily tuller,farmer
+california,farm,3327,kale,organic notill nospray biodynamic,NA,Neal Katz,92.49,1695.28,3,39.66,154.29,NA,3,3,Neal Katz,farmer
+california,farm,3330,kale,organic notill nospray biodynamic,NA,Neal Katz,41.55,1489.16,3,39.66,158.14999999999998,NA,3,3,Neal Katz,farmer
+california,farm,3341,kale,organic,NA,doug and cathy conover,20.32,3686.69,NA,23.33,141.42000000000002,NA,NA,NA,doug and cathy conover,farmer
+california,farm,3323,grape,organic cover_crops nospray,NA,doug and cathy conover,171.42,1879.93,5,23.23,161.79999999999998,NA,5,5,doug and cathy conover,farmer
+california,farm,3322,grape,organic cover_crops nospray,NA,doug and cathy conover,36.49,1025.86,5,23.23,161.48999999999998,NA,5,5,doug and cathy conover,farmer
+florida,farm,3572,kale,organic,NA,danielle kovach,169.08,7472.46,4,52.38,121.74000000000001,56,4,5,danielle kovach,farmer
+connecticut,farm,3391,cherry_tomato,organic nospray,NA,My garden,44.64,821.81,4,185.5,237.57999999999998,149,3,4,My garden,farmer
+connecticut,farm,3392,cherry_tomato,NA,NA,church community donation,27.46,1235.65,4,114.9,166.69,141,2,3,church community donation,farmer
+maryland,farm,2845,cherry_tomato,organic notill cover_crops nospray,NA,Carolyn Johnson,36.35,1409.32,NA,51.32,56.09,137,NA,NA,Carolyn Johnson,farmer
+maryland,farm,2846,cherry_tomato,organic notill cover_crops nospray,NA,Carolyn Johnson,53.68,1282.11,NA,51.32,55.87,137,NA,NA,Carolyn Johnson,farmer
+maryland,farm,2848,cherry_tomato,organic notill cover_crops nospray,NA,Carolyn Johnson,28.56,912.93,NA,51.32,55.47,137,NA,NA,Carolyn Johnson,farmer
+pennsylvania,farm,2917,spinach,NA,NA,NA,48.51,597.74,NA,98.21,126.5,NA,NA,NA,farmUnnamed,farmUnnamed
+ohio,farm,2023,lettuce,organic,NA,mike,25.08,285.31,4,94.2,211.35000000000002,NA,4,4,mike,farmer
+ohio,farm,2022,lettuce,organic,NA,mike,24.53,250.22,4,94.2,211.82,NA,4,4,mike,farmer
+ohio,farm,2021,lettuce,organic,NA,mike,35.92,427.01,4,94.2,211.66,NA,4,4,mike,farmer
+california,farm,3343,grape,organic notill nospray,NA,Paula and David Shatkin,192.92,2352.03,2,88.52,163.72,0,2,2,Paula and David Shatkin,farmer
+california,farm,3350,grape,organic notill nospray,NA,Paula and David Shatkin,564.93,2186.46,2,88.52,165.54,0,2,2,Paula and David Shatkin,farmer
+california,farm,3349,grape,organic notill nospray,NA,Paula and David Shatkin,1049.81,2420.91,2,88.52,162.39999999999998,0,2,2,Paula and David Shatkin,farmer
+north_carolina,farm,3544,cherry_tomato,organic notill cover_crops nospray,NA,Dr. John Wilson Community Garden,62.67,1084.39,NA,95.05,148.35,92,NA,NA,Dr. John Wilson Community Garden,farmer
+north_carolina,farm,3545,cherry_tomato,organic notill cover_crops nospray,NA,Dr. John Wilson Community Garden,46.83,1215.88,NA,95.05,148.74,92,NA,NA,Dr. John Wilson Community Garden,farmer
+north_carolina,farm,3546,cherry_tomato,organic notill cover_crops nospray,NA,Dr. John Wilson Community Garden,43.71,780.25,NA,95.05,168.32,92,NA,NA,Dr. John Wilson Community Garden,farmer
+north_carolina,farm,3524,lettuce,organic notill cover_crops nospray,NA,Dr. John Wilson Community Garden,48.69,360.51,NA,95.56,120.61,92,NA,NA,Dr. John Wilson Community Garden,farmer
+north_carolina,farm,3530,kale,organic notill cover_crops nospray,NA,Dr. John Wilson Community Garden,83.01,10337.9,NA,94.57,122.36999999999999,92,NA,NA,Dr. John Wilson Community Garden,farmer
+north_carolina,farm,3532,kale,organic notill cover_crops nospray,NA,Dr. John Wilson Community Garden,57.7,1699.54,NA,94.57,144.34,92,NA,NA,Dr. John Wilson Community Garden,farmer
+north_carolina,farm,3541,kale,organic notill cover_crops nospray,NA,Dr. John Wilson Community Garden,103.89,17670.2,NA,95.4,121.73,36,NA,NA,Dr. John Wilson Community Garden,farmer
+north_carolina,farm,3542,kale,organic notill cover_crops nospray,NA,Dr. John Wilson Community Garden,135.09,24441.8,NA,95.4,144.53,36,NA,NA,Dr. John Wilson Community Garden,farmer
+north_carolina,farm,3543,kale,organic notill cover_crops nospray,NA,Dr. John Wilson Community Garden,165.99,21582.9,NA,95.4,121.35000000000001,36,NA,NA,Dr. John Wilson Community Garden,farmer
+north_carolina,farm,3538,kale,organic notill cover_crops nospray,NA,Dr. John Wilson Community Garden,208.33,26452.5,NA,95.35,143.45999999999998,36,NA,NA,Dr. John Wilson Community Garden,farmer
+north_carolina,farm,3539,kale,organic notill cover_crops nospray,NA,Dr. John Wilson Community Garden,51.95,2442.15,NA,95.35,120.96,36,NA,NA,Dr. John Wilson Community Garden,farmer
+north_carolina,farm,3540,kale,organic notill cover_crops nospray,NA,Dr. John Wilson Community Garden,126.04,11833.8,NA,95.35,120.47999999999999,36,NA,NA,Dr. John Wilson Community Garden,farmer
+connecticut,farm,3653.1,kale,organic nospray,NA,gilman mucaj,62.41,7132.06,NA,NA,NA,NA,NA,NA,gilman mucaj,farmer
+connecticut,farm,3653.2,kale,organic nospray,NA,gilman mucaj,68.35,1810.88,NA,NA,NA,NA,NA,NA,gilman mucaj,farmer
+north_carolina,farm,2015,cherry_tomato,NA,NA,NA,25.79,3387.5,4,337.26,505.33,NA,4,4,farmUnnamed,farmUnnamed
+north_carolina,farm,2016,cherry_tomato,NA,NA,NA,22.09,740.52,4,337.26,504.94,NA,4,4,farmUnnamed,farmUnnamed
+north_carolina,farm,2017,cherry_tomato,NA,NA,NA,30.44,759.07,4,337.26,505.67999999999995,NA,4,4,farmUnnamed,farmUnnamed
+california,farm,3328,kale,organic notill nospray biodynamic,NA,Neal Katz,106.99,9542.38,3,24.53,139.37,NA,3,3,Neal Katz,farmer
+california,farm,3329,other,certified_organic cover_crops nospray biodynamic,NA,Neal Katz,88.73,110.68,NA,-25.42,88.76,NA,NA,NA,Neal Katz,farmer
+california,farm,3554,cherry_tomato,organic notill nospray,NA,Carol and Jim Buroga,35.96,99.6,4,1558.72,1631.67,98,4,4,Carol and Jim Buroga,farmer
+california,farm,3353,lettuce,organic notill nospray,NA,Carol and Jim Buroga,21.18,590.62,3,87.43,352.94,98,3,3,Carol and Jim Buroga,farmer
+washington,farm,3461,kale,certified_organic notill cover_crops,NA,Pauline Chiquet,111.66,13497.3,NA,46.82,89.59,96,NA,NA,Pauline Chiquet,farmer
+washington,farm,3460,kale,certified_organic notill cover_crops,NA,Pauline Chiquet,100.84,12497.9,NA,46.82,90.97,96,NA,NA,Pauline Chiquet,farmer
+connecticut,farm,2174.2,kale,organic nospray,NA,gilman mucaj,123.43,10215.4,NA,NA,NA,NA,NA,NA,gilman mucaj,farmer
+connecticut,farm,2174.1,kale,organic nospray,NA,gilman mucaj,241.64,15563.9,NA,NA,NA,NA,NA,NA,gilman mucaj,farmer
+connecticut,farm,2560.1,kale,nospray certified_organic,NA,daren hall,39.75,7354.87,NA,NA,NA,NA,NA,NA,daren hall,farmer
+connecticut,farm,2560.2,kale,nospray certified_organic,NA,daren hall,39.46,1558.5,NA,NA,NA,NA,NA,NA,daren hall,farmer
+connecticut,farm,2560.3,kale,nospray certified_organic,NA,daren hall,32.46,7027.87,NA,NA,NA,NA,NA,NA,daren hall,farmer
+connecticut,farm,3652.3,kale,nospray certified_organic,NA,daren hall,51.62,9270.07,NA,NA,NA,NA,NA,NA,daren hall,farmer
+connecticut,farm,3652.2,kale,nospray certified_organic,NA,daren hall,58.18,12549.6,NA,NA,NA,NA,NA,NA,daren hall,farmer
+connecticut,farm,3652.1,kale,nospray certified_organic,NA,daren hall,70.05,22531.5,NA,NA,NA,NA,NA,NA,daren hall,farmer
+maryland,farm,2330,cherry_tomato,certified_organic,NA,Don Ludke,56.48,1540.69,NA,-264.32,-232.26,NA,NA,NA,Don Ludke,farmer
+connecticut,farm,2150,lettuce,cover_crops nospray,NA,Josh Bristol,17.39,110.69,NA,-208.84,-185.16,NA,NA,NA,Josh Bristol,farmer
+massachusetts,farm,3480,carrot,organic,NA,Steve Chiarizio,2.01,18.26,NA,46.43,335.5,133,NA,NA,Steve Chiarizio,farmer
+massachusetts,farm,3481,carrot,organic,NA,Steve Chiarizio,4.79,28.4,NA,46.43,287.96,133,NA,NA,Steve Chiarizio,farmer
+massachusetts,farm,3482,carrot,organic,NA,Steve Chiarizio,14.67,18.89,NA,46.43,217.81,133,NA,NA,Steve Chiarizio,farmer
+connecticut,farm,2003,cherry_tomato,organic notill cover_crops nospray,NA,Greg Hazelton,37.84,7133.47,NA,73.74,91.39999999999999,NA,NA,NA,Greg Hazelton,farmer
+connecticut,farm,3654,carrot,organic notill cover_crops nospray,NA,Greg Hazelton,26.68,79.2,NA,73.8,119.55,NA,NA,NA,Greg Hazelton,farmer
+connecticut,farm,2551,carrot,organic notill cover_crops nospray,NA,Greg Hazelton,0.29,48.04,NA,75.34,121.62,NA,NA,NA,Greg Hazelton,farmer
+pennsylvania,store,3568,carrot,local certified_organic,common_market_coop,NA,9.13,81.68,NA,NA,NA,NA,NA,NA,common_market_coop,namedStore
+maryland,store,3708,grape,certified_organic,common_market_coop,NA,119.27,9661.39,NA,NA,NA,NA,NA,NA,common_market_coop,namedStore
+massachusetts,farm,2589,carrot,NA,NA,NA,15.57,51.71,NA,699.59,722.01,NA,NA,NA,farmUnnamed,farmUnnamed
+vermont,farm,858,carrot,organic notill,NA,Green Mtn Girls,10.17,88.09,NA,NA,NA,NA,NA,NA,Green Mtn Girls,farmer
+vermont,farm,857,carrot,organic notill,NA,Green Mtn Girls,5.85,38.13,NA,NA,NA,NA,NA,NA,Green Mtn Girls,farmer
+vermont,farm,860,carrot,organic notill,NA,Green Mtn Girls,15.77,73.06,NA,NA,NA,NA,NA,NA,Green Mtn Girls,farmer
+vermont,farm,859,spinach,organic notill,NA,Green Mtn Girls,86.31,622.02,NA,NA,NA,NA,NA,NA,Green Mtn Girls,farmer
+connecticut,farm,2171.2,kale,organic nospray,NA,karen bahre,126.33,20468.6,NA,NA,NA,NA,NA,NA,karen bahre,farmer
+connecticut,farm,3651,cherry_tomato,organic nospray,NA,karen bahre,41.67,6126.03,NA,52.65,71.59,NA,NA,NA,karen bahre,farmer
+connecticut,farm,2143.1,cherry_tomato,organic nospray,NA,karen bahre,23.82,611.87,NA,NA,NA,NA,NA,NA,karen bahre,farmer
+connecticut,farm,2143.2,cherry_tomato,organic nospray,NA,karen bahre,24.66,2456.22,NA,NA,NA,NA,NA,NA,karen bahre,farmer
+georgia,farm,2016b,lettuce,NA,NA,NA,14.55,482.09,4,NA,NA,NA,3,4,farmUnnamed,farmUnnamed
+georgia,farm,2014,lettuce,NA,NA,NA,40.2,515.48,4,95.57,140.38,NA,3,4,farmUnnamed,farmUnnamed
+georgia,farm,2012,lettuce,NA,NA,NA,21.06,296.91,4,95.57,140.64999999999998,NA,3,4,farmUnnamed,farmUnnamed
+georgia,farm,2017b,lettuce,NA,NA,NA,55.39,751.04,2,NA,NA,NA,2,3,farmUnnamed,farmUnnamed
+georgia,farm,2015b,lettuce,NA,NA,NA,4.95,2353.97,2,NA,NA,NA,2,3,farmUnnamed,farmUnnamed
+georgia,farm,2013,lettuce,NA,NA,NA,44.23,674.94,2,76.94,122.66999999999999,NA,2,3,farmUnnamed,farmUnnamed
+massachusetts,farm,2588.2,kale,certified_organic,NA,Julie Rawson,164.33,21935.4,NA,NA,NA,NA,NA,NA,Julie Rawson,farmer
+massachusetts,farm,2588.1,kale,certified_organic,NA,Julie Rawson,143.92,16735.1,NA,NA,NA,NA,NA,NA,Julie Rawson,farmer
+massachusetts,farm,3479,cherry_tomato,organic,NA,Steve Chiarizio,31.97,1445.65,NA,-0.62,95.03,117,NA,NA,Steve Chiarizio,farmer
+massachusetts,farm,3483,cherry_tomato,organic,NA,Steve Chiarizio,42.43,1426.44,NA,-0.62,95.39999999999999,117,NA,NA,Steve Chiarizio,farmer
+massachusetts,farm,3484,cherry_tomato,organic,NA,Steve Chiarizio,45.15,1938.19,NA,-0.62,95.75,117,NA,NA,Steve Chiarizio,farmer
+pennsylvania,farm,3161,cherry_tomato,NA,NA,NA,60.73,2574.63,5,NA,NA,NA,4,4,farmUnnamed,farmUnnamed
+pennsylvania,farm,3160,cherry_tomato,NA,NA,NA,54.72,8547.47,5,NA,NA,NA,4,4,farmUnnamed,farmUnnamed
+pennsylvania,farm,3175,lettuce,NA,NA,NA,11.03,227.97,3,NA,NA,NA,3,3,farmUnnamed,farmUnnamed
+pennsylvania,farm,3177,lettuce,NA,NA,NA,15.58,426.85,3,NA,NA,NA,3,3,farmUnnamed,farmUnnamed
+pennsylvania,farm,3176,lettuce,NA,NA,NA,10.36,275.65,3,NA,NA,NA,3,3,farmUnnamed,farmUnnamed
+maryland,store,3563.1,carrot,certified_organic,wegmans,NA,5.07,20.88,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+maryland,store,3563.2,carrot,certified_organic,wegmans,NA,6.71,38.89,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+maryland,store,3563.3,carrot,certified_organic,wegmans,NA,8.96,56.97,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+maryland,store,3562.2,kale,certified_organic,wegmans,NA,90.66,15371.9,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+maryland,store,3562.1,kale,certified_organic,wegmans,NA,125.11,15489.7,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+maryland,store,3562.3,kale,certified_organic,wegmans,NA,105.38,17443,NA,NA,NA,NA,NA,NA,wegmans,namedStore
+maryland,store,3561,spinach,certified_organic,wegmans,NA,105.32,846.62,NA,52.75,73.59,NA,NA,NA,wegmans,namedStore
+maryland,store,3560,spinach,certified_organic,wegmans,NA,81.68,199.37,NA,52.91,72.87,NA,NA,NA,wegmans,namedStore
+massachusetts,farm,3522,kale,organic cover_crops,NA,Steve Chiarizios,121.88,21693.2,NA,-1.05,110.98,118,NA,NA,Steve Chiarizios,farmer
+massachusetts,farm,3521,kale,organic cover_crops,NA,Steve Chiarizios,165.17,28093.1,NA,-1.05,111.41,118,NA,NA,Steve Chiarizios,farmer
+massachusetts,farm,3491,kale,organic cover_crops,NA,Steve Chiarizios,74.39,27466.5,NA,-1.05,89.10000000000001,118,NA,NA,Steve Chiarizios,farmer
+ohio,farm,3269,cherry_tomato,organic,NA,John Hjan,43.93,6182.38,5,50.26,97.11,NA,5,5,John Hjan,farmer
+ohio,farm,3270,cherry_tomato,organic,NA,John Hjan,35,4585.24,5,50.26,96.77,NA,5,5,John Hjan,farmer
+ohio,farm,3272,cherry_tomato,organic,NA,John Hjan,43.17,6471.41,5,50.26,167.96,NA,5,5,John Hjan,farmer
+california,farm,3331.1,cherry_tomato,organic notill cover_crops nospray biodynamic,NA,Doug and Cathy Conover,45.49,5306.83,NA,NA,NA,NA,NA,NA,Doug and Cathy Conover,farmer
+california,farm,3331.2,cherry_tomato,organic notill cover_crops nospray biodynamic,NA,Doug and Cathy Conover,33.19,4086.94,NA,NA,NA,NA,NA,NA,Doug and Cathy Conover,farmer
+california,farm,3337.1,cherry_tomato,organic notill cover_crops nospray biodynamic,NA,Doug and Cathy Conover,50.3,4313.67,NA,NA,NA,NA,NA,NA,Doug and Cathy Conover,farmer
+california,farm,3337.2,cherry_tomato,organic notill cover_crops nospray biodynamic,NA,Doug and Cathy Conover,39.57,8554.94,NA,NA,NA,NA,NA,NA,Doug and Cathy Conover,farmer
+california,farm,3345.1,carrot,organic notill nospray biodynamic,NA,Doug and Cathy Conover,7.04,88.74,NA,NA,NA,NA,NA,NA,Doug and Cathy Conover,farmer
+california,farm,3345.2,carrot,organic notill nospray biodynamic,NA,Doug and Cathy Conover,10.62,201.27,NA,NA,NA,NA,NA,NA,Doug and Cathy Conover,farmer
+new_york,farm,2329.1,carrot,certified_organic,NA,Janice Wiles,7.45,13.73,NA,NA,NA,86,NA,NA,Janice Wiles,farmer
+new_york,farm,2329.2,carrot,certified_organic,NA,Janice Wiles,8.49,44.62,NA,NA,NA,86,NA,NA,Janice Wiles,farmer
+ohio,farm,2026,lettuce,organic,NA,Mike,87.61,7114.55,2,117.62,166.56,NA,2,2,Mike,farmer
+ohio,farm,2025,lettuce,organic,NA,Mike,43.06,5856.99,3,117.38,145.51999999999998,NA,3,3,Mike,farmer
+ohio,farm,2024,lettuce,organic,NA,Mike,59.68,6939.84,1,117.27,145.03,NA,1,1,Mike,farmer
+ohio,farm,2027,carrot,organic,NA,Mike,12.49,81.02,NA,117.19,189.54,NA,NA,NA,Mike,farmer
+ohio,farm,2029,carrot,organic,NA,Mike,14.14,87.34,NA,117.19,189.79,NA,NA,NA,Mike,farmer
+ohio,farm,2028,carrot,organic,NA,Mike,12.88,79.09,NA,117.19,190.06,NA,NA,NA,Mike,farmer
+north_carolina,farm,3794.2,kale,organic notill,NA,Rockmont Farm,216.29,19993.9,NA,NA,NA,64,NA,NA,Rockmont Farm,farmer
+north_carolina,farm,3794.1,kale,organic notill,NA,Rockmont Farm,169.28,16342.3,NA,NA,NA,64,NA,NA,Rockmont Farm,farmer
+north_carolina,farm,3795,kale,organic notill,NA,Rockmont Farm,402.83,23992.7,NA,72.07,120.34,64,NA,NA,Rockmont Farm,farmer
+north_carolina,farm,3796,kale,organic notill,NA,Rockmont Farm,168.23,15529.2,NA,72.07,121.72,64,NA,NA,Rockmont Farm,farmer
+north_carolina,farm,3821,carrot,organic notill,NA,Rockmont Farm,15.42,34.51,NA,72.22,145.4,64,NA,NA,Rockmont Farm,farmer
+north_carolina,farm,3822,carrot,organic notill,NA,Rockmont Farm,10.57,41.57,NA,72.22,146.31,64,NA,NA,Rockmont Farm,farmer
+north_carolina,farm,3823.1,carrot,organic notill,NA,Rockmont Farm,4.76,2.58,NA,NA,NA,64,NA,NA,Rockmont Farm,farmer
+north_carolina,farm,3823.2,carrot,organic notill,NA,Rockmont Farm,11.89,7.24,NA,NA,NA,64,NA,NA,Rockmont Farm,farmer
+north_carolina,farm,3806,kale,organic notill nospray,NA,Warren Wilson College Garden,340.98,1918.68,NA,70.91,137.2,64,NA,NA,Warren Wilson College Garden,farmer
+north_carolina,farm,3807.2,kale,organic notill nospray,NA,Warren Wilson College Garden,285.7,5564.12,NA,NA,NA,64,NA,NA,Warren Wilson College Garden,farmer
+north_carolina,farm,3807.1,kale,organic notill nospray,NA,Warren Wilson College Garden,395.19,6037.36,NA,NA,NA,64,NA,NA,Warren Wilson College Garden,farmer
+north_carolina,farm,3818,lettuce,organic notill nospray,NA,Warren Wilson College Garden,39.82,699.81,NA,70.39,119.35,64,NA,NA,Warren Wilson College Garden,farmer
+north_carolina,farm,3819.1,lettuce,organic notill nospray,NA,Warren Wilson College Garden,57.79,670.54,NA,NA,NA,64,NA,NA,Warren Wilson College Garden,farmer
+north_carolina,farm,3819.2,lettuce,organic notill nospray,NA,Warren Wilson College Garden,72.28,600.37,NA,NA,NA,64,NA,NA,Warren Wilson College Garden,farmer
+north_carolina,farm,3820.1,lettuce,organic notill nospray,NA,Warren Wilson College Garden,46.85,532.7,NA,NA,NA,64,NA,NA,Warren Wilson College Garden,farmer
+north_carolina,farm,3820.2,lettuce,organic notill nospray,NA,Warren Wilson College Garden,140.41,351.94,NA,NA,NA,64,NA,NA,Warren Wilson College Garden,farmer
+north_carolina,farm,3780,carrot,organic notill nospray,NA,Warren Wilson College Garden,12.23,5.84,NA,70.75,145.2,64,NA,NA,Warren Wilson College Garden,farmer
+north_carolina,farm,3781.1,carrot,organic notill nospray,NA,Warren Wilson College Garden,21.41,10.82,NA,NA,NA,64,NA,NA,Warren Wilson College Garden,farmer
+north_carolina,farm,3781.2,carrot,organic notill nospray,NA,Warren Wilson College Garden,6.74,4.78,NA,NA,NA,64,NA,NA,Warren Wilson College Garden,farmer
+north_carolina,farm,3782,carrot,organic notill nospray,NA,Warren Wilson College Garden,11.85,10.26,NA,70.75,144.31,64,NA,NA,Warren Wilson College Garden,farmer
+north_carolina,farm,3783,cherry_tomato,organic notill nospray,NA,Warren Wilson College Garden,59.59,7887.5,NA,70.22,93.5,142,NA,NA,Warren Wilson College Garden,farmer
+north_carolina,farm,3784,cherry_tomato,organic notill nospray,NA,Warren Wilson College Garden,40.59,867.01,NA,70.22,96.12,142,NA,NA,Warren Wilson College Garden,farmer
+virginia,farm,2666,lettuce,NA,NA,NA,98.7,4491.63,NA,72.08,91.37,NA,NA,NA,farmUnnamed,farmUnnamed
+virginia,farm,2667,lettuce,NA,NA,NA,111.32,4149.11,NA,72.08,89.63,NA,NA,NA,farmUnnamed,farmUnnamed
+virginia,farm,2668,lettuce,NA,NA,NA,290.28,456.65,NA,72.08,91.12,NA,NA,NA,farmUnnamed,farmUnnamed
+virginia,farm,2669,lettuce,NA,NA,NA,23.09,595.14,NA,55.94,73.82,NA,NA,NA,farmUnnamed,farmUnnamed
+virginia,farm,2670,lettuce,NA,NA,NA,64.2,551.1,NA,55.94,74.78,NA,NA,NA,farmUnnamed,farmUnnamed
+virginia,farm,2671,lettuce,NA,NA,NA,52.41,702.66,NA,55.94,74.08,NA,NA,NA,farmUnnamed,farmUnnamed
+NA,farm,3644,kale,NA,NA,NA,146.84,1561.03,NA,54.74,216.49,NA,NA,NA,farmUnnamed,farmUnnamed
+NA,farm,3649,kale,NA,NA,NA,166.7,1874.76,NA,54.74,216.29000000000002,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3646,kale,NA,NA,NA,174.84,1850.8,NA,54.65,215.67000000000002,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3650,kale,NA,NA,NA,316.31,1371.17,NA,54.65,215.09,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3645,kale,NA,NA,NA,185.32,1925.19,NA,54.65,215.41,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3638,cherry_tomato,NA,NA,NA,70.28,975.42,NA,54.66,78.64,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3643,cherry_tomato,NA,NA,NA,66.57,1839.09,NA,54.66,78.37,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3642,cherry_tomato,NA,NA,NA,48.5,875.97,NA,54.58,77.77,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3640,cherry_tomato,NA,NA,NA,44.61,959.19,NA,54.58,78.03999999999999,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3641,cherry_tomato,NA,NA,NA,40.93,834.37,NA,54.58,192.5,NA,NA,NA,farmUnnamed,farmUnnamed
+colorado,farm,2992.2,lettuce,certified_organic cover_crops nospray,NA,michael moss,17.44,324.35,NA,NA,NA,57,NA,NA,michael moss,farmer
+colorado,farm,2989.3,kale,certified_organic cover_crops nospray,NA,michael moss,535.92,3462.9,NA,NA,NA,85,NA,NA,michael moss,farmer
+colorado,farm,2989.2,kale,certified_organic cover_crops nospray,NA,michael moss,529.31,9766.44,NA,NA,NA,85,NA,NA,michael moss,farmer
+colorado,farm,2989.1,kale,certified_organic cover_crops nospray,NA,michael moss,637.86,11246.6,NA,NA,NA,85,NA,NA,michael moss,farmer
+colorado,farm,2997,spinach,certified_organic cover_crops nospray,NA,michael moss,693.38,66.74,NA,309.09,383.12,37,NA,NA,michael moss,farmer
+colorado,farm,4001.1,carrot,cover_crops,NA,catherine blackwell,9.6,85.34,NA,NA,NA,86,NA,NA,catherine blackwell,farmer
+colorado,farm,4001.2,carrot,cover_crops,NA,catherine blackwell,9.45,53.85,NA,NA,NA,86,NA,NA,catherine blackwell,farmer
+colorado,farm,4001.3,carrot,cover_crops,NA,catherine blackwell,7.35,51.06,NA,NA,NA,86,NA,NA,catherine blackwell,farmer
+colorado,farm,4003.1,lettuce,cover_crops,NA,catherine blackwell,11.08,90.25,NA,NA,NA,36,NA,NA,catherine blackwell,farmer
+colorado,farm,4003.2,lettuce,cover_crops,NA,catherine blackwell,20.46,198.15,NA,NA,NA,36,NA,NA,catherine blackwell,farmer
+colorado,farm,4003.3,lettuce,cover_crops,NA,catherine blackwell,18.6,165,NA,NA,NA,36,NA,NA,catherine blackwell,farmer
+colorado,farm,4002.2,kale,cover_crops,NA,catherine blackwell,358.71,23130.2,NA,NA,NA,36,NA,NA,catherine blackwell,farmer
+colorado,farm,4002.1,kale,cover_crops,NA,catherine blackwell,392.61,21620.3,NA,NA,NA,36,NA,NA,catherine blackwell,farmer
+colorado,farm,4002.3,kale,cover_crops,NA,catherine blackwell,493.39,1776.8,NA,NA,NA,36,NA,NA,catherine blackwell,farmer
+colorado,farm,4004.1,spinach,cover_crops,NA,catherine blackwell,308.32,54.65,NA,NA,NA,36,NA,NA,catherine blackwell,farmer
+colorado,farm,4004.2,spinach,cover_crops,NA,catherine blackwell,272.14,44.44,NA,NA,NA,36,NA,NA,catherine blackwell,farmer
+colorado,farm,4004.3,spinach,cover_crops,NA,catherine blackwell,399.25,57.98,NA,NA,NA,36,NA,NA,catherine blackwell,farmer
+maryland,store,3709.1,grape,certified_organic,common_market_coop,NA,107.07,944.84,NA,NA,NA,NA,NA,NA,common_market_coop,namedStore
+maryland,store,3709.2,grape,certified_organic,common_market_coop,NA,117.13,918.02,NA,NA,NA,NA,NA,NA,common_market_coop,namedStore
+maryland,store,3569.1,carrot,certified_organic,common_market_coop,NA,15.81,37.08,NA,NA,NA,NA,NA,NA,common_market_coop,namedStore
+maryland,store,3569.2,carrot,certified_organic,common_market_coop,NA,13.27,28.43,NA,NA,NA,NA,NA,NA,common_market_coop,namedStore
+maryland,store,3569.3,carrot,certified_organic,common_market_coop,NA,15.14,20.08,NA,NA,NA,NA,NA,NA,common_market_coop,namedStore
+massachusetts,farm,3486,lettuce,organic,NA,Steve Chiarizio,27.45,381.48,NA,193.28,214.73,50,NA,NA,Steve Chiarizio,farmer
+massachusetts,farm,3487,lettuce,organic,NA,Steve Chiarizio,33.84,309,NA,193.28,216.17000000000002,50,NA,NA,Steve Chiarizio,farmer
+massachusetts,farm,3488,lettuce,organic,NA,Steve Chiarizio,35.81,443.48,NA,193.28,215.65,50,NA,NA,Steve Chiarizio,farmer
+massachusetts,farm,3516,lettuce,organic cover_crops,NA,Steve Chiarizio,65.86,565.98,NA,-2.75,16.83,50,NA,NA,Steve Chiarizio,farmer
+massachusetts,farm,3489,lettuce,organic cover_crops,NA,Steve Chiarizio,50.68,598.69,NA,-2.75,19.15,50,NA,NA,Steve Chiarizio,farmer
+massachusetts,farm,3490,lettuce,organic cover_crops,NA,Steve Chiarizio,174.65,692.32,NA,-2.75,17.22,50,NA,NA,Steve Chiarizio,farmer
+connecticut,store,3302,lettuce,local,whole_foods,NA,36.39,570.6,4,120.45,141.97,NA,3,4,whole_foods,namedStore
+connecticut,farm_market,3298.1,lettuce,NA,NA,pending,45.51,851.84,4,NA,NA,NA,3,3,pending,farmer
+connecticut,farm_market,3298.2,lettuce,NA,NA,pending,46.31,587.37,4,NA,NA,NA,3,3,pending,farmer
+connecticut,farm_market,3299.1,carrot,NA,NA,Wade's farm stand,13.69,85.23,4,NA,NA,NA,3,3,Wade's farm stand,farmer
+connecticut,farm_market,3299.2,carrot,NA,NA,Wade's farm stand,76.94,149.32,4,NA,NA,NA,3,3,Wade's farm stand,farmer
+new_york,farm,3420.1,lettuce,organic notill nospray,NA,Sarah Johnston,35.64,248.61,2,NA,NA,82,2,3,Sarah Johnston,farmer
+new_york,farm,3420.2,lettuce,organic notill nospray,NA,Sarah Johnston,58.27,465.6,2,NA,NA,82,2,3,Sarah Johnston,farmer
+new_york,farm,3420.3,lettuce,organic notill nospray,NA,Sarah Johnston,24.51,234.75,2,NA,NA,82,2,3,Sarah Johnston,farmer
+new_york,NA,3421.3,kale,NA,NA,NA,182.86,9968.97,2,NA,NA,NA,2,2,noData,unnamed
+new_york,NA,3421.2,kale,NA,NA,NA,304.47,16390.8,2,NA,NA,NA,2,2,noData,unnamed
+new_york,NA,3421.1,kale,NA,NA,NA,286.98,13890.7,2,NA,NA,NA,2,2,noData,unnamed
+ohio,farm,3881,cherry_tomato,organic,NA,Mike,31.27,1392.54,NA,56.24,104.80000000000001,NA,NA,NA,Mike,farmer
+connecticut,store,3377,carrot,certified_organic,trader_joes,NA,15.28,26.58,3,49.2,98.18,NA,4,4,trader_joes,namedStore
+connecticut,store,3376,spinach,certified_organic,trader_joes,NA,434.28,24.81,4,49.06,234.02,NA,4,4,trader_joes,namedStore
+new_york,farm,3510,carrot,NA,NA,NA,5.89,118.47,NA,45.7,669.6400000000001,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3511,carrot,NA,NA,NA,4.55,19.81,NA,45.7,668.84,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3512,carrot,NA,NA,NA,4.92,43.29,NA,45.7,692.44,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3507,carrot,NA,NA,NA,5.1,16.59,NA,44.67,666.53,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3508,carrot,NA,NA,NA,5.16,15.92,NA,44.67,643.29,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3509,carrot,NA,NA,NA,5.92,76.97,NA,44.67,650.0899999999999,NA,NA,NA,farmUnnamed,farmUnnamed
+maryland,farm,2217,kale,NA,NA,NA,600.79,1603.69,3,43.37,166.25,NA,3,3,farmUnnamed,farmUnnamed
+maryland,farm,2218,kale,NA,NA,NA,233.84,3288.68,3,43.37,165.45,NA,3,3,farmUnnamed,farmUnnamed
+maryland,farm,2219,kale,NA,NA,NA,226.59,5684.22,3,43.37,185.28,NA,3,3,farmUnnamed,farmUnnamed
+maryland,farm,2220,kale,NA,NA,NA,238.12,2125.7,2,43.26,165.82999999999998,NA,2,2,farmUnnamed,farmUnnamed
+maryland,farm,2221,kale,NA,NA,NA,237.4,5305.02,2,43.26,167.76,NA,2,2,farmUnnamed,farmUnnamed
+maryland,farm,2222,kale,NA,NA,NA,250.12,3458.47,2,43.26,184.76999999999998,NA,2,2,farmUnnamed,farmUnnamed
+new_york,farm,3504,spinach,NA,NA,NA,140.05,606.03,NA,44.55,117.78999999999999,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3505,spinach,NA,NA,NA,166.36,267.61,NA,44.55,118.58,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3506,spinach,NA,NA,NA,155.92,71.84,NA,44.55,118.32,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3513,spinach,NA,NA,NA,167.39,137.45,NA,NA,NA,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3514,spinach,NA,NA,NA,465.65,361.79,NA,44.36,118.85,NA,NA,NA,farmUnnamed,farmUnnamed
+new_york,farm,3515,spinach,NA,NA,NA,137.4,137.45,NA,44.36,119.21,NA,NA,NA,farmUnnamed,farmUnnamed
+massachusetts,farm,2637,carrot,NA,NA,NA,21.83,91.05,3,-407.36,-406.03000000000003,NA,2,3,farmUnnamed,farmUnnamed
+colorado,store,4007.1,carrot,certified_organic,alfalfas,NA,17.58,13.7,NA,NA,NA,NA,NA,NA,alfalfas,namedStore
+colorado,store,4007.2,carrot,certified_organic,alfalfas,NA,16.36,13.93,NA,NA,NA,NA,NA,NA,alfalfas,namedStore
+colorado,store,4007.3,carrot,certified_organic,alfalfas,NA,16.89,16.49,NA,NA,NA,NA,NA,NA,alfalfas,namedStore
+ohio,farm,3284,cherry_tomato,notill,NA,Firefighters,30,1518.11,1,49.53,115.79,NA,1,1,Firefighters,farmer
+ohio,farm,3899,spinach,notill,NA,Firefighters,994.6,1083.79,1,49.71,117.80000000000001,NA,1,1,Firefighters,farmer
+ohio,farm,3912,kale,organic,NA,Mike,851.95,17393.1,4,51.62,335.49,NA,4,4,Mike,farmer
+ohio,farm,3913,kale,organic,NA,Mike,109.57,1770.61,4,51.62,334.67,NA,4,4,Mike,farmer
+ohio,farm,3914,kale,organic,NA,Mike,338.68,13430.9,4,51.62,457.3,NA,4,4,Mike,farmer
+ohio,farm,3266,lettuce,organic,NA,Mike,673.82,3556.13,4,51.47,333.17999999999995,NA,4,4,Mike,farmer
+ohio,farm,3698,kale,NA,NA,NA,790.81,20840.3,4,67.8,192.35,NA,2,4,farmUnnamed,farmUnnamed
+ohio,farm,3697,kale,NA,NA,NA,429.1,1656.14,4,67.95,169.28,NA,2,4,farmUnnamed,farmUnnamed
+ohio,farm,3696,kale,NA,NA,NA,740.18,2538.94,4,67.8,172.07,NA,2,4,farmUnnamed,farmUnnamed
+connecticut,store,3292.1,carrot,certified_organic,stop_and_shop,NA,9.09,31.93,3,NA,NA,NA,3,3,stop_and_shop,namedStore
+connecticut,store,3292.2,carrot,certified_organic,stop_and_shop,NA,10.36,35.2,3,NA,NA,NA,3,3,stop_and_shop,namedStore
+connecticut,store,3292.3,carrot,certified_organic,stop_and_shop,NA,6.94,74.56,3,NA,NA,NA,3,3,stop_and_shop,namedStore
+massachusetts,farm,2595,spinach,NA,NA,NA,366,25.35,NA,2011.68,2116.88,NA,NA,NA,farmUnnamed,farmUnnamed
+massachusetts,farm,2592.1,carrot,NA,NA,NA,3.72,19.58,NA,NA,NA,NA,NA,NA,farmUnnamed,farmUnnamed
+massachusetts,farm,2592.2,carrot,NA,NA,NA,3.87,99.89,NA,NA,NA,NA,NA,NA,farmUnnamed,farmUnnamed
+ohio,farm,3690,lettuce,NA,NA,NA,67.97,106.19,3,67.74,96.72,NA,1,4,farmUnnamed,farmUnnamed
+ohio,farm,3691,lettuce,NA,NA,NA,44.71,71.32,3,67.74,98.1,NA,1,4,farmUnnamed,farmUnnamed
+ohio,farm,3693,lettuce,NA,NA,NA,63.24,221.28,3,67.5,166.55,NA,1,4,farmUnnamed,farmUnnamed
+massachusetts,farm,3882,grape,NA,NA,NA,148.77,1452.01,3,2913.04,2913.18,NA,4,2,farmUnnamed,farmUnnamed
+massachusetts,farm,3883,grape,NA,NA,NA,231.94,1460.44,3,2913.04,2931.48,NA,4,2,farmUnnamed,farmUnnamed
+massachusetts,farm,3884,grape,NA,NA,NA,386.15,1457.67,3,2913.08,2931.02,NA,4,2,farmUnnamed,farmUnnamed
+massachusetts,farm,3933,spinach,NA,NA,NA,363.23,188.4,4,2913.22,2985.49,NA,5,4,farmUnnamed,farmUnnamed
+massachusetts,farm,3934,spinach,NA,NA,NA,242,117.55,4,2913.26,2985.86,NA,5,4,farmUnnamed,farmUnnamed
+massachusetts,farm,3935,spinach,NA,NA,NA,401.26,373.75,4,2913.26,2986.1800000000003,NA,5,4,farmUnnamed,farmUnnamed
+ohio,farm,3695,kale,NA,NA,NA,603.38,2883.09,3,67.02,143.95999999999998,NA,2,4,farmUnnamed,farmUnnamed
+ohio,farm,3694,kale,NA,NA,NA,564.19,2385.9,3,67.19,172.79,NA,2,4,farmUnnamed,farmUnnamed
+ohio,farm,3692,kale,NA,NA,NA,600.94,7958.9,3,67.19,99.4,NA,2,4,farmUnnamed,farmUnnamed
+massachusetts,farm,3915,kale,NA,NA,NA,673.56,2369.63,4,2911.51,3031.55,NA,3,4,farmUnnamed,farmUnnamed
+massachusetts,farm,3916,kale,NA,NA,NA,438.43,1177.8,4,2911.51,2977.73,NA,3,4,farmUnnamed,farmUnnamed
+massachusetts,farm,3917,kale,NA,NA,NA,558.31,2173.65,4,2911.51,3032.4900000000002,NA,3,4,farmUnnamed,farmUnnamed
+massachusetts,farm,3909,lettuce,NA,NA,NA,72.64,278.17,4,71.84,162.01,NA,4,4,farmUnnamed,farmUnnamed
+massachusetts,farm,3910,lettuce,NA,NA,NA,83.07,168,4,71.91,143.66,NA,4,4,farmUnnamed,farmUnnamed
+massachusetts,farm,3911,lettuce,NA,NA,NA,148.64,315.45,4,71.84,161.54000000000002,NA,4,4,farmUnnamed,farmUnnamed
+tennessee,farm,4563,lettuce,hydroponic,NA,greener roots farm,44.41,199.54,NA,26.89,173.14,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4564,lettuce,hydroponic,NA,greener roots farm,51.08,245.17,NA,26.89,171.56,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4565,lettuce,hydroponic,NA,greener roots farm,42.13,207.11,NA,26.88,322.01,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4560.1,lettuce,hydroponic,NA,greener roots farm,62.66,378.22,NA,NA,NA,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4560.2,lettuce,hydroponic,NA,greener roots farm,58.97,330.75,NA,NA,NA,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4561,lettuce,hydroponic,NA,greener roots farm,22.15,307.78,NA,26.76,391.05,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4562,lettuce,hydroponic,NA,greener roots farm,68.53,365.79,NA,26.74,338.96000000000004,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4557,lettuce,hydroponic,NA,greener roots farm,17.42,475.21,NA,26.73,390.47,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4558,lettuce,hydroponic,NA,greener roots farm,58.87,425.05,NA,26.7,177.86999999999998,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4559,lettuce,hydroponic,NA,greener roots farm,112.02,265.06,NA,26.7,151.51,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4554,lettuce,hydroponic,NA,greener roots farm,20.58,308.97,NA,26.66,412.96000000000004,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4555,lettuce,hydroponic,NA,greener roots farm,49.41,267.74,NA,25.82,197.84,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4556,lettuce,hydroponic,NA,greener roots farm,27.01,245.69,NA,25.89,395.26,NA,NA,NA,greener roots farm,farmer
+massachusetts,farm,2686,spinach,NA,NA,NA,325.62,101.2,3,91.49,115.13,NA,2,3,farmUnnamed,farmUnnamed
+massachusetts,farm,2687,lettuce,NA,NA,NA,109.81,419.57,4,91,115.63,NA,3,4,farmUnnamed,farmUnnamed
+massachusetts,farm,2685,lettuce,NA,NA,NA,123.1,297.63,4,91,114.28999999999999,NA,3,4,farmUnnamed,farmUnnamed
+massachusetts,farm,2690,lettuce,NA,NA,NA,56.47,155.14,4,91,115.16,NA,3,4,farmUnnamed,farmUnnamed
+massachusetts,farm_market,3475,carrot,NA,NA,Indian Head Farm,3.67,50.39,3,73.35,523.71,NA,3,3,Indian Head Farm,farmer
+massachusetts,farm_market,3476,carrot,NA,NA,Indian Head Farm,5.64,31.08,3,73.35,499.38,NA,3,3,Indian Head Farm,farmer
+massachusetts,farm_market,3523,carrot,NA,NA,Indian Head Farm,5.35,50.94,3,73.35,525.95,NA,3,3,Indian Head Farm,farmer
+tennessee,farm,4548,lettuce,hydroponic,NA,greener roots farm,8.46,261.56,NA,1.17,367.99,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4549,lettuce,hydroponic,NA,greener roots farm,34.79,410.28,NA,1.17,146.29,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4552,lettuce,hydroponic,NA,greener roots farm,17.38,323.71,NA,1.14,389.61,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4546,lettuce,hydroponic,NA,greener roots farm,19.9,362.29,NA,1.06,390.31,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4553,lettuce,hydroponic,NA,greener roots farm,36.38,418.24,NA,0.98,362.57,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4547,lettuce,hydroponic,NA,greener roots farm,77.59,337,NA,0.98,127.22,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4544,lettuce,hydroponic,NA,greener roots farm,9.65,68.11,NA,1.02,367.03,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,3401,lettuce,hydroponic,NA,greener roots farm,41.65,129.92,NA,1.04,175.51999999999998,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4545,lettuce,hydroponic,NA,greener roots farm,27.33,183,NA,0.95,366.55,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4541,lettuce,hydroponic,NA,greener roots farm,11.45,140.24,NA,1,365.74,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4542,lettuce,hydroponic,NA,greener roots farm,26.66,31.91,NA,0.91,199.28,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,4543,lettuce,hydroponic,NA,greener roots farm,9.62,130.37,NA,0.91,387.65000000000003,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,3400,lettuce,hydroponic,NA,greener roots farm,51.58,347.2,NA,0.92,175.92,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,3399,lettuce,hydroponic,NA,greener roots farm,53.8,242.9,NA,0.85,173.54,NA,NA,NA,greener roots farm,farmer
+tennessee,farm,3411,lettuce,hydroponic,NA,greener roots farm,188.14,324.31,NA,0.92,219.45999999999998,NA,NA,NA,greener roots farm,farmer
+north_carolina,farm,3232,kale,NA,NA,NA,876.4,2148.01,4,69.34,110.36000000000001,NA,3,4,farmUnnamed,farmUnnamed
+north_carolina,farm,3234,kale,NA,NA,NA,960.7,2139.97,4,69.34,115.72,NA,3,4,farmUnnamed,farmUnnamed
+north_carolina,farm,3226,lettuce,NA,NA,NA,50.32,26.29,3,NA,NA,NA,2,3,farmUnnamed,farmUnnamed
+north_carolina,farm,3227,lettuce,NA,NA,NA,57.4,29.28,3,NA,NA,NA,2,3,farmUnnamed,farmUnnamed
+north_carolina,farm,3228,lettuce,NA,NA,NA,38.62,28.42,3,NA,NA,NA,2,3,farmUnnamed,farmUnnamed
+north_carolina,farm,3235,kale,NA,NA,NA,785.97,2085.5,3,69.23,109.35,NA,2,3,farmUnnamed,farmUnnamed
+north_carolina,farm,3236,kale,NA,NA,NA,818.74,1816.51,3,69.23,89.30000000000001,NA,2,3,farmUnnamed,farmUnnamed
+north_carolina,farm,3237,kale,NA,NA,NA,517.78,13583.7,3,69.23,90.14,NA,2,3,farmUnnamed,farmUnnamed
+north_carolina,farm,3534,kale,organic notill cover_crops nospray,NA,Becki Janes,723,1792.29,NA,120.4,142.93,66,NA,NA,Becki Janes,farmer
+north_carolina,farm,3535,kale,organic notill cover_crops nospray,NA,Becki Janes,807.58,1805.21,NA,120.4,142.54000000000002,66,NA,NA,Becki Janes,farmer
+north_carolina,farm,3549,kale,organic notill cover_crops nospray,NA,Becki Janes,295.85,1747.88,NA,120.4,143.75,66,NA,NA,Becki Janes,farmer
+north_carolina,farm,3814,lettuce,organic notill cover_crops nospray,NA,Becki Janes,34.88,124.45,NA,120.25,191,66,NA,NA,Becki Janes,farmer
+north_carolina,farm,3536,lettuce,organic notill cover_crops nospray,NA,Becki Janes,53.26,258.39,NA,120.25,143.93,66,NA,NA,Becki Janes,farmer
+georgia,farm,2121,kale,NA,NA,NA,204.36,6231.18,NA,96.97,149.38,NA,NA,NA,farmUnnamed,farmUnnamed
+georgia,farm,2120,kale,NA,NA,NA,640.19,1745.77,NA,96.97,149.15,NA,NA,NA,farmUnnamed,farmUnnamed
+georgia,farm,2123,kale,NA,NA,NA,650.96,1871.34,NA,90.18,94.51,NA,NA,NA,farmUnnamed,farmUnnamed
+georgia,farm,2124,kale,NA,NA,NA,366.29,2072.47,NA,90.18,143.73000000000002,NA,NA,NA,farmUnnamed,farmUnnamed
+georgia,farm,2125,kale,NA,NA,NA,707.58,2357.11,NA,90.18,93.41000000000001,NA,NA,NA,farmUnnamed,farmUnnamed
+north_carolina,farm,3947,carrot,organic notill cover_crops nospray,NA,Janice Brewer,5.05,37.09,NA,96.79,358.54,83,NA,NA,Janice Brewer,farmer
+north_carolina,farm,3951,kale,organic notill cover_crops nospray,NA,Janice Brewer,561.64,1345.25,NA,67.38,69.77,83,NA,NA,Janice Brewer,farmer
+north_carolina,farm,3952,kale,organic notill cover_crops nospray,NA,Janice Brewer,544.13,1475.57,NA,67.38,69.08,83,NA,NA,Janice Brewer,farmer
+north_carolina,farm,3953,kale,organic notill cover_crops nospray,NA,Janice Brewer,191.27,1654.67,NA,67.38,93.25,83,NA,NA,Janice Brewer,farmer
+north_carolina,farm,3948,lettuce,organic notill cover_crops nospray,NA,Janice Brewer,61.68,396.5,NA,67.14,166.32,83,NA,NA,Janice Brewer,farmer
+north_carolina,farm,3949,lettuce,organic notill cover_crops nospray,NA,Janice Brewer,60.47,500.54,NA,67.14,92.12,83,NA,NA,Janice Brewer,farmer
+north_carolina,farm,3950,lettuce,organic notill cover_crops nospray,NA,Janice Brewer,79.86,419.27,NA,67.14,165.32999999999998,83,NA,NA,Janice Brewer,farmer
+massachusetts,farm_market,3501,kale,NA,NA,indian head farm,403.75,13006.6,NA,48.26,120.27000000000001,NA,NA,NA,indian head farm,farmer
+massachusetts,farm_market,3502,kale,NA,NA,indian head farm,462.18,9731.41,NA,48.26,113.35,NA,NA,NA,indian head farm,farmer
+massachusetts,farm_market,3503,kale,NA,NA,indian head farm,631.62,1312.03,NA,48.26,138.69,NA,NA,NA,indian head farm,farmer
+massachusetts,store,3494.1,carrot,certified_organic,trader_joes,NA,14.67,23.47,3,NA,NA,NA,3,3,trader_joes,namedStore
+massachusetts,store,3494.2,carrot,certified_organic,trader_joes,NA,13.43,17.32,3,NA,NA,NA,3,3,trader_joes,namedStore
+massachusetts,store,3493.1,lettuce,certified_organic,trader_joes,NA,48.64,145.74,NA,NA,NA,NA,NA,NA,trader_joes,namedStore
+massachusetts,store,3493.2,lettuce,certified_organic,trader_joes,NA,26.13,104.91,NA,NA,NA,NA,NA,NA,trader_joes,namedStore
+massachusetts,store,3493.3,lettuce,certified_organic,trader_joes,NA,26.99,103.78,NA,NA,NA,NA,NA,NA,trader_joes,namedStore
+california,farm,3024k,kale,organic cover_crops nospray,NA,Adam Lovelace,305.72,11193.8,NA,2302.6,2330.49,NA,NA,NA,Adam Lovelace,farmer
+california,farm,3024t,cherry_tomato,organic nospray notill,NA,Adam Lovelace,48.96,1149.01,NA,49.71,118.69,NA,NA,NA,Adam Lovelace,farmer
+california,farm,3019,cherry_tomato,organic nospray notill,NA,Adam Lovelace,97.62,880.63,NA,NA,NA,NA,NA,NA,Adam Lovelace,farmer
+california,farm,2957,kale,organic,NA,Aspen Madrone,572.93,12859.2,NA,NA,NA,NA,NA,NA,Aspen Madrone,farmer
+california,farm,2954,kale,organic,NA,Aspen Madrone,377.65,1221.04,NA,NA,NA,NA,NA,NA,Aspen Madrone,farmer
+california,farm_market,2961,lettuce,certified_organic,NA,unlisted,89.79,649.49,NA,49.27,121.22,NA,NA,NA,unlisted,farmer
+florida,farm,3576,cherry_tomato,organic,NA,danielle kovach,56.81,2191.54,NA,-1177.41,-1102.3700000000001,NA,NA,NA,danielle kovach,farmer
+florida,farm,3577,cherry_tomato,organic,NA,danielle kovach,68.48,610.72,NA,-1177.41,-1102.5500000000002,NA,NA,NA,danielle kovach,farmer
+michigan,store,4654,cherry_tomato,none,meijer,NA,46.68,1037.61,NA,-0.03,148.37,NA,NA,NA,meijer,namedStore
+connecticut,farm,2170,kale,organic nospray,NA,ed vanderbeck,476.24,16729,NA,140.53,144.56,29,NA,NA,ed vanderbeck,farmer
+connecticut,farm,2160,spinach,organic nospray,NA,ed vanderbeck,248.77,60.3,NA,140.74,144.42000000000002,42,NA,NA,ed vanderbeck,farmer
+massachusetts,farm,2567,carrot,NA,NA,NA,10.25,31.1,4,-169.38,-22.269999999999982,NA,4,4,farmUnnamed,farmUnnamed
+massachusetts,farm,2570,carrot,NA,NA,NA,7.64,21.33,4,-169.38,-20.389999999999986,NA,4,4,farmUnnamed,farmUnnamed
+massachusetts,farm,2571,carrot,NA,NA,NA,7.63,27.74,4,-169.38,-20.99000000000001,NA,4,4,farmUnnamed,farmUnnamed
+massachusetts,farm,2568,spinach,NA,NA,NA,336.67,717.01,4,-168.09,-90.84,NA,4,4,farmUnnamed,farmUnnamed
+massachusetts,farm,2569,spinach,NA,NA,NA,266.47,903.84,4,-168.09,-91.16,NA,4,4,farmUnnamed,farmUnnamed
+massachusetts,farm,2572,spinach,NA,NA,NA,291.04,482.4,4,-168.09,-90.58,NA,4,4,farmUnnamed,farmUnnamed
+massachusetts,store,3497.1,spinach,none,whole_foods,NA,188.88,164.87,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,3497.2,spinach,none,whole_foods,NA,201.91,286.4,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,3497.3,spinach,none,whole_foods,NA,202.63,50.89,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,3495.3,kale,certified_organic,whole_foods,NA,346.37,2228.26,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,3495.2,kale,certified_organic,whole_foods,NA,374.15,1958.34,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,3495.1,kale,certified_organic,whole_foods,NA,357.25,2044.08,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,farm_market,5003,lettuce,organic cover_crops,NA,Karl,38.96,256.37,NA,95.63,117.21,98,NA,NA,Karl,farmer
+massachusetts,farm_market,5002,lettuce,organic,NA,Karl,32.54,127.54,NA,95.69,111.28,98,NA,NA,Karl,farmer
+massachusetts,farm,5004,kale,organic,NA,Karl,375.45,15038,NA,95.79,112.72,126,NA,NA,Karl,farmer
+massachusetts,farm,5001,grape,organic,NA,Karl,119.65,1250.31,5,95.97,115.07,NA,4,5,Karl,farmer
+massachusetts,farm,5000,grape,organic,NA,Karl,445.38,18922.1,5,95.97,114.72,NA,4,5,Karl,farmer
+massachusetts,farm,4999,grape,organic,NA,Karl,256.17,1216.53,5,95.97,96.53999999999999,NA,4,5,Karl,farmer
+massachusetts,farm,2909.3,carrot,organic,NA,Karl,6.97,8.59,5,NA,NA,107,2,5,Karl,farmer
+massachusetts,farm,2909.2,carrot,organic,NA,Karl,6.03,25.87,5,NA,NA,107,2,5,Karl,farmer
+massachusetts,farm,2909.1,carrot,organic,NA,Karl,7.42,12.57,5,NA,NA,107,2,5,Karl,farmer
+ohio,farm,2810,carrot,NA,NA,NA,8.94,22.28,NA,136.02,189.39000000000001,NA,NA,NA,farmUnnamed,farmUnnamed
+ohio,farm,2811,carrot,NA,NA,NA,6.77,11.72,NA,136.02,187.71,NA,NA,NA,farmUnnamed,farmUnnamed
+ohio,farm,2812,carrot,NA,NA,NA,8.89,46.78,NA,136.02,188.70000000000002,NA,NA,NA,farmUnnamed,farmUnnamed
+maryland,farm,2205,carrot,organic,NA,judy sopenski,16.97,9.25,NA,-1097.32,-955.91,NA,NA,NA,judy sopenski,farmer
+maryland,farm,2206,carrot,organic,NA,judy sopenski,3.91,58.86,NA,-1097.32,-525.15,NA,NA,NA,judy sopenski,farmer
+maryland,farm,2207,carrot,organic,NA,judy sopenski,16.37,11.27,NA,-1097.32,-981.01,NA,NA,NA,judy sopenski,farmer
+maryland,farm,2208,carrot,organic,NA,judy sopenski,1.52,6.54,NA,-1097.35,-528.2399999999999,NA,NA,NA,judy sopenski,farmer
+maryland,farm,2209,carrot,organic,NA,judy sopenski,13.68,4.3,NA,-1097.35,-979.1899999999999,NA,NA,NA,judy sopenski,farmer
+maryland,farm,2210,carrot,organic,NA,judy sopenski,14.34,3.92,NA,-1097.35,-979.9999999999999,NA,NA,NA,judy sopenski,farmer
+massachusetts,farm,3959,cherry_tomato,NA,NA,NA,43.63,627.79,5,NA,NA,NA,4,5,farmUnnamed,farmUnnamed
+massachusetts,farm,3957,cherry_tomato,NA,NA,NA,54.49,726.41,5,NA,NA,NA,5,5,farmUnnamed,farmUnnamed
+massachusetts,farm,3958,cherry_tomato,NA,NA,NA,38.19,757.71,5,NA,NA,NA,3,5,farmUnnamed,farmUnnamed
+massachusetts,store,4781,cherry_tomato,certified_organic greenhouse,whole_foods,NA,42.97,787.27,3,116.3,116.81,NA,3,3,whole_foods,namedStore
+massachusetts,store,4779,cherry_tomato,greenhouse,whole_foods,NA,36.03,869.24,2,116.41,116.58,NA,2,2,whole_foods,namedStore
+rhode_island,farm,2778,kale,NA,NA,NA,111.23,3157.83,5,-797.13,-738.78,NA,3,5,farmUnnamed,farmUnnamed
+rhode_island,farm,2775,carrot,NA,NA,NA,20.56,51.35,5,-799.88,-582.35,NA,5,5,farmUnnamed,farmUnnamed
+rhode_island,farm,2776,spinach,NA,NA,NA,174.88,184.71,5,-799.94,-770.72,NA,5,5,farmUnnamed,farmUnnamed
+maryland,store,4618,cherry_tomato,certified_organic,common_market_coop,NA,29.45,1167.74,NA,22.06,91.24000000000001,NA,NA,NA,common_market_coop,namedStore
+massachusetts,farm,2697.1,spinach,NA,NA,NA,99.52,201.56,4,NA,NA,NA,3,4,farmUnnamed,farmUnnamed
+massachusetts,farm,2697.2,spinach,NA,NA,NA,205.55,104.46,4,NA,NA,NA,3,4,farmUnnamed,farmUnnamed
+massachusetts,farm,2697.3,spinach,NA,NA,NA,168.62,64.11,4,NA,NA,NA,3,4,farmUnnamed,farmUnnamed
+massachusetts,farm,2700.2,carrot,NA,NA,NA,10.35,69.86,4,NA,NA,NA,4,4,farmUnnamed,farmUnnamed
+massachusetts,farm,2700.3,carrot,NA,NA,NA,6.64,24.36,4,NA,NA,NA,4,4,farmUnnamed,farmUnnamed
+massachusetts,farm,2700.1,carrot,NA,NA,NA,8.59,34.3,4,NA,NA,NA,4,4,farmUnnamed,farmUnnamed
+massachusetts,farm_market,4775.1,carrot,organic,NA,Steve Chiarizio,22.45,77.3,4,NA,NA,NA,NA,4,Steve Chiarizio,farmer
+massachusetts,farm_market,4775.2,carrot,organic,NA,Steve Chiarizio,12.88,58.1,4,NA,NA,NA,NA,4,Steve Chiarizio,farmer
+massachusetts,farm_market,4775.3,carrot,organic,NA,Steve Chiarizio,24.57,99.75,4,NA,NA,NA,NA,4,Steve Chiarizio,farmer
+massachusetts,farm_market,4776.1,lettuce,organic,NA,Steve Chiarizio,69.19,528.42,4,NA,NA,52,2,4,Steve Chiarizio,farmer
+massachusetts,farm_market,4776.2,lettuce,organic,NA,Steve Chiarizio,35.17,599.21,4,NA,NA,52,2,4,Steve Chiarizio,farmer
+massachusetts,farm_market,4776.3,lettuce,organic,NA,Steve Chiarizio,72.65,618.61,4,NA,NA,52,2,4,Steve Chiarizio,farmer
+massachusetts,store,3498.3,kale,certified_organic,whole_foods,NA,377.52,8511.79,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,3498.2,kale,certified_organic,whole_foods,NA,562.57,14476.6,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,3498.1,kale,certified_organic,whole_foods,NA,411.05,9779.39,NA,NA,NA,NA,NA,NA,whole_foods,namedStore
+massachusetts,store,3477.1,cherry_tomato,greenhouse,whole_foods,NA,37.1,913.76,2,NA,NA,NA,2,2,whole_foods,namedStore
+massachusetts,store,3477.2,cherry_tomato,greenhouse,whole_foods,NA,39.34,949.94,2,NA,NA,NA,2,2,whole_foods,namedStore
+massachusetts,store,3477.3,cherry_tomato,greenhouse,whole_foods,NA,44.93,1013.17,2,NA,NA,NA,2,2,whole_foods,namedStore
+massachusetts,store,3517.1,cherry_tomato,certified_organic other fair_food,whole_foods,NA,36.24,1209.64,2,NA,NA,NA,2,2,whole_foods,namedStore
+massachusetts,store,3517.2,cherry_tomato,certified_organic other fair_food,whole_foods,NA,32.54,1242,2,NA,NA,NA,2,2,whole_foods,namedStore
+maryland,store,4599.1,carrot,certified_organic,trouts_jubilee,NA,40.9,168.87,NA,NA,NA,NA,NA,NA,trouts_jubilee,namedStore
+maryland,store,4599.2,carrot,certified_organic,trouts_jubilee,NA,20.81,34.79,NA,NA,NA,NA,NA,NA,trouts_jubilee,namedStore
+maryland,store,4599.3,carrot,certified_organic,trouts_jubilee,NA,19,41.9,NA,NA,NA,NA,NA,NA,trouts_jubilee,namedStore
+maryland,store,4598.3,kale,none,trouts_jubilee,NA,635.4,15814.5,NA,NA,NA,NA,NA,NA,trouts_jubilee,namedStore
+maryland,store,4598.2,kale,none,trouts_jubilee,NA,648.41,2353.25,NA,NA,NA,NA,NA,NA,trouts_jubilee,namedStore
+maryland,store,4598.1,kale,none,trouts_jubilee,NA,716.26,2951.34,NA,NA,NA,NA,NA,NA,trouts_jubilee,namedStore
+maryland,store,4596.1,lettuce,none,trouts_jubilee,NA,24.98,145.46,NA,NA,NA,NA,NA,NA,trouts_jubilee,namedStore
+maryland,store,4596.2,lettuce,none,trouts_jubilee,NA,28.91,133.28,NA,NA,NA,NA,NA,NA,trouts_jubilee,namedStore
+maryland,store,4596.3,lettuce,none,trouts_jubilee,NA,29.72,114.08,NA,NA,NA,NA,NA,NA,trouts_jubilee,namedStore
+texas,farm,3684,spinach,certified_organic,NA,"Hannah Beall, Saga Farm",228.76,1795.78,2,-188.6,120.27000000000001,87,2,2,"Hannah Beall, Saga Farm",farmer
+texas,farm,3685,spinach,certified_organic,NA,"Hannah Beall, Saga Farm",250.3,57.91,2,-188.6,126.10999999999999,87,2,2,"Hannah Beall, Saga Farm",farmer
+texas,farm,3687,kale,certified_organic,NA,"Hannah Beall, Saga Farm",377.12,8976.01,4,50.29,50.5,99,1,3,"Hannah Beall, Saga Farm",farmer
+texas,farm,3689,kale,certified_organic,NA,"Hannah Beall, Saga Farm",398.08,8909.28,4,50.29,118.50999999999999,99,1,3,"Hannah Beall, Saga Farm",farmer
+texas,farm,3683,carrot,organic cover_crops nospray notill,NA,"neil brosig, food forest",83.26,235.26,4,52.41,125.72,97,4,4,"neil brosig, food forest",farmer
+texas,farm,3682,carrot,organic cover_crops nospray notill,NA,"neil brosig, food forest",104.9,282.57,4,52.41,126.09,97,4,4,"neil brosig, food forest",farmer
+texas,farm,3681,carrot,organic cover_crops nospray notill,NA,"neil brosig, food forest",87.18,280.58,4,52.41,125.47,97,4,4,"neil brosig, food forest",farmer
+new_york,store,3373,cherry_tomato,none,stop_and_shop,NA,31.67,733.26,NA,71.64,88.16,NA,NA,NA,stop_and_shop,namedStore
