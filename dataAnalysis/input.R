@@ -1,5 +1,64 @@
 library("tidyverse")
-df <- read_csv("~/D3/surveyDashboard/dataAnalysis/rfc 2020 data (viz).csv")
+
+
+columnSpecification <- cols(
+    `Soil 0-10cm Organic Matter %` = col_double(),
+    `Soil 0-10cm Total Organic Carbon %` = col_double(),
+    `Soil 0-10cm pH` = col_double(),
+    `Soil 0-10cm Soil Respiration` = col_double(),
+    `Soil 0-10cm, Sodium (noisy)` = col_double(),
+    `Soil 0-10cm, Magnesium (noisy)` = col_double(),
+    `Soil 0-10cm, Aluminum` = col_double(),
+    `Soil 0-10cm, Silicon %` = col_double(),
+    `Soil 0-10cm, Phosphorous` = col_double(),
+    `Soil 0-10cm, Sulfur` = col_double(),
+    `Soil 0-10cm, Potassium` = col_double(),
+    `Soil 0-10cm, Calcium` = col_double(),
+    `Soil 0-10cm, Titanium` = col_double(),
+    `Soil 0-10cm, Vanadium` = col_double(),
+    `Soil 0-10cm, Chromium` = col_double(),
+    `Soil 0-10cm, Manganese` = col_double(),
+    `Soil 0-10cm, Iron` = col_double(),
+    `Soil 0-10cm, Nickel` = col_double(),
+    `Soil 0-10cm, Copper` = col_double(),
+    `Soil 0-10cm, Zinc` = col_double(),
+    `Soil 0-10cm, Arsenic` = col_double(),
+    `Soil 0-10cm, Selenium` = col_double(),
+    `Soil 0-10cm, Rubidium` = col_double(),
+    `Soil 0-10cm, Strontium` = col_double(),
+    `Soil 0-10cm, Molybdenum` = col_double(),
+    `Soil 0-10cm, Lead` = col_double(),
+    `Soil 10-20cm Organic Matter %` = col_double(),
+    `Soil 10-20cm Total Organic Carbon %` = col_double(),
+    `Soil 10-20cm pH` = col_double(),
+    `Soil 10-20cm Soil Respiration` = col_double(),
+    `Soil 10-20cm, Sodium (noisy)` = col_double(),
+    `Soil 10-20cm, Magnesium (noisy)` = col_double(),
+    `Soil 10-20cm, Aluminum` = col_double(),
+    `Soil 10-20cm, Silicon %` = col_double(),
+    `Soil 10-20cm, Phosphorous` = col_double(),
+    `Soil 10-20cm, Sulfur` = col_double(),
+    `Soil 10-20cm, Potassium` = col_double(),
+    `Soil 10-20cm, Calcium` = col_double(),
+    `Soil 10-20cm, Titanium` = col_double(),
+    `Soil 10-20cm, Vanadium` = col_double(),
+    `Soil 10-20cm, Chromium` = col_double(),
+    `Soil 10-20cm, Manganese` = col_double(),
+    `Soil 10-20cm, Iron` = col_double(),
+    `Soil 10-20cm, Nickel` = col_double(),
+    `Soil 10-20cm, Copper` = col_double(),
+    `Soil 10-20cm, Zinc` = col_double(),
+    `Soil 10-20cm, Arsenic` = col_double(),
+    `Soil 10-20cm, Selenium` = col_double(),
+    `Soil 10-20cm, Rubidium` = col_double(),
+    `Soil 10-20cm, Strontium` = col_double(),
+    `Soil 10-20cm, Molybdenum` = col_double(),
+    `Soil 10-20cm, Lead` = col_double(),
+    `Planting` = col_character()
+)
+
+
+df <- read_csv( "./rfc 2020 data (viz).csv", col_types = columnSpecification)
 toRename <- list(
   FarmPractices = 'Farm Practices',
   StoreName = 'Store Name',
@@ -10,25 +69,36 @@ toRename <- list(
   MaturityDays = "Maturity days",
   Sweetness0to5 ="Sweetness (0-5 scale)",
   Flavor0to5 = "Flavor (0-5 scale)",
-  Taste0to5 = "Overall Taste (0-5 scale)"
+  Taste0to5 = "Overall Taste (0-5 scale)",
+  SoilOrganicMatter0to10cmPercentage = "Soil 0-10cm Organic Matter %",
+  SoilOrganicMatter10to20cmPercentage = "Soil 10-20cm Organic Matter %"
   )
-
 df <- rename( df, !!!toRename )
+
+## Clasifications of different variables
 
 variablesList <- colnames(df)
 
-soilVariables <- c( 39:90 )
-cropVariables <- c( 21:37 )
+soilIndexes <- c( 39:90 )
+soilVariables <- variablesList[soilIndexes]
+
+
+cropIndexes <- c( 21:37 )
+cropVariables <- variablesList[ cropIndexes ]
 
 chemicalVariables <- c( soilVariables, cropVariables )
 
-practicesList <- df %>% select( FarmPractices ) %>% map( ~strsplit( split="[;,\\s]", x = .x, perl=TRUE) ) %>% flatten() %>% flatten() %>% unique() %>% reduce( ~append(.x,.y) ) 
+soilQualityVariables <- c( 'SoilOrganicMatter0to10cmPercentage', 'SoilOrganicMatter10to20cmPercentage' )
+
+practicesList <- df %>% select( FarmPractices ) %>% map( ~strsplit( split="[;,\\s]", x = .x, perl=TRUE) ) %>% flatten() %>% flatten() %>% unique() %>% reduce( ~append(.x,.y) ) %>% na.omit()
+
+
 
 farmersList <- df %>% select( Farmer ) %>% unique() %>% unlist() %>% unname()
 
 productsList <- df %>% select( Type ) %>% unlist() %>% unique()
 
-
+## Decoupling of 'Farm Practices' variable to get an actual variable for every practice.
 
 isSubstring <- function( string, substring ) {
   index  <- grep( x=string, pattern=substring )
@@ -40,35 +110,34 @@ isSubstring <- function( string, substring ) {
   }
 }
 
-isIrrigating <- function(x) {
-  isSubstring( substring="irrigation", string =x )
+individualFarmPracticesColumns <- tibble(.rows=nrow(df))
+for ( i in practicesList ) {
+  individualFarmPracticesColumns[,i] <- map_lgl( df$FarmPractices, ~isSubstring( substring='i', string = .x )  )
 }
+individualFarmPracticesColumns
 
-filter( df, FarmPractices == 'other' )
+df <- bind_cols( df, individualFarmPracticesColumns )
 
 
-hasPractice <- function( practice, data ) {
-  filtering <- function( x ) {
-    isSubstring( string=practice, substring=x )
-  }
-  BoolColumn <- map( data$FarmPractices, filtering )
-  return( which( BoolColumn == TRUE ) )
-}
+## The basic data frame df is ready.
 
-hasPractice( df, practice = 'irrigation' )
-
-buyerVariables <- c( "State", "Source", "ID",  "Type", "FarmPractices", "StoreName", "Farmer", "Polyphenols", "Antioxidants","Flavor0to5" , "ShippingTimehrs", "TotalTimehrs", "MaturityDays", "Sweetness0to5", "Flavor0to5", "Taste0to5" )
+buyerVariables <- c( "State", "Source", "ID",  "Type", "FarmPractices", "StoreName", "Farmer", "Polyphenols", "Antioxidants","Flavor0to5" , "ShippingTimehrs", "TotalTimehrs", "MaturityDays", "Sweetness0to5", "Flavor0to5", "Taste0to5" , practicesList, soilQualityVariables)
 
 ## Apparently, if the provider isn't named, you can be sure the product comes from a farm.
 ## No Row has both
-filter( df, is.na(StoreName) == is.na(Farmer) && is.na(Farmer) == TRUE  )
-## They are predominantly unnamed farms
-filter( df, is.na(StoreName) == is.na(Farmer) ) %>% select( Source ) %>% unique()
-filter( df, is.na(StoreName) == is.na(Farmer)  ) %>% group_by( Source ) %>% summarize( n() )
 
+## filter( df, is.na(StoreName) == is.na(Farmer) && is.na(Farmer) == TRUE  )
+
+## They are predominantly unnamed farms
+
+## filter( df, is.na(StoreName) == is.na(Farmer) ) %>% select( Source ) %>% unique()
+
+analysisOfSourceColumn <- filter( df, is.na(StoreName) == is.na(Farmer)  ) %>% group_by( Source ) %>% summarize( n() )
 
 ## Obtainment of buyer's data table
 buyersTable <- df %>% select( one_of( !!!buyerVariables ) ) %>% filter( !is.na( Antioxidants ), !is.na(Polyphenols) )
+
+## We want to have a variable that tells us where does the product come from, wether it is a certain farmer, a certain store or other. In another column we'll store this provider's name or a unidentified indicator.
 
 sourceNameColumn <- function( Farmer, StoreName, Source ) {
   noFarmer <- is.na(Farmer)
@@ -102,6 +171,8 @@ sourceClass <- function( Farmer, StoreName, Source ) {
   return( output )
 }
 
+reprocessed <- c( 'Farmer', 'StoreName', 'Source')
+
 
 ## na.omit() usefull omits any component containing a NA in a df.
 
@@ -111,6 +182,10 @@ sourceClass <- pmap_chr( buyersTable %>% select( StoreName, Farmer, Source), sou
 buyersTable$sourceName <- sourceName
 buyersTable$sourceClass <- sourceClass
 
-write_csv( x=buyersTable, path='buyersTable.csv' )
+## We remove reprocessed columns in order to get a lighter csv.
+
+buyersCSV <- buyersTable %>% select( -one_of( reprocessed ) )
+
+write_csv( x=buyersCSV, path='buyersTable.csv' )
 
 ## La función recibe dos factores y algunos condicionantes y nos da un ANOVA para ver si algún dato se destaca. Do your own research!
