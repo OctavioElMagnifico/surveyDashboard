@@ -186,6 +186,6 @@ buyersTable$sourceClass <- sourceClass
 
 buyersCSV <- buyersTable %>% select( -one_of( reprocessed ) )
 
-write_csv( x=buyersCSV, path='buyersTable.csv' )
+write_csv( x=buyersCSV, path='../output/buyersTable.csv' )
 
 ## La función recibe dos factores y algunos condicionantes y nos da un ANOVA para ver si algún dato se destaca. Do your own research!
