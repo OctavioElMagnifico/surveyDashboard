@@ -184,8 +184,13 @@ buyersTable$sourceClass <- sourceClass
 
 ## We remove reprocessed columns in order to get a lighter csv.
 
-buyersCSV <- buyersTable %>% select( -one_of( reprocessed ) )
+buyersCSV <- buyersTable %>% select( -one_of( reprocessed ) ) %>% filter( !is.na( Flavor0to5 ), !is.na( organic ), !is.na( State ), !is.na( Type ), !is.na(SoilOrganicMatter0to10cmPercentage) )
 
-write_csv( x=buyersCSV, path='../output/buyersTable.csv' )
+
+
+write_csv( x=buyersCSV, path='../output/buyers.csv' )
+
+
+## Ideas to try
 
 ## La función recibe dos factores y algunos condicionantes y nos da un ANOVA para ver si algún dato se destaca. Do your own research!
