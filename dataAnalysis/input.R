@@ -2,6 +2,7 @@ library("tidyverse")
 
 
 columnSpecification <- cols(
+    `ID` = col_character(),
     `Soil 0-10cm Organic Matter %` = col_double(),
     `Soil 0-10cm Total Organic Carbon %` = col_double(),
     `Soil 0-10cm pH` = col_double(),
@@ -184,7 +185,7 @@ buyersTable$sourceClass <- sourceClass
 
 ## We remove reprocessed columns in order to get a lighter csv.
 
-buyersCSV <- buyersTable %>% select( -one_of( reprocessed ) ) %>% filter( !is.na( Flavor0to5 ), !is.na( organic ), !is.na( State ), !is.na( Type ), !is.na(SoilOrganicMatter0to10cmPercentage) )
+buyersCSV <- buyersTable %>% select( -one_of( reprocessed ) ) %>% filter( !is.na( Flavor0to5 ), !is.na( organic ), !is.na( State ), !is.na( Type ), !is.na(SoilOrganicMatter0to10cmPercentage), !is.na( SoilOrganicMatter10to20cmPercentage ) )
 
 
 

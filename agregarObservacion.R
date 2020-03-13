@@ -1,4 +1,4 @@
-#! Rscript
+#!/usr/bin/env Rscript 
 set.seed(42)
 
 tabla <- read.csv(file="compositions.csv",header = T)
