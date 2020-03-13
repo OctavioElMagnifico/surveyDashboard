@@ -170,11 +170,6 @@
 
          var arrangeToFactor = function (factorName) {
 
-            d3.csv("/csv/buyers.csv", parseRow)
-              .then( function(dataFile) {
-                datos = dataFile;
-              } );
-
              var vector = getColumn( datos, factorName );
              var categories = _.uniq(vector);
 
@@ -314,10 +309,6 @@
 
             svg.attr( "height", 1.5 * height )
 
-            d3.csv("/csv/buyers.csv", parseRow)
-              .then( function(dataFile) {
-                datos = dataFile;
-              } );
 
             svg.selectAll(".ejeChico").
                 remove()
@@ -332,10 +323,7 @@
             ;
             svg.selectAll(".bottomC")
                .remove()
-             d3.csv("/csv/buyers.csv", parseRow)
-               .then( function(dataFile) {
-                   datos = dataFile;
-               } );
+
             escalaR = d3.scaleLinear()
                         .domain( [
                             d3.min(datos, function(d) { return d[explained]; }  ),
@@ -344,7 +332,7 @@
                         .range( [ width / 2, 0 ] );
 
             svg.append("circle")
-              .attr("r", ( 0.51*height ) )
+              .attr("r", ( 0.51*width ) )
               .attr("cx", ( width * 0.75  ))
               .attr("cy", ( height * 0.75 ) )
               .attr("fill",bottomCircle)
@@ -390,12 +378,11 @@
             .then( function(dataFile) {
               datos = dataFile;
 
-              /* constellation(datos); */
-              arrangeToFactor( 'organic' )
+              constellation(datos);
 
             } );
 
-          var selected = "organic";
+          var selected = "constellation";
           var reset = "FALSE";
 
           const draw = () => {
@@ -408,7 +395,7 @@
               .transition()
               .duration(1000)
               .text( datos.length );
-            
+
             d3.selectAll("span#display2")
               .attr("color","black")
 
@@ -425,10 +412,21 @@
             };
           };
 
-          /* var productLevels = _.uniq( getColumn( datos, 'product' ) );
-           * var organicLevels = _.uniq( getColumn( datos, 'organic' ) );
-           */
+          var outliers = [];
+          var outliersData = [];
+
+          function handleClick(event){
+            outliers.push(document.getElementById("myVal").value)
+            outliersData.push( datos.filter( (d) => ( d.sampleId == value ) ) )
+            var datos = datos.filter( (d) => ( d.sampleId != value ) )
+            return false;
+          }
         </script>
+
+        <form name="OutliersList" onSubmit="return handleClick()">
+          <input name="Submit"  type="submit" value="Add to Outliers" >
+          <input type="text" id="myVal" placeholder="Insert Point ID from Tooltip.">
+        </form>
 
     </body>
 </html>
