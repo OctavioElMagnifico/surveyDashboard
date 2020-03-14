@@ -71,14 +71,18 @@
 		</div>
     <p> This is the whole dataset! To reach the center, a value should be infinitely big, so points near the center are probably outliers. </p>
   </aside>
+	<p id="puSlider">
+		<input id="slider" type="range" min="8000" max="25000" step="300" value="40000" orient="horizontal">
+	</p>
 
         <script type="text/javascript">
 
 
          var height = 600;
          var width = 600;
-         var padding = 40;
+         var padding = 50;
          var datos;
+         var datosTabla;
          var objectiveSamples = 455;
          var headerHeight = 100;
 
@@ -227,7 +231,7 @@
                  ;
 
             svg.append("rect")
-              .attr("x", ( (d) => ( cellWidth + padding ) *  explicative.length + padding / 2 ) )
+              .attr("x", ( (d) => ( cellWidth + padding ) *  explicative.length + padding ) )
                .attr("y", ( position['Y'] - cellHeight - padding  ) )
               .attr("fill", "rgba(100,100,120,0.4)")
               .attr("height", ( cellHeight + padding ) )
@@ -285,8 +289,9 @@
                 .attr("font-family","optima,futura,sans-serif")
                 .attr("transform","translate(" + ( position['X'] + cellWidth / 2 ) +  "," +  ( position['Y'] - cellHeight/2) + ")" )
                  ;
+               
               svg.append("text")
-                .attr("x", ( cellWidth + padding ) *  3 + 2 *  padding - 10 )
+                .attr("x", ( cellWidth + padding ) *  explicative.length + 2 *  padding - 10 )
                 .attr("y", padding * 4 )
                 .attr("font-size","20")
                 .attr("font-weight","bold")
@@ -353,25 +358,24 @@
                 {
                     escalaA = d3.scaleLog()
                                 .domain( [ d3.min( datos, (d) => ( d[ expl ] ) ) , d3.max(datos, (d) => (d[ expl ]) ) ] )
-                                .range( [ 0 , ( 2 *  Math.PI ) / 3 ] );
+                                .range( [ 0 , ( 2 *  Math.PI ) / explicative.length ] );
 
                   var selectedCircles = svg.selectAll("circle." + expl );
 
-                  svg.selectAll("circle." + expl )
-                     .data(datos, getSId)
+                  selectedCircles.data(datos, getSId)
                      .exit()
                      .remove();
 
-                    svg.selectAll("circle." + expl )
-                    .data(datos, getSId)
+
+                  selectedCircles.data(datos, getSId)
                     .enter()
                     .append("circle" )
                     .attr("class", (d) => ( expl ) )
                     .merge(selectedCircles)
                     .transition()
                     .duration(1500)
-                    .attr("cx", (d) => ( escalaR( d[ explained ] ) * Math.cos( escalaA( d[ expl ] ) + ( ( 2 * Math.PI )/3 ) * (i+1) ) + width * 0.75 ) )
-                    .attr("cy", (d) => ( escalaR( d[ explained ] ) * Math.sin( escalaA( d[ expl ] ) + ( ( 2 * Math.PI )/3 ) * (i+1) ) + height * 0.75 ) )
+                    .attr("cx", (d) => ( escalaR( d[ explained ] ) * Math.cos( escalaA( d[ expl ] ) + ( ( 2 * Math.PI )/ explicative.length ) * (i+1) ) + width * 0.75 ) )
+                    .attr("cy", (d) => ( escalaR( d[ explained ] ) * Math.sin( escalaA( d[ expl ] ) + ( ( 2 * Math.PI )/ explicative.length ) * (i+1) ) + height * 0.75 ) )
                     .attr("r", 3+i + "px" )
                     .attr("transform","translate(0,0)")
                     .attr("fill", d3.schemeCategory10[ i + 2 ] )
@@ -388,6 +392,7 @@
           d3.csv("/csv/buyers.csv", parseRow)
             .then( function(dataFile) {
               datos = dataFile;
+              datosTabla = dataFile;
 
               constellation(datos);
 
@@ -423,24 +428,20 @@
             };
           };
 
-          var outliers = [];
-          var outliersData = [];
+          var outlierCeiling;
 
-          function handleClick(event){
-            outliers.push(document.getElementById("myVal").value);
-            outliersData.push( datos.filter( (d) => ( d.sampleId == value ) ) );
-            var datos = datos.filter( (d) => ( d.sampleId != value ) );
-            draw();
-            return false;
-          }
-
+          d3.select("input")
+            .on("change", function() {
+              outlierCeiling = +d3.select(this).node().value;
+              console.log( outlierCeiling )
+              datos = datosTabla
+              datos = datos.filter( (d) => ( d[explained] < outlierCeiling ) )
+              draw()
+            });
 
         </script>
 
-        <form name="OutliersList" onSubmit="return handleClick()">
-          <input name="Submit"  type="submit" value="Add to Outliers" >
-          <input type="text" id="myVal" placeholder="Insert Point ID from Tooltip.">
-        </form>
+
 
     </body>
 </html>
