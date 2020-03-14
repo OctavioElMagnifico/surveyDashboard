@@ -104,7 +104,7 @@
 
           /* Configuration specific to the data available. */
 
-         var parseOrganic = function(d) { if ( d == "FALSE" ) { return 'NotOrganic'; } else { return 'Organic'; } };
+         var parseBooleanCol = function(d,colName) { if ( d == "FALSE" ) { return ( 'Not ' + colName ); } else { return colName; } };
 
           var parseRow = function(d) {
             return{
@@ -114,11 +114,12 @@
               sourceName: d.sourceName,
               sourceClass: d.sourceClass,
               state: d.State,
-              organic: parseOrganic( d.organic ),
-              flavorScale: d.Flavor0to5,
+              organic: parseBooleanCol( d.organic, 'Organic' ),
+              irrigation: parseBooleanCol( d.irrigation, 'Irrigation' ),
+              flavorScale: parseFloat(d.Flavor0to5),
               product: d.Type,
               organicMatterInner: parseFloat( d.SoilOrganicMatter0to10cmPercentage ),
-              organicMatterOuter: parseFloat( d.SoilOrganicMatter10to20cmPercentage ),
+              organicMatterOuter: parseFloat( d.SoilOrganicMatter10to20cmPercentage )
             }
           };
 
@@ -216,6 +217,7 @@
 
 
              var parametrizedScatter = function( category, categoryVal, index, position, explicativeSelected ) {
+
              escalaX = d3.scaleLinear()
                          .domain( [
                              d3.min(datos, (d)  => ( d[explicativeSelected] )  ),
@@ -311,7 +313,7 @@
                ;
 
 
-               /* Poings drawing and joining */
+               /* Points drawing and joining */
                const selectedCircs = svg.selectAll("circle." + explicativeSelected )
                                         .data( datos, getSId )
 
@@ -323,10 +325,10 @@
 
                selectedCircs.enter()
                                         .append("circle" )
+                                        .attr( "class", explicativeSelected )
                                         .attr("fill", "blue")
-
-
-               selectedCircs.filter( (d) => ( d[category] == categoryVal ) )
+                                        .merge(selectedCircs)
+                                        .filter( (d) => ( d[category] == categoryVal ) )
                                         .transition()
                                         .duration(1000)
                                         .attr("fill", d3.schemeCategory10[index] )
@@ -354,6 +356,7 @@
                     remove()
              ;
          };
+
 
          var constellation = function() {
 
@@ -397,10 +400,10 @@
                   var selectedCircles = svg.selectAll("circle." + expl )
                     .data(datos, getSId);
 
-
                   selectedCircles
-                     .exit()
-                     .remove();
+                    .exit()
+                    .remove();
+
 
                   selectedCircles
                     .enter()
@@ -416,6 +419,7 @@
                     .attr("fill", d3.schemeCategory10[ i + 2 ] )
                           }
                       );
+
          };
 
 

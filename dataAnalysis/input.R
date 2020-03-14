@@ -94,7 +94,6 @@ soilQualityVariables <- c( 'SoilOrganicMatter0to10cmPercentage', 'SoilOrganicMat
 practicesList <- df %>% select( FarmPractices ) %>% map( ~strsplit( split="[;,\\s]", x = .x, perl=TRUE) ) %>% flatten() %>% flatten() %>% unique() %>% reduce( ~append(.x,.y) ) %>% na.omit()
 
 
-
 farmersList <- df %>% select( Farmer ) %>% unique() %>% unlist() %>% unname()
 
 productsList <- df %>% select( Type ) %>% unlist() %>% unique()
@@ -113,7 +112,8 @@ isSubstring <- function( string, substring ) {
 
 individualFarmPracticesColumns <- tibble(.rows=nrow(df))
 for ( i in practicesList ) {
-  individualFarmPracticesColumns[,i] <- map_lgl( df$FarmPractices, ~isSubstring( substring='i', string = .x )  )
+  print( i )
+  individualFarmPracticesColumns[,i] <- map_lgl( df$FarmPractices, ~isSubstring( substring= i , string = .x )  )
 }
 individualFarmPracticesColumns
 
@@ -174,6 +174,9 @@ sourceClass <- function( Farmer, StoreName, Source ) {
 
 reprocessed <- c( 'Farmer', 'StoreName', 'Source')
 
+write_rds( x=df, path="./df.Rds",compress = "none")
+
+treeModelDf <- 
 
 ## na.omit() usefull omits any component containing a NA in a df.
 
@@ -185,7 +188,7 @@ buyersTable$sourceClass <- sourceClass
 
 ## We remove reprocessed columns in order to get a lighter csv.
 
-buyersCSV <- buyersTable %>% select( -one_of( reprocessed ) ) %>% filter( !is.na( Flavor0to5 ), !is.na( organic ), !is.na( State ), !is.na( Type ), !is.na(SoilOrganicMatter0to10cmPercentage), !is.na( SoilOrganicMatter10to20cmPercentage ) )
+buyersCSV <- buyersTable %>% select( -one_of( reprocessed ) ) %>% filter( !is.na(Flavor0to5), !is.na( organic ), !is.na( State ), !is.na( Type ), !is.na(SoilOrganicMatter0to10cmPercentage), !is.na( SoilOrganicMatter10to20cmPercentage ) )
 
 
 
