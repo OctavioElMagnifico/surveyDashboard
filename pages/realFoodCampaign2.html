@@ -28,6 +28,8 @@
         aside{width:100%}
         aside div{display:inline-block}
         aside div hr{display:none}
+        .slider { height: 400px, width:80px }
+        .slider input { height: 400px, width:80px }
         }
   </style>
 
@@ -70,10 +72,14 @@
 		  <span class="display" id="display2" >00</span>
 		</div>
     <p> This is the whole dataset! To reach the center, a value should be infinitely big, so points near the center are probably outliers. </p>
+    <p id="puSlider">
+	    <label for="slider"
+        style="display: inline-block; width: 240px; text-align: right">
+        <h3>Outlier Ceiling.</h3> = <span id="ceiling-value">…</span>
+      </label>
+		  <input id="slider" type="range" min="8000" max="25000" step="300" value="40000" orient="horizontal" width="500" class="slider">
+	  </p>
   </aside>
-	<p id="puSlider">
-		<input id="slider" type="range" min="8000" max="25000" step="300" value="40000" orient="horizontal">
-	</p>
 
         <script type="text/javascript">
 
@@ -232,7 +238,7 @@
 
             svg.append("rect")
               .attr("x", ( (d) => ( cellWidth + padding ) *  explicative.length + padding ) )
-               .attr("y", ( position['Y'] - cellHeight - padding  ) )
+              .attr("y", ( position['Y'] - cellHeight - padding  ) )
               .attr("fill", "rgba(100,100,120,0.4)")
               .attr("height", ( cellHeight + padding ) )
               .attr("width", cellWidth / 2)
@@ -240,25 +246,21 @@
             ;
 
             const selectedCircs = svg.selectAll("circle." + explicativeSelected )
-                                  .filter( (d) => ( d[category] == categoryVal ) )
                                   .data( datos, getSId )
 
 
             selectedCircs.exit()
-                        .filter( (d) => ( d[category] == categoryVal ) )
                         .attr("fill", "yellow")
                         .remove()
 
 
-            selectedCircs.data( datos, getSId )
-                        .filter( (d) => ( d[category] == categoryVal ) )
-                        .enter()
+            selectedCircs.enter()
                         .append("circle" )
-                        .attr( "class", (d) => ( explicativeSelected ) )
                         .attr("fill", "blue")
 
 
-            selectedCircs.transition()
+               selectedCircs.filter( (d) => ( d[category] == categoryVal ) )
+                        .transition()
                         .duration(1000)
                         .attr("fill", d3.schemeCategory10[index] )
                         .attr("r","3")
@@ -284,12 +286,27 @@
                 .attr("font-size","20")
                 .attr("font-weight","bold")
                 .attr("text-anchor","middle")
-                .attr("fill","#777")
+                .attr("fill","white")
                 .attr("class","label")
                 .attr("font-family","optima,futura,sans-serif")
-                .attr("transform","translate(" + ( position['X'] + cellWidth / 2 ) +  "," +  ( position['Y'] - cellHeight/2) + ")" )
+                .attr("transform","translate(" + ( position['X'] + cellWidth / 2 + padding/2 ) +  "," +  ( position['Y'] - cellHeight/2) + ")" )
                  ;
-               
+
+               /* explicative axis legending */
+               svg.append("text")
+                  .text( (d) => ( explicativeSelected ) )
+                  .attr("x", 0 )
+                  .attr("y", 0 )
+                  .attr("font-size","16")
+                  .attr("font-weight","bold")
+                  .attr("text-anchor","middle")
+                  .attr("fill","red")
+                  .attr("class","label")
+                  .attr("font-family","optima,futura,sans-serif")
+                  .attr("transform","translate(" + ( position['X'] + cellWidth / 2 ) +  "," +  ( position['Y'] - padding/4 ) + ")" )
+               ;
+
+               /* Big category value labels */
               svg.append("text")
                 .attr("x", ( cellWidth + padding ) *  explicative.length + 2 *  padding - 10 )
                 .attr("y", padding * 4 )
@@ -302,6 +319,20 @@
                 .text( categoryVal )
                 .attr("transform","translate(0," +(  position['Y'] - cellHeight * 1.4 ) + ")" )
               ;
+               /* Explicative axis legending. */
+               svg.append("text")
+                  .attr("x", padding / 4 )
+                  .attr("y", padding * 4 )
+                  .attr("font-size","16")
+                  .attr("font-weight","bold")
+                  .attr("fill","red")
+                  .attr("class","label")
+                  .attr("font-family","optima,futura,sans-serif")
+                  .style("writing-mode","vertical-rl")
+                  .text( explained )
+                  .attr("transform","translate(" + position['X'] + "," +(  position['Y'] - cellHeight * 1.4 ) + ")" )
+               ;
+
          };
 
 
@@ -436,6 +467,8 @@
               console.log( outlierCeiling )
               datos = datosTabla
               datos = datos.filter( (d) => ( d[explained] < outlierCeiling ) )
+              d3.select("#ceiling-value").text( outlierCeiling )
+
               draw()
             });
 
