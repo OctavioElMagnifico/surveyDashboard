@@ -1,0 +1,14 @@
+{
+  "name": "@d3/circle-packing",
+  "main": "0edfeb766ced5a8c@164.js",
+  "version": "164.0.0",
+  "homepage": "https://observablehq.com/@d3/circle-packing",
+  "author": {
+    "name": "D3",
+    "url": "https://observablehq.com/@d3"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}

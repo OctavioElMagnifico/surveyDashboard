@@ -98,7 +98,7 @@
 
           var parseRow = function(d) {
             return{
-              sampleId: d.ID,
+              sampleId: parseInt(d.ID),
               antioxidants: parseFloat( d.Antioxidants ),
               polyphenols: parseFloat( d.Polyphenols ),
               sourceName: d.sourceName,
@@ -118,7 +118,7 @@
              return column;
          };
 
-         var getSId = (d) => ( d.ID );
+         var getSId = (d) => ( d.sampleId );
          var factors = [ "product", "organic" ];
 
          var explicative = [ "polyphenols", "organicMatterInner", "organicMatterOuter" ];
@@ -202,7 +202,7 @@
 
              var ejeY = d3.axisLeft()
                           .scale(escalaY)
-                          .ticks(3)
+                          .ticks(7)
 
 
              var parametrizedScatter = function( category, categoryVal, index, position, explicativeSelected ) {
@@ -235,22 +235,23 @@
               .attr("class","label")
             ;
 
-            var selectedCircs = svg.selectAll("circle." + explicativeSelected )
-                                   .filter( (d) => ( d[category] == categoryVal ) )
+            const selectedCircs = svg.selectAll("circle." + explicativeSelected )
+                                  .filter( (d) => ( d[category] == categoryVal ) )
+                                  .data( datos, getSId )
 
-               /* svg.selectAll("circle")
-                *                     .data(datos, getSId)
-                *                     .exit()
-                *                     .remove(); */
 
-               selectedCircs.data( datos, getSId )
-                                   .exit()
-                                   .attr("fill", "yellow")
+            selectedCircs.exit()
+                        .filter( (d) => ( d[category] == categoryVal ) )
+                        .attr("fill", "yellow")
+                        .remove()
 
-               /* selectedCircs.data( datos, getSId )
-                *                     .enter()
-                *                     .attr("fill", "blue")
-                */
+
+            selectedCircs.data( datos, getSId )
+                        .filter( (d) => ( d[category] == categoryVal ) )
+                        .enter()
+                        .append("circle" )
+                        .attr( "class", (d) => ( explicativeSelected ) )
+                        .attr("fill", "blue")
 
 
             selectedCircs.transition()
@@ -364,19 +365,19 @@
                     svg.selectAll("circle." + expl )
                     .data(datos, getSId)
                     .enter()
-                    .append("circle")
+                    .append("circle" )
+                    .attr("class", (d) => ( expl ) )
                     .merge(selectedCircles)
                     .transition()
-                    .duration(2500)
+                    .duration(1500)
                     .attr("cx", (d) => ( escalaR( d[ explained ] ) * Math.cos( escalaA( d[ expl ] ) + ( ( 2 * Math.PI )/3 ) * (i+1) ) + width * 0.75 ) )
                     .attr("cy", (d) => ( escalaR( d[ explained ] ) * Math.sin( escalaA( d[ expl ] ) + ( ( 2 * Math.PI )/3 ) * (i+1) ) + height * 0.75 ) )
                     .attr("r", 3+i + "px" )
                     .attr("transform","translate(0,0)")
                     .attr("fill", d3.schemeCategory10[ i + 2 ] )
-                    .attr("class", (d) => ( expl ) );
                           }
                       );
-         }
+         };
 
 
          /* Comment on program structure: The only call donde to d3.csv exports the data to a global environment variable from where the other transformation functions get it. Thats why most of the code is function definition. */
@@ -426,9 +427,10 @@
           var outliersData = [];
 
           function handleClick(event){
-            outliers.push(document.getElementById("myVal").value)
-            outliersData.push( datos.filter( (d) => ( d.sampleId == value ) ) )
-            var datos = datos.filter( (d) => ( d.sampleId != value ) )
+            outliers.push(document.getElementById("myVal").value);
+            outliersData.push( datos.filter( (d) => ( d.sampleId == value ) ) );
+            var datos = datos.filter( (d) => ( d.sampleId != value ) );
+            draw();
             return false;
           }
 

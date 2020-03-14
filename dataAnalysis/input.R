@@ -165,7 +165,7 @@ sourceClass <- function( Farmer, StoreName, Source ) {
   } else if ( noStore == FALSE ) {
     output <- 'namedStore'
   } else if ( !is.na( Source ) ) {
-    output <- paste0( Source, 'Unnamed' )
+    output <- Source
   } else {
     output <- 'unnamed'
   }
@@ -195,3 +195,45 @@ write_csv( x=buyersCSV, path='../output/buyers.csv' )
 ## Ideas to try
 
 ## La función recibe dos factores y algunos condicionantes y nos da un ANOVA para ver si algún dato se destaca. Do your own research!
+
+
+## Treemap CVS
+
+library('rpart')
+treeModel <- rpart( Polyphenols ~ sourceClass + Type, buyersTable )
+
+cat1 <- ( buyersTable$sourceClass ) %>% unique()
+cat1
+
+cat2 <-  ( buyersTable$Type ) %>% unique()
+
+
+cat1Col <- c()
+for ( i in cat1 ) {
+  cat1Col <- c( cat1Col, rep( x=i, times = length( cat2 ) ) )
+}
+cat1Col
+
+cat2Col <-  rep( x=cat2, times= length( cat1 ) )
+
+
+
+hierarchyTree <-  tibble(
+  sourceClass = cat1Col,
+  Type  = cat2Col
+)
+
+treeModel <- rpart( Polyphenols ~ sourceClass + Type, buyersTable )
+
+## predict( treeModel, newdata = list( Type = 'kale', sourceClass = 'farmer' ) )
+## predict( treeModel, newdata = hierarchyTree[1,] )
+
+hierarchyTree <- mutate( hierarchyTree, polyphenols = predict( treeModel, newdata = list( Type = Type, sourceClass = sourceClass ) ) )
+
+hierarchyCSV <- hierarchyTree %>% rename( parentId = 'sourceClass' , 'id' = Type, 'size' =  polyphenols )
+
+hierarchyCSV <- select( hierarchyCSV, id, parentId, size )
+
+hierarchyCSV <- add_row( hierarchyCSV, parentId = rep('source', length(cat1) ), id = cat1, size = "", .before = 1  ) %>%  add_row( parentId = "", id = 'source', size = "", .before = 1  )
+
+write_csv( x = hierarchyCSV, path='../output/hierarchy.csv' )

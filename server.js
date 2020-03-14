@@ -53,4 +53,10 @@ app.get('/csv/:name', (req, res) => {
   res.sendFile(`${__dirname}/output/${csvName}`)
 })
 
+app.get('/json/:name', (req, res) => {
+  const jsonName = req.params.name
+  res.setHeader('Content-Type', 'text/json')
+  res.sendFile(`${__dirname}/output/${jsonName}`)
+})
+
 app.listen(PORT, () => console.log(`Server ready on port ${PORT}`))
