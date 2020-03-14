@@ -120,6 +120,12 @@ individualFarmPracticesColumns
 df <- bind_cols( df, individualFarmPracticesColumns )
 
 
+dfTreeModel <- bind_cols( select(df, one_of( !!!buyerVariables ) ) ,
+                         individualFarmPracticesColumns )
+treeInputsList <- list( df = dfTreeModel, practices = practicesList )
+
+write_rds( x=treeInputsList, path="./treeInputs.Rds" )
+
 ## The basic data frame df is ready.
 
 buyerVariables <- c( "State", "Source", "ID",  "Type", "FarmPractices", "StoreName", "Farmer", "Polyphenols", "Antioxidants","Flavor0to5" , "ShippingTimehrs", "TotalTimehrs", "MaturityDays", "Sweetness0to5", "Flavor0to5", "Taste0to5" , practicesList, soilQualityVariables)
