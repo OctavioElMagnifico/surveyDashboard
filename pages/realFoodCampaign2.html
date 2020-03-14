@@ -245,29 +245,6 @@
               .attr("class","label")
             ;
 
-            const selectedCircs = svg.selectAll("circle." + explicativeSelected )
-                                  .data( datos, getSId )
-
-
-            selectedCircs.exit()
-                        .attr("fill", "yellow")
-                        .remove()
-
-
-            selectedCircs.enter()
-                        .append("circle" )
-                        .attr("fill", "blue")
-
-
-               selectedCircs.filter( (d) => ( d[category] == categoryVal ) )
-                        .transition()
-                        .duration(1000)
-                        .attr("fill", d3.schemeCategory10[index] )
-                        .attr("r","3")
-                        .attr("cx", (d) =>(  escalaX( d[explicativeSelected] )  ) )
-                        .attr("cy", (d) =>(  escalaY( d[explained] )  ) )
-                        .attr("transform","translate(" + ( position['X'] ) +  "," +  (  position['Y'] - cellHeight ) + ")" )
-                          ;
 
              svg.append("g")
                 .attr("class","ejeChico")
@@ -319,7 +296,7 @@
                 .text( categoryVal )
                 .attr("transform","translate(0," +(  position['Y'] - cellHeight * 1.4 ) + ")" )
               ;
-               /* Explicative axis legending. */
+               /* Explained axis legending. */
                svg.append("text")
                   .attr("x", padding / 4 )
                   .attr("y", padding * 4 )
@@ -331,6 +308,32 @@
                   .style("writing-mode","vertical-rl")
                   .text( explained )
                   .attr("transform","translate(" + position['X'] + "," +(  position['Y'] - cellHeight * 1.4 ) + ")" )
+               ;
+
+
+               /* Poings drawing and joining */
+               const selectedCircs = svg.selectAll("circle." + explicativeSelected )
+                                        .data( datos, getSId )
+
+
+               selectedCircs.exit()
+                                        .attr("fill", "yellow")
+                                        .remove()
+
+
+               selectedCircs.enter()
+                                        .append("circle" )
+                                        .attr("fill", "blue")
+
+
+               selectedCircs.filter( (d) => ( d[category] == categoryVal ) )
+                                        .transition()
+                                        .duration(1000)
+                                        .attr("fill", d3.schemeCategory10[index] )
+                                        .attr("r","3")
+                                        .attr("cx", (d) =>(  escalaX( d[explicativeSelected] )  ) )
+                                        .attr("cy", (d) =>(  escalaY( d[explained] )  ) )
+                                        .attr("transform","translate(" + ( position['X'] ) +  "," +  (  position['Y'] - cellHeight ) + ")" )
                ;
 
          };
@@ -391,14 +394,15 @@
                                 .domain( [ d3.min( datos, (d) => ( d[ expl ] ) ) , d3.max(datos, (d) => (d[ expl ]) ) ] )
                                 .range( [ 0 , ( 2 *  Math.PI ) / explicative.length ] );
 
-                  var selectedCircles = svg.selectAll("circle." + expl );
+                  var selectedCircles = svg.selectAll("circle." + expl )
+                    .data(datos, getSId);
 
-                  selectedCircles.data(datos, getSId)
+
+                  selectedCircles
                      .exit()
                      .remove();
 
-
-                  selectedCircles.data(datos, getSId)
+                  selectedCircles
                     .enter()
                     .append("circle" )
                     .attr("class", (d) => ( expl ) )
