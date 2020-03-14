@@ -70,6 +70,26 @@
 
         <script type="text/javascript">
 
+          /* R calling functions. */
+
+          async function predictProduce ( practicesSelected ) {
+            return fetch('/rexec', {
+              method: 'POST',
+              headers: {
+                'content-type': 'application/json'
+              },
+              body: JSON.stringify({
+                script: 'predictProduce.R',
+                arguments: [ practicesSelected ],
+                output: 'compositions.csv'
+              })
+            })
+          };
+
+          var exPracticesSelected = [ 'organic', 'non_gmo', 'irrigation' ]
+          var exStrigPractices;
+
+          /* Some Visualization Constants. */
 
          var height = 600;
          var width = 600;
@@ -246,6 +266,7 @@
                 .attr("transform","translate(" + ( position['X'] ) +  "," +  ( position['Y'] - cellHeight  ) + ")" )
                 .call(ejeY);
 
+               /* big bottom labels */
              svg.append("text")
                 .text( (d) => ( explicativeSelected ) )
                 .attr("x", 0 )
@@ -253,7 +274,7 @@
                 .attr("font-size","20")
                 .attr("font-weight","bold")
                 .attr("text-anchor","middle")
-                .attr("fill","white")
+                .attr("fill","lightgray")
                 .attr("class","label")
                 .attr("font-family","optima,futura,sans-serif")
                 .attr("transform","translate(" + ( position['X'] + cellWidth / 2 + padding/2 ) +  "," +  ( position['Y'] - cellHeight/2) + ")" )
@@ -314,7 +335,9 @@
                selectedCircs.enter()
                                         .append("circle" )
                                         .attr( "class", explicativeSelected )
-                                        .attr("fill", "blue")
+                                        .attr("cx", (d) =>(  escalaX( d[explicativeSelected] )  ) )
+                                        .attr("cy", (d) =>(  escalaY( d[explained] )  ) )
+                                        .attr("r",0 )
                                         .merge(selectedCircs)
                                         .filter( (d) => ( d[category] == categoryVal ) )
                                         .transition()
@@ -395,8 +418,11 @@
 
                   selectedCircles
                     .enter()
-                    .append("circle" )
-                    .attr("class", (d) => ( expl ) )
+                    .append( "circle" )
+                    .attr( "class", (d) => ( expl ) )
+                    .attr("cx", (d) => ( escalaR( d[ explained ] ) * Math.cos( escalaA( d[ expl ] ) + ( ( 2 * Math.PI )/ explicative.length ) * (i+1) ) + width * 0.75 ) )
+                    .attr("cy", (d) => ( escalaR( d[ explained ] ) * Math.sin( escalaA( d[ expl ] ) + ( ( 2 * Math.PI )/ explicative.length ) * (i+1) ) + height * 0.75 ) )
+                    .attr("r", 0 )
                     .merge(selectedCircles)
                     .transition()
                     .duration(1500)
