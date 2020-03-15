@@ -117,14 +117,27 @@ for ( i in practicesList ) {
 }
 individualFarmPracticesColumns
 
+synonimPractices <- list( "Non_GMO_Verified", "non_gmo", "Non_GMO", "non-gmo" )
+
+## TO DO: mutate a column with an OR condition and synthesize.
+
 df <- bind_cols( df, individualFarmPracticesColumns )
 
+treeVariables <- c( "Antioxidants", "Flavor0to5", "Polyphenols", "Type" )
 
-dfTreeModel <- bind_cols( select(df, one_of( !!!buyerVariables ) ) ,
+dfTreeModel <- bind_cols( select(df, one_of( !!!treeVariables ) ) ,
                          individualFarmPracticesColumns )
+
+treeModelRow <- dfTreeModel[1,practicesList]
+for ( i in nrow(treeModelRow) ) {
+  treeModelRow[1,i] <- FALSE
+}
+treeModelRow[1,'Type'] <- 'none'
+
 treeInputsList <- list( df = dfTreeModel, practices = practicesList )
 
 write_rds( x=treeInputsList, path="./treeInputs.Rds" )
+write_csv( x=treeModelRow, path="../output/treeModelRow.csv" )
 
 ## The basic data frame df is ready.
 

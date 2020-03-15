@@ -1,2 +1,10 @@
-"","x"
-"1","organic,non_gmo,irrigation"
+id,fruit,parameter,value
+1,kale,antioxidants,293.3889603960398
+2,kale,polyphenols,9009.8166766467
+3,kale,flavor,293.3889603960398
+4,grape,antioxidants,171.34337837837833
+5,grape,polyphenols,3751.195624999999
+6,grape,flavor,171.34337837837833
+7,lettuce,antioxidants,33.27273374888695
+8,lettuce,polyphenols,634.6616503992892
+9,lettuce,flavor,33.27273374888695

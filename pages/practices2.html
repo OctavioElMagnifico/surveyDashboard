@@ -15,6 +15,21 @@
     <body>
         <script type="text/javascript">
 
+          async function predictProduce ( practicesSelected ) {
+            return fetch('/rexec', {
+              method: 'POST',
+              headers: {
+                'content-type': 'application/json'
+              },
+              body: JSON.stringify({
+                script: 'predictProduce.R',
+                arguments: [ practicesSelected ],
+                output: 'fruitsDynamic.csv'
+              })
+            })
+          };
+
+          exSelectedPractices = [ "organic", "non_gmo", "irrigation" ]
 
           var parseRow = function(d) {
             return{
@@ -40,14 +55,18 @@
                        attr("width", ancho).
                        attr("height",alto);
 
+          var fruitsList = [ 'tomatto', 'lettuce' ]
+          var cellPadding = 100;
+
           fruitsPositions = {
             tomatto: 0,
-            lettuce: 100,
+            lettuce: 50,
           }
 
           file1 = "/csv/fruits1.csv";
           file2 = "/csv/fruits2.csv";
-          
+          fileD = "/csv/fruitsDynamic.csv";
+
           var draw = function( file )
           {
             var escalaX;
@@ -58,9 +77,9 @@
                 datos = dataFile;
                 escalaX = d3.scaleBand().
                              domain( d3.range( datos.length ) ).
-                             range( [0,ancho - 100 ] ).
+                             range( [0,ancho - cellPadding*( fruitsList.length - 1 ) ] ).
                              round(true).
-                             paddingInner(0.05)
+                             paddingInner(0.01)
                 escalaY = d3.scaleLinear().
                              domain(
                                [ 0, d3.max( datos, (d) => d.value ) ]
@@ -76,7 +95,7 @@
                                .attr("x", function(d,i)
                                  { return escalaX( i ) + fruitsPositions[d.fruit]; }
                                )
-                               .attr("width", escalaX.bandwidth() )
+                               .attr("width", escalaX.bandwidth() / 2 )
                                .attr("height",alto)
                                .attr("fill", (d,i) => color( i )
                                )
@@ -110,9 +129,9 @@
                 ;
               }
               );
-            console.log(datos)
+            /* Means drawing */
             d3.csv( "/csv/meanFruits1.csv" , parseRow)
-                   .then( function(dataFile) {
+              .then( function(dataFile) {
                 datos = dataFile;
 
                 var rects = svg.selectAll("rect")
@@ -122,9 +141,9 @@
                                .enter()
                                .append("rect")
                                .attr("x", function(d,i)
-                                 { return escalaX( i ) + fruitsPositions[d.fruit]; }
+                                 { return escalaX( i ) + fruitsPositions[d.fruit] + escalaX.bandwidth() / 2; }
                                )
-                               .attr("width", escalaX.bandwidth() )
+                               .attr("width", escalaX.bandwidth() / 2 )
                                .attr("height",alto)
                                .attr("fill", color( 10 )  )
                                .merge(rects)
