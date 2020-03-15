@@ -23,7 +23,7 @@ modelAntiox <- lm( Antioxidants ~ none + certified_organic + biologique + biodyn
 
 ## fittedAntiox
 
-write_rds(x=fittedAntiox, path = "./antioxidantsTree.Rds", compress = "gz")
+write_rds(x=modelAntiox, path = "./antioxidantsTree.Rds", compress = "gz")
 
 
 dataPoly <- data %>% select( one_of( !!!practicesList, 'Polyphenols', 'Type' ) ) %>% filter( !is.na( Polyphenols ) )
@@ -32,7 +32,7 @@ modelPoly <- lm( Polyphenols ~ none + certified_organic + biologique + biodynami
 
 ## fittedPoly
 
-write_rds(x=fittedPoly, path = "./polyphenolsTree.Rds", compress = "gz")
+write_rds(x=modelPoly, path = "./polyphenolsTree.Rds", compress = "gz")
 
 dataFlavor <- data %>% select( one_of( !!!practicesList, 'Flavor0to5', 'Type' ) ) %>% filter( !is.na( Flavor0to5 ) )
 
@@ -40,7 +40,7 @@ modelFlavor <- lm( Flavor0to5 ~ none + certified_organic + biologique + biodynam
 
 ## fittedFlavor
 
-write_rds(x=fittedPoly, path = "./flavorsTree.Rds", compress = "gz")
+write_rds(x=modelPoly, path = "./flavorsTree.Rds", compress = "gz")
 
 ## Varaibles to add: Soil conservation, taste, sweetness.
 
