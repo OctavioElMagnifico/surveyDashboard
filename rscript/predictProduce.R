@@ -22,4 +22,4 @@ escupir <- entrada[1]
 
 cat( escupir )
 
-write.csv( x='escupir', file=Sys.getenv("OUTPUT_FILE") )
+write.csv( x=escupir, file=Sys.getenv("OUTPUT_FILE") )
