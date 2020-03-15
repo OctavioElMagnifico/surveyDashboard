@@ -1,196 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-    <script type="text/javascript" src="https://unpkg.com/d3@5.15.0/dist/d3.js"> </script>
-		<title>Capítulo 9: Articulación.</title>
-    <style type="text/css">
-    </style>
-	</head>
-	<body>
-      <p id="pone"> Presioná para añadir un dato. </p>
-      <p id="saca"> Presioná para extraer un dato. </p>
-		<script type="text/javascript">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-     var parseRow = function(d) {
-         value: parseFloat(d.value)
-     };
+        <title>Dashboard: Real Food Information.</title>
+        <script type="text/javascript" src="https://unpkg.com/d3@5.15.0/dist/d3.js"> </script>
+        <script type="text/javascript" src="https://unpkg.com/lodash@4.17.15/lodash.js"></script>
 
-     var datos;
-
-     d3.csv("/csv/fruits1.csv", parseRow)
-       .then( function(dataFile) {
-           datos = dataFile;
-           console.log
-       } );
-
-
-
-
-     var ancho = 600;
-     var alto = 250;
-     var amortig = 20;
-     var valorMax = 10;
-     var llave = function(d) {
-         return d.id;
-     }
-     var escalaX = d3.scaleBand().
-                      domain( d3.range( datos.length ) ).
-                      range( [0,ancho] ).
-                      round(true).
-                      paddingInner(0.05)
-     var escalaY = d3.scaleLinear().
-                      domain(
-                          [ 0, d3.max( datos, (d) => d.value ) ]
-                      ).
-                      range( [ 0, alto ] )
-
-     var svg = d3.select("body").
-                  append("svg").
-                  attr("width", ancho).
-                  attr("height",alto);
-
-     svg.selectAll("rect")
-                        .data( datos, llave )
-                        .enter()
-                        .append("rect")
-                        .attr("x", function(d,i)
-                            { return escalaX( i ); }
-                        )
-                        .attr("y", function(d)
-                            {return alto - escalaY( d.value );}
-                        )
-                        .attr("width", escalaX.bandwidth() )
-                        .attr("height",alto)
-                        .attr("fill", function(d) {
-                            return "rgb(0,0," + Math.round( d.value * 5) + ")";
-                        }
-                        )
-     ;
-     svg.selectAll("text").
-                        data( datos, llave ).
-                        enter().
-                        append("text").
-                        text( function(d) {
-                            return Math.round(d.value);
-                        }
-                        ).
-                        attr("x", function(d,i)
-                            { return escalaX(i) + escalaX.bandwidth() / 2; }
-                        ).
-                         attr("y", function(d)
-                             { if (d.value>6) 
-                             { return alto - escalaY( d.value ) + 14; } else
-                                 {return alto - escalaY(d.value) - 1;};
-                                 ;}).
-                         attr("text-anchor", "middle").
-                         attr("fill","magenta").
-                         attr("font-family", "sans-serif").
-                         attr("font-size","14px")
-     ;
-     d3.selectAll("p").
-        on("click", function() {
-            var identidadParrafo = d3.select(this).attr("id");
-
-            if ( identidadParrafo == "pone" ) {
-                var nuevoNum = Math.floor( Math.random() * valorMax );
-                var nuevaLlave  = d3.max( datos, (d) => d.key ) + 1;
-                datos.push( { key: nuevaLlave, value: nuevoNum } );
-
-            } else{
-                datos.shift();
-            };
-
-            escalaX.domain( d3.range( datos.length ) );
-            escalaY.domain( [ 0, d3.max( datos, (d) => d.value ) ] );
-
-            var barras = svg.selectAll("rect").
-                             data( datos, llave );
-            barras.enter().
-                   append("rect").
-                   attr("x", ancho).
-                   attr("y", function(d) {
-                       return alto - escalaY(d.value);
-                   }
-                   ).
-                   attr("width", escalaX.bandwidth() ).
-                   attr("height", function(d) {
-                       return escalaY( d.value );
-                   }
-                   ).
-                   attr("fill", function(d) {
-                       return "rgb(0,0," + Math.round(d.value * 5) + ")";
-                   }
-                   ).
-                   merge(barras).
-                   transition().
-                   duration(500).
-                   attr("x", function(d,i)
-                       { return escalaX( i ); }
-                   ).
-                  attr("y", function(d)
-                      {return alto - escalaY( d.value );}
-                  ).
-                  attr("width", escalaX.bandwidth() ).
-                   attr("height", function(d) {
-                       return escalaY( d.value );
-                   }
-                   )
-            ;
-
-            var etiquetas = svg.selectAll("text").
-                                data( datos, llave )
-
-              etiquetas.enter().
-                append("text").
-                text( function(d) {
-                    return Math.round(d.value);
-                }
-                ).
-                attr("x", function(d,i)
-                    { return escalaX(i) + escalaX.bandwidth() / 2; }
-                ).
-                attr("y", function(d)
-                    { if (d.value > 6)
-                    { return alto - escalaY( d.value ) + 14; } else
-                        {return alto - escalaY(d.value) - 1;};
-                        ;}).
-                attr("text-anchor", "middle").
-                attr("fill","pink").
-                attr("font-family", "sans-serif").
-                attr("font-size","11px").
-                merge(etiquetas).
-                transition(0).
-                text( function(d) {
-                    return d.value;
-                } ).
-                attr("x", function(d,i) {
-                    return escalaX(i) + escalaX.bandwidth() / 2;
-                }).
-                attr("y", function(d) {
-                    return alto - escalaY(d.value) + 14;
-                })
-            ;
-
-            barras.exit().
-                   transition().
-                   duration(500).
-                   attr( "x", -escalaX.bandwidth() -10  ).
-                   remove()
-            ;
-
-            var etiquetas = svg.selectAll("text").
-                                data( datos, llave )
-
-            etiquetas.exit().
-                                transition().
-                                duration(250).
-                                attr("fill","red").
-                                remove()
-            ;
-
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Squada+One&display=swap" rel="stylesheet">
+       <style type="text/css">
+         body{margin:0;background-color:#fff!important;font-family:Roboto;text-align:center;border-bottom: 13px solid #add;}
+        .menu{width:100%;box-sizing:border-box;background:#add;padding:4px;text-align:center}
+        .menu span,aside h3{font-family:squada one;color:#fff;font-size:24pt;padding:10px 60px;background:#999;border-radius:5px;cursor:pointer;display:inline-block;margin:0 0 2px;font-weight:400}
+        .menu span{-webkit-transition:all .5s ease-in-out;transition:all .5s ease-in-out}
+        .menu span:hover{background:#bbb}
+        article h1{margin:auto;text-align:center;font-size:38px;font-weight:400;padding:10px}menu p{margin:5px}
+        h2{border-bottom: 3px solid #add;margin:0;padding-bottom:10px;display:inline-block;color: #999}
+        article p{padding:20px 10px;column-count:2;max-width:1000px;width:100%;margin:auto;text-indent:20px;font-size:11pt;text-align:left;}
+        aside{width:230px;float:right;padding:0 20px;text-align:center}
+        aside h3{font-size:18pt;padding:10px;width:210px;cursor:initial;margin:10px 0}
+        aside h4{margin:0;font-family:squada one;font-size:16pt;font-weight:400;display:inline}
+        aside div{background:#add;padding:10px 20px;border-radius:3px}
+        aside p{text-align:left;margin:5px}
+        aside span{margin-right:20px}
+        svg{display:inline-block}
+        .slider { height: 800px, width:800px }
+         p#puSlider{text-align: center}
+        .slider input { height: 800px, width:800px }
+        @media screen and (max-width:1250px){
+        aside{width:100%}
+        aside div{display:inline-block}
+        aside div hr{display:none}
         }
-           );
-		</script>
-	</body>
+  </style>
+
+
+    </head>
+    <body>
+	<article>
+    <h1>Survey Dashboard:</h1>
+    <h2>Investigate Wich Variables Explain Antioxidants Content.</h2>
+    <p>Welcome! We are an open data surveying program and we are colecting information about nutrient contents in commercial food.  If you click on the labels named 'Organicity' or 'Product' you'll see the data deagregated by one of those two factors and displayed according to each explicative variable . If you click over the 'Constellation' label, you'll see a display of the whole dataset acoording to the three variables. With de 'Outlier Ceiling' slider you can set a level of exclusion and see if patterns emerge more clearly while discarding certain extreme points. </p>
+
+	</article>
+
+	<div  class="menu">
+		 <span id="selOrganic">Organicity.</span>
+		 <span id="selProduct">Product.</span>
+		 <span id="selConstellation">Constellation.</span>
+		 <p >Click on an option to arrange the data by:</p>
+	</div>
+
+	<aside>
+	  <h3> What are you Seeing.</h3>
+		<div>
+		  <h4>objective</h4>
+		  <span class="display" id="display1" >00</span>
+		  <hr>
+		  <h4>samples</h4>
+		  <span class="display" id="display2" >00</span>
+		</div>
+    <p> This is the whole dataset! Points near the center have bigger values, so isolates itself around the center it is probably an outlier.</p>
+	    <label for="slider"
+        style="display: inline-block; width: 240px; text-align: center">
+        <h3>Outlier Ceiling</h3><h4 id="ceiling-value">…</h4>
+        <p id="puSlider">
+      </label>
+		  <input id="slider" type="range" min="8000" max="25000" step="300" value="40000" orient="horizontal" width="500" class="slider">
+	  </p>
+  </aside>
+
+        <script type="text/javascript">
+
+
+
+          async function predictProduce ( practicesSelected ) {
+            return fetch('/rexec', {
+              method: 'POST',
+              headers: {
+                'content-type': 'application/json'
+              },
+              body: JSON.stringify({
+                script: 'predictProduce.R',
+                arguments: [ practicesSelected ],
+                output: 'fruitsDynamic.csv'
+              })
+            })
+          };
+
+          var parseRow = function(d) {
+            return{
+              id: d.id,
+              value: parseFloat(d.value),
+              fruit: d.fruit,
+              parameter: d.parameter,
+              relative: parseFloat(d.relative),
+            }
+          };
+
+          var color = d3.scaleOrdinal( d3.schemeCategory10 );
+
+
+          var ancho = 500;
+          var alto = 500;
+          var amortig = 20;
+          var valorMax = 10;
+          var llave = function(d) {
+            return d.id;
+          }
+          var fruitsList = [ 'Kale.', 'Grape.', 'Lettuce.' ]
+          var cellPadding = 50;
+          var fruitsPositions = {
+            kale: 0,
+            grape: cellPadding * 1,
+            lettuce: cellPadding * 2,
+          }
+
+          var svg = d3.select("body").
+                       append("svg").
+                       attr("width", ancho + cellPadding ).
+                       attr("height",alto);
+
+          svg.selectAll("bottomLabel")
+             .append("rect")
+             .attr( "x", 0 )
+             .attr( "y", 500 )
+             .attr( "width", ancho )
+             .attr( "height", 100 )
+             .attr("class", "labelsBottom")
+             .attr( "fill", "white" );
+
+
+
+          file1 = "/csv/fruits1.csv";
+          file2 = "/csv/fruits2.csv";
+          fileD = "/csv/fruitsDynamic.csv";
+
+          svg.selectAll( "text.bigLabel" )
+             .data(fruitsList)
+             .attr("x", (d,i) => ancho * i )
+             .attr("y", alto)
+             .text( (d) => d )
+             .attr("class","bigLabel")
+
+          var draw = function( file )
+          {
+            var escalaX;
+            var escalaY;
+
+            d3.csv(file , parseRow)
+              .then( function(dataFile) {
+                datos = dataFile;
+
+                escalaX = d3.scaleBand().
+                             domain( d3.range( datos.length ) ).
+                             range( [0,ancho - cellPadding * ( fruitsList.length - 1 ) ] ).
+                             round(true).
+                             paddingInner(0.1);
+
+                escalaY = d3.scaleLinear().
+                             domain(
+                               [ 0, d3.max( datos, (d) => d.relative ) ]
+                             ).
+                             range( [ 0, alto ] )
+
+                console.log( escalaX.range() )
+
+                var rects = svg.selectAll("rect")
+                               .data( datos, llave )
+
+                rects
+                               .enter()
+                               .append("rect")
+                               .attr("x", function(d,i)
+                                 { return escalaX( i ) + fruitsPositions[d.fruit]; }
+                               )
+                               .attr("width", escalaX.bandwidth() / 2 )
+                               .attr("height",alto)
+                               .attr("fill", (d,i) => color( i )
+                               )
+                               .attr("class", (d) => d.fruit )
+                               .merge(rects)
+                               .transition()
+                               .duration(1000)
+                               .attr("y", function(d)
+                                 {return alto - escalaY( d.relative );}
+                               )
+                ;
+
+                svg.selectAll("text").
+                    data( datos, llave ).
+                    enter().
+                    append("text").
+                    text( (d) => d.parameter ).
+                    attr("x", function(d,i)
+                      { return escalaX( i ) + fruitsPositions[d.fruit] + 7; }
+                    ).
+                    attr("y",  alto - 50 ).
+                    attr("text-anchor", "middle").
+                    attr("fill","white").
+                    attr("font-family", "sans-serif").
+                    attr("font-size","14px").
+                    attr("writing-mode","vertical-rl")
+                   .attr("fill","black")
+                   .attr("text-align","bottom")
+                   .attr("font-weight","bold")
+                ;
+              }
+              );
+            /* Means drawing */
+            d3.csv( "/csv/fruitsReference.csv" , parseRow)
+              .then( function(dataFile) {
+                datos = dataFile;
+
+                var rects = svg.selectAll("rect")
+                               .data( datos, llave )
+
+                rects
+                               .enter()
+                               .append("rect")
+                               .attr("x", function(d,i)
+                                 { return escalaX( i ) + fruitsPositions[d.fruit] + escalaX.bandwidth() / 2; }
+                               )
+                               .attr("width", escalaX.bandwidth() / 2 )
+                               .attr("height",alto)
+                               .attr("fill", "black"  )
+                               .attr("class", (d) => d.parameter )
+                               .merge(rects)
+                               .transition()
+                               .duration(1000)
+                               .attr("y", function(d)
+                                 {return alto - escalaY( d.relative );}
+                               )
+                ;
+              }
+              );
+          };
+
+          var datos;
+          var escalaX;
+          var escalaY;
+
+          predictProduce( [ "none" ] )
+          draw( fileD )
+
+
+          svg.selectAll("text")
+             .data( fruitsList )
+             .enter()
+             .append("text")
+             .attr("x", (d,i) => ( ( i + 1 )*( ancho / 3 ) + ( cellPadding / 2 )*(i-1) ) )
+             .attr("y",125)
+             .text( (d) => d )
+             .attr("font-size",35)
+             .attr("writing-mode","vertical-rl")
+             .attr("fill","black")
+             .attr("text-align","bottom")
+          ;
+
+        </script>
+
+
+
+    </body>
 </html>
