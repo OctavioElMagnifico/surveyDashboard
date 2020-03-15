@@ -43,8 +43,8 @@
           var color = d3.scaleOrdinal( d3.schemeCategory10 );
 
 
-          var ancho = 900;
-          var alto = 250;
+          var ancho = 1000;
+          var alto = 500;
           var amortig = 20;
           var valorMax = 10;
           var llave = function(d) {
@@ -55,11 +55,11 @@
                        attr("width", ancho).
                        attr("height",alto);
 
-          var fruitsList = [ 'tomatto', 'lettuce' ]
+          var fruitsList = [ 'grape', 'lettuce' ]
           var cellPadding = 100;
 
-          fruitsPositions = {
-            tomatto: 0,
+          var fruitsPositions = {
+            grape: 0,
             lettuce: 50,
           }
 
@@ -130,7 +130,7 @@
               }
               );
             /* Means drawing */
-            d3.csv( "/csv/meanFruits1.csv" , parseRow)
+            d3.csv( "/csv/fruitsMeansEx.csv" , parseRow)
               .then( function(dataFile) {
                 datos = dataFile;
 
@@ -146,6 +146,7 @@
                                .attr("width", escalaX.bandwidth() / 2 )
                                .attr("height",alto)
                                .attr("fill", color( 10 )  )
+                               .attr("class", (d) => d.parameter )
                                .merge(rects)
                                .transition()
                                .duration(1000)

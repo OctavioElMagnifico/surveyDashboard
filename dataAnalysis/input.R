@@ -103,10 +103,10 @@ productsList <- df %>% select( Type ) %>% unlist() %>% unique()
 isSubstring <- function( string, substring ) {
   index  <- grep( x=string, pattern=substring )
   if ( length( index ) == 0 ) {
-    return( FALSE )
+    return( 0 )
   }
   else {
-    return( TRUE )
+    return( 1 )
   }
 }
 
