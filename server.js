@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 
 const execRscript = async (script, args, output) => {
   return new Promise((resolve, reject) => {
-    const command = `$bash {__dirname}/rscript/${script} ${args.map(arg => `"${arg}"`).join(' ')}`
+    const command = `$Rscript {__dirname}/rscript/${script} ${args.map(arg => `"${arg}"`).join(' ')}`
     const outputPath = `${__dirname}/output/${output}`
     exec(command, {env: { OUTPUT_FILE: outputPath} } ,(err, stdout, stderr) => {
       if(err) {

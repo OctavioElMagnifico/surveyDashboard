@@ -1,5 +1,4 @@
 #! /bin/sh
-library("rpart")
 library("readr")
 
 ## fittedFlavor <- read_rds( path = "./dataAnalysis/flavorsTree.Rds" )
