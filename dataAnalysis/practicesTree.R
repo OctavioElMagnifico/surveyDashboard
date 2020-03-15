@@ -57,38 +57,38 @@ return( output )
 
 ## treePredict( data[3,] )
 
-trainParametrization <- trainControl(
-  method = "repeatedcv",
-  number = 10,
-  repeats = 3
-)
+## trainParametrization <- trainControl(
+##   method = "repeatedcv",
+##   number = 10,
+##   repeats = 3
+## )
 
-dataCtree <- data %>% select( one_of( !!!practicesList, 'Flavor0to5', 'Antioxidants', 'Polyphenols', 'Type' ) ) %>% filter( !is.na( Flavor0to5 ), !is.na( Antioxidants ), !is.na( Polyphenols ) )
+## dataCtree <- data %>% select( one_of( !!!practicesList, 'Flavor0to5', 'Antioxidants', 'Polyphenols', 'Type' ) ) %>% filter( !is.na( Flavor0to5 ), !is.na( Antioxidants ), !is.na( Polyphenols ) )
 
-ctreeFlavor <- train(
-  Flavor0to5 + Polyphenols + Antioxidants ~ none + certified_organic + biologique + biodynamic + local + nospray + non_gmo + hydroponic + Non_GMO + greenhouse + irrigation + biological_amendments + Type,
-  data = dataCtree,
-  method = "ctree",
-  tuneGrid = expand.grid( mincriterion = c( seq(0.9, 0.99, length.out = 12) ) ),
-  trControl = trainParametrization
-)
+## ctreeFlavor <- train(
+##   Flavor0to5 + Polyphenols + Antioxidants ~ none + certified_organic + biologique + biodynamic + local + nospray + non_gmo + hydroponic + Non_GMO + greenhouse + irrigation + biological_amendments + Type,
+##   data = dataCtree,
+##   method = "ctree",
+##   tuneGrid = expand.grid( mincriterion = c( seq(0.9, 0.99, length.out = 12) ) ),
+##   trControl = trainParametrization
+## )
 
 ## PLS
 
-trainParametrization <- trainControl(
-  method = "repeatedcv",
-  number = 10,
-  repeats = 3
-)
+## trainParametrization <- trainControl(
+##   method = "repeatedcv",
+##   number = 10,
+##   repeats = 3
+## )
 
-dataCtree <- data %>% select( one_of( !!!practicesList, 'Flavor0to5', 'Antioxidants', 'Polyphenols', 'Type' ) ) %>% filter( !is.na( Flavor0to5 ), !is.na( Antioxidants ), !is.na( Polyphenols ) )
+## dataCtree <- data %>% select( one_of( !!!practicesList, 'Flavor0to5', 'Antioxidants', 'Polyphenols', 'Type' ) ) %>% filter( !is.na( Flavor0to5 ), !is.na( Antioxidants ), !is.na( Polyphenols ) )
 
-plsFlavor <- train(
-  Flavor0to5 ~ none + certified_organic + biologique + biodynamic + local + nospray + non_gmo + hydroponic + Non_GMO + greenhouse + irrigation + biological_amendments + Type,
-  data = dataCtree,
-  method = "",
-  trControl = trainParametrization
-)
+## plsFlavor <- train(
+##   Flavor0to5 ~ none + certified_organic + biologique + biodynamic + local + nospray + non_gmo + hydroponic + Non_GMO + greenhouse + irrigation + biological_amendments + Type,
+##   data = dataCtree,
+##   method = "",
+##   trControl = trainParametrization
+## )
 
 
 
