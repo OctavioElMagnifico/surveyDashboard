@@ -1,4 +1,4 @@
-#! /usr/bin/env Rscript
+#! /bin/sh
 library("rpart")
 library("readr")
 

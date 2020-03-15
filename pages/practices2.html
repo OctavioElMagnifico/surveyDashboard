@@ -61,8 +61,8 @@
 
           var fruitsPositions = {
             grape: 0,
-            lettuce: 50,
-            kale: 100,
+            lettuce: 0,
+            kale: 0,
           }
 
           file1 = "/csv/fruits1.csv";
@@ -82,13 +82,13 @@
                              domain( d3.range( datos.length ) ).
                              range( [0,ancho - cellPadding*( fruitsList.length - 1 ) ] ).
                              round(true).
-                             paddingInner(0.01);
+                             paddingInner(0.05);
 
                 escalaY = d3.scaleLinear().
                              domain(
                                [ 0, d3.max( datos, (d) => d.relative ) ]
                              ).
-                             range( [ 0, alto ] )
+                             range( [ alto, 0 ] )
 
                 console.log( escalaX.range() )
 
@@ -101,7 +101,7 @@
                                .attr("x", function(d,i)
                                  { return escalaX( i ) + fruitsPositions[d.fruit]; }
                                )
-                               .attr("width", escalaX.bandwidth() / 2 )
+                               .attr("width", escalaX.bandwidth()  )
                                .attr("height",alto)
                                .attr("fill", (d,i) => color( i )
                                )
@@ -149,7 +149,7 @@
                                .attr("x", function(d,i)
                                  { return escalaX( i ) + fruitsPositions[d.fruit] + escalaX.bandwidth() / 2; }
                                )
-                               .attr("width", escalaX.bandwidth() / 2 )
+                               .attr("width", escalaX.bandwidth() * 0.3 )
                                .attr("height",alto)
                                .attr("fill", "black"  )
                                .attr("class", (d) => d.parameter )
