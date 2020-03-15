@@ -37,6 +37,7 @@
               value: parseFloat(d.value),
               fruit: d.fruit,
               parameter: d.parameter,
+              relative: parseFloat(d.relative),
             }
           };
 
@@ -55,12 +56,13 @@
                        attr("width", ancho).
                        attr("height",alto);
 
-          var fruitsList = [ 'grape', 'lettuce' ]
+          var fruitsList = [ 'grape', 'lettuce', 'kale' ]
           var cellPadding = 100;
 
           var fruitsPositions = {
             grape: 0,
             lettuce: 50,
+            kale: 100,
           }
 
           file1 = "/csv/fruits1.csv";
@@ -70,21 +72,25 @@
           var draw = function( file )
           {
             var escalaX;
-            var excalaY;
+            var escalaY;
 
             d3.csv(file , parseRow)
               .then( function(dataFile) {
                 datos = dataFile;
+
                 escalaX = d3.scaleBand().
                              domain( d3.range( datos.length ) ).
                              range( [0,ancho - cellPadding*( fruitsList.length - 1 ) ] ).
                              round(true).
-                             paddingInner(0.01)
+                             paddingInner(0.01);
+
                 escalaY = d3.scaleLinear().
                              domain(
-                               [ 0, d3.max( datos, (d) => d.value ) ]
+                               [ 0, d3.max( datos, (d) => d.relative ) ]
                              ).
                              range( [ 0, alto ] )
+
+                console.log( escalaX.range() )
 
                 var rects = svg.selectAll("rect")
                                .data( datos, llave )
@@ -103,7 +109,7 @@
                                .transition()
                                .duration(1000)
                                .attr("y", function(d)
-                                 {return alto - escalaY( d.value );}
+                                 {return alto - escalaY( d.relative );}
                                )
                 ;
                 svg.selectAll("text").
@@ -130,7 +136,7 @@
               }
               );
             /* Means drawing */
-            d3.csv( "/csv/fruitsMeansEx.csv" , parseRow)
+            d3.csv( "/csv/fruitsReference.csv" , parseRow)
               .then( function(dataFile) {
                 datos = dataFile;
 
@@ -145,13 +151,13 @@
                                )
                                .attr("width", escalaX.bandwidth() / 2 )
                                .attr("height",alto)
-                               .attr("fill", color( 10 )  )
+                               .attr("fill", "black"  )
                                .attr("class", (d) => d.parameter )
                                .merge(rects)
                                .transition()
                                .duration(1000)
                                .attr("y", function(d)
-                                 {return alto - escalaY( d.value );}
+                                 {return alto - escalaY( d.relative );}
                                )
                 ;
                 svg.selectAll("text").
@@ -182,7 +188,9 @@
           var datos;
           var escalaX;
           var escalaY;
-          draw( file1 )
+          predictProduce(  )
+          
+          draw( fileD )
           console.log(datos)
 
         </script>

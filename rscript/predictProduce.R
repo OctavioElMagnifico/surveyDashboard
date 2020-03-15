@@ -4,13 +4,13 @@ library("readr")
 
 ## fittedFlavor <- read_rds( path = "./dataAnalysis/flavorsTree.Rds" )
 
-fittedFlavor <- read_rds( path = "../dataAnalysis/flavorsTree.Rds" )
-fittedPoly <- read_rds( path = "../dataAnalysis/polyphenolsTree.Rds" )
-fittedAntiox <- read_rds( path = "../dataAnalysis/antioxidantsTree.Rds" )
+fittedFlavor <- read_rds( path = "./dataAnalysis/flavorsTree.Rds" )
+fittedPoly <- read_rds( path = "./dataAnalysis/polyphenolsTree.Rds" )
+fittedAntiox <- read_rds( path = "./dataAnalysis/antioxidantsTree.Rds" )
 
 ## modelRow <- read_csv( "../output/treeModelRow.csv" )
 
-modelRow <- read_csv( "../output/treeModelRow.csv" )
+modelRow <- read_csv( "./output/treeModelRow.csv" )
 
 treePredict <- function( newdata ) {
 
@@ -25,8 +25,7 @@ treePredict <- function( newdata ) {
 
 input <- commandArgs(trailingOnly=TRUE)
 
-## entradaEj <- list( "certified_organic", "local", "other" )
-
+## entradaEj <- list( "certified_organic", "irrigation" )
 ## input <- entradaEj
 
 newDataRow <- modelRow
@@ -65,9 +64,15 @@ output <- data.frame(
   value = valueColumn
 )
 
+referenceTable <- read_csv( file = './output/fruitsReference.csv')
+
+output$relative <- output$value / referenceTable$value
+
 write_csv( x=output, path=Sys.getenv("OUTPUT_FILE") )
 
 ## Getting the reference levels:
+
+
 
 ## referenceLevels <- modelRow
 ## referenceLevels[1,'none'] <- 1
@@ -79,12 +84,15 @@ write_csv( x=output, path=Sys.getenv("OUTPUT_FILE") )
 ## referenceLevels[1,'Type'] <- 'lettuce'
 ## lettucePredicted <- treePredict( referenceLevels )
 
+## Be carefull with the Id column.
+
 ## valueColumn <- c( kalePredicted, grapePredicted, lettucePredicted )
 ## referenceLevelsTable <- data.frame(
-##   id = idColumn,
+##   id = idColumn + length(idColumn),
 ##   fruit = fruitsColumn,
 ##   parameter = parameterColumn,
-##   value = valueColumn
+##   value = valueColumn,
+##   relative = rep(1)
 ## )
 
 ## output
