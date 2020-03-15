@@ -1,16 +1,16 @@
 #! /usr/bin/env Rscript
-library("rpart")
-library("readr")
+## library("rpart")
+## library("readr")
 
 ## fittedFlavor <- read_rds( path = "./dataAnalysis/flavorsTree.Rds" )
 
-fittedFlavor <- read_rds( path = "./dataAnalysis/flavorsTree.Rds" )
-fittedPoly <- read_rds( path = "./dataAnalysis/polyphenolsTree.Rds" )
-fittedAntiox <- read_rds( path = "./dataAnalysis/antioxidantsTree.Rds" )
+fittedFlavor <- readRDS( file = "./dataAnalysis/flavorsTree.Rds" )
+fittedPoly <- readRDS( file = "./dataAnalysis/polyphenolsTree.Rds" )
+fittedAntiox <- readRDS( file = "./dataAnalysis/antioxidantsTree.Rds" )
 
 ## modelRow <- read_csv( "../output/treeModelRow.csv" )
 
-modelRow <- read_csv( "./output/treeModelRow.csv" )
+modelRow <- read.csv( file = "./output/treeModelRow.csv" )
 
 treePredict <- function( newdata ) {
 
@@ -36,11 +36,11 @@ for ( variable in input ) {
 referenceLevels <- modelRow
 referenceLevels[1,'none'] <- 1
 
-newDataRow[1,'Type'] <- 'grape'
+newDataRow$Type <- 'grape'
 grapePredicted <- treePredict( newDataRow )
-newDataRow[1,'Type'] <- 'kale'
+newDataRow$Type <- 'kale'
 kalePredicted <- treePredict( newDataRow )
-newDataRow[1,'Type'] <- 'lettuce'
+newDataRow$Type <- 'lettuce'
 lettucePredicted <- treePredict( newDataRow )
 
 
@@ -64,11 +64,11 @@ output <- data.frame(
   value = valueColumn
 )
 
-referenceTable <- read_csv( file = './output/fruitsReference.csv')
+referenceTable <- read.csv( file = './output/fruitsReference.csv')
 
 output$relative <- output$value / referenceTable$value
 
-write_csv( x=output, path=Sys.getenv("OUTPUT_FILE") )
+write.csv( x=output, file=Sys.getenv("OUTPUT_FILE") )
 
 ## Getting the reference levels:
 
