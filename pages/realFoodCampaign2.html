@@ -83,7 +83,7 @@
               body: JSON.stringify({
                 script: 'predictProduce.R',
                 arguments: [ practicesSelected ],
-                output: ''
+                output: 'fruitsDynamic.csv'
               })
             })
             return response.stdout
