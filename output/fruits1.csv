@@ -1,5 +1,5 @@
-fruit,antioxidants
-tomatto,1
-lettuce,3
-kale,5
-grapes,11
+fruit,parameter,value
+tomatto,polyphenols,5
+tomatto,antioxidants,3
+lettuce,polyphenols,6
+lettuce,antioxidants,2

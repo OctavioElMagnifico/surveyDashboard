@@ -1,9 +1,10 @@
 #! /usr/bin/env Rscript
 library("rpart")
+library("readr")
 
-## fittedFlavor <- readRds( path = "flavorsTree.Rds" )
-## fittedPoly <- readRds( path = "polyphenolsTree.Rds" )
-## fittedAntiox <- readRds( path = "antioxidantsTree.Rds" )
+## fittedFlavor <- read_rds( path = "./dataAnalysis/flavorsTree.Rds" )
+## fittedPoly <- read_rds( path = "./dataAnalysis/polyphenolsTree.Rds" )
+## fittedAntiox <- read_rds( path = "./dataAnalysis/antioxidantsTree.Rds" )
 
 ## treePredict <- function( newdata ) {
 
@@ -18,7 +19,7 @@ library("rpart")
 
 entrada <- commandArgs(trailingOnly=TRUE)
 
-escupir <- entrada[1]
+escupir <- entrada
 
 cat( escupir )
 

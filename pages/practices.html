@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+    <script type="text/javascript" src="https://unpkg.com/d3@5.15.0/dist/d3.js"> </script>
+		<title>Capítulo 9: Articulación.</title>
+    <style type="text/css">
+    </style>
+	</head>
+	<body>
+      <p id="pone"> Presioná para añadir un dato. </p>
+      <p id="saca"> Presioná para extraer un dato. </p>
+		<script type="text/javascript">
+
+     var parseRow = function(d) {
+         value: parseFloat(d.value)
+     };
+
+     var datos;
+
+     d3.csv("/csv/fruits1.csv", parseRow)
+       .then( function(dataFile) {
+           datos = dataFile;
+       } );
+
+
+
+
+     var ancho = 600;
+     var alto = 250;
+     var amortig = 20;
+     var valorMax = 10;
+     var llave = function(d) {
+         return d.id;
+     }
+     var escalaX = d3.scaleBand().
+                      domain( d3.range( datos.length ) ).
+                      range( [0,ancho] ).
+                      round(true).
+                      paddingInner(0.05)
+     var escalaY = d3.scaleLinear().
+                      domain(
+                          [ 0, d3.max( datos, (d) => d.value ) ]
+                      ).
+                      range( [ 0, alto ] )
+
+     var svg = d3.select("body").
+                  append("svg").
+                  attr("width", ancho).
+                  attr("height",alto);
+
+     svg.selectAll("rect")
+                        .data( datos, llave )
+                        .enter()
+                        .append("rect")
+                        .attr("x", function(d,i)
+                            { return escalaX( i ); }
+                        )
+                        .attr("y", function(d)
+                            {return alto - escalaY( d.value );}
+                        )
+                        .attr("width", escalaX.bandwidth() )
+                        .attr("height",alto)
+                        .attr("fill", function(d) {
+                            return "rgb(0,0," + Math.round( d.value * 5) + ")";
+                        }
+                        )
+     ;
+     svg.selectAll("text").
+                        data( datos, llave ).
+                        enter().
+                        append("text").
+                        text( function(d) {
+                            return Math.round(d.value);
+                        }
+                        ).
+                        attr("x", function(d,i)
+                            { return escalaX(i) + escalaX.bandwidth() / 2; }
+                        ).
+                         attr("y", function(d)
+                             { if (d.value>6) 
+                             { return alto - escalaY( d.value ) + 14; } else
+                                 {return alto - escalaY(d.value) - 1;};
+                                 ;}).
+                         attr("text-anchor", "middle").
+                         attr("fill","magenta").
+                         attr("font-family", "sans-serif").
+                         attr("font-size","14px")
+     ;
+     d3.selectAll("p").
+        on("click", function() {
+            var identidadParrafo = d3.select(this).attr("id");
+
+            if ( identidadParrafo == "pone" ) {
+                var nuevoNum = Math.floor( Math.random() * valorMax );
+                var nuevaLlave  = d3.max( datos, (d) => d.key ) + 1;
+                datos.push( { key: nuevaLlave, value: nuevoNum } );
+
+            } else{
+                datos.shift();
+            };
+
+            escalaX.domain( d3.range( datos.length ) );
+            escalaY.domain( [ 0, d3.max( datos, (d) => d.value ) ] );
+
+            var barras = svg.selectAll("rect").
+                             data( datos, llave );
+            barras.enter().
+                   append("rect").
+                   attr("x", ancho).
+                   attr("y", function(d) {
+                       return alto - escalaY(d.value);
+                   }
+                   ).
+                   attr("width", escalaX.bandwidth() ).
+                   attr("height", function(d) {
+                       return escalaY( d.value );
+                   }
+                   ).
+                   attr("fill", function(d) {
+                       return "rgb(0,0," + Math.round(d.value * 5) + ")";
+                   }
+                   ).
+                   merge(barras).
+                   transition().
+                   duration(500).
+                   attr("x", function(d,i)
+                       { return escalaX( i ); }
+                   ).
+                  attr("y", function(d)
+                      {return alto - escalaY( d.value );}
+                  ).
+                  attr("width", escalaX.bandwidth() ).
+                   attr("height", function(d) {
+                       return escalaY( d.value );
+                   }
+                   )
+            ;
+
+            var etiquetas = svg.selectAll("text").
+                                data( datos, llave )
+
+              etiquetas.enter().
+                append("text").
+                text( function(d) {
+                    return Math.round(d.value);
+                }
+                ).
+                attr("x", function(d,i)
+                    { return escalaX(i) + escalaX.bandwidth() / 2; }
+                ).
+                attr("y", function(d)
+                    { if (d.value > 6)
+                    { return alto - escalaY( d.value ) + 14; } else
+                        {return alto - escalaY(d.value) - 1;};
+                        ;}).
+                attr("text-anchor", "middle").
+                attr("fill","pink").
+                attr("font-family", "sans-serif").
+                attr("font-size","11px").
+                merge(etiquetas).
+                transition(0).
+                text( function(d) {
+                    return d.value;
+                } ).
+                attr("x", function(d,i) {
+                    return escalaX(i) + escalaX.bandwidth() / 2;
+                }).
+                attr("y", function(d) {
+                    return alto - escalaY(d.value) + 14;
+                })
+            ;
+
+            barras.exit().
+                   transition().
+                   duration(500).
+                   attr( "x", -escalaX.bandwidth() -10  ).
+                   remove()
+            ;
+
+            var etiquetas = svg.selectAll("text").
+                                data( datos, llave )
+
+            etiquetas.exit().
+                                transition().
+                                duration(250).
+                                attr("fill","red").
+                                remove()
+            ;
+
+        }
+           );
+		</script>
+	</body>
+</html>

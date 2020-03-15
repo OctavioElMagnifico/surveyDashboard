@@ -1,2 +1,5 @@
-tomatto,lettuce,kale,grapes
-1,8,3,7
+id,fruit,parameter,value
+1,tomatto,polyphenols,3
+2,tomatto,antioxidants,4
+3,lettuce,polyphenols,5
+4,lettuce,antioxidants,3

@@ -53,6 +53,11 @@ app.get('/csv/:name', (req, res) => {
   res.sendFile(`${__dirname}/output/${csvName}`)
 })
 
+app.get('/rds/:name', (req, res) => {
+  const rdsName = req.params.name
+  res.sendFile(`${__dirname}/dataAnalysis/${rdsName}`)
+})
+
 app.get('/json/:name', (req, res) => {
   const jsonName = req.params.name
   res.setHeader('Content-Type', 'text/json')
