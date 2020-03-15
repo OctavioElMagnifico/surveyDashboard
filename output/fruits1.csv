@@ -1,5 +1,5 @@
-fruit,parameter,value
-tomatto,polyphenols,5
-tomatto,antioxidants,3
-lettuce,polyphenols,6
-lettuce,antioxidants,2
+id,fruit,parameter,value
+1,tomatto,polyphenols,5
+2,tomatto,antioxidants,3
+3,lettuce,polyphenols,6
+4,lettuce,antioxidants,2
