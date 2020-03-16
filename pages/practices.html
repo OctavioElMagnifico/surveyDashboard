@@ -209,7 +209,7 @@
           /* Variation labels */
           var deltaLabels = svg.selectAll("text.delta")
                                .data( datos, llave )
-              
+
           deltaLabels.enter()
                                .append("text")
                                .merge(deltaLabels)
@@ -292,7 +292,7 @@
        .data( fruitsList )
        .enter()
        .append("text")
-       .attr("x", (d,i) => ( ( i + 1 )*( ancho / 3 ) + ( cellPadding / 2 )*(i-1) ) )
+       .attr("x", (d,i) => ( ( i + 1 )*( ancho / 3 ) + ( cellPadding / fruitsList.length )*(i-1) ) )
        .attr("y",125)
        .text( (d) => d )
        .attr("font-size",35)
