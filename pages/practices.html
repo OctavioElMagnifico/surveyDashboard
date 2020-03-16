@@ -45,220 +45,277 @@
 	</article>
 
 	<div  class="menu">
-		 <span id="selOrganic">Organicity.</span>
-		 <span id="selProduct">Product.</span>
-		 <span id="selConstellation">Constellation.</span>
-		 <p >Click on an option to arrange the data by:</p>
+		<span id="selGmo">Non-GMO.</span>
+		<span id="selBiodynamic">Biodynamic.</span>
+		<span id="selOrganic">Organic.</span>
+		<span id="selIrrigation">Irrigation.</span>
+		<span id="selFair">Fair Food.</span>
+		<span id="selLocal">Local.</span>
+		<span id="selHydro">Hydroponic.</span>
+    <h4> Selected </h4>
+		<p id="selection" >...</p>
 	</div>
 
-	<aside>
-	  <h3> What are you Seeing.</h3>
+	<aside class="asideLeft">
+	  <h3>Samples Used.</h3>
 		<div>
-		  <h4>objective</h4>
-		  <span class="display" id="display1" >00</span>
-		  <hr>
-		  <h4>samples</h4>
-		  <span class="display" id="display2" >00</span>
+		  <h4>2046</h4>
 		</div>
-    <p> This is the whole dataset! Points near the center have bigger values, so isolates itself around the center it is probably an outlier.</p>
-	    <label for="slider"
-        style="display: inline-block; width: 240px; text-align: center">
-        <h3>Outlier Ceiling</h3><h4 id="ceiling-value">…</h4>
-        <p id="puSlider">
-      </label>
-		  <input id="slider" type="range" min="8000" max="25000" step="300" value="40000" orient="horizontal" width="500" class="slider">
-	  </p>
+	  <label for="slider"
+      style="display: inline-block; width: 240px; text-align: center">
+      <h3 id="redraw">Redraw.</h3>
   </aside>
 
-        <script type="text/javascript">
+  <script type="text/javascript">
+
+    async function predictProduce ( practicesSelected ) {
+      return fetch('/rexec', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          script: 'predictProduce.R',
+          arguments: [ practicesSelected ],
+          output: 'fruitsDynamic.csv'
+        })
+      })
+    };
+
+    var parseRow = function(d) {
+      return{
+        id: d.id,
+        value: parseFloat(d.value),
+        fruit: d.fruit,
+        parameter: d.parameter,
+        relative: parseFloat(d.relative),
+      }
+    };
+
+    var color = d3.scaleOrdinal( d3.schemeCategory10 );
+
+    var ancho = 500;
+    var alto = 500;
+    var amortig = 20;
+    var valorMax = 10;
+    var llave = function(d) {
+      return d.id;
+    }
+    var fruitsList = [ 'Kale.', 'Grape.', 'Lettuce.' ]
+    var cellPadding = 50;
+    var fruitsPositions = {
+      kale: 0,
+      grape: cellPadding * 1,
+      lettuce: cellPadding * 2,
+    }
+
+    var svg = d3.select("body").
+                 append("svg").
+                 attr("width", ancho + cellPadding ).
+                 attr("height",alto);
+
+    svg.selectAll("bottomLabel")
+       .append("rect")
+       .attr( "x", 0 )
+       .attr( "y", 500 )
+       .attr( "width", ancho )
+       .attr( "height", 100 )
+       .attr("class", "labelsBottom")
+       .attr( "fill", "white" );
 
 
 
-          async function predictProduce ( practicesSelected ) {
-            return fetch('/rexec', {
-              method: 'POST',
-              headers: {
-                'content-type': 'application/json'
-              },
-              body: JSON.stringify({
-                script: 'predictProduce.R',
-                arguments: [ practicesSelected ],
-                output: 'fruitsDynamic.csv'
-              })
-            })
-          };
+    file1 = "/csv/fruits1.csv";
+    file2 = "/csv/fruits2.csv";
+    fileD = "/csv/fruitsDynamic.csv";
 
-          var parseRow = function(d) {
-            return{
-              id: d.id,
-              value: parseFloat(d.value),
-              fruit: d.fruit,
-              parameter: d.parameter,
-              relative: parseFloat(d.relative),
-            }
-          };
+    svg.selectAll( "text.bigLabel" )
+       .data(fruitsList)
+       .attr("x", (d,i) => ancho * i )
+       .attr("y", alto)
+       .text( (d) => d )
+       .attr("class","bigLabel")
 
-          var color = d3.scaleOrdinal( d3.schemeCategory10 );
+    var draw = function( file )
+    {
+      var escalaX;
+      var escalaY;
 
+      d3.csv(file , parseRow)
+        .then( function(dataFile) {
+          datos = dataFile;
 
-          var ancho = 500;
-          var alto = 500;
-          var amortig = 20;
-          var valorMax = 10;
-          var llave = function(d) {
-            return d.id;
-          }
-          var fruitsList = [ 'Kale.', 'Grape.', 'Lettuce.' ]
-          var cellPadding = 50;
-          var fruitsPositions = {
-            kale: 0,
-            grape: cellPadding * 1,
-            lettuce: cellPadding * 2,
-          }
+          escalaX = d3.scaleBand().
+                       domain( d3.range( datos.length ) ).
+                       range( [0,ancho - cellPadding * ( fruitsList.length - 1 ) ] ).
+                       round(true).
+                       paddingInner(0.1);
 
-          var svg = d3.select("body").
-                       append("svg").
-                       attr("width", ancho + cellPadding ).
-                       attr("height",alto);
+          escalaY = d3.scaleLinear().
+                       domain(
+                         [ 0, d3.max( datos, (d) => d.relative ) ]
+                       ).
+                       range( [ 0, alto ] )
 
-          svg.selectAll("bottomLabel")
-             .append("rect")
-             .attr( "x", 0 )
-             .attr( "y", 500 )
-             .attr( "width", ancho )
-             .attr( "height", 100 )
-             .attr("class", "labelsBottom")
-             .attr( "fill", "white" );
+          console.log( escalaX.range() )
 
+          var rects = svg.selectAll("rect")
+                         .data( datos, llave )
 
-
-          file1 = "/csv/fruits1.csv";
-          file2 = "/csv/fruits2.csv";
-          fileD = "/csv/fruitsDynamic.csv";
-
-          svg.selectAll( "text.bigLabel" )
-             .data(fruitsList)
-             .attr("x", (d,i) => ancho * i )
-             .attr("y", alto)
-             .text( (d) => d )
-             .attr("class","bigLabel")
-
-          var draw = function( file )
-          {
-            var escalaX;
-            var escalaY;
-
-            d3.csv(file , parseRow)
-              .then( function(dataFile) {
-                datos = dataFile;
-
-                escalaX = d3.scaleBand().
-                             domain( d3.range( datos.length ) ).
-                             range( [0,ancho - cellPadding * ( fruitsList.length - 1 ) ] ).
-                             round(true).
-                             paddingInner(0.1);
-
-                escalaY = d3.scaleLinear().
-                             domain(
-                               [ 0, d3.max( datos, (d) => d.relative ) ]
-                             ).
-                             range( [ 0, alto ] )
-
-                console.log( escalaX.range() )
-
-                var rects = svg.selectAll("rect")
-                               .data( datos, llave )
-
-                rects
-                               .enter()
-                               .append("rect")
-                               .attr("x", function(d,i)
-                                 { return escalaX( i ) + fruitsPositions[d.fruit]; }
-                               )
-                               .attr("width", escalaX.bandwidth() / 2 )
-                               .attr("height",alto)
-                               .attr("fill", (d,i) => color( i )
-                               )
-                               .attr("class", (d) => d.fruit )
-                               .merge(rects)
-                               .transition()
-                               .duration(1000)
-                               .attr("y", function(d)
-                                 {return alto - escalaY( d.relative );}
-                               )
-                ;
-
-                svg.selectAll("text").
-                    data( datos, llave ).
-                    enter().
-                    append("text").
-                    text( (d) => d.parameter ).
-                    attr("x", function(d,i)
-                      { return escalaX( i ) + fruitsPositions[d.fruit] + 7; }
-                    ).
-                    attr("y",  alto - 50 ).
-                    attr("text-anchor", "middle").
-                    attr("fill","white").
-                    attr("font-family", "sans-serif").
-                    attr("font-size","14px").
-                    attr("writing-mode","vertical-rl")
-                   .attr("fill","black")
-                   .attr("text-align","bottom")
-                   .attr("font-weight","bold")
-                ;
-              }
-              );
-            /* Means drawing */
-            d3.csv( "/csv/fruitsReference.csv" , parseRow)
-              .then( function(dataFile) {
-                datos = dataFile;
-
-                var rects = svg.selectAll("rect")
-                               .data( datos, llave )
-
-                rects
-                               .enter()
-                               .append("rect")
-                               .attr("x", function(d,i)
-                                 { return escalaX( i ) + fruitsPositions[d.fruit] + escalaX.bandwidth() / 2; }
-                               )
-                               .attr("width", escalaX.bandwidth() / 2 )
-                               .attr("height",alto)
-                               .attr("fill", "black"  )
-                               .attr("class", (d) => d.parameter )
-                               .merge(rects)
-                               .transition()
-                               .duration(1000)
-                               .attr("y", function(d)
-                                 {return alto - escalaY( d.relative );}
-                               )
-                ;
-              }
-              );
-          };
-
-          var datos;
-          var escalaX;
-          var escalaY;
-
-          predictProduce( [ "none" ] )
-          draw( fileD )
-
-
-          svg.selectAll("text")
-             .data( fruitsList )
-             .enter()
-             .append("text")
-             .attr("x", (d,i) => ( ( i + 1 )*( ancho / 3 ) + ( cellPadding / 2 )*(i-1) ) )
-             .attr("y",125)
-             .text( (d) => d )
-             .attr("font-size",35)
-             .attr("writing-mode","vertical-rl")
-             .attr("fill","black")
-             .attr("text-align","bottom")
+          rects
+                         .enter()
+                         .append("rect")
+                         .attr("x", function(d,i)
+                           { return escalaX( i ) + fruitsPositions[d.fruit]; }
+                         )
+                         .attr("width", escalaX.bandwidth() / 2 )
+                         .attr("height",alto)
+                         .attr("fill", (d,i) => color( i )
+                         )
+                         .attr("class", (d) => d.fruit )
+                         .merge(rects)
+                         .transition()
+                         .duration(1000)
+                         .attr("y", function(d)
+                           {return alto - escalaY( d.relative );}
+                         )
           ;
 
-        </script>
+          svg.selectAll("text").
+              data( datos, llave ).
+              enter().
+              append("text").
+              text( (d) => d.parameter ).
+              attr("x", function(d,i)
+                { return escalaX( i ) + fruitsPositions[d.fruit] + 7; }
+              ).
+              attr("y",  alto - 50 ).
+              attr("text-anchor", "middle").
+              attr("fill","white").
+              attr("font-family", "sans-serif").
+              attr("font-size","14px").
+              attr("writing-mode","vertical-rl")
+             .attr("fill","black")
+             .attr("text-align","bottom")
+             .attr("font-weight","bold")
+          ;
+        }
+        );
+      /* Means drawing */
+      d3.csv( "/csv/fruitsReference.csv" , parseRow)
+        .then( function(dataFile) {
+          datos = dataFile;
+
+          var rects = svg.selectAll("rect")
+                         .data( datos, llave )
+
+          rects
+                         .enter()
+                         .append("rect")
+                         .attr("x", function(d,i)
+                           { return escalaX( i ) + fruitsPositions[d.fruit] + escalaX.bandwidth() / 2; }
+                         )
+                         .attr("width", escalaX.bandwidth() / 2 )
+                         .attr("height",alto)
+                         .attr("fill", "black"  )
+                         .attr("class", (d) => d.parameter )
+                         .merge(rects)
+                         .transition()
+                         .duration(1000)
+                         .attr("y", function(d)
+                           {return alto - escalaY( d.relative );}
+                         )
+          ;
+        }
+        );
+    };
+
+    var datos;
+    var escalaX;
+    var escalaY;
+
+    predictProduce( [ "none" ] )
+    setTimeout( function() {
+      draw( fileD )
+    }
+              , 2000 )
+
+    svg.selectAll("text")
+       .data( fruitsList )
+       .enter()
+       .append("text")
+       .attr("x", (d,i) => ( ( i + 1 )*( ancho / 3 ) + ( cellPadding / 2 )*(i-1) ) )
+       .attr("y",125)
+       .text( (d) => d )
+       .attr("font-size",35)
+       .attr("writing-mode","vertical-rl")
+       .attr("fill","black")
+       .attr("text-align","bottom")
+    ;
+
+    var selectedPractices = [];
+    var togglePractice = function( selectedPractice ) {
+      selectedPractices.push( selectedPractice );
+      selectedPractices = _.uniq( selectedPractices );
+    };
+
+
+    /* var practicesList = [ "non_gmo", "irrigation", "organic", "greenhouse", "local" ]; */
+
+    d3.selectAll("#selGmo").
+       on( "click", function() {
+         togglePractice( "non_gmo" );
+         d3.selectAll("#selection").selectAll("text").remove();
+         d3.select("#selection").append("text").text(selectedPractices.join() ).style( "font-weight", "bold" ).style( "font-size", "20px" );
+       } );
+    d3.selectAll("#selIrrigation").
+       on( "click", function() {
+         togglePractice( "irrigation" )
+         d3.selectAll("#selection").selectAll("text").remove();
+         d3.select("#selection").append("text").text(selectedPractices.join() ).style( "font-weight", "bold" ).style( "font-size", "20px" );
+       } );
+    d3.selectAll("#selOrganic").
+       on( "click", function() {
+         togglePractice( "organic" )
+         d3.selectAll("#selection").selectAll("text").remove();
+         d3.select("#selection").append("text").text(selectedPractices.join() ).style( "font-weight", "bold" ).style( "font-size", "20px" );
+       } );
+    d3.selectAll("#selBiodynamic").
+       on( "click", function() {
+         togglePractice( "biodynamic" )
+         d3.selectAll("#selection").selectAll("text").remove();
+         d3.select("#selection").append("text").text(selectedPractices.join() ).style( "font-weight", "bold" ).style( "font-size", "20px" );
+       } );
+    d3.selectAll("#selLocal").
+       on( "click", function() {
+         togglePractice( "local" )
+         d3.selectAll("#selection").selectAll("text").remove();
+         d3.select("#selection").append("text").text(selectedPractices.join() ).style( "font-weight", "bold" ).style( "font-size", "20px" );
+       } );
+    d3.selectAll("#selFair").
+       on( "click", function() {
+         togglePractice( "fair_food" )
+         d3.selectAll("#selection").selectAll("text").remove();
+         d3.select("#selection").append("text").text(selectedPractices.join() ).style( "font-weight", "bold" ).style( "font-size", "20px" );
+       } );
+    d3.selectAll("#selHydro").
+       on( "click", function() {
+         togglePractice( "hydroponic" )
+         d3.selectAll("#selection").selectAll("text").remove();
+         d3.select("#selection").append("text").text(selectedPractices.join() ).style( "font-weight", "bold" ).style( "font-size", "20px" );
+       } );
+    /* redraw button */
+    d3.selectAll("#redraw")
+      .on( "click", function() {
+        predictProduce( selectedPractices );
+        setTimeout( function() {
+          draw( fileD )
+        }
+                  , 2000 )
+      } )
+
+
+  </script>
 
 
 
