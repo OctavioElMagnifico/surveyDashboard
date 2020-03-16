@@ -137,6 +137,13 @@
        .text( (d) => d )
        .attr("class","bigLabel")
 
+    var delta = function( relativeChange ) {
+      deltaPercentage = Math.round( ( relativeChange - 1 ) * 100 ) ;
+      var label = deltaPercentage + "%"
+      console.log( label )
+      return{ label };
+    };
+
     var draw = function( file )
     {
       var escalaX;
@@ -158,7 +165,6 @@
                        ).
                        range( [ 0, alto ] )
 
-          console.log( escalaX.range() )
 
           var rects = svg.selectAll("rect")
                          .data( datos, llave )
@@ -198,6 +204,27 @@
               attr("font-size","14px").
               attr("writing-mode","vertical-rl")
              .attr("fill","black")
+             .attr("text-align","bottom")
+             .attr("font-weight","bold")
+          ;
+          /* Variation labels */
+          var deltaLabels = svg.selectAll("text.delta")
+                               .data( datos, llave )
+              
+          deltaLabels.enter()
+                               .append("text")
+                               .merge(deltaLabels)
+                               .text( d => ( (Math.round( d.relative - 1) * 10000) / 100) + "% variation" )
+                               .attr("x", function(d,i)
+                                 { return escalaX( i ) + fruitsPositions[d.fruit] + 7; }
+                               ).
+                                attr("y",  70 ).
+                                attr("class", "delta")
+                               .attr("text-anchor", "middle").
+                                attr("font-family", "sans-serif").
+                                attr("font-size","14px").
+                                attr("writing-mode","vertical-rl")
+             .attr("fill","red")
              .attr("text-align","bottom")
              .attr("font-weight","bold")
           ;
