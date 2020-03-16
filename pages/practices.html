@@ -214,7 +214,7 @@
           deltaLabels.enter()
                                .append("text")
                                .merge(deltaLabels)
-                               .text( d => ( (Math.round( d.relative - 1) * 10000) / 100) + "% variation" )
+                               .text( d =>  ( 100 * ( d.relative - 1) ).toFixed(2) + "% variation" )
                                .attr("x", function(d,i)
                                  { return escalaX( i ) + fruitsPositions[d.fruit] + 7; }
                                ).
