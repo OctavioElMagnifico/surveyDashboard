@@ -68,7 +68,7 @@
 
   <script type="text/javascript">
 
-    async function predictProduce ( practicesSelected ) {
+    async function predictProduce ( practices ) {
       return fetch('/rexec', {
         method: 'POST',
         headers: {
@@ -76,7 +76,7 @@
         },
         body: JSON.stringify({
           script: 'predictProduce.R',
-          arguments: [ practicesSelected ],
+          arguments: [ practices ],
           output: 'fruitsDynamic.csv'
         })
       })
@@ -275,9 +275,10 @@
     ;
 
     var selectedPractices = [];
-    var togglePractice = function( selectedPractice ) {
-      selectedPractices.push( selectedPractice );
-      selectedPractices = _.uniq( selectedPractices );
+    var togglePractice = function( toggledPractice ) {
+      if ( selectedPractices.includes( toggledPractice ) ) {
+        selectedPractices = selectedPractices.filter( (d) => ( d != toggledPractice ) )
+      } else { selectedPractices.push( toggledPractice ) }
     };
 
 
