@@ -16,7 +16,7 @@
         .menu span:hover{background:#bbb}
         article h1{margin:auto;text-align:center;font-size:38px;font-weight:400;padding:10px}menu p{margin:5px}
         h2{border-bottom: 3px solid #add;margin:0;padding-bottom:10px;display:inline-block;color: #999}
-        article p{padding:20px 10px;column-count:2;max-width:1000px;width:100%;margin:auto;text-indent:20px;font-size:11pt;text-align:left;}
+        article p{padding:20px 10px;column-count:2;max-width:1000px;width:100%;margin:auto;text-indent:20px;font-size:14pt;text-align:left;}
         aside{width:230px;float:right;padding:0 20px;text-align:center}
         aside h3{font-size:18pt;padding:10px;width:210px;cursor:initial;margin:10px 0}
         aside h4{margin:0;font-family:squada one;font-size:16pt;font-weight:400;display:inline}
@@ -40,24 +40,25 @@
 	<article>
     <h1>Survey Dashboard:</h1>
     <h2>Investigate Wich Variables Explain Antioxidants Content.</h2>
-    <p>Welcome! We are an open data surveying program and we are colecting information about nutrient contents in commercial food.  If you click on the labels named 'Organicity' or 'Product' you'll see the data deagregated by one of those two factors and displayed according to each explicative variable . If you click over the 'Constellation' label, you'll see a display of the whole dataset acoording to the three variables. With de 'Outlier Ceiling' slider you can set a level of exclusion and see if patterns emerge more clearly while discarding certain extreme points. </p>
+    <p>Welcome! We are an open data surveying program and we are colecting information about nutrient contents in commercial food.  If you click on the labels named 'Organicity', 'State' or 'Product' you'll see the data deagregated by one of those two factors and displayed according to each explicative variable . If you click over the 'Constellation' label, you'll see a display of the whole dataset acoording to the three variables. With de 'Outlier Ceiling' slider you can set a level of exclusion and see if patterns emerge more clearly while discarding certain extreme points. </p>
 	</article>
 
 	<div  class="menu">
 		 <span id="selOrganic">Organicity.</span>
+		 <span id="selState">State.</span>
 		 <span id="selProduct">Product.</span>
 		 <span id="selConstellation">Constellation.</span>
 		 <p >Click on an option to arrange the data by:</p>
 	</div>
 
 	<aside>
-	  <h3> What are you Seeing.</h3>
+	  <h3> Data.</h3>
 		<div>
-		  <h4>objective</h4>
-		  <span class="display" id="display1" >00</span>
+		  <h4>Available</h4>
+		  <span class="display" id="display1" >139</span>
 		  <hr>
-		  <h4>samples</h4>
-		  <span class="display" id="display2" >00</span>
+		  <h4>Considered</h4>
+		  <span class="display" id="display2" >139</span>
 		</div>
     <p> This is the whole dataset! Points near the center have bigger values, so isolates itself around the center it is probably an outlier.</p>
 	    <label for="slider"
@@ -65,7 +66,7 @@
         <h3>Outlier Ceiling</h3><h4 id="ceiling-value">…</h4>
         <p id="puSlider">
       </label>
-		  <input id="slider" type="range" min="8000" max="25000" step="300" value="40000" orient="horizontal" width="500" class="slider">
+		  <input id="slider" type="range" min="5000" max="35000" step="300" value="40000" orient="horizontal" width="500" class="slider">
 	  </p>
   </aside>
 
@@ -155,11 +156,16 @@
              on( "click", function() {
                arrangeToFactor('organic',datos);
                selected = "organic";
-             } );
+             } ) ;
           d3.selectAll("#selProduct").
              on( "click", function() {
                arrangeToFactor('product',datos);
                selected = "product";
+             } ) ;
+          d3.selectAll("#selState").
+             on( "click", function() {
+               arrangeToFactor('state',datos);
+               selected = "state";
              });
 
           /* End of configuration specific to the data available. */
@@ -478,6 +484,9 @@
                 break;
               case "product":
                 arrangeToFactor( 'product' );
+                break;
+              case "state":
+                arrangeToFactor( 'state' );
                 break;
             };
           };
