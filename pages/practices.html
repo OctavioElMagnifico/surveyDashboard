@@ -48,7 +48,7 @@
 		<span id="selGmo">Non-GMO.</span>
 		<span id="selBiodynamic">Biodynamic.</span>
 		<span id="selOrganic">Organic.</span>
-		<span id="selIrrigation">Irrigation.</span>
+		<span id="selUrban">Urban Farming.</span>
 		<span id="selFair">Fair Food.</span>
 		<span id="selLocal">Local.</span>
 		<span id="selHydro">Hydroponic.</span>
@@ -290,9 +290,9 @@
          d3.selectAll("#selection").selectAll("text").remove();
          d3.select("#selection").append("text").text(selectedPractices.join() ).style( "font-weight", "bold" ).style( "font-size", "20px" );
        } );
-    d3.selectAll("#selIrrigation").
+    d3.selectAll("#selUrban").
        on( "click", function() {
-         togglePractice( "irrigation" )
+         togglePractice( "urban_farming" )
          d3.selectAll("#selection").selectAll("text").remove();
          d3.select("#selection").append("text").text(selectedPractices.join() ).style( "font-weight", "bold" ).style( "font-size", "20px" );
        } );
