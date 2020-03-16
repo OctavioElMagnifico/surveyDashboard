@@ -197,14 +197,13 @@
               attr("x", function(d,i)
                 { return escalaX( i ) + fruitsPositions[d.fruit] + 7; }
               ).
-              attr("y",  alto - 50 ).
-              attr("text-anchor", "middle").
+              attr("y",  alto - 10 ).
+              attr("text-anchor", "end").
               attr("fill","white").
               attr("font-family", "sans-serif").
               attr("font-size","14px").
               attr("writing-mode","vertical-rl")
              .attr("fill","black")
-             .attr("text-align","bottom")
              .attr("font-weight","bold")
           ;
           /* Variation labels */
@@ -218,9 +217,9 @@
                                .attr("x", function(d,i)
                                  { return escalaX( i ) + fruitsPositions[d.fruit] + 7; }
                                ).
-                                attr("y",  70 ).
+                                attr("y",  10 ).
                                 attr("class", "delta")
-                               .attr("text-anchor", "middle").
+                               .attr("text-anchor", "start").
                                 attr("font-family", "sans-serif").
                                 attr("font-size","14px").
                                 attr("writing-mode","vertical-rl")
