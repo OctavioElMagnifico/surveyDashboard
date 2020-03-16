@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>Dashboard: Real Food Information.</title>
+        <script type="text/javascript" src="https://unpkg.com/d3@5.15.0/dist/d3.js"> </script>
+        <script type="text/javascript" src="https://unpkg.com/lodash@4.17.15/lodash.js"></script>
+
+ </head>
+
+ <body>
+        <script type="text/javascript">
+
+          var padding = 10;
+          var width = 445 - 2*padding;
+          var height = 445-2*padding;
+
+          d3.select("body").append("div").attr("id","placeTree")
+
+          var svg = d3.select("#placeTree")
+                      .append("svg")
+                      .attr( "width", width + 2*padding )
+                      .attr( "height", height + 2*padding )
+                      .append("g")
+                      .attr("transform","translate(" + padding+ "," + padding + ")" );
+
+
+          d3.csv('/csv/trialData.csv', function(data) {
+
+              stratifiedData = d3.stratify()(data);
+            var layout = d3.pack().size( [ height, width ] );
+            var root = d3.hierarchy( data ).sum( (d) => (d.data.size) );
+
+            var nodes = root.descendants();
+            layout( root );
+            var slices = svg.selectAll("circle")
+                            .data(nodes)
+                            .enter()
+                            .append('circle');
+
+            slices.attr('cx', (d) => ( d.x ))
+                  .attr( 'cy', (d) => ( d.y ) )
+                  .attr( 'r', (d) => ( d.r ) )
+            ;
+          } )
+          ;
+
+          ;
+
+        </script>
+    </body>
+</html>
+

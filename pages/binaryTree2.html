@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>Dashboard: Real Food Information.</title>
+        <script type="text/javascript" src="https://unpkg.com/d3@5.15.0/dist/d3.js"> </script>
+        <script type="text/javascript" src="https://unpkg.com/lodash@4.17.15/lodash.js"></script>
+
+ </head>
+
+ <body>
+        <script type="text/javascript">
+
+          var padding = 10;
+          var width = 445 - 2*padding;
+          var height = 445-2*padding;
+
+          d3.select("body").append("div").attr("id","placeTree")
+
+          var svg = d3.select("#placeTree")
+                      .append("svg")
+                      .attr( "width", width + 2*padding )
+                      .attr( "height", height + 2*padding )
+                      .append("g")
+                      .attr("transform","translate(" + padding+ "," + padding + ")" );
+
+          var stratifiedData;
+          var root;
+
+          d3.csv('/csv/trialData.csv').then( function(fileData) {
+
+            /* var stratifiedData = d3.hierarchy(fileData).sum( (d) => ( d.size ) ); */
+            stratifiedData = d3.stratify(fileData)
+
+            root = d3.stratify(stratifiedData);
+
+            root.sum( (d) => ( +d.value ) );
+
+            d3.treemap()
+              .size([width, height])
+              .paddingTop(20)
+              .paddingRight(7)
+              .paddingInner(3)
+            (root)
+
+
+            var color = d3.scaleOrdinal()
+                          .domain(["namedStore","farmer","farm_market","farm"])
+                          .range( [ "red", "green", "yellow", "purple"] );
+
+            var opacity = d3.scaleLinear()
+                            .domain([10, 30])
+                            .range([.5,1]);
+
+            svg.selectAll( "rect" )
+               .data( root.leaves() )
+               .enter()
+               .append("rect")
+               .attr( 'x', (d) => d.x0 )
+               .attr( 'y', (d) => d.y0 )
+               .attr( 'width', (d) => ( d.x1 - d.x0 ) )
+               .attr( 'height', (d) => ( d.y1 - d.y0 ) )
+               .style( "stroke", "black" )
+               .style( "fill", (d) => color( d.parent.data.id ) )
+               .style( "opacity", (d) => opacity( d.data.size ) );
+
+          } );
+
+        </script>
+    </body>
+</html>
+

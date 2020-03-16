@@ -1,4 +1,4 @@
-#! Rscript
+#! /usr/bin/env Rscript
 set.seed(42)
 
 entrada <- commandArgs(trailingOnly = TRUE)
