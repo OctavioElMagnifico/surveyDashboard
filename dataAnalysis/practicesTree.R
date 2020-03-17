@@ -1,5 +1,5 @@
-## library("tidyverse")
-## library("rpart")
+library("tidyverse")
+library("rpart")
 ## library("caret")
 ## library("party")
 ## library("gpls")
@@ -14,7 +14,10 @@ practicesList <- inputs$practices
 
 
 ## Promising:
-## treeModel <- rpart( Antioxidants ~ ., data %>% select( one_of( !!!practicesList, 'Type', 'Antioxidants' ) ) )
+treeAntiox <- rpart( Antioxidants ~ ., dataAntiox )
+treePoly <- rpart( Polyphenols ~ ., dataPoly )
+treeFlavor <- rpart( Flavor0to5 ~ ., dataFlavor )
+saveRDS(object = list( treeAntiox, treePoly, treeFlavor ), file = "./treeModels.Rds" )
 
 ## predict( treeModel, data[3,] )
 
