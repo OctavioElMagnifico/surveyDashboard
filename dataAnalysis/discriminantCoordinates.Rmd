@@ -1,0 +1,361 @@
+---
+title: Guía4-i,"Coordenadas Discriminantes"
+author: Octavio M. Duarte
+output: html_document
+---
+
+
+```{r previos}
+library(tidyverse)
+library(knitr)
+set.seed(42)
+library('magrittr')
+library('jsonlite')
+```
+
+```{r funciones}
+obtenerQi <- function(marcoDeDatos,listaVariables,poblacion,colPoblacion) {
+  indices <- which( marcoDeDatos[,colPoblacion] == poblacion )
+  cov(
+    marcoDeDatos[indices,listaVariables]
+  ) * ( length(indices) - 1 )
+}
+
+obtenerQ <- function(marcoDeDatos,listaVariables) {
+  cov(
+    marcoDeDatos[,variables]
+  ) * ( nrow(marcoDeDatos) - 1 )
+}
+
+todosLosQ <- function(marcoDeDatos,listaVariables,colPoblacion) {
+  listaPoblaciones <- marcoDeDatos[,colPoblacion] %>% unique() %>% unlist()
+  listaQ <- map( listaPoblaciones, ~obtenerQi(marcoDeDatos, listaVariables,.x, colPoblacion ) )
+  names(listaQ) <- listaPoblaciones
+  return(
+    listaQ
+  )
+}
+
+mediaUnaPoblacion <- function(marcoDeDatos,listaVariables,colPoblacion,poblacion) {
+  indices <- which( marcoDeDatos[,colPoblacion] == poblacion )
+  return(
+    colMeans( marcoDeDatos[indices,listaVariables] )
+  )
+}
+
+mediaGeneral <- function(marcoDeDatos,listaVariables) {
+  return( colMeans( marcoDeDatos[,listaVariables] ) )
+}
+
+obtenerNi <- function(marcoDeDatos,colPoblacion) {
+  listaPoblaciones <- marcoDeDatos[,colPoblacion] %>% unique() %>% unlist()
+  listaN <- map_dbl( listaPoblaciones,
+                    ~length( which( marcoDeDatos[,colPoblacion] == .x ) )
+                    )
+  names(listaN) <- listaPoblaciones
+  return( listaN )
+}
+
+obtenerU <- function(marcoDeDatos,listaVariables,colPoblacion) {
+  listaQ <- todosLosQ(marcoDeDatos,listaVariables,colPoblacion)
+  n <- nrow(marcoDeDatos)
+  k <- length(listaVariables)
+  sDentro <- reduce(listaQ,`+`)
+  return(sDentro)
+}
+
+obtenerH <- function(marcoDeDatos,listaVariables,colPoblacion) {
+  listaPoblaciones <- marcoDeDatos[,colPoblacion] %>% unique() %>% unlist()
+  listaMedias <- map( listaPoblaciones, ~mediaUnaPoblacion(marcoDeDatos,listaVariables,colPoblacion,.x) )
+  names(listaMedias) <- listaPoblaciones
+  mediaGeneral <- mediaGeneral(marcoDeDatos,listaVariables)
+  listaN <- obtenerNi(marcoDeDatos,colPoblacion)
+  listaASumar <- map2( listaMedias, listaN, ~(( .x - mediaGeneral ) %*% t( .x - mediaGeneral )) * .y  )
+  matrizH <- listaASumar %>% reduce(`+`)
+  return(matrizH)
+}
+
+gammaEstrella1 <- function(marcoDeDatos,listaVariables,colPoblacion) {
+  listaPoblaciones <- marcoDeDatos[,colPoblacion] %>% unique() %>% unlist()
+  listaQ <- todosLosQ(marcoDeDatos,listaVariables,colPoblacion)
+  listaN <- obtenerNi(marcoDeDatos,colPoblacion)
+
+  numerador <- map2_dbl(
+    listaQ,
+    listaN,
+    ~(det(.x/.y))^(.y/2)
+  ) %>% reduce(`*`)
+
+  nTotal  <- nrow(marcoDeDatos)
+  denominador <- ( det( reduce( listaQ, `+` ) / nTotal ) )^(nTotal/2)
+  return( numerador / denominador )
+}
+
+gammaEstrella2 <- function(marcoDeDatos,listaVariables,colPoblacion) {
+  listaPoblaciones <- marcoDeDatos[,colPoblacion] %>% unique() %>% unlist()
+  listaQ <- todosLosQ(marcoDeDatos,listaVariables,colPoblacion)
+  listaN <- obtenerNi(marcoDeDatos,colPoblacion)
+  matrizH <- obtenerH(marcoDeDatos,listaVariables,colPoblacion)
+  matrizU <- reduce( listaQ, `+` )
+
+  numerador <- map2_dbl(
+    listaQ,
+    listaN,
+    ~(det(.x/.y))^(.y/2)
+  ) %>% reduce(`*`)
+
+  nTotal  <- nrow(marcoDeDatos)
+  denominador <- ( det( matrizU + matrizH / nTotal ) )^(nTotal/2)
+  return( numerador / denominador )
+}
+
+gammaEstrella3 <- function(marcoDeDatos,listaVariables,colPoblacion) {
+  listaPoblaciones <- marcoDeDatos[,colPoblacion] %>% unique() %>% unlist()
+  listaQ <- todosLosQ(marcoDeDatos,listaVariables,colPoblacion)
+  listaN <- obtenerNi(marcoDeDatos,colPoblacion)
+  matrizH <- obtenerH(marcoDeDatos,listaVariables,colPoblacion)
+  matrizU <- reduce( listaQ, `+` )
+
+  nTotal  <- nrow(marcoDeDatos)
+  return( ( det( matrizU ) / det( matrizU + matrizH ) )^(nTotal/2) )
+}
+
+indicesNu <- function(listaVariables,colPoblacion) {
+  n <- length(colPoblacion)
+  p <- length(listaVariables)
+  k <- colPoblacion %>% unique() %>% length()
+  nu <- p*k+(p*(p+1)*k)/2
+  nu1 <- p*k+(p*(p+1))/2
+  nu2 <- p+(p*(p+1))/2
+  return(
+    list(
+      "nu" = nu,
+      "nu1" = nu1,
+      "nu2" = nu2
+    )
+  )
+}
+
+pruebaSigmaEnPoblaciones1 <- function(marcoDeDatos,listaVariables,colPoblacion,alfa) {
+  estadistico <- gammaEstrella1(marcoDeDatos,listaVariables,colPoblacion)
+  indices <- indicesNu(listaVariables,marcoDeDatos[[colPoblacion]])
+  gradLib1 <- indices[["nu"]] - indices[["nu1"]]
+  percentil <- qchisq( p = 1 - alfa, df = gradLib1 )
+  cuantilParaP =   pchisq( df = gradLib1, q = -2 * log(estadistico) )
+  return(
+    tibble(
+      rechazo =  -2*log(estadistico) > percentil,
+      pValor =  1 - cuantilParaP,
+      estadistico = -2 * log(estadistico),
+      percentil = qchisq( df = gradLib1, p = 1- alfa )
+    )
+  )
+}
+
+pruebaSigmaEnPoblaciones2 <- function(marcoDeDatos,listaVariables,colPoblacion,alfa) {
+  estadistico <- gammaEstrella2(marcoDeDatos,listaVariables,colPoblacion)
+  indices <- indicesNu(listaVariables,marcoDeDatos[[colPoblacion]])
+  gradLib2 <- indices[["nu"]] - indices[["nu2"]]
+  percentil <- qchisq( p = 1 - alfa, df = gradLib2 )
+  cuantilParaP =   pchisq( df = gradLib2, q = -2 * log(estadistico) )
+  return(
+    tibble(
+      rechazo =  -2*log(estadistico) > percentil,
+      pValor =  1 - cuantilParaP,
+      estadistico = estadistico,
+      percentil = qchisq( df = gradLib2, p = 1- alfa )
+    )
+  )
+}
+
+# NOTA: Mejorar agregando que para k=2 es una F y quizás alguna otra estimación.
+pruebaSigmaEnPoblaciones3 <- function(marcoDeDatos,listaVariables,colPoblacion,alfa) {
+  estadistico <- gammaEstrella2(marcoDeDatos,listaVariables,colPoblacion)
+  indices <- indicesNu(listaVariables,marcoDeDatos[[colPoblacion]])
+  percentil <- qchisq( p = 1 - alfa, df = indices[["nu1"]] - indices[["nu1"]] )
+  gradLib3 <- indices[["nu1"]] - indices[["nu2"]]
+  cuantilParaP = pchisq( df = gradLib3, q = -2 * log(estadistico) )
+  return(
+    tibble(
+      rechazo =  -2*log(estadistico) > percentil,
+      pValor = 1 - cuantilParaP,
+      estadistico = estadistico,
+      percentil = qchisq( df = gradLib3, p = 1- alfa )
+    )
+  )
+}
+
+estimarSigmaDentro <- function(marcoDeDatos,listaVariables,colPoblacion) {
+  listaQ <- todosLosQ(marcoDeDatos,listaVariables,colPoblacion)
+  n <- nrow(marcoDeDatos)
+  k <- length(listaVariables)
+  sDentro <- reduce(listaQ,`+`) / (n-k)
+  return(sDentro)
+}
+
+estimarSigmaEntre <- function(marcoDeDatos,listaVariables,colPoblacion) {
+  n <- nrow(marcoDeDatos)
+  k <- length(listaVariables)
+  matrizH <- obtenerH(marcoDeDatos,listaVariables,colPoblacion) / n
+  return( matrizH )
+}
+
+coordenadasDiscriminantes <- function(marcoDeDatos, listaVariables, colPoblacion) {
+  matrizH <- obtenerH(marcoDeDatos,listaVariables,colPoblacion)
+  matrizU<- obtenerU(marcoDeDatos,listaVariables,colPoblacion)
+  matrizC <- chol(matrizU)
+  inversaC <- solve(matrizC)
+  matrizB <- t( inversaC ) %*% matrizH %*% ( inversaC )
+  descompB <- eigen(matrizB)
+  n <- nrow(marcoDeDatos)
+  k <- length( marcoDeDatos[,colPoblacion] %>% unique() )
+  listaVectores <- map( seq(1,length(descompB$values)), ~descompB$vectors[,.x] )
+  listaDirecciones <- map( listaVectores, ~ inversaC %*% unlist( .x ) * sqrt( n - k ) )
+  nombresListaDirecciones <- map2( rep('a',length(listaDirecciones)),
+                                  seq(1,length(listaDirecciones)),
+                                  ~paste(.x,.y,sep='') )
+  names(listaDirecciones) <- nombresListaDirecciones
+  columnasProyecciones <- map(listaDirecciones, ~ (marcoDeDatos[,listaVariables] %>% as.matrix()) %*% .x )
+  return(
+    list(proyecciones = columnasProyecciones,
+         direcciones = listaDirecciones,
+         autovalores = descompB$values %>% round(9),
+         autoVecB = listaVectores,
+         matrizB = matrizB,
+         inversaC = inversaC,
+         listaVectores = listaVectores
+         )
+  )
+}
+
+viejoDiscriminantes <- function(marcoDeDatos, listaVariables, colPoblacion) {
+  sEntre <- estimarSigmaEntre(marcoDeDatos,listaVariables,colPoblacion)
+  sDentro<- estimarSigmaDentro(marcoDeDatos,listaVariables,colPoblacion)
+  matrizC <- chol(sDentro)
+  inversaC <- solve(matrizC)
+  matrizB <- t(inversaC) %*% sEntre %*% inversaC
+  descompB <- eigen(matrizB)
+  n <- nrow(marcoDeDatos)
+  k <- length( marcoDeDatos[,colPoblacion] %>% unique() )
+  listaVectores <- map( seq(1,length(descompB$values)), ~descompB$vectors[,.x] * sqrt(n-k) )
+  listaDirecciones <- map( listaVectores, ~ inversaC %*% .x )
+  nombresListaDirecciones <- map2( rep('a',length(listaDirecciones)),
+                                  seq(1,length(listaDirecciones)),
+                                  ~paste(.x,.y,sep='') )
+  names(listaDirecciones) <- nombresListaDirecciones
+  columnasProyecciones <- map(listaDirecciones, ~ (marcoDeDatos[,listaVariables] %>% as.matrix()) %*% .x )
+  return(
+    list(proyecciones = columnasProyecciones,
+         direcciones = listaDirecciones,
+         autovalores = descompB$values %>% round(9)
+         )
+  )
+}
+
+normaVector <- function(vector) {
+  norm( x = matrix( vector, ncol=1 ),type="2" )
+}
+
+trazarElipse <- function(centro = c(0,0), radio = 1, forma = matrix( c(1,0,0,1), ncol = 2 ), puntos) {
+  espectral <- eigen(forma, symmetric = T)
+  rotar <- espectral$vectors
+  escalar <- espectral$values
+  paramH <- function(t) { (radio / sqrt( escalar[[1]] ) ) * cos(t) }
+  paramV <- function(t) { (radio / sqrt(escalar[[2]]) ) * sin(t) }
+  valoresT <- seq(0,2*pi,length.out=puntos)
+  columnaX <- map_dbl(valoresT,paramH)
+  columnaY <- map_dbl(valoresT,paramV)
+  matriz <- matrix(
+    c( columnaX, columnaY ),
+    ncol=2
+  )
+  matrizTransformada <- matriz %*% t(rotar)
+  tabla <- tibble(
+    elipseX = matrizTransformada[,1] + centro[[1]],
+    elipseY = matrizTransformada[,2] + centro[[2]]
+  )
+  return( tabla )
+}
+
+matrizCecilia <- matrix( c(2.5,-0.5,-0.5,2.5), ncol = 2 )
+
+espectroCecilia <- eigen(matrizCecilia)
+
+
+elipseP <- trazarElipse(puntos=30,forma=matrizCecilia)
+
+elipseP %>% ggplot() +
+  aes( x = elipseX, y= elipseY) +
+  geom_point() +
+  coord_fixed()
+```
+
+# RFP
+
+```{r}
+
+## setwd("~/D3/surveyDashboard/dataAnalysis")
+
+df <- read_rds( "./realFoodCampaign.Rds" )
+
+variablesList <- colnames(df)
+
+analysisVars <- variablesList[ c(39,40,41,65) ]
+
+
+dataF <- filter( df, !is.na( SoilOrganicMatter0to10cmPercentage ) )
+
+for ( i in 1:length(analysisVars) ) {
+  dataF <- filter( dataF, !is.na( .data[[  analysisVars[[i]]  ]] ) )
+}
+
+
+
+cdRFP <- coordenadasDiscriminantes( marcoDeDatos = dataF[c(1:200),], listaVariables = analysisVars, colPoblacion =  'Source' )
+
+dataF <- dataF[c(1:200) ,]
+
+dataF$dc1 <- ( cdRFP$proyecciones )$a1
+dataF$dc2 <- ( cdRFP$proyecciones )$a2
+
+dataF %>% ggplot() +
+  aes( x=dc1, y=dc2, color = Farmer ) +
+  geom_point()
+
+analysisVars <- variablesList[ c(39,65,19,20,18,66) ]
+
+
+dataF <- filter( df, !is.na( SoilOrganicMatter0to10cmPercentage ) )
+
+for ( i in 1:length(analysisVars) ) {
+  dataF <- filter( dataF, !is.na( .data[[  analysisVars[[i]]  ]] ) )
+}
+
+
+
+cdRFP <- coordenadasDiscriminantes( marcoDeDatos = dataF[c(1:200),], listaVariables = analysisVars, colPoblacion =  'organic' )
+
+dataF <- dataF[c(1:200) ,]
+
+dataF$dc1 <- ( cdRFP$proyecciones )$a1
+dataF$dc2 <- ( cdRFP$proyecciones )$a2
+
+toJSON( x=dataF ) %>% write_file( path="../output/discriminantCoordinates.json" )
+
+centroideT <- dataF[ which( dataF$organic ) , c('dc1','dc2') ] %>% colMeans %>% enframe() %>% spread(name,value)
+centroideF <- dataF[ which( !( dataF$organic ) ) , c('dc1','dc2') ] %>% colMeans %>% enframe() %>% spread(name,value)
+
+
+centroides <- tibble(
+  dc1 = c(centroideT$dc1, centroideF$dc1),
+  dc2 = c(centroideT$dc2, centroideF$dc2),
+  organic = c('TRUE','FALSE')
+)
+
+dataF %>% ggplot() +
+  aes( x=dc1, y=dc2, color = organic ) +
+  geom_point() +
+  geom_point( data = centroides, size = 5, color = "blue" )
+
+
+```

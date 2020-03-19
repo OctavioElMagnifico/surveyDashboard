@@ -103,10 +103,10 @@ productsList <- df %>% select( Type ) %>% unlist() %>% unique()
 isSubstring <- function( string, substring ) {
   index  <- grep( x=string, pattern=substring )
   if ( length( index ) == 0 ) {
-    return( 0 )
+    return( FALSE )
   }
   else {
-    return( 1 )
+    return( TRUE )
   }
 }
 
@@ -122,6 +122,8 @@ synonimPractices <- list( "Non_GMO_Verified", "non_gmo", "Non_GMO", "non-gmo" )
 ## TO DO: mutate a column with an OR condition and synthesize.
 
 df <- bind_cols( df, individualFarmPracticesColumns )
+
+write_rds( x=df, path="~/D3/surveyDashboard/dataAnalysis/realFoodCampaign.Rds" )
 
 treeVariables <- c( "Antioxidants", "Flavor0to5", "Polyphenols", "Type" )
 
