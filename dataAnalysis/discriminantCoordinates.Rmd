@@ -1,7 +1,8 @@
 ---
-title: Guía4-i,"Coordenadas Discriminantes"
+title: "Coordenadas Discriminantes"
 author: Octavio M. Duarte
 output: html_document
+date: 27/04/2018
 ---
 
 
@@ -337,20 +338,26 @@ cdRFP <- coordenadasDiscriminantes( marcoDeDatos = dataF[c(1:200),], listaVariab
 
 dataF <- dataF[c(1:200) ,]
 
-dataF$dc1 <- ( cdRFP$proyecciones )$a1
-dataF$dc2 <- ( cdRFP$proyecciones )$a2
+dataF <- dataF %>% mutate( dc1 = ( cdRFP$proyecciones )$a1, dc2 = ( cdRFP$proyecciones )$a2 )
 
-toJSON( x=dataF ) %>% write_file( path="../output/discriminantCoordinates.json" )
+dataF <- dataF %>% select( ID,dc1,dc2,organic, 39,65,19,20,18,66 )
 
-centroideT <- dataF[ which( dataF$organic ) , c('dc1','dc2') ] %>% colMeans %>% enframe() %>% spread(name,value)
-centroideF <- dataF[ which( !( dataF$organic ) ) , c('dc1','dc2') ] %>% colMeans %>% enframe() %>% spread(name,value)
 
+write_csv(x=dataF, path = "../output/discriminantCoordinates.csv" )
+
+centroideT <- dataF %>% filter( organic == TRUE ) %>% select( -organic, -ID ) %>% colMeans %>% enframe() %>% spread(name,value) %>% mutate( ID="centroid", organic = TRUE )
+
+centroideF <- dataF %>% filter( organic == FALSE ) %>% select( -organic, -ID ) %>% colMeans %>% enframe() %>% spread(name,value) %>% mutate( ID="centroid", organic = FALSE )
+
+rbind( dataF, centroideF, centroideT ) %>% write_csv( path = "../output/discriminantCoordinates.csv" )
 
 centroides <- tibble(
   dc1 = c(centroideT$dc1, centroideF$dc1),
   dc2 = c(centroideT$dc2, centroideF$dc2),
   organic = c('TRUE','FALSE')
 )
+
+centroides %>% write_csv( path="../output/discriminantCentroids.csv" )
 
 dataF %>% ggplot() +
   aes( x=dc1, y=dc2, color = organic ) +

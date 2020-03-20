@@ -6,8 +6,6 @@
         <title>Dashboard: Real Food Information.</title>
         <script type="text/javascript" src="https://unpkg.com/d3@5.15.0/dist/d3.js"> </script>
         <script type="text/javascript" src="https://unpkg.com/lodash@4.17.15/lodash.js"></script>
-        <script type="text/javascript" src="../node_modules/d3.js"></script>
-
 
 		    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto|Squada+One&display=swap" rel="stylesheet"> -->
 
@@ -89,29 +87,48 @@
       return column;
     };
 
+    var padding = 50;
+    var decompHeight = 150;
     var height = 600;
-    var width = 600;
+    var width = 900;
 
     var svg = d3.select("body")
                 .append("svg")
-                .attr("height",height)
-                .attr("width",width)
+                .attr("height",height + 3*padding + decompHeight )
+                .attr("width",width + 2*padding );
 
+    var parseBool = function(d,colName) { if ( d == "FALSE" ) { return ( false ); } else { true ; } };
 
-    d3.json( "../output/discriminantCoordinates.json" ).then( function(dataFile) {
+    var parseRow = function( row ) {
+      return{
+        ID: row.ID,
+        dc1: parseFloat(row.dc1),
+        dc2: parseFloat(row.dc2),
+        organic: parseBool( row.organic )
+      };
+    }
+
+    var scaleX;
+    var scaleY;
+    var dataF;
+
+    d3.csv( "/csv/discriminantCoordinates.csv", parseRow ).then( function(dataFile) {
 
       dataF = dataFile;
 
-      scaleX = d3.scaleLinear()
-                 .domain([ -15, -8 ])
-                 .range([0,600])
-
+      console.log( dataF )
 
       scaleX = d3.scaleLinear()
-                 .domain([ d3.min( dataF, d => d.dc2 ), d3.max( dataF, d => d.dc2 ) ])
-                 .range([0,height])
+                 .domain([ d3.min( dataF, (d) => d.dc1 ), d3.max( dataF, (d) => d.dc1 ) ])
+                 .range( [ padding , width - padding ] );
 
-      console.log( scaleY().range() )
+      scaleY = d3.scaleLinear()
+                 .domain(d3.extent( dataF, d => d.dc2 ))
+                 .range([height - padding , padding]);
+
+      scaleColor = d3.scaleOrdinal()
+                     .domain( _.uniq( getColumn( dataF, 'organic' ) ) )
+                     .range( d3.schemeCategory10 );
 
       svg.selectAll("circle")
          .data(dataF)
@@ -119,10 +136,30 @@
          .append("circle")
          .attr("cx", (d) => scaleX(d.dc1) )
          .attr("cy", (d) => scaleY( d.dc2 ) )
-         .attr("fill","black")
-         .attr("r", 3);
-    });
+         .attr("fill", function(d) {if ( d.ID == 'centroid' ) { return "gray" } else { return scaleColor( d.organic ) } } )
+         .attr("r", function(d) {if ( d.ID == 'centroid' ) { return 8 } else { return 3 } } );
 
+      var axisX = d3.axisBottom()
+                    .scale(scaleX)
+      ;
+
+      svg.append("g")
+                    .attr("class","axisX")
+                    .call(axisX)
+                    .attr("transform","translate(" + padding + "," + ( height ) + ")" )
+            ;
+
+      var axisY = d3.axisRight()
+                    .scale(scaleY)
+      ;
+
+      svg.append("g")
+         .attr("class","axisY")
+         .call(axisY)
+         .attr("transform","translate(" + ( scaleX(0) + padding ) + "," + padding + ")" )
+      ;
+
+    });
 
 
   </script>
