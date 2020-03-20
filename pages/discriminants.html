@@ -41,27 +41,16 @@
     <body>
 	<article>
     <h1>Survey Dashboard: Discriminant Coordinates Analysis.</h1>
-    <h2>Investigate Wich Farm Practices Benefit You and the Soil.</h2>
-    <p>Welcome! This interactive chart allows you... </p>
-    <br>
-    <p> You can add and remove practices to the model with the buttons, then predict the relative changes with the "predict" button. </p>
 
 	</article>
 
 	<div  class="menu">
-    <h4> Selected </h4>
-		<p > Buttons above add and remove practices to our prediction. You'll see the effect with the predict button. </p>
-		<p id="selection"> ... </p>
 	</div>
 
 	<aside class="asideLeft">
-	  <h3>Samples Used.</h3>
 		<div>
-		  <h4>2046</h4>
 		</div>
 	  <label for="slider"
-      style="display: inline-block; width: 240px; text-align: center, text-color:red">
-      <h3 id="redraw" color="red">Predict!</h3>
   </aside>
 
   <script type="text/javascript">
@@ -136,8 +125,11 @@
          .append("circle")
          .attr("cx", (d) => scaleX(d.dc1) )
          .attr("cy", (d) => scaleY( d.dc2 ) )
-         .attr("fill", function(d) {if ( d.ID == 'centroid' ) { return "gray" } else { return scaleColor( d.organic ) } } )
-         .attr("r", function(d) {if ( d.ID == 'centroid' ) { return 8 } else { return 3 } } );
+         .attr("fill", function(d) { return scaleColor( d.organic ) } )
+         .attr("r", function(d) {if ( d.ID == 'centroid' ) { return 8 } else { return 3 } } )
+        .append("title")
+        .text( (d) => ( "Point ID: " + d.ID ) )
+      ;
 
       var axisX = d3.axisBottom()
                     .scale(scaleX)
@@ -167,6 +159,11 @@
     d3.csv( "/csv/discriminantC1.csv" )
       .then( function(dataFile) {
         dataB1 = dataFile;
+
+        scaleColor = d3.scaleOrdinal()
+                       .domain( _.uniq( getColumn( dataB1, 'component' ) ) )
+                       .range( d3.schemeCategory10 );
+
         var x = d3.scaleLinear()
                   .domain( d3.extent( dataB1, (d) => d.amount  ) )
                   .range( [ padding , width - padding ] );
@@ -181,11 +178,21 @@
                   .enter()
                   .append("rect")
                   .attr("class","c1")
-                  .attr( "x", function(d) { return x( Math.min( 0, d.amount )  ) + 4*padding; } )
+                  .attr( "x", function(d) { return x( Math.min( 0, d.amount )  ) ; } )
                   .attr( "y", function(d) { return y( d.component ) + 2*padding ; } )
                   .attr( "width", function(d) { return Math.abs( x(d.amount) - x(0) ); } )
                   .attr( "height", y.bandwidth() )
-                  .attr("fill", (d,i) => scaleColor(i) )
+                  .attr("fill", (d) => scaleColor( d.component ) )
+                  .on("mouseover", function() {
+                    d3.select(this)
+                      .attr("fill", "orange");
+                  } )
+                  .on("mouseout", function() {
+                    d3.select(this)
+                      .attr("fill", (d) => scaleColor( d.component ) );
+                  } )
+                  .append("title")
+                  .text( (d) => d.component + " : " + d.amount )
                   ;
       } )
 
@@ -194,14 +201,15 @@
       .then( function(dataFile) {
         dataB2 = dataFile;
 
+
         var x = d3.scaleBand()
                   .domain( dataB2.map( (d) => ( d.component ) ) )
-                  .range( [ width + padding, width - padding + decompHeight  ], .2 )
+                  .range( [ width + padding, width + decompHeight  ], .2 )
         ;
 
         var y = d3.scaleLinear()
                   .domain( d3.extent( dataB2, (d) => d.amount  ) )
-                  .range( [ 2*padding , height - 3 * padding ] )
+                  .range( [ padding , height + padding ] )
         ;
 
 
@@ -210,11 +218,21 @@
                   .enter()
                   .append("rect")
                   .attr("class","c2")
-                  .attr( "y", function(d) { return y( Math.min( 0, d.amount )  ) + 3*padding; } )
-                  .attr( "x", function(d) { return x( d.component ) + 2*padding ; } )
+                  .attr( "y", function(d) { return y( Math.min( 0, d.amount )  ) + decompHeight + 4*padding; } )
+                  .attr( "x", function(d) { return x( d.component ) ; } )
                   .attr( "height", function(d) { return Math.abs( y(d.amount) - y(0) ); } )
                   .attr( "width", x.bandwidth() )
-                  .attr("fill", (d,i) => scaleColor(i) )
+                  .attr("fill", (d) => scaleColor( d.component ) )
+                  .on("mouseover", function() {
+                    d3.select(this)
+                      .attr("fill", "orange");
+                  } )
+                  .on("mouseout", function() {
+                    d3.select(this)
+                      .attr("fill", (d) => scaleColor( d.component ) );
+                  } )
+                  .append("title")
+                  .text( (d) => d.component + " : " + d.amount )
                   ;
       } );
 
