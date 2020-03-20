@@ -178,7 +178,7 @@
                   .enter()
                   .append("rect")
                   .attr("class","c1")
-                  .attr( "x", function(d) { return x( Math.min( 0, d.amount )  ) ; } )
+                  .attr( "x", function(d) { return x( Math.min( 0, d.amount )  ) + 2*padding ; } )
                   .attr( "y", function(d) { return y( d.component ) + 2*padding ; } )
                   .attr( "width", function(d) { return Math.abs( x(d.amount) - x(0) ); } )
                   .attr( "height", y.bandwidth() )
