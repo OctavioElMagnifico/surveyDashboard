@@ -209,7 +209,7 @@
 
         var y = d3.scaleLinear()
                   .domain( d3.extent( dataB2, (d) => d.amount  ) )
-                  .range( [ padding , height + padding ] )
+                  .range( [ padding , height - ( decompHeight + 2*padding )] )
         ;
 
 
