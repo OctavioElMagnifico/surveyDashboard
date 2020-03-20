@@ -95,7 +95,7 @@
     var svg = d3.select("body")
                 .append("svg")
                 .attr("height",height + 3*padding + decompHeight )
-                .attr("width",width + 2*padding );
+                .attr("width",width + 2*padding + decompHeight );
 
     var parseBool = function(d,colName) { if ( d == "FALSE" ) { return ( false ); } else { true ; } };
 
@@ -160,6 +160,63 @@
       ;
 
     });
+
+    var y;
+    var x;
+
+    d3.csv( "/csv/discriminantC1.csv" )
+      .then( function(dataFile) {
+        dataB1 = dataFile;
+        var x = d3.scaleLinear()
+                  .domain( d3.extent( dataB1, (d) => d.amount  ) )
+                  .range( [ padding , width - padding ] );
+
+        var y = d3.scaleBand()
+                  .domain( dataB1.map( (d) => ( d.component ) ) )
+                  .range( [height + decompHeight - 2*padding , height - padding  ], .2 )
+        ;
+
+        svg.selectAll("rect.c1")
+                  .data( dataB1 )
+                  .enter()
+                  .append("rect")
+                  .attr("class","c1")
+                  .attr( "x", function(d) { return x( Math.min( 0, d.amount )  ) + 4*padding; } )
+                  .attr( "y", function(d) { return y( d.component ) + 2*padding ; } )
+                  .attr( "width", function(d) { return Math.abs( x(d.amount) - x(0) ); } )
+                  .attr( "height", y.bandwidth() )
+                  .attr("fill", (d,i) => scaleColor(i) )
+                  ;
+      } )
+
+
+    d3.csv( "/csv/discriminantC2.csv" )
+      .then( function(dataFile) {
+        dataB2 = dataFile;
+
+        var x = d3.scaleBand()
+                  .domain( dataB2.map( (d) => ( d.component ) ) )
+                  .range( [ width + padding, width - padding + decompHeight  ], .2 )
+        ;
+
+        var y = d3.scaleLinear()
+                  .domain( d3.extent( dataB2, (d) => d.amount  ) )
+                  .range( [ 2*padding , height - 3 * padding ] )
+        ;
+
+
+        svg.selectAll("rect.c2")
+                  .data( dataB2 )
+                  .enter()
+                  .append("rect")
+                  .attr("class","c2")
+                  .attr( "y", function(d) { return y( Math.min( 0, d.amount )  ) + 3*padding; } )
+                  .attr( "x", function(d) { return x( d.component ) + 2*padding ; } )
+                  .attr( "height", function(d) { return Math.abs( y(d.amount) - y(0) ); } )
+                  .attr( "width", x.bandwidth() )
+                  .attr("fill", (d,i) => scaleColor(i) )
+                  ;
+      } );
 
 
   </script>

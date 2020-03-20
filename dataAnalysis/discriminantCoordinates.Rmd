@@ -364,5 +364,22 @@ dataF %>% ggplot() +
   geom_point() +
   geom_point( data = centroides, size = 5, color = "blue" )
 
+componentsNames <- cdRFP$matrizB %>% rownames
+components1 <-   cdRFP$listaVectores[[1]]
+components2 <-   cdRFP$listaVectores[[2]]
+
+names( components1 ) <- componentsNames
+names( components2 ) <- componentsNames
+
+tibble(
+  component = componentsNames,
+  amount = components1
+) %>% write.csv( file="../output/discriminantC1.csv" )
+
+tibble(
+  component = componentsNames,
+  amount = components2
+) %>% write.csv( file="../output/discriminantC2.csv" )
+
 
 ```
