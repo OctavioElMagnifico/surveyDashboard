@@ -162,9 +162,10 @@
 
                  /* This is the only remaining rect, the "background" */
 
-                 svg.select("rect")
-                    .duration(800)
-                    .style("fill", depthScale(depth0) )
+               svg.selectAll("rect")
+                  .transition()
+                  .duration(800)
+                  .style("fill", depthScale(depth0) )
 
                  /* let path = d.path(newRoot).map( d => d.data.key ).reverse().join('/') ; */
 
