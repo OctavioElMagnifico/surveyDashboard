@@ -162,9 +162,7 @@
 
                  /* This is the only remaining rect, the "background" */
 
-                 svg.select("g")
-                    .data(newRoot)
-                    .transition()
+                 svg.select("rect")
                     .duration(800)
                     .style("fill", depthScale(depth0) )
 
