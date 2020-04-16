@@ -46,7 +46,10 @@
 
          var root;
 
-         var depthScale = d3.scaleOrdinal( d3.schemeCategory10 );
+          var depthScale = d3.scaleLinear()
+                             .interpolate( d3.interpolateLab )
+                             .domain([0,5])
+                             .range(["#046C9A","#ECCBAE"])
 
          var populateTooltip = function(d) {
 
