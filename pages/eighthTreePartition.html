@@ -54,8 +54,8 @@
 
              let path = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/")
 
-             let xPosition = d.x1 ;
-             let yPosition = d.y1 ;
+             let xPosition = ( d.x1 - d.x0 ) * 0.5 + d3.event.pageX;
+             let yPosition = ( d.y1 - d.y0 ) * 0.5 + d3.event.pageY;
 
              d3.select("#tooltip")
                .transition()
