@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <style>
+         #tooltip {
+             position: absolute;
+             text-align: center;
+             width: 200px;
+             height: auto;
+             padding: 3px;
+             font: 12px sans-serif;
+             background: lightgray;
+             border-radius: 10px;
+             pointer-events: none;
+         }
+         #tooltip.hidden {
+             display: none;
+         }
+         #tooltip p {
+             margin: 0;
+             font-family: sans-serif;
+             font-size: 12px;
+             line-height 20px;
+         }
+         text {
+             pointer-events: none;
+         }
+          rect.tile {
+            rx: 5px;
+            ry: 5px;
+          }
+        </style>
+        <title> Binary Partition: Ninth Iteration. Experimenting with differnte color scale for leaves. </title>
+        <script type="text/javascript" src="https://unpkg.com/d3@5.15.0/dist/d3.js"> </script>
+    </head>
+    <body>
+        <h1> Interactive Binary Tree Partition. </h1>
+        <ul>
+            <li> Click works in a switch fashion: if you are on the general view, clicking an area develops taking it as the new root.</li>
+            <li> If you click again it won't continue zooming it will come back to the original state. To see a deeper level, you must click on that level's area. </li>
+            <li> It still isn't showing target vs. completed. </li>
+            <li> The hover is already in place. </li>
+
+        </ul>
+        <div id="tooltip" class="hidden">
+            <p><strong> <span id="tooltipTitle">Some Info About This Bucket</span></strong></p>
+            <p><span id="value">100</span></p>
+        </div>
+        <script type="text/javascript">
+         var svgWidth = 900;
+         var svgHeight = 300;
+          var padding = 15;
+          var wes_palettes = {"BottleRocket1":["#A42820","#5F5647","#9B110E","#3F5151","#4E2A1E","#550307","#0C1707"],"BottleRocket2":["#FAD510","#CB2314","#273046","#354823","#1E1E1E"],"Cavalcanti1":["#D8B70A","#02401B","#A2A475","#81A88D","#972D15"],"Chevalier1":["#446455","#FDD262","#D3DDDC","#C7B19C"],"Darjeeling1":["#FF0000","#00A08A","#F2AD00","#F98400","#5BBCD6"],"Darjeeling2":["#ECCBAE","#046C9A","#D69C4E","#ABDDDE","#000000"],"FantasticFox1":["#DD8D29","#E2D200","#46ACC8","#E58601","#B40F20"],"GrandBudapest1":["#F1BB7B","#FD6467","#5B1A18","#D67236"],"GrandBudapest2":["#E6A0C4","#C6CDF7","#D8A499","#7294D4"],"IsleofDogs1":["#9986A5","#79402E","#CCBA72","#0F0D0E","#D9D0D3","#8D8680"],"IsleofDogs2":["#EAD3BF","#AA9486","#B6854D","#39312F","#1C1718"],"Moonrise1":["#F3DF6C","#CEAB07","#D5D5D3","#24281A"],"Moonrise2":["#798E87","#C27D38","#CCC591","#29211F"],"Moonrise3":["#85D4E3","#F4B5BD","#9C964A","#CDC08C","#FAD77B"],"Royal1":["#899DA4","#C93312","#FAEFD1","#DC863B"],"Royal2":["#9A8822","#F5CDB4","#F8AFA8","#FDDDA0","#74A089"],"Rushmore":["#E1BD6D","#EABE94","#0B775E","#35274A","#F2300F"],"Rushmore1":["#E1BD6D","#EABE94","#0B775E","#35274A","#F2300F"],"Zissou1":["#3B9AB2","#78B7C5","#EBCC2A","#E1AF00","#F21A00"]};
+         var root;
+
+         var wesS = wes_palettes.Darjeeling2;
+
+         var depthScale = d3.scaleLinear()
+                            .interpolate( d3.interpolateLab )
+                            .domain([0,5])
+                            .range([wesS[1],wesS[0]])
+
+         var catScale = d3.scaleOrdinal()
+                          .domain(["grape","carrot","spinach"])
+                          .range( wes_palettes.Darjeeling1.slice(1) )
+
+
+         var treeColoring = function(d,depth0) {
+             if ( d.depth + depth0 < 4 ) { return depthScale(d.depth + depth0) }
+             else { return catScale(d.data.key) }
+         }
+
+         var populateTooltip = function(d) {
+
+             let xPosition = ( d.x1 - d.x0 ) * 0.5 + d3.event.pageX;
+             let yPosition = ( d.y1 - d.y0 ) * 0.5 + d3.event.pageY;
+
+             d3.select("#tooltip")
+               .transition()
+               .duration(300)
+               .style("left", xPosition+"px" )
+               .style("top", yPosition+"px" )
+               .select("#value")
+               .text(d.value);
+
+             d3.select("#tooltip")
+               .select("#tooltipTitle")
+               .text(d.Id)
+
+             d3.select("#tooltip")
+               .classed("hidden",false);
+         };
+
+         var visualize = function( data ) {
+             nestedData = d3.nest()
+                            .key( d => d.climateRegion )
+                            .key( d => d.bioregion )
+                            .key( d => d.farmType )
+                            .key( d => d.crop )
+                            .entries( data )
+
+             var targetFarms = { key: "Target Farms", values: nestedData };
+             var treeLayout = d3.treemap()
+                                .size([900,300])
+                                .padding(5)
+                                .paddingTop(15);
+
+             root = d3.hierarchy(targetFarms, d => d.values )
+                      .sum( d => d.expected ? ( d.expected + 1 ) : undefined );
+
+
+             svg = d3.select("body")
+                     .append("svg")
+                     .attr("width",svgWidth + padding )
+                     .attr("height",svgHeight + padding );
+
+             var newRoot = root;
+             root.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/") )
+             newRoot.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/") )
+
+             var textConditionalToArea = function( d ) {
+                 let h = d.y1 - d.y0;
+                 let w = d.x1 - d.x0;
+                 if ( h > 10 && w > 40 ) {
+                     return d.data.key;
+                 }
+             };
+
+             function filterTreemap(selArea) {
+                 let Id0 = selArea.parent ? selArea.parent.Id : "Target Farms" ;
+
+                 newRoot = selArea.copy();
+
+                 treeLayout(newRoot);
+                 newRoot.each( d => d.Id = Id0 + '/' + d.path(root).filter( d => d != null ).map( d => d.data.key ).filter( d => d != "Target Farms" && d != "Target Farms/").reverse().join("/") )
+
+                 let depth0 = selArea.depth;
+
+                 var areas = svg.selectAll("g")
+                                .data(newRoot.descendants(),
+                                      d => d.Id);
+
+                 areas.exit()
+                      .remove();
+
+
+                 /* This is the only remaining rect, the "background" */
+
+                 svg.select("rect")
+                    .transition()
+                    .duration(300)
+                    .style("fill",  depthScale(depth0))
+
+                 areas.enter()
+                    .filter( d => d.depth < 5 - depth0 )
+                    .append("g")
+                    .append("rect");
+
+                 svg.selectAll("rect")
+                    .data(newRoot.descendants(),
+                          d => d.Id)
+                    .on("mouseover", d => populateTooltip(d) )
+                    .on("mouseout", function() {
+                        d3.select("#tooltip").
+                           classed("hidden",true);
+                    } )
+                    .on("click", selArea === root ?
+                        (p) => filterTreemap(p) : () => filterTreemap(root))
+                    .style("fill", d => treeColoring(d,depth0))
+                    .transition()
+                    .duration(500)
+                    .attr("class","tile")
+                    .attr("x", d => d.x0 )
+                    .attr("y", d => d.y0 )
+                    .attr("width", d => d.x1 - d.x0 + 1 )
+                    .attr("height", d => d.y1 - d.y0 + 1 );
+                 /* .style("stroke","black"); */
+
+
+                 /* we'll wrap text into the buckets, the only nodes with free area available */
+
+                 leaves = areas.filter( d => d.depth == 4 - depth0 );
+
+                 /* if the area is too small, we won't add a label, but the name would be accesible on hover */
+
+                 /* svg.selectAll("text").remove() */
+
+                 d3.selectAll("text")
+                   .remove();
+
+                 let labels = svg.selectAll("g")
+                                 .data(newRoot.descendants(),
+                                       d => d.Id)
+                                 .append("text");
+
+                 labels.enter()
+                       .append("text")
+                       .merge(labels)
+                       .text( d => textConditionalToArea(d) )
+                       .style("text-anchor","right")
+                       .attr("font-size","12")
+                       .style("font-weight","bold")
+                       .attr("font-family","sans-serif")
+                       .style("fill","ghostwhite")
+                       .transition()
+                       .duration(300)
+                       .attr("x", d => d.x0 + 5 )
+                       .attr("y", d => d.y0 + 12 )
+                       .text( d => textConditionalToArea(d) )
+             }
+
+             filterTreemap(newRoot)
+         }
+
+         d3.csv("/csv/mockupSurveyDesign.csv")
+           .then( visualize )
+
+         <!-- Example of farm area selection: d3.selectAll("rect").filter( d => d.data.climateRegion == "coldButComfy" && d.data.crop == "carrot" ).style("stroke","red").attr("stroke-width",3) -->
+         /* example name construction: path to root console.log(d.path(root).map( d => d.data.key )) */
+         /* seleccinoar todas las hojas d3.selectAll("rect").filter( d => d.depth > 3).style("fill","black") */
+
+        </script>
+    </body>
+</html>

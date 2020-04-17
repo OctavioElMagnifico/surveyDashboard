@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <style>
+         #tooltip {
+             position: absolute;
+             text-align: center;
+             width: 200px;
+             height: auto;
+             padding: 3px;
+             font: 12px sans-serif;
+             background: lightgray;
+             border-radius: 10px;
+             pointer-events: none;
+         }
+         #tooltip.hidden {
+             display: none;
+         }
+         #tooltip p {
+             margin: 0;
+             font-family: sans-serif;
+             font-size: 12px;
+             line-height 20px;
+         }
+        </style>
+        <title> Binary Partition: Eighth Iteration. Experimenting with differnte color scale for leaves. </title>
+        <script type="text/javascript" src="https://unpkg.com/d3@5.15.0/dist/d3.js"> </script>
+        <script type="text/javascript" src="./wesanderson.js"> </script>
+    </head>
+    <body>
+        <h1> Interactive Binary Tree Partition. </h1>
+        <ul>
+            <li> Click works in a switch fashion: if you are on the general view, clicking an area develops taking it as the new root.</li>
+            <li> If you click again it won't continue zooming it will come back to the original state. To see a deeper level, you must click on that level's area. </li>
+            <li> It still isn't showing target vs. completed. </li>
+            <li> The hover is already in place. </li>
+
+        </ul>
+        <div id="tooltip" class="hidden">
+            <p><strong> <span id="tooltipTitle">Some Info About This Bucket</span></strong></p>
+            <p><span id="value">100</span></p>
+        </div>
+        <script type="text/javascript">
+         var svgWidth = 900;
+         var svgHeight = 300;
+
+
+
+         var root;
+
+         var wesS = wes_palettes.Darjeeling2;
+
+         var depthScale = d3.scaleLinear()
+                            .interpolate( d3.interpolateLab )
+                            .domain([0,5])
+                            .range([wesS[1],wesS[0]])
+         
+         var catScale = d3.scaleOrdinal()
+                          .domain(["grape","carrot","spinach"])
+                          .range( wes_palettes.Darjeeling1.slice(1) )
+
+
+         var treeColoring = function(d,depth0) {
+             if ( d.depth + depth0 < 4 ) { return depthScale(d.depth + depth0) }
+             else { console.log(d.data.key); return catScale(d.data.key) }
+         }
+
+         var populateTooltip = function(d) {
+
+             let path = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/")
+
+             let xPosition = ( d.x1 - d.x0 ) * 0.5 + d3.event.pageX;
+             let yPosition = ( d.y1 - d.y0 ) * 0.5 + d3.event.pageY;
+
+             d3.select("#tooltip")
+               .transition()
+               .duration(300)
+               .style("left", xPosition+"px" )
+               .style("top", yPosition+"px" )
+               .select("#value")
+               .text(d.value);
+
+             d3.select("#tooltip")
+               .select("#tooltipTitle")
+               .text(path)
+
+             d3.select("#tooltip")
+               .classed("hidden",false);
+         };
+
+         var visualize = function( data ) {
+             nestedData = d3.nest()
+                            .key( d => d.climateRegion )
+                            .key( d => d.bioregion )
+                            .key( d => d.farmType )
+                            .key( d => d.crop )
+                            .entries( data )
+
+             var targetFarms = { key: "Target Farms", values: nestedData };
+             var treeLayout = d3.treemap()
+                                .size([900,300])
+                                .padding(5)
+                                .paddingTop(15);
+
+             root = d3.hierarchy(targetFarms, d => d.values )
+                      .sum( d => d.expected ? ( d.expected + 1 ) : undefined );
+
+             svg = d3.select("body")
+                     .append("svg")
+                     .attr("width",svgWidth)
+                     .attr("height",svgHeight);
+
+
+
+             treeLayout(root);
+
+             var areas = svg.selectAll("g")
+                            .data(root.descendants(),
+                                  d => d.data.climateRegion || d.data.crop || d.data.farmType || d.data.bioregion )
+                            .enter()
+                            .append("g").filter( d => d.depth < 5 );
+
+             areas.append("rect")
+                  .attr("x", d => d.x0 )
+                  .attr("y", d => d.y0 )
+                  .attr("width", d => d.x1 - d.x0 + 1 )
+                  .attr("height", d => d.y1 - d.y0 + 1 )
+                  .style("fill", d => treeColoring(d,0) )
+                  .on("mouseover",  populateTooltip)
+                  .on("mouseout", function() {
+                      d3.select("#tooltip").
+                         classed("hidden",true);
+                  } )
+                  .on("click", filterTreemap );
+
+             leaves = d3.selectAll("g").filter( d => d.depth == 4 )
+
+             /* if the area is too small, we won't add a label, but the name would be accesible on hover */
+
+             var textConditionalToArea = function( d ) {
+                 let h = d.y1 - d.y0;
+                 let w = d.x1 - d.x0;
+                 if ( h > 10 && w > 40 ) {
+                     return d.data.key;
+                 }
+             };
+
+             areas.append("text")
+                  .attr("x", d => d.x0 )
+                  .attr("y", d => d.y0 + 10 )
+                  .style("text-anchor","right")
+                  .style("fill","white")
+                  .attr("font-size","12")
+                  .attr("font-family","sans-serif")
+                  .text( d => textConditionalToArea(d) );
+
+
+             function filterTreemap(selArea) {
+
+                 let newRoot = selArea.copy();
+
+                 treeLayout(newRoot);
+
+                 let depth0 = selArea.depth;
+
+                 var areas = svg.selectAll("g")
+                                .data(newRoot.descendants(),
+                                      d => d.data.climateRegion || d.data.crop || d.data.farmType || d.data.bioregion );
+
+                 areas.exit()
+                      .remove();
+
+                 /* This is the only remaining rect, the "background" */
+
+                 svg.select("rect")
+                    .transition()
+                    .duration(800)
+                    .style("fill", depthScale(depth0) )
+
+                 areas.enter()
+                    .append("g")
+                    .filter( d => d.depth < 5 - depth0 )
+                    .append("rect")
+                    .on("mouseover", d => populateTooltip(d) )
+                    .on("mouseout", function() {
+                        d3.select("#tooltip").
+                           classed("hidden",true);
+                    } )
+                    .on("click", selArea === root ?
+                        (p) => filterTreemap(p) : () => filterTreemap(root))
+                    .style("fill", d => treeColoring(d,depth0))
+                    .transition()
+                    .duration(1000)
+                    .attr("x", d => d.x0 )
+                    .attr("y", d => d.y0 )
+                    .attr("width", d => d.x1 - d.x0 + 1 )
+                    .attr("height", d => d.y1 - d.y0 + 1 )
+                 /* .style("stroke","black"); */
+
+
+                 /* we'll wrap text into the buckets, the only nodes with free area available */
+
+                 leaves = areas.filter( d => d.depth == 4 - depth0 );
+
+                 /* if the area is too small, we won't add a label, but the name would be accesible on hover */
+
+                 svg.selectAll("text")
+                    .remove();
+
+                 d3.selectAll("g")
+                   .filter( d => d.depth < 5 - depth0 )
+                   .append("text")
+                   .style("text-anchor","right")
+                   .style("fill","white")
+                   .attr("font-size","12")
+                   .attr("font-family","sans-serif")
+                   .text( d => textConditionalToArea(d) )
+                   .transition()
+                   .duration(1000)
+                   .attr("x", d => d.x0 )
+                   .attr("y", d => d.y0 + 10 );
+             }
+         }
+
+         d3.csv("./mockupSurveyDesign.csv")
+           .then( visualize )
+
+         <!-- Example of farm area selection: d3.selectAll("rect").filter( d => d.data.climateRegion == "coldButComfy" && d.data.crop == "carrot" ).style("stroke","red").attr("stroke-width",3) -->
+         /* example name construction: path to root console.log(d.path(root).map( d => d.data.key )) */
+         /* seleccinoar todas las hojas d3.selectAll("rect").filter( d => d.depth > 3).style("fill","black") */
+
+        </script>
+    </body>
+</html>
