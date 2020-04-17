@@ -13,6 +13,7 @@
              background: lightgray;
              border-radius: 10px;
              pointer-events: none;
+             word-wrap: break-word;
          }
          #tooltip.hidden {
              display: none;
@@ -171,6 +172,8 @@
                     .transition()
                     .duration(500)
                     .attr("class","tile")
+                    .attr("rx","5px")
+                    .attr("ry","5px")
                     .attr("x", d => d.x0 )
                     .attr("y", d => d.y0 )
                     .attr("width", d => d.x1 - d.x0 + 1 )
