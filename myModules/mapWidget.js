@@ -66,16 +66,17 @@ const zooming = function(d) {
 const recenter = function(p) {
     projection.translate( [ -p[0], -p[1] ] ).translate( [ w/2, h/2] );
 
+  svgMap.selectAll("path")
+    .transition()
+    .duration(1000)
+    .attr("d",path);
+
+
     svgMap.selectAll("circle")
         .transition()
         .duration(1000)
         .attr("cx", d => ( projection([d.lon,d.lat])[0] ))
         .attr("cy", d => ( projection([d.lon,d.lat])[1] ));
-
-    svgMap.selectAll("path")
-        .transition()
-        .duration(1000)
-        .attr("d",path);
 
 };
 
