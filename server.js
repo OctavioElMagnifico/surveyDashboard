@@ -47,6 +47,7 @@ app.post('/rexec/csv', asyncHandler(async (req, res) => {
   res.sendFile(outputPath)
 }))
 
+
 app.get('/csv/:name', (req, res) => {
   const csvName = req.params.name
   res.setHeader('Content-Type', 'text/csv')
@@ -62,6 +63,12 @@ app.get('/json/:name', (req, res) => {
   const jsonName = req.params.name
   res.setHeader('Content-Type', 'text/json')
   res.sendFile(`${__dirname}/output/${jsonName}`)
+})
+
+app.get('/module/:name', (req, res) => {
+  const moduleName = req.params.name
+  res.setHeader('Content-Type', 'text/javascript')
+  res.sendFile(`${__dirname}/myModules/${moduleName}.js`)
 })
 
 app.listen(PORT, () => console.log(`Server ready on port ${PORT}`))
