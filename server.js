@@ -67,7 +67,7 @@ app.get('/json/:name', (req, res) => {
 
 app.get('/module/:name', (req, res) => {
   const moduleName = req.params.name
-  res.setHeader('Content-Type', 'text/javascript')
+  // res.setHeader('Content-Type', 'text/javascript')
   res.sendFile(`${__dirname}/myModules/${moduleName}.js`)
 })
 
