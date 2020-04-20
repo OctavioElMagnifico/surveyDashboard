@@ -96,14 +96,14 @@ var map = svgMap.append("g")
 // background to allow dragging
 
 
-d3.csv("./us-ag-productivity.csv")
+d3.csv("/csv/us-ag-productivity.csv")
 .then( function( data ) {
     color.domain([
         d3.min( data, d => ( d.value ) ),
         d3.max( data, d => ( d.value ) )
     ]);
     <!--  añadimos el geoJson-=>
-    d3.json("./us-states.json")
+    d3.json("/json/us-states.json")
         .then( function(json) {
 
             for (var i = 0; i < data.length; i++) {
@@ -141,7 +141,7 @@ d3.csv("./us-ag-productivity.csv")
         .attr("height",h)
         .attr("opacity",0);
 
-    d3.csv("./us-cities.csv")
+    d3.csv("/csv/us-cities.csv")
         .then( function(cities) {
 
             d3.scaleLinear()

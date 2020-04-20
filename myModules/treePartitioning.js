@@ -232,7 +232,7 @@ var visualize = function( data ) {
 
 // getting the same effect than with a click: filterTreemap( algo ) <---- algo is defined in the example above
 
-d3.csv("./mockupSurveyDesign.csv")
+d3.csv("/csv/mockupSurveyDesign.csv")
 .then( visualize );
 
 <!-- Example of farm area selection: d3.selectAll("rect").filter( d => d.data.climateRegion == "coldButComfy" && d.data.crop == "carrot" ).style("stroke","red").attr("stroke-width",3) -->
