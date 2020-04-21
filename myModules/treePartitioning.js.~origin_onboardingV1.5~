@@ -98,30 +98,14 @@ var treeColoring = function(d,depth0) {
     else { return catScale(d.data.key); }
 }
 
-var categoriesExample = [
-  "climateRegion",
-  "bioregion",
-  "farmType",
-  "crop"
 
-];
-
-var visualize = function( data, categories ) {
-
-  // We are abstracting this beautifully simple process with an unusual reduce, I think it's worth it because it will allow non coders to use this viz without much effort, they'll just provide an array of names.
-
-    // nestedData = d3.nest()
-    //             .key( d => d.climateRegion )
-    //             .key( d => d.bioregion )
-    //             .key( d => d.farmType )
-    //             .key( d => d.crop )
-    //             .entries( data );
-
-  nestedData = d3.nest();
-
-  let reduced = categories.reduce( ( preceeding, evaluating) => preceeding.key( d => d[evaluating] ) , nestedData );
-
-  nestedData = nestedData.entries( data );
+var visualize = function( data ) {
+    nestedData = d3.nest()
+                .key( d => d.climateRegion )
+                .key( d => d.bioregion )
+                .key( d => d.farmType )
+                .key( d => d.crop )
+                .entries( data );
 
     var targetFarms = { key: "Target Farms", values: nestedData };
     var treeLayout = d3.treemap()
@@ -138,13 +122,9 @@ var visualize = function( data, categories ) {
         .attr("width",svgWidth + padding )
         .attr("height",svgHeight + padding );
 
-  var newRoot = root;
-  root.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/").replace( /\/$/ , "" ) );
-
-  var newRoot = root;
-
-  // root.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/").replace( /\/$/, "" ) );
-  //   var newRoot = root;
+    var newRoot = root;
+    root.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/") );
+    newRoot.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/") );
 
     var textConditionalToArea = function( d ) {
         let h = d.y1 - d.y0;
@@ -159,20 +139,12 @@ var visualize = function( data, categories ) {
     filterTreemap = function(selArea) {
         let Id0 = selArea.parent ? selArea.parent.Id : "Target Farms" ;
 
+        // The trouble with name generations lies here: in Id0 Î
+
         newRoot = selArea.copy();
 
         treeLayout(newRoot);
-      // Couldn't this be saner? Right now, it needs to filter cause a trailing slash is added at the end of just the first level and it breaks the immediate succesor's ids.
-        newRoot.each( function( d ) { let array = d.path(root)
-                                          .filter( d => d != null )
-                                          .map( d => d.data.key )
-                                          .reverse();
-                                      let arrayU = _.uniq(array);
-                                      arrayU.shift();
-                                      let Id = Id0 + '/' + arrayU.join("/");
-                                      d.Id = Id.replace(/\/$/ , "" );
-                                      return d;}
-                    );
+        newRoot.each( d => d.Id = Id0 + '/' + d.path(root).filter( d => d != null ).map( d => d.data.key ).filter( d => d != "Target Farms" && d != "Target Farms/").reverse().join("/") );
 
         let depth0 = selArea.depth;
 
@@ -180,13 +152,9 @@ var visualize = function( data, categories ) {
                     .data(newRoot.descendants(),
                             d => d.Id);
 
-      areas.exit()
-        .selectAll("rect")
-        .transition()
-        .duration(250)
-        .attr("width",0)
-        .attr("height",0)
-        .attr("opacity",0);
+        areas.exit()
+            .remove();
+
 
         /* This is the only remaining rect, the "background" */
 
@@ -215,8 +183,7 @@ var visualize = function( data, categories ) {
                 (p) => filterTreemap(p) : () => filterTreemap(root))
             .style("fill", d => treeColoring(d,depth0))
             .transition()
-            .duration(600)
-            .attr("opacity",1)
+            .duration(500)
             .attr("rx","5px")
             .attr("ry","5px")
             .attr("x", d => d.x0 )
@@ -266,7 +233,7 @@ var visualize = function( data, categories ) {
 // getting the same effect than with a click: filterTreemap( algo ) <---- algo is defined in the example above
 
 d3.csv("/csv/mockupSurveyDesign.csv")
-  .then( data => visualize( data, categoriesExample ) );
+.then( visualize );
 
 <!-- Example of farm area selection: d3.selectAll("rect").filter( d => d.data.climateRegion == "coldButComfy" && d.data.crop == "carrot" ).style("stroke","red").attr("stroke-width",3) -->
 /* example name construction: path to root console.log(d.path(root).map( d => d.data.key )) */
