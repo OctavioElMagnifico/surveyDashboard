@@ -127,8 +127,8 @@ var visualize = function( dataTree ) {
       .attr("height",svgHeight + padding );
 
     var newRoot = root;
-  root.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/") );
-  newRoot.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/") );
+  root.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/").replace( /\/$/ , "" ) );
+  newRoot.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/").replace(/\/$/ , "" ) );
 
   var textConditionalToArea = function( d ) {
     let h = d.y1 - d.y0;
@@ -141,7 +141,7 @@ var visualize = function( dataTree ) {
   // This one is in charge of drawing the actual tree and also it is able to redraw the deeper selections.
 
   filterTreemap = function(selArea) {
-    let Id0 = selArea.parent ? selArea.parent.Id : "Target Farms" ;
+    let Id0 = selArea.parent ? selArea.parent.Id : selArea.Id ;
 
     // The trouble with name generations lies here: in Id0 Î
 
@@ -151,9 +151,11 @@ var visualize = function( dataTree ) {
     newRoot.each( function( d ) { let array = d.path(root)
                                       .filter( d => d != null )
                                       .map( d => d.data.key )
-                                      .reverse()
-                                  array = uniq(array);
-                                  d.Id = Id0 + '/' + array.join("/");
+                                      .reverse();
+                                  let arrayU = _.uniq(array);
+                                  arrayU.shift();
+                                  let Id = Id0 + '/' + arrayU.join("/");
+                                  d.Id = Id.replace(/\/$/ , "" );
                                   return d;}
                 );
 
@@ -164,84 +166,90 @@ var visualize = function( dataTree ) {
               d => d.Id);
 
     areas.exit()
-      .remove();
+      .selectAll("rect")
+      .transition()
+      .duration(250)
+      .attr("width",0)
+      .attr("height",0)
+      .attr("opacity",0);
 
 
     /* This is the only remaining rect, the "background" */
 
-    svg.select("rect.treeArea")
-      .transition()
-      .duration(300)
-      .style("fill",  depthScale(depth0));
+      svg.select("rect.treeArea")
+        .transition()
+        .duration(300)
+        .style("fill",  depthScale(depth0));
 
-    // Here maxdepth is maxnumbered. It is not the only place. The constant to search and destroy is "5"
+      // Here maxdepth is maxnumbered. It is not the only place. The constant to search and destroy is "5"
 
-    areas.enter()
-      .filter( d => d.depth < 5 - depth0 )
-      .append("g")
-      .append("rect")
-      .classed("treeArea",true);
+      areas.enter()
+        .filter( d => d.depth < 5 - depth0 )
+        .append("g")
+        .append("rect")
+        .classed("treeArea",true);
 
-    svg.selectAll("rect.treeArea")
-      .data(newRoot.descendants(),
-            d => d.Id)
-      .on("mouseover", d => populateTooltip(d) )
-      .on("mouseout", function() {
-        d3.select("#tooltip")
-          .style("display","none");
-      } )
-      .on("click", selArea === root ?
-          (p) => filterTreemap(p) : () => filterTreemap(root))
-      .style("fill", d => treeColoring(d,depth0))
-      .transition()
-      .duration(500)
+      svg.selectAll("rect.treeArea")
+        .data(newRoot.descendants(),
+              d => d.Id)
+        .on("mouseover", d => populateTooltip(d) )
+        .on("mouseout", function() {
+          d3.select("#tooltip")
+            .style("display","none");
+        } )
+        .on("click", selArea === root ?
+            (p) => filterTreemap(p) : () => filterTreemap(root))
+        .style("fill", d => treeColoring(d,depth0))
+        .transition()
+        .duration(500)
+      .attr("opacity",1)
       .attr("rx","5px")
-            .attr("ry","5px")
-            .attr("x", d => d.x0 )
-            .attr("y", d => d.y0 )
-            .attr("width", d => d.x1 - d.x0 + 1 )
-            .attr("height", d => d.y1 - d.y0 + 1 );
+      .attr("ry","5px")
+      .attr("x", d => d.x0 )
+      .attr("y", d => d.y0 )
+      .attr("width", d => d.x1 - d.x0 + 1 )
+      .attr("height", d => d.y1 - d.y0 + 1 );
 
-        /* .style("stroke","black"); */
+    /* .style("stroke","black"); */
 
 
-        /* if the area is too small, we won't add a label, but the name would be accesible on hover */
+    /* if the area is too small, we won't add a label, but the name would be accesible on hover */
 
-        svg.selectAll("text")
-            .transition()
-            .duration(300)
-            .attr("opacity",0);
+      svg.selectAll("text")
+        .transition()
+        .duration(300)
+        .attr("opacity",0);
 
-        let labels = svg.selectAll("g")
-                        .data(newRoot.descendants(),
-                            d => d.Id)
-                        .append("text");
+      let labels = svg.selectAll("g")
+          .data(newRoot.descendants(),
+                d => d.Id)
+          .append("text");
 
-        labels.enter()
-            .append("text")
-            .merge(labels)
-            .text( d => textConditionalToArea(d) )
-            .style("text-anchor","right")
-            .attr("font-size","12")
-            .attr("font-family","sans-serif")
-            .style("font-weight","bold")
-            .style("fill","white")
-            .style("pointer-events","none")
-            .attr("x", d => d.x0 + 10 )
-            .attr("y", d => d.y0 + 10 )
-            .text( d => textConditionalToArea(d) )
-            .transition()
-            .duration(600)
-            .attr("opacity",1);
+      labels.enter()
+        .append("text")
+        .merge(labels)
+        .text( d => textConditionalToArea(d) )
+        .style("text-anchor","right")
+        .attr("font-size","12")
+        .attr("font-family","sans-serif")
+        .style("font-weight","bold")
+        .style("fill","white")
+        .style("pointer-events","none")
+        .attr("x", d => d.x0 + 10 )
+        .attr("y", d => d.y0 + 10 )
+        .text( d => textConditionalToArea(d) )
+        .transition()
+        .duration(600)
+        .attr("opacity",1);
     };
 
     filterTreemap(newRoot);
-}
+  }
 
-// getting a node through searching its name on the root
-// root.each( function(d) { if (d.Id == "Target Farms/stickyHot") { algo = d; } } )
+  // getting a node through searching its name on the root
+  // root.each( function(d) { if (d.Id == "Target Farms/stickyHot") { algo = d; } } )
 
-// getting the same effect than with a click: filterTreemap( algo ) <---- algo is defined in the example above
+  // getting the same effect than with a click: filterTreemap( algo ) <---- algo is defined in the example above
 
 d3.csv("/csv/mockupSurveyDesign.csv")
   .then( function( data )  {

@@ -116,6 +116,7 @@ const highlightPath = function( path ) {
 }
 
 //This will receive a viable path and higlight every node involved (the "ladder" ascending up to it).
+//This should be added to a listener on the treemap so selection is not lost when zooming
 const highlightSelection = function( array ) {
     noHighlight();
     let ladder = ladderPaths( array );
