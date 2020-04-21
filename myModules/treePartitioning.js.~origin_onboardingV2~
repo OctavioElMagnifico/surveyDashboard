@@ -101,37 +101,23 @@ var treeColoring = function(d,depth0) {
 }
 
 //generalize: filterTreemap should be an independent const, to get that done, "visualize" <- change name! will return an object with all needed info.
-var categoriesExample = [
+
+var categoriesEx = [
   "climateRegion",
   "bioregion",
   "farmType",
   "crop"
-
 ];
 
-var visualize = function( data, categories ) {
+var visualize = function( dataTree ) {
 
-  // We are abstracting this beautifully simple process with an unusual reduce, I think it's worth it because it will allow non coders to use this viz without much effort, they'll just provide an array of names.
-
-    // nestedData = d3.nest()
-    //             .key( d => d.climateRegion )
-    //             .key( d => d.bioregion )
-    //             .key( d => d.farmType )
-    //             .key( d => d.crop )
-    //             .entries( data );
-
-  nestedData = d3.nest();
-
-  let reduced = categories.reduce( ( preceeding, evaluating) => preceeding.key( d => d[evaluating] ) , nestedData );
-
-  nestedData = nestedData.entries( data );
   var treeLayout = d3.treemap()
       .size([svgWidth,svgHeight])
       .padding(5)
       .paddingTop(15);
 
   //change "expected" name
-  root = d3.hierarchy( nestedData, d => d.values )
+  root = d3.hierarchy( dataTree, d => d.values )
     .sum( d => d.expected ? ( d.expected + 1 ) : undefined );
 
   //change svg name
@@ -140,120 +126,121 @@ var visualize = function( data, categories ) {
       .attr("width",svgWidth + padding )
       .attr("height",svgHeight + padding );
 
-  var newRoot = root;
+    var newRoot = root;
+  root.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/").replace( /\/$/ , "" ) );
+  newRoot.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/").replace(/\/$/ , "" ) );
 
-  // root.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/").replace( /\/$/, "" ) );
-  //   var newRoot = root;
+  var textConditionalToArea = function( d ) {
+    let h = d.y1 - d.y0;
+    let w = d.x1 - d.x0;
+    if ( h > 10 && w > 40 ) {
+      return d.data.key;
+    }
+  };
 
-    var textConditionalToArea = function( d ) {
-        let h = d.y1 - d.y0;
-        let w = d.x1 - d.x0;
-        if ( h > 10 && w > 40 ) {
-            return d.data.key;
-        }
-    };
+  // This one is in charge of drawing the actual tree and also it is able to redraw the deeper selections.
 
-    // This one is in charge of drawing the actual tree and also it is able to redraw the deeper selections.
+  filterTreemap = function(selArea) {
+    let Id0 = selArea.parent ? selArea.parent.Id : selArea.Id ;
 
-    filterTreemap = function(selArea) {
-        let Id0 = selArea.parent ? selArea.parent.Id : "Target Farms" ;
+    // The trouble with name generations lies here: in Id0 Î
 
-        newRoot = selArea.copy();
+    newRoot = selArea.copy();
 
-        treeLayout(newRoot);
-      // Couldn't this be saner? Right now, it needs to filter cause a trailing slash is added at the end of just the first level and it breaks the immediate succesor's ids.
-        newRoot.each( function( d ) { let array = d.path(root)
-                                          .filter( d => d != null )
-                                          .map( d => d.data.key )
-                                          .reverse();
-                                      let arrayU = _.uniq(array);
-                                      arrayU.shift();
-                                      let Id = Id0 + '/' + arrayU.join("/");
-                                      d.Id = Id.replace(/\/$/ , "" );
-                                      return d;}
-                    );
+    treeLayout(newRoot);
+    newRoot.each( function( d ) { let array = d.path(root)
+                                      .filter( d => d != null )
+                                      .map( d => d.data.key )
+                                      .reverse();
+                                  let arrayU = _.uniq(array);
+                                  arrayU.shift();
+                                  let Id = Id0 + '/' + arrayU.join("/");
+                                  d.Id = Id.replace(/\/$/ , "" );
+                                  return d;}
+                );
 
-        let depth0 = selArea.depth;
+    let depth0 = selArea.depth;
 
-        var areas = svg.selectAll("g")
-                    .data(newRoot.descendants(),
-                            d => d.Id);
+    var areas = svg.selectAll("g")
+        .data(newRoot.descendants(),
+              d => d.Id);
 
-      areas.exit()
-        .selectAll("rect")
+    areas.exit()
+      .selectAll("rect")
+      .transition()
+      .duration(250)
+      .attr("width",0)
+      .attr("height",0)
+      .attr("opacity",0);
+
+
+    /* This is the only remaining rect, the "background" */
+
+      svg.select("rect.treeArea")
         .transition()
-        .duration(250)
-        .attr("width",0)
-        .attr("height",0)
+        .duration(300)
+        .style("fill",  depthScale(depth0));
+
+      // Here maxdepth is maxnumbered. It is not the only place. The constant to search and destroy is "5"
+
+      areas.enter()
+        .filter( d => d.depth < 5 - depth0 )
+        .append("g")
+        .append("rect")
+        .classed("treeArea",true);
+
+      svg.selectAll("rect.treeArea")
+        .data(newRoot.descendants(),
+              d => d.Id)
+        .on("mouseover", d => populateTooltip(d) )
+        .on("mouseout", function() {
+          d3.select("#tooltip")
+            .style("display","none");
+        } )
+        .on("click", selArea === root ?
+            (p) => filterTreemap(p) : () => filterTreemap(root))
+        .style("fill", d => treeColoring(d,depth0))
+        .transition()
+        .duration(500)
+      .attr("opacity",1)
+      .attr("rx","5px")
+      .attr("ry","5px")
+      .attr("x", d => d.x0 )
+      .attr("y", d => d.y0 )
+      .attr("width", d => d.x1 - d.x0 + 1 )
+      .attr("height", d => d.y1 - d.y0 + 1 );
+
+    /* .style("stroke","black"); */
+
+
+    /* if the area is too small, we won't add a label, but the name would be accesible on hover */
+
+      svg.selectAll("text")
+        .transition()
+        .duration(300)
         .attr("opacity",0);
 
-        /* This is the only remaining rect, the "background" */
+      let labels = svg.selectAll("g")
+          .data(newRoot.descendants(),
+                d => d.Id)
+          .append("text");
 
-        svg.select("rect.treeArea")
-            .transition()
-            .duration(300)
-            .style("fill",  depthScale(depth0));
-
-// Here maxdepth is magicnumbered. It is not the only place. The constant to search and destroy is "5"
-
-        areas.enter()
-            .filter( d => d.depth < 5 - depth0 )
-            .append("g")
-            .append("rect")
-            .classed("treeArea",true);
-
-        svg.selectAll("rect.treeArea")
-            .data(newRoot.descendants(),
-                  d => d.Id)
-            .on("mouseover", d => populateTooltip(d) )
-            .on("mouseout", function() {
-                d3.select("#tooltip")
-                    .style("display","none");
-            } )
-            .on("click", selArea === root ?
-                (p) => filterTreemap(p) : () => filterTreemap(root))
-            .style("fill", d => treeColoring(d,depth0))
-            .transition()
-            .duration(600)
-            .attr("opacity",1)
-            .attr("rx","5px")
-            .attr("ry","5px")
-            .attr("x", d => d.x0 )
-            .attr("y", d => d.y0 )
-            .attr("width", d => d.x1 - d.x0 + 1 )
-            .attr("height", d => d.y1 - d.y0 + 1 );
-
-        /* .style("stroke","black"); */
-
-
-        /* if the area is too small, we won't add a label, but the name would be accesible on hover */
-
-        svg.selectAll("text")
-            .transition()
-            .duration(300)
-            .attr("opacity",0);
-
-        let labels = svg.selectAll("g")
-                        .data(newRoot.descendants(),
-                            d => d.Id)
-                        .append("text");
-
-        labels.enter()
-            .append("text")
-            .merge(labels)
-            .text( d => textConditionalToArea(d) )
-            .style("text-anchor","right")
-            .attr("font-size","12")
-            .attr("font-family","sans-serif")
-            .style("font-weight","bold")
-            .style("fill","white")
-            .style("pointer-events","none")
-            .attr("x", d => d.x0 + 10 )
-            .attr("y", d => d.y0 + 10 )
-            .text( d => textConditionalToArea(d) )
-            .transition()
-            .duration(600)
-            .attr("opacity",1);
+      labels.enter()
+        .append("text")
+        .merge(labels)
+        .text( d => textConditionalToArea(d) )
+        .style("text-anchor","right")
+        .attr("font-size","12")
+        .attr("font-family","sans-serif")
+        .style("font-weight","bold")
+        .style("fill","white")
+        .style("pointer-events","none")
+        .attr("x", d => d.x0 + 10 )
+        .attr("y", d => d.y0 + 10 )
+        .text( d => textConditionalToArea(d) )
+        .transition()
+        .duration(600)
+        .attr("opacity",1);
     };
 
     filterTreemap(newRoot);
@@ -265,7 +252,35 @@ var visualize = function( data, categories ) {
   // getting the same effect than with a click: filterTreemap( algo ) <---- algo is defined in the example above
 
 d3.csv("/csv/mockupSurveyDesign.csv")
-  .then( data => visualize( data, categoriesExample ) );
+  .then( function( data )  {
+    // this will be done manually at the "render" stage of the dashboard.
+
+    let rootKey = "Target Farms";
+
+    // function tendTree( dataset, ...ourKeys) {
+    //   let tree = d3.nest();
+    //   ourKeys.forEach( key => { tree =  tree.key( p => p[`${key}`] )}   )
+    //   return tree.entries( dataset )
+    // }
+    
+    // function tendTree( dataset, ...ourKeys) {
+    //   let tree = d3.nest();
+    //   ourKeys.reduce( (tree, key) => { return tree.key( p => p[key] ) } )
+    //   return tree.entries( dataset )
+    // }
+
+    nestedData = d3.nest()
+      .key( d => d.climateRegion )
+      .key( d => d.bioregion )
+      .key( d => d.farmType )
+      .key( d => d.crop )
+      .entries( data );
+
+    var packagedNestedData = { key: rootKey, values: nestedData };
+
+    visualize(packagedNestedData);
+  }
+       );
 
   <!-- Example of farm area selection: d3.selectAll("rect").filter( d => d.data.climateRegion == "coldButComfy" && d.data.crop == "carrot" ).style("stroke","red").attr("stroke-width",3) -->
   /* example name construction: path to root console.log(d.path(root).map( d => d.data.key )) */

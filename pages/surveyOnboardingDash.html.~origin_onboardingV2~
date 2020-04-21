@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+       <style>
+			  .pan rect {
+				    fill: black;
+				    opacity: 0.2;
+			  }
+        body {
+            font-family: Sans-Serif;
+            background-color: cornflowerblue;
+        }
+
+			  .pan text {
+				    fill: black;
+				    font-size: 18px;
+				    text-anchor: middle;
+			  }
+
+			  .pan:hover rect,
+ 			  .pan:hover text {
+				    fill: blue;
+			  }
+
+        .column {
+            float: left;
+            width: 50%;
+        }
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .header {
+            background-color: darkblue;
+            opacity: 0.8;
+            box-shadow: 3px 3px 3px 3px grey;
+            border-radius: 25px;
+            color: floralwhite;
+        }
+        </style>
+        <title> Survey Onboarding Dashboard, First Iteration. </title>
+        <script type="text/javascript" src="https://unpkg.com/d3@5.15.0/dist/d3.js"> </script>
+        <script type="text/javascript" src="https://unpkg.com/lodash@4.17.15/lodash.js"> </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1> Dashboard ¿MVP?: Survey Helper Visualizations. </h1>
+            <ul>
+                <li> Selection of options highlights corresponding map areas. Map areas reflect reamining subjects with their amount of surface. Biggest ones are underserved. </li>
+                <li> It toggles between any level of detail and the global view: zoom a category clickin on it (an emergent area) and unzoom again into global biew with another click. </li>
+                <li> It still isn't showing target vs. completed. Infrastructure for it is ready, though (it can map arbitrarily complex trees, it suffices with addin columns for "completed" or something like that). </li>
+                <li> The hover is still not populated. </li>
+                <li> The map offers dragging and zooming through the usual mouse gestures. </li>
+            </ul>
+        </div>
+        <div id="columns" class="row">
+            <div id="partition" class="column">
+                <script type="text/javascript" src="/module/treePartitioning" ></script>
+            </div>
+            <div class="column">
+                <div id="form" >
+                    <script type="text/javascript" src="/module/sumarDesplegables" ></script>
+                </div>
+                <div id="mapDiv">
+                    <script type="text/javascript" src="/module/mapWidget" ></script>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
