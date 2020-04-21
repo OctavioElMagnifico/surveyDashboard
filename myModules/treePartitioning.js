@@ -1,4 +1,5 @@
 // This binary partitioning is still a little hardcoded. The fundamental remaining parametrization needed is taking a list of keys as arguments for the CSV nesting when it is transformed into a tree. This will be done soon.
+
 // What this visualization does is representing a hierarchical dataset through the succesive partiotion of areas relative in their surface to a chosen variable that can be recursed through the tree. We designed it to help us give visual feedback during a survey design.
 
 // Probably functionality should be broken between a pre procesing stage when the tree is generated and another that, fed with the tree, keys and variable name draws the partitioning.
@@ -35,19 +36,19 @@ tooltipTitle = tooltip.append("p")
                     .append("span");
 
 d3.select("#title")
-.style("font-size","8")
-.style("font-family","sans-serif")
-.style("font-weight","bold");
+  .style("font-size","8")
+  .style("font-family","sans-serif")
+  .style("font-weight","bold");
 
 d3.select("#tooltip").selectAll("p")
-    .style("margin","0")
-    .style("line-height","20px");
+  .style("margin","0")
+  .style("line-height","20px");
 
 
 tooltipValue = tooltip.append("p")
-    .attr("id","value")
-    .append("span")
-    .style("font-size","12px");
+                      .attr("id","value")
+                      .append("span")
+                      .style("font-size","12px");
 
 //To be called on hover.
 var populateTooltip = function(d) {
@@ -77,9 +78,10 @@ var svgWidth = 500;
 var svgHeight = 600;
 var padding = 10;
 
-/* var root; */
+var root;
 var filterTreemap;
 
+//generalize
 var catScale = d3.scaleOrdinal()
     .domain(["grape","carrot","spinach"])
     .range( wes_palettes.Darjeeling1.slice(1) );
@@ -91,100 +93,109 @@ var depthScale = d3.scaleLinear()
                 .domain([0,5])
                 .range([wesS[1],wesS[0]]);
 
-// We'll use one scale for hierarchy and another one for the topmost surfaces: the current tree leaves ( with current we refer to the fact that deepnes could be variable ).
+// We'll use one scale for hierarchy and another one for the topmost surfaces: the current tree leaves ( with current we refer to the fact that deepness could be variable ).
 
 var treeColoring = function(d,depth0) {
     if ( d.depth + depth0 < 4 ) { return depthScale(d.depth + depth0); }
     else { return catScale(d.data.key); }
 }
 
+//generalize: filterTreemap should be an independent const, to get that done, "visualize" <- change name! will return an object with all needed info.
 
-var visualize = function( data ) {
-    nestedData = d3.nest()
-                .key( d => d.climateRegion )
-                .key( d => d.bioregion )
-                .key( d => d.farmType )
-                .key( d => d.crop )
-                .entries( data );
+var categoriesEx = [
+  "climateRegion",
+  "bioregion",
+  "farmType",
+  "crop"
+];
 
-    var targetFarms = { key: "Target Farms", values: nestedData };
-    var treeLayout = d3.treemap()
-                    .size([svgWidth,svgHeight])
-                    .padding(5)
-                    .paddingTop(15);
+var visualize = function( dataTree ) {
 
-    root = d3.hierarchy(targetFarms, d => d.values )
-            .sum( d => d.expected ? ( d.expected + 1 ) : undefined );
+  var treeLayout = d3.treemap()
+      .size([svgWidth,svgHeight])
+      .padding(5)
+      .paddingTop(15);
 
+  //change "expected" name
+  root = d3.hierarchy( dataTree, d => d.values )
+    .sum( d => d.expected ? ( d.expected + 1 ) : undefined );
 
+  //change svg name
     svg = d3.select("#partition")
-        .append("svg")
-        .attr("width",svgWidth + padding )
-        .attr("height",svgHeight + padding );
+      .append("svg")
+      .attr("width",svgWidth + padding )
+      .attr("height",svgHeight + padding );
 
     var newRoot = root;
-    root.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/") );
-    newRoot.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/") );
+  root.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/") );
+  newRoot.each( d => d.Id = d.path(root).filter( d => d != null ).map( d => d.data.key ).reverse().join("/") );
 
-    var textConditionalToArea = function( d ) {
-        let h = d.y1 - d.y0;
-        let w = d.x1 - d.x0;
-        if ( h > 10 && w > 40 ) {
-            return d.data.key;
-        }
-    };
+  var textConditionalToArea = function( d ) {
+    let h = d.y1 - d.y0;
+    let w = d.x1 - d.x0;
+    if ( h > 10 && w > 40 ) {
+      return d.data.key;
+    }
+  };
 
-    // This one is in charge of drawing the actual tree and also it is able to redraw the deeper selections.
+  // This one is in charge of drawing the actual tree and also it is able to redraw the deeper selections.
 
-    filterTreemap = function(selArea) {
-        let Id0 = selArea.parent ? selArea.parent.Id : "Target Farms" ;
+  filterTreemap = function(selArea) {
+    let Id0 = selArea.parent ? selArea.parent.Id : "Target Farms" ;
 
-        // The trouble with name generations lies here: in Id0 Î
+    // The trouble with name generations lies here: in Id0 Î
 
-        newRoot = selArea.copy();
+    newRoot = selArea.copy();
 
-        treeLayout(newRoot);
-        newRoot.each( d => d.Id = Id0 + '/' + d.path(root).filter( d => d != null ).map( d => d.data.key ).filter( d => d != "Target Farms" && d != "Target Farms/").reverse().join("/") );
+    treeLayout(newRoot);
+    newRoot.each( function( d ) { let array = d.path(root)
+                                      .filter( d => d != null )
+                                      .map( d => d.data.key )
+                                      .reverse()
+                                  array = uniq(array);
+                                  d.Id = Id0 + '/' + array.join("/");
+                                  return d;}
+                );
 
-        let depth0 = selArea.depth;
+    let depth0 = selArea.depth;
 
-        var areas = svg.selectAll("g")
-                    .data(newRoot.descendants(),
-                            d => d.Id);
+    var areas = svg.selectAll("g")
+        .data(newRoot.descendants(),
+              d => d.Id);
 
-        areas.exit()
-            .remove();
+    areas.exit()
+      .remove();
 
 
-        /* This is the only remaining rect, the "background" */
+    /* This is the only remaining rect, the "background" */
 
-        svg.select("rect.treeArea")
-            .transition()
-            .duration(300)
-            .style("fill",  depthScale(depth0));
+    svg.select("rect.treeArea")
+      .transition()
+      .duration(300)
+      .style("fill",  depthScale(depth0));
 
-// Here maxdepth is maxnumbered. It is not the only place. The constant to search and destroy is "5"
+    // Here maxdepth is maxnumbered. It is not the only place. The constant to search and destroy is "5"
 
-        areas.enter()
-            .filter( d => d.depth < 5 - depth0 )
-            .append("g")
-            .append("rect")
-            .classed("treeArea",true);
+    areas.enter()
+      .filter( d => d.depth < 5 - depth0 )
+      .append("g")
+      .append("rect")
+      .classed("treeArea",true);
 
-        svg.selectAll("rect.treeArea")
-            .data(newRoot.descendants(),
-                  d => d.Id)
-            .on("mouseover", d => populateTooltip(d) )
-            .on("mouseout", function() {
-                d3.select("#tooltip")
-                    .style("display","none");
-            } )
-            .on("click", selArea === root ?
-                (p) => filterTreemap(p) : () => filterTreemap(root))
-            .style("fill", d => treeColoring(d,depth0))
-            .transition()
-            .duration(500)
-            .attr("rx","5px")
+    svg.selectAll("rect.treeArea")
+      .data(newRoot.descendants(),
+            d => d.Id)
+      .on("mouseover", d => populateTooltip(d) )
+      .on("mouseout", function() {
+        d3.select("#tooltip")
+          .style("display","none");
+      } )
+      .on("click", selArea === root ?
+          (p) => filterTreemap(p) : () => filterTreemap(root))
+      .style("fill", d => treeColoring(d,depth0))
+      .transition()
+      .duration(500)
+      .attr("rx","5px")
             .attr("ry","5px")
             .attr("x", d => d.x0 )
             .attr("y", d => d.y0 )
@@ -233,8 +244,36 @@ var visualize = function( data ) {
 // getting the same effect than with a click: filterTreemap( algo ) <---- algo is defined in the example above
 
 d3.csv("/csv/mockupSurveyDesign.csv")
-.then( visualize );
+  .then( function( data )  {
+    // this will be done manually at the "render" stage of the dashboard.
 
-<!-- Example of farm area selection: d3.selectAll("rect").filter( d => d.data.climateRegion == "coldButComfy" && d.data.crop == "carrot" ).style("stroke","red").attr("stroke-width",3) -->
-/* example name construction: path to root console.log(d.path(root).map( d => d.data.key )) */
+    let rootKey = "Target Farms";
+
+    // function tendTree( dataset, ...ourKeys) {
+    //   let tree = d3.nest();
+    //   ourKeys.forEach( key => { tree =  tree.key( p => p[`${key}`] )}   )
+    //   return tree.entries( dataset )
+    // }
+    
+    // function tendTree( dataset, ...ourKeys) {
+    //   let tree = d3.nest();
+    //   ourKeys.reduce( (tree, key) => { return tree.key( p => p[key] ) } )
+    //   return tree.entries( dataset )
+    // }
+
+    nestedData = d3.nest()
+      .key( d => d.climateRegion )
+      .key( d => d.bioregion )
+      .key( d => d.farmType )
+      .key( d => d.crop )
+      .entries( data );
+
+    var packagedNestedData = { key: rootKey, values: nestedData };
+
+    visualize(packagedNestedData);
+  }
+       );
+
+  <!-- Example of farm area selection: d3.selectAll("rect").filter( d => d.data.climateRegion == "coldButComfy" && d.data.crop == "carrot" ).style("stroke","red").attr("stroke-width",3) -->
+  /* example name construction: path to root console.log(d.path(root).map( d => d.data.key )) */
 /* seleccinoar todas las hojas d3.selectAll("rect").filter( d => d.depth > 3).style("fill","black") */
